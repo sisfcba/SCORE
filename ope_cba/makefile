@@ -1,0 +1,240 @@
+#
+#	Make dos Comandos de Operacao
+#
+
+#DEBUG	  =
+DEBUG	  =	-g
+CC		  = cc -D CBA_120KAII_III=1
+FLAGS	  =	-mf -Wc,-we -O -wx -j $(DEBUG) -5 -fpi87 -fp5
+LFLAGS	  = -b -l /usr/lib/queuef.lib -l termlib
+CFLAGS	  = $(FLAGS) -I $(DIR_HDRS) -I $(DIR_HDRS1) -I $(DIR_HDRS2)
+LDFLAGS   = $(FLAGS) $(LFLAGS)
+LINK	  =	$(LD) $(LDFLAGS) -o $@
+
+DIR_HDRS=	../include 
+DIR_HDRS1=  ../lib_ph
+DIR_HDRS2=	../mcp/McpCba
+###### Diretorio definitivo alterado para nao gerar novos arquivos no exec
+DIR_EXEC=	../../exec/
+#DIR_EXEC=	./
+
+DIR_LIB1=	../lib_score
+DIR_LIB2=	../rel/lib
+DIR_LIB3=	../interfrem/lib
+DIR_LIB4=   ../lib_ph
+DIR_LIB5=   /qnx4/phtk/lib
+
+HEADERS=	$(DIR_HDRS)/Definicao.h $(DIR_HDRS)/ScoreConst.h \
+			$(DIR_HDRS)/Macros.h $(DIR_HDRS)/Score.h \
+			$(DIR_HDRS)/Prototipos.h $(DIR_HDRS)/VarsComum.h \
+			$(DIR_HDRS)/ScoreMsgs.h 
+
+HEADERS1=	$(HEADERS) $(DIR_HDRS)/Comandos.h $(DIR_HDRS)/Eventos.h \
+			$(DIR_HDRS)/OperacaoBib.h $(DIR_HDRS)/WindowsCBA.h $(DIR_HDRS)/KeysCBA.h
+
+HEADERS2=	$(HEADERS) $(DIR_HDRS)/Comandos.h $(DIR_HDRS)/Eventos.h
+
+HEADERS3=	$(HEADERS2) $(DIR_HDRS)/AjusteCamisa.h
+
+HEADERS4=	$(HEADERS2) $(DIR_HDRS)/ScoreCba.h
+
+HEADERS5=	$(HEADERS4) $(DIR_HDRS2)/AlimentCBA.h
+
+LIB1=		$(DIR_LIB1)/Score.lib
+LIB2=		$(DIR_LIB2)/BibRel.lib
+LIB3=		$(DIR_LIB3)/InterfRem.lib
+LIB4=       $(DIR_LIB4)/ScorePh.lib
+LIB5=       $(DIR_LIB5)/photon_s.lib $(DIR_LIB5)/phexlib3r.lib
+
+LIBREMPH=	$(LIB1) $(LIB2) $(LIB3)
+LIBOPEPH=   $(LIB1) $(LIB2) $(LIB4) $(LIB5)
+
+DEFLIBREMPH=  -l$(LIB1) -l$(LIB2) -l$(LIB3)
+DEFLIBOPEPH=  -l$(LIB1) -l$(LIB2) -l$(LIB4) -l$(LIB5)
+
+OBJS1=	$(DIR_HDRS2)/PFLib.o
+
+all: $(DIR_EXEC)OpeCbaInfCorrPH $(DIR_EXEC)OpeCbaManAutPH  $(DIR_EXEC)OpeCbaLampEaPH \
+	 $(DIR_EXEC)OpeCbaMoveAnodoPH $(DIR_EXEC)OpeCbaEstCubaPH $(DIR_EXEC)OpeCbaIncTPinosPH \
+	 $(DIR_EXEC)OpeCbaIncOpePH $(DIR_EXEC)OpeCbaIniRuidoPH $(DIR_EXEC)OpeCbaTabOpePH \
+	 $(DIR_EXEC)OpeCbaInfQuebPH $(DIR_EXEC)OpeCbaAlimQuebPH $(DIR_EXEC)OpeCbaSoproPH \
+	 $(DIR_EXEC)OpeCbaSoproEspecPH $(DIR_EXEC)OpeCbaManobCruzPH \
+	 $(DIR_EXEC)OpeCbaIniCamPH $(DIR_EXEC)OpeCbaIniQPrevPH $(DIR_EXEC)OpeCbaEstAlimPH \
+	 $(DIR_EXEC)OpeCbaAtivBoostPH $(DIR_EXEC)OpeCbaAtivElimEaPH \
+	 $(DIR_EXEC)OpeCbaSPassoTabIncPH $(DIR_EXEC)OpeCbaTabPartPH $(DIR_EXEC)OpeCbaTabAlternPH \
+	 $(DIR_EXEC)OpeCbaIniIncQuebPH $(DIR_EXEC)OpeCbaFatPFPH $(DIR_EXEC)OpeCbaInfCabPH \
+	 $(DIR_EXEC)OpeCbaIncPadraoPH $(DIR_EXEC)OpeCbaShutdownPH
+
+	@echo Todos modulos estao atualizados !
+
+
+#  Modulos objetos padrao criados no nodo controle
+
+OpeCbaEstCubaPH.o:  OpeCbaEstCuba.c $(HEADERS3)
+	$(COMPILE.c) -fo=$@ OpeCbaEstCuba.c -DOPERACAO_WINDOWS
+
+OpeCbaInfCorrPH.o:  OpeCbaInfCorr.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaInfCorr.c -DOPERACAO_WINDOWS
+
+OpeCbaInfQuebPH.o:  OpeCbaInfQueb.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaInfQueb.c -DOPERACAO_WINDOWS
+
+OpeCbaIncTPinosPH.o:  OpeCbaIncTPinos.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaIncTPinos.c -DOPERACAO_WINDOWS
+
+OpeCbaManAutPH.o:  OpeCbaManAut.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaManAut.c -DOPERACAO_WINDOWS
+
+OpeCbaLampEaPH.o:  OpeCbaLampEa.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaLampEa.c -DOPERACAO_WINDOWS
+
+OpeCbaMoveAnodoPH.o:  OpeCbaMoveAnodo.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaMoveAnodo.c -DOPERACAO_WINDOWS
+
+OpeCbaIncOpePH.o:  OpeCbaIncOpe.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaIncOpe.c -DOPERACAO_WINDOWS
+
+OpeCbaIncPadraoPH.o:  OpeCbaIncPadrao.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaIncPadrao.c -DOPERACAO_WINDOWS
+
+OpeCbaShutdownPH.o:  OpeCbaShutdown.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaShutdown.c -DOPERACAO_WINDOWS
+
+OpeCbaIniRuidoPH.o:  OpeCbaIniRuido.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaIniRuido.c -DOPERACAO_WINDOWS
+
+OpeCbaIniIncQuebPH.o:  OpeCbaIniIncQueb.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaIniIncQueb.c -DOPERACAO_WINDOWS
+
+OpeCbaFatPFPH.o:  OpeCbaFatPF.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaFatPF.c -DOPERACAO_WINDOWS
+
+OpeCbaTabOpePH.o:  OpeCbaTabOpe.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaTabOpe.c -DOPERACAO_WINDOWS
+
+OpeCbaSoproPH.o:    OpeCbaSopro.c    $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaSopro.c -DOPERACAO_WINDOWS
+
+OpeCbaSoproEspecPH.o:    OpeCbaSoproEspec.c    $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaSoproEspec.c -DOPERACAO_WINDOWS
+
+OpeCbaAlimQuebPH.o:  OpeCbaAlimQueb.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaAlimQueb.c -DOPERACAO_WINDOWS
+
+OpeCbaManobCruzPH.o:  OpeCbaManobCruz.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaManobCruz.c -DOPERACAO_WINDOWS
+
+OpeCbaInfCabPH.o:  OpeCbaInfCab.c $(HEADERS2)
+	$(COMPILE.c) -fo=$@ OpeCbaInfCab.c -DOPERACAO_WINDOWS
+
+#  Modulos objetos especificos da CBA criados no nodo controle
+
+OpeCbaIniCamPH.o:  OpeCbaIniCam.c $(HEADERS3)
+	$(COMPILE.c) -fo=$@ OpeCbaIniCam.c -DOPERACAO_WINDOWS
+
+OpeCbaIniQPrevPH.o:  OpeCbaIniQPrev.c $(HEADERS4)
+	$(COMPILE.c) -fo=$@ OpeCbaIniQPrev.c -DOPERACAO_WINDOWS
+
+OpeCbaSPassoTabIncPH.o:  OpeCbaSPassoTabInc.c $(HEADERS4)
+	$(COMPILE.c) -fo=$@ OpeCbaSPassoTabInc.c -DOPERACAO_WINDOWS
+
+OpeCbaEstAlimPH.o:  OpeCbaEstAlim.c $(HEADERS5)
+	$(COMPILE.c) -fo=$@ OpeCbaEstAlim.c -DOPERACAO_WINDOWS
+
+OpeCbaAtivBoostPH.o:  OpeCbaAtivBoost.c $(HEADERS4)
+	$(COMPILE.c) -fo=$@ OpeCbaAtivBoost.c -DOPERACAO_WINDOWS
+
+OpeCbaAtivElimEaPH.o:  OpeCbaAtivElimEa.c $(HEADERS4)
+	$(COMPILE.c) -fo=$@ OpeCbaAtivElimEa.c -DOPERACAO_WINDOWS
+
+OpeCbaTabPartPH.o:  OpeCbaTabPart.c $(HEADERS4)
+	$(COMPILE.c) -fo=$@ OpeCbaTabPart.c -DOPERACAO_WINDOWS
+
+OpeCbaTabAlternPH.o:  OpeCbaTabAltern.c $(HEADERS4)
+	$(COMPILE.c) -fo=$@ OpeCbaTabAltern.c -DOPERACAO_WINDOWS
+
+
+#  Modulos executaveis padrao criados no nodo controle
+
+$(DIR_EXEC)OpeCbaEstCubaPH: OpeCbaEstCubaPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaEstCubaPH.o
+
+$(DIR_EXEC)OpeCbaInfCorrPH: OpeCbaInfCorrPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaInfCorrPH.o
+
+$(DIR_EXEC)OpeCbaInfQuebPH: OpeCbaInfQuebPH.o $(LIBPH) $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaInfQuebPH.o
+
+$(DIR_EXEC)OpeCbaIncTPinosPH: OpeCbaIncTPinosPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaIncTPinosPH.o
+
+$(DIR_EXEC)OpeCbaManAutPH: OpeCbaManAutPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaManAutPH.o
+
+$(DIR_EXEC)OpeCbaLampEaPH: OpeCbaLampEaPH.o $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaLampEaPH.o
+
+$(DIR_EXEC)OpeCbaMoveAnodoPH: OpeCbaMoveAnodoPH.o $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaMoveAnodoPH.o
+
+$(DIR_EXEC)OpeCbaIncOpePH: OpeCbaIncOpePH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaIncOpePH.o
+
+$(DIR_EXEC)OpeCbaIncPadraoPH: OpeCbaIncPadraoPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaIncPadraoPH.o
+
+$(DIR_EXEC)OpeCbaShutdownPH: OpeCbaShutdownPH.o $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaShutdownPH.o
+
+$(DIR_EXEC)OpeCbaIniRuidoPH: OpeCbaIniRuidoPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaIniRuidoPH.o
+
+$(DIR_EXEC)OpeCbaIniIncQuebPH: OpeCbaIniIncQuebPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaIniIncQuebPH.o
+
+$(DIR_EXEC)OpeCbaFatPFPH: OpeCbaFatPFPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaFatPFPH.o
+
+$(DIR_EXEC)OpeCbaTabOpePH: OpeCbaTabOpePH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaTabOpePH.o
+
+$(DIR_EXEC)OpeCbaSoproPH: OpeCbaSoproPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaSoproPH.o
+
+$(DIR_EXEC)OpeCbaSoproEspecPH: OpeCbaSoproEspecPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaSoproEspecPH.o
+
+$(DIR_EXEC)OpeCbaAlimQuebPH: OpeCbaAlimQuebPH.o $(LIBOPEPH) $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaAlimQuebPH.o
+
+$(DIR_EXEC)OpeCbaManobCruzPH: OpeCbaManobCruzPH.o $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaManobCruzPH.o
+
+$(DIR_EXEC)OpeCbaInfCabPH: OpeCbaInfCabPH.o $(LIBPH) $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaInfCabPH.o
+
+#  Modulos executaveis especificos da CBA criados no nodo controle
+
+$(DIR_EXEC)OpeCbaIniCamPH: OpeCbaIniCamPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaIniCamPH.o
+
+$(DIR_EXEC)OpeCbaIniQPrevPH: OpeCbaIniQPrevPH.o $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaIniQPrevPH.o
+
+$(DIR_EXEC)OpeCbaSPassoTabIncPH: OpeCbaSPassoTabIncPH.o $(LIBREMPH)
+    $(LINK) $(DEFLIBREMPH) OpeCbaSPassoTabIncPH.o
+
+$(DIR_EXEC)OpeCbaEstAlimPH: OpeCbaEstAlimPH.o $(LIBOPEPH) $(OBJS1)
+    $(LINK) $(OBJS1) $(DEFLIBOPEPH) OpeCbaEstAlimPH.o
+
+$(DIR_EXEC)OpeCbaAtivBoostPH: OpeCbaAtivBoostPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaAtivBoostPH.o
+
+$(DIR_EXEC)OpeCbaAtivElimEaPH: OpeCbaAtivElimEaPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaAtivElimEaPH.o
+
+$(DIR_EXEC)OpeCbaTabPartPH: OpeCbaTabPartPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaTabPartPH.o
+
+$(DIR_EXEC)OpeCbaTabAlternPH: OpeCbaTabAlternPH.o $(LIBOPEPH)
+    $(LINK) $(DEFLIBOPEPH) OpeCbaTabAlternPH.o

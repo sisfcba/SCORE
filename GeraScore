@@ -1,0 +1,38 @@
+#! /bin/sh
+#ifdef __USAGE
+#%C    - Compila todos os arquivos do score
+#
+#Use:
+#%C
+# Arquivo de comandos do shell para compilar modulos do score
+# Autor: Leonel Vicente Mota Ivo	-	Data: 23/06/94
+#
+
+# Apenas para depuracao
+#set -xv
+
+echo Compilando todos os arquivos do diretorio ../srcs...
+echo Compilando os diretorios de biblioteca...
+ws -d -l 10 -P lib*,*lib -e a ../srcs "CompilaDir @ $*"
+if test $? -ne 0
+then
+  echo "\007\033<Falha na compilacao de alguma biblioteca!\033>"
+  exit -1
+fi
+echo Compilando os outros diretorios...
+ws -d -l 10 -P !lib* -P !*lib -P !*src -P !*default -P !*wgt -e a ../srcs "CompilaDir @ $*"
+if test $? -ne 0
+then
+  echo "\007\033<Falha na compilacao de algum diretorio!\033>"
+  exit -1
+fi
+echo Compilando diretorios Photon...
+sleep 2
+ws -d -l 10 -P *ph, -e a ../srcs "CompilaDirph @ $*"
+if test $? -ne 0
+then
+  echo "\007\033<Falha na compilacao de algum diretorio!\033>"
+else
+  echo "\007\033<Compilacao Score terminada!\033>"
+fi
+../util/CheckTamBd

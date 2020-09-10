@@ -1,0 +1,44 @@
+            Relatorio Historico Resumo Diario de Efeito Anodico
+
+                      Lay-Out e Descricao dos Campos
+
+   Resumo EA - [1]           - Alg [2]        -   [3] ate   [4]
+ IAlvo = [5] KA      IReal = [6] KA      Sistema = [7] %      Linha = [8] %
+     ----Tensoes  Medias---- --------Efeito Anodico-------- Previsao  Quebrada
+Dia  Placa Alvo  Liq.  Tot.   Qtd Med. Max. Dur  -Previsao- -- EA --  Prevent.
+      (V)   (V)   (V)   (V)        (V)  (V)  mm   Dur   %   Qt   %     Qt   %
+
+[9]  [10]  [11]  [12]  [13]   [14  15   16  17]  [18   19]  [20  21]  [22  23]
+
+1)  Selecao de cubas consideradas no relatorio
+2)  Algoritmo selecionado na pre-selecao
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Percentual de tempo que o sistema ficou ativo no periodo
+8)  Percentual de tempo que a linha ficou habilitada no periodo
+9)  Dia referente a linha do relatorio
+10) Media da tensao de placa das cubas selecionadas no dia
+11) Media da tensao alvo das cubas selecionadas no dia
+12) Media da tensao liquida (RDiaLiq * IAlvoDia) das cubas selecionadas no dia
+13) Media da tensao total (RDiaBruta * IAlvoDia) das cubas selecionadas no dia
+14) Quantidade media de efeito anodico das cubas selecionadas no dia
+15) Media ponderada da tensao de efeito anodico das cubas selecionadas no dia
+16) Media das tensoes maximas de efeito anodico das cubas selecionadas no dia
+17) Duracao media de efeito anodico das cubas selecionadas no dia
+18) Duracao media de previsoes terminadas com ocorrencia  de  efeito  anodico
+    das cubas selecionadas no dia
+19) Percentual medio de eficiencia de previsoes ocorridas  com  efeito anodico
+    das cubas selecionadas no dia
+20) Numero medio de previsoes de efeito anodico das cubas selecionadas no dia
+21) Percentual medio de eficiencia de previsoes de efeito anodico das cubas
+    selecionadas no dia
+22) Numero medio de quebradas preventivas das cubas selecionadas no dia
+23) Percentual medio de eficiencia de quebradas preventivas das cubas seleci-
+    nadas no dia
+
+    Observacao
+    - As cubas que estiveram em estado ligado ou desligado no periodo
+      nao serao consideradas no calculo das medias
+

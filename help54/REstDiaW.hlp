@@ -1,0 +1,39 @@
+     Status Report - [1]           - Alg [2]       - [3] to [4]
+ RCurr =  [5]  KA    MCurr =  [6]  KA     System =  [7]  %     Line =  [8]  %
+Pot    -----Noise-----   ----Anode Movement-----   Manual  Move   Volt   Off 
+       -L.F.-   -H.F.-   ---Up----    ---Down---           Fault  Dev    Scan
+       hh:mm    hh:mm    Num   Dur    Num    Dur    hh:mm   Num   hh:mm  hh:mm
+[9]    [10]     [11]     [12]  [13]   [14]   [15]   [16]    [17]  [18]   [19]
+Avr    [20]     [21]     [22]  [23]   [24]   [25]   [26]    [27]  [28]   [29]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Average rated line current during the period
+6-  Average measured line current during the period
+7-  Time (in percentage) in which the System remained active
+8-  Time (in percentage) in which the Line remained active
+9-  Pot number 
+10- Daily average time of LF Noise during the period
+11- Daily average time of HF Noise during the period
+12- Average number of upward anode movements during the period
+13- Average duration of upward movements during the period
+14- Average number of downward anode movements during the period
+15- Average duration of downward movements during the period
+16- Daily average the pot remained in Manual mode during the period
+17- Daily average number of anode movement failures during the period
+18- Daily average time in which the pot remained in voltage deviation during
+    the period
+19- Daily average time in which the pot remained out of scan (no data was 
+    acquired for the pot) during the period
+20 to 29 - Average of the fields 10 to 19, respectively
+
+PS
+The pots who have been in the states "jumped" or "on-line" in this interval
+are not considered when calculating the averages.    
+
+
+
+
+

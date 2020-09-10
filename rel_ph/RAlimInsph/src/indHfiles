@@ -1,0 +1,5 @@
+MYHDR = ../RAlimInsPH.hpp ../GlobaisPH.hpp ../../../include/Definicao.h ../../../include/ScoreConst.h \
+../../../include/ScoreMsgs.h ../../../include/ScoreErros.h ../../../include/Score.h ../../../include/VarsComum.h \
+../../../include/Prototipos.h ../../../include/IniArqVar.h ../../../include/Eventos.h ../../../include/BdScore.h \
+../../../ihm_ph/src/OperacaoPH.hpp ../../../lib_ph/ScoreLibph.hpp ../../../include/EvHelp.hpp \
+../../../mcp/McpCba/AlimentCBA.h

@@ -1,0 +1,287 @@
+#Atualizacao de todos os nodos SCORE
+cp -Vnrp //54/score/base_dados_r3/arqvar* //1/score/base_dados/
+cp -Vnrp //54/score/base_dados_r3/arqvar* //2/score/base_dados/
+cp -Vnrp //54/score/base_dados_r3/arqvar* //3/score/base_dados/
+cp -Vnrp //54/score/base_dados_r3/arqvar* //49/score/base_dados/
+cp -Vnrp //54/score/base_dados_r3/arqvar* //30/score/base_dados/
+cp -Vnrp //54/score/base_dados_r3/arqvar* //4/score/base_dados/
+cp -Vnrp //54/score/base_dados_r3/arqvar* //5/score/base_dados/
+cp -Vnrp //54/score/base_dados_r1/arqvar* //13/score/base_dados/
+cp -Vnrp //54/score/base_dados_r1/arqvar* //14/score/base_dados/
+cp -Vnrp //54/score/base_dados_r1/arqvar* //12/score/base_dados/
+cp -Vnrp //54/score/base_dados_r1/arqvar* //17/score/base_dados/
+cp -Vnrp //54/score/base_dados_r1/arqvar* //47/score/base_dados/
+cp -Vnrp //54/score/base_dados_r1/arqvar* //15/score/base_dados/
+cp -Vnrp //54/score/base_dados_r1/arqvar* //16/score/base_dados/
+cp -Vnrp //54/score/base_dados_r2/arqvar* //7/score/base_dados/
+cp -Vnrp //54/score/base_dados_r2/arqvar* //8/score/base_dados/
+cp -Vnrp //54/score/base_dados_r2/arqvar* //6/score/base_dados/
+cp -Vnrp //54/score/base_dados_r2/arqvar* //40/score/base_dados/
+cp -Vnrp //54/score/base_dados_r2/arqvar* //48/score/base_dados/
+cp -Vnrp //54/score/base_dados_r2/arqvar* //9/score/base_dados/
+cp -Vnrp //54/score/base_dados_r2/arqvar* //10/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //19/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //20/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //18/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //39/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //41/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //21/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //22/score/base_dados/
+cp -Vnrp //54/score/base_dados_r4/arqvar* //12/score/base_dados/
+cp -Vnrp //54/score/base_dados_r7/arqvar* //35/score/base_dados/
+cp -Vnrp //54/score/base_dados_r7/arqvar* //36/score/base_dados/
+cp -Vnrp //54/score/base_dados_r7/arqvar* //11/score/base_dados/
+cp -Vnrp //54/score/base_dados_r7/arqvar* //37/score/base_dados/
+cp -Vnrp //54/score/base_dados_r7/arqvar* //38/score/base_dados/
+cp -Vnrp //54/score/base_dados_r8/arqvar* //43/score/base_dados/
+cp -Vnrp //54/score/base_dados_r8/arqvar* //44/score/base_dados/
+cp -Vnrp //54/score/base_dados_r8/arqvar* //42/score/base_dados/
+cp -Vnrp //54/score/base_dados_r8/arqvar* //45/score/base_dados/
+cp -Vnrp //54/score/base_dados_r8/arqvar* //46/score/base_dados/
+cp -Vnrp //54/score/base_dados_r9/arqvar* //51/score/base_dados/
+cp -Vnrp //54/score/base_dados_r9/arqvar* //52/score/base_dados/
+cp -Vnrp //54/score/base_dados_r9/arqvar* //50/score/base_dados/
+cp -Vnrp //54/score/base_dados_r9/arqvar* //53/score/base_dados/
+
+cp -Vnrp //54/score/exec/* //1/score/exec/
+cp -Vnrp //54/score/exec/* //2/score/exec/
+cp -Vnrp //54/score/exec/* //3/score/exec/
+cp -Vnrp //54/score/exec/* //49/score/exec/
+cp -Vnrp //54/score/exec/* //30/score/exec/
+cp -Vnrp //54/score/exec/* //4/score/exec/
+cp -Vnrp //54/score/exec/* //5/score/exec/
+cp -Vnrp //54/score/exec/* //13/score/exec/
+cp -Vnrp //54/score/exec/* //14/score/exec/
+cp -Vnrp //54/score/exec/* //12/score/exec/
+cp -Vnrp //54/score/exec/* //17/score/exec/
+cp -Vnrp //54/score/exec/* //47/score/exec/
+cp -Vnrp //54/score/exec/* //15/score/exec/
+cp -Vnrp //54/score/exec/* //16/score/exec/
+cp -Vnrp //54/score/exec/* //7/score/exec/
+cp -Vnrp //54/score/exec/* //8/score/exec/
+cp -Vnrp //54/score/exec/* //6/score/exec/
+cp -Vnrp //54/score/exec/* //40/score/exec/
+cp -Vnrp //54/score/exec/* //48/score/exec/
+cp -Vnrp //54/score/exec/* //9/score/exec/
+cp -Vnrp //54/score/exec/* //10/score/exec/
+cp -Vnrp //54/score/exec/* //19/score/exec/
+cp -Vnrp //54/score/exec/* //20/score/exec/
+cp -Vnrp //54/score/exec/* //18/score/exec/
+cp -Vnrp //54/score/exec/* //39/score/exec/
+cp -Vnrp //54/score/exec/* //41/score/exec/
+cp -Vnrp //54/score/exec/* //21/score/exec/
+cp -Vnrp //54/score/exec/* //22/score/exec/
+cp -Vnrp //54/score/exec/* //12/score/exec/
+cp -Vnrp //54/score/exec/* //35/score/exec/
+cp -Vnrp //54/score/exec/* //36/score/exec/
+cp -Vnrp //54/score/exec/* //11/score/exec/
+cp -Vnrp //54/score/exec/* //37/score/exec/
+cp -Vnrp //54/score/exec/* //38/score/exec/
+cp -Vnrp //54/score/exec/* //43/score/exec/
+cp -Vnrp //54/score/exec/* //44/score/exec/
+cp -Vnrp //54/score/exec/* //42/score/exec/
+cp -Vnrp //54/score/exec/* //45/score/exec/
+cp -Vnrp //54/score/exec/* //46/score/exec/
+cp -Vnrp //54/score/exec/* //51/score/exec/
+cp -Vnrp //54/score/exec/* //52/score/exec/
+cp -Vnrp //54/score/exec/* //50/score/exec/
+cp -Vnrp //54/score/exec/* //53/score/exec/
+
+cp -Vnrp //54/score/config/ihm*  //1/score/config/
+cp -Vnrp //54/score/config/ihm*  //2/score/config/
+cp -Vnrp //54/score/config/ihm*  //3/score/config/
+cp -Vnrp //54/score/config/ihm* //49/score/config/
+cp -Vnrp //54/score/config/ihm* //30/score/config/
+cp -Vnrp //54/score/config/ihm*  //4/score/config/
+cp -Vnrp //54/score/config/ihm*  //5/score/config/
+cp -Vnrp //54/score/config/ihm* //13/score/config/
+cp -Vnrp //54/score/config/ihm* //14/score/config/
+cp -Vnrp //54/score/config/ihm* //12/score/config/
+cp -Vnrp //54/score/config/ihm* //17/score/config/
+cp -Vnrp //54/score/config/ihm* //47/score/config/
+cp -Vnrp //54/score/config/ihm* //15/score/config/
+cp -Vnrp //54/score/config/ihm* //16/score/config/
+cp -Vnrp //54/score/config/ihm*  //7/score/config/
+cp -Vnrp //54/score/config/ihm*  //8/score/config/
+cp -Vnrp //54/score/config/ihm*  //6/score/config/
+cp -Vnrp //54/score/config/ihm* //40/score/config/
+cp -Vnrp //54/score/config/ihm* //48/score/config/
+cp -Vnrp //54/score/config/ihm*  //9/score/config/
+cp -Vnrp //54/score/config/ihm* //10/score/config/
+cp -Vnrp //54/score/config/ihm* //19/score/config/
+cp -Vnrp //54/score/config/ihm* //20/score/config/
+cp -Vnrp //54/score/config/ihm* //18/score/config/
+cp -Vnrp //54/score/config/ihm* //39/score/config/
+cp -Vnrp //54/score/config/ihm* //41/score/config/
+cp -Vnrp //54/score/config/ihm* //21/score/config/
+cp -Vnrp //54/score/config/ihm* //22/score/config/
+cp -Vnrp //54/score/config/ihm* //12/score/config/
+cp -Vnrp //54/score/config/ihm* //35/score/config/
+cp -Vnrp //54/score/config/ihm* //36/score/config/
+cp -Vnrp //54/score/config/ihm* //11/score/config/
+cp -Vnrp //54/score/config/ihm* //37/score/config/
+cp -Vnrp //54/score/config/ihm* //38/score/config/
+cp -Vnrp //54/score/config/ihm* //43/score/config/
+cp -Vnrp //54/score/config/ihm* //44/score/config/
+cp -Vnrp //54/score/config/ihm* //42/score/config/
+cp -Vnrp //54/score/config/ihm* //45/score/config/
+cp -Vnrp //54/score/config/ihm* //46/score/config/
+cp -Vnrp //54/score/config/ihm* //51/score/config/
+cp -Vnrp //54/score/config/ihm* //52/score/config/
+cp -Vnrp //54/score/config/ihm* //50/score/config/
+cp -Vnrp //54/score/config/ihm* //53/score/config/
+
+cp -Vnrp //54/score/base_dados/MsgStr.*  //1/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //2/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //3/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //49/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //30/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //4/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //5/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //13/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //14/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //12/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //17/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //47/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //15/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //16/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //7/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //8/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //6/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //40/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //48/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.*  //9/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //10/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //19/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //20/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //18/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //39/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //41/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //21/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //22/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //12/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //35/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //36/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //11/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //37/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //38/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //43/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //44/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //42/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //45/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //46/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //51/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //52/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //50/score/base_dados/
+cp -Vnrp //54/score/base_dados/MsgStr.* //53/score/base_dados/
+
+
+cp -Vnrp //54/score/descr/*  //1/score/descr/
+cp -Vnrp //54/score/descr/*  //2/score/descr/
+cp -Vnrp //54/score/descr/*  //3/score/descr/
+cp -Vnrp //54/score/descr/* //49/score/descr/
+cp -Vnrp //54/score/descr/* //30/score/descr/
+cp -Vnrp //54/score/descr/*  //4/score/descr/
+cp -Vnrp //54/score/descr/*  //5/score/descr/
+cp -Vnrp //54/score/descr/* //13/score/descr/
+cp -Vnrp //54/score/descr/* //14/score/descr/
+cp -Vnrp //54/score/descr/* //12/score/descr/
+cp -Vnrp //54/score/descr/* //17/score/descr/
+cp -Vnrp //54/score/descr/* //47/score/descr/
+cp -Vnrp //54/score/descr/* //15/score/descr/
+cp -Vnrp //54/score/descr/* //16/score/descr/
+cp -Vnrp //54/score/descr/*  //7/score/descr/
+cp -Vnrp //54/score/descr/*  //8/score/descr/
+cp -Vnrp //54/score/descr/*  //6/score/descr/
+cp -Vnrp //54/score/descr/* //40/score/descr/
+cp -Vnrp //54/score/descr/* //48/score/descr/
+cp -Vnrp //54/score/descr/*  //9/score/descr/
+cp -Vnrp //54/score/descr/* //10/score/descr/
+cp -Vnrp //54/score/descr/* //19/score/descr/
+cp -Vnrp //54/score/descr/* //20/score/descr/
+cp -Vnrp //54/score/descr/* //18/score/descr/
+cp -Vnrp //54/score/descr/* //39/score/descr/
+cp -Vnrp //54/score/descr/* //41/score/descr/
+cp -Vnrp //54/score/descr/* //21/score/descr/
+cp -Vnrp //54/score/descr/* //22/score/descr/
+cp -Vnrp //54/score/descr/* //12/score/descr/
+cp -Vnrp //54/score/descr/* //35/score/descr/
+cp -Vnrp //54/score/descr/* //36/score/descr/
+cp -Vnrp //54/score/descr/* //11/score/descr/
+cp -Vnrp //54/score/descr/* //37/score/descr/
+cp -Vnrp //54/score/descr/* //38/score/descr/
+cp -Vnrp //54/score/descr/* //43/score/descr/
+cp -Vnrp //54/score/descr/* //44/score/descr/
+cp -Vnrp //54/score/descr/* //42/score/descr/
+cp -Vnrp //54/score/descr/* //45/score/descr/
+cp -Vnrp //54/score/descr/* //46/score/descr/
+cp -Vnrp //54/score/descr/* //51/score/descr/
+cp -Vnrp //54/score/descr/* //52/score/descr/
+cp -Vnrp //54/score/descr/* //50/score/descr/
+cp -Vnrp //54/score/descr/* //53/score/descr/
+
+
+cp -Vnrp //54/score/base_dados/descr*  //1/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //2/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //3/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //49/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //30/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //4/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //5/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //13/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //14/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //12/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //17/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //47/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //15/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //16/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //7/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //8/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //6/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //40/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //48/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr*  //9/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //10/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //19/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //20/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //18/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //39/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //41/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //21/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //22/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //12/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //35/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //36/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //11/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //37/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //38/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //43/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //44/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //42/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //45/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //46/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //51/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //52/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //50/score/base_dados/
+cp -Vnrp //54/score/base_dados/descr* //53/score/base_dados/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

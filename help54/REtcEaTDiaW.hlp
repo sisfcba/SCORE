@@ -1,0 +1,32 @@
+ AE Statistics - [1] - Alg [2] - [3] do [4]  -  Zmi [5]
+ RCurr = [6] KA   MCurr = [7] KA  System = [8] %  Line = [9] %
+  Duration   %     MaxVtg   %    Interv   %    Pred Interv   %
+   [Min]            [V]          [Hour]          [Min]   
+    [A]     [10]    [B]    [11]   [C]    [12]     [D]       [13]
+     .       .       .      .      .      .        .         .
+	 .       .       .      .      .      .        .         .
+	 .       .       .      .      .      .        .         .
+	[A]     [10]    [B]    [11]   [C]    [12]     [D]       [13]
+	
+1)  Type of pre-selection
+2)  Control Algorithm
+3)  Initial date
+4)  Final date
+5)  Shift being shown at the report
+6)  Rated Line Current
+7)  Measured Line Current
+8)  Time (in percentage) in which the System remained active
+9)  Time (in percentage) in which the Line remained active
+10) Percentage of the Anode Effects with duration classified according
+    to column "A"
+11) Percentage of the  Anode Effects  with  maximum voltage classified
+    according to column "B" 
+12) Percentage of the Anode Effects with the time between the last two
+    Anode Effects classified according to column "C"
+13) Percentage of the Anode Effects with the  time  between  the  last
+    Anode Effect and to the  last  Anode Effect Prediction, classified
+    according to column "D" 
+
+
+
+

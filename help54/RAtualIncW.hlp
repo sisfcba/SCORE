@@ -1,0 +1,57 @@
+         Increments Control Cycle Report - [1]      -Alg [2]
+
+Pot  H.F.Noise L.F.Noise -Studs Chg- --Tapping-- -Crust Brk- --Operator--  Tot
+     mV   Dur  mV   Dur  mV   Dur  T mV   Dur  T mV   Dur  T  mV   Dur  T  mV
+[3] [4     5    6    7   8     9  10 11   12  13 14   15  16  17   18  19  20]
+Avr [21   22   23   24   25   26     27   28     29   30      31   32      33]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Pot Number   
+4-  Increment due to High Frequency Noise (mili-Volts)
+5-  Duration of the HF Noise treatment
+6-  Increment due to Low Frequency Noise (mili-Volts)
+7-  Duration of the LF Noise treatment
+8-  Increment due to Stud Change (mili-Volts)
+9-  Duration of the Stud Change Treatment
+10- Type of Stud Change Increment
+        Constant - Constant Increment
+        Ramp     - Decreasing Increment (Ramp shaped)
+11- Increment due to Metal Tapping (mili-Volts)
+12- Duration of the Metal Tapping Treatment
+13- Type of Metal Tapping Increment
+        Constant - Constant Increment
+        Ramp     - Decreasing Increment (Ramp shaped)
+14- Increment due to Crust Breaking (mili-Volts)
+15- Duration of the Crust Breaking Treatment
+16- Type of Crust Breaking Increment
+        Constant - Constant Increment
+        Ramp     - Decreasing Increment (Ramp shaped)
+17- Increment due to Operator's demand (mili-Volts)
+18- Duration of the increment
+19- Type of Increment
+        Constant - Constant Increment
+        Ramp     - Decreasing Increment (Ramp shaped)
+20- Total incremental resistance, limited to the maximum increment allowed
+21- Average of the increment due to HF Noise for the pots shown (mili-Volts)
+22- Average duration of HF Noise Treatment for the pots shown
+23- Average of the increment due to LF Noise for the pots shown (mili-Volts)
+24- Average duration of LF Noise Treatment for the pots shown
+25- Average of the increment due to Stud Change for the pots shown (mV)
+26- Average duration of Stud Change Treatment for the pots shown
+27- Average of the increment due to Metal Tapping for the pots shown (mV)
+28- Average duration of Metal Tapping Treatment for the pots shown
+29- Average of the increment due to Crust Breaking for the pots shown (mV)
+30- Average duration of Crust Breaking Treatment for the pots shown
+31- Average of the operator's for the pots shown (mV)
+32- Average duration of operator's increment for the pots shown
+33- Average of the total incremental resistance for the pots shown
+
+
+
+
+
+
+
+
+

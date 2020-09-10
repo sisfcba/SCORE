@@ -1,0 +1,144 @@
+
+             PROCEDIMENTO PARA INCLUSAO DE NOVO EVENTO NO SCORE
+
+
+1) Colocar o indice do evento no arquivo Eventos.h apos o ultimo do usuario.
+
+2) Declarar o evento na base de dados conforme a sequencia de passos abaixo:
+
+   2.1) Entrar no diretorio de base de dados
+        # cd /score/base_dados
+
+   2.2) Entrar no  arquivo  descritor de eventos  "descr_ev"  pelo  programa
+        gerarq:
+        # /score/bin/gerarq descr_ev
+
+   2.3) Posicionar no inicio do registro do evento  a  ser  preenchido pelas
+        teclas <Ctrl> <F7>, colocando-se  posteriormente  o  offset  inicial
+        desse registro. Cada registro tem o tamanho de 15 bytes, portanto  o
+        offset inicial pode ser calculado  multiplicando o indice do  evento
+        criado no Eventos.h pelo tamanho do registro ( Indice * 15 ).
+
+        Exemplo: Evento LogCuba (LOG_OPER_CUBA = 45 no Eventos.h)
+                 Offset inicial: 45 * 15 = 675
+
+   2.4) Preencher os campos do registro:
+
+        Grupo: Define condicoes de exibicao do alarme. Geralmente sao usados
+            os seguintes valores:
+            1 - Registra, exibe na janela de alarmes e imprime o evento.
+            2 - Registra e exibe na janela de alarmes o evento.
+            3 - Registra e imprime o evento.
+            4 - Apenas registra o evento.
+
+        Dispositivo - Dispositivo a ser exibido (geralmente 1 para todos  os
+            dispositivos).
+
+        Mneumonico - Mneumonico do evento a ser exibido com  tamanho  maximo
+            de 10 caracteres.
+
+        Msg - Mensagem a ser exibida na janela de alarmes e relatorios,  com
+            tamanho maximo de 42 caracteres.
+
+        EvCuba - Flag que indica se o evento e de cuba (1) ou linha (0)
+
+        TipoParEv - Esses campos definem o tipo dos 5 parametros do  evento.
+            Podem assumir o seguinte dominio de valores:
+            1 - Tipo char
+            2 - Tipo inteiro
+            3 - Tipo long
+            4 - Tipo float
+            5 - Tipo string
+
+        CodEvCompl - Codigo do evento complementar para o  painel de alarmes.
+            Quando um evento deve acionar o PAL, so sai dessa fila de alarmes
+            apos a geracao de um alarme indicando  a  normalizacao  da  cuba.
+            Portanto esse campo estabelece a relacao entre o evento que sina-
+            liza o PAL e o que o retira da fila, devendo o primeiro conter  o
+            segundo e vice-versa.
+
+        TipoAlarme - Identifica o tipo de alarme com relacao ao PAL, conforme
+            o dominio de valores abaixo:
+            0 - Evento que nao tem relacao com o PAL.
+            1 - Evento que gera uma sinalizacao no PAL.
+            2 - Evento que retira um alarme da fila do PAL.
+        PriorAlarme - Prioridade do alarme na fila do PAL.
+            1 - Prioridade geral do alarme
+            2 - Prioridade grave do alarme
+        SomAlarme - Tipo de som gerado pelo alarme
+            1 - Som acentuado
+            2 - Som atenuado
+        SaidaPAl - Bit de saida a ser acionado no PAl.
+
+        Exemplo: Eventos InicioEa e FimEa
+
+          Declaracao do Eventos.h
+
+          #define INICIO_EA           6
+          #define FIM_EA              7
+
+          Declaracao do descr_ev
+
+          Grupo:      1
+          Dispositiv: 1
+          Mneumonico: InicioEa
+          Msg:        Inicio de efeito anodico
+          EvCuba:     1
+          TipoParEv:  5
+          TipoParEv:  -1
+          TipoParEv:  -1
+          TipoParEv:  -1
+          TipoParEv:  -1
+          CodEvCompl: 7
+          TipoAlarme: 1
+          PriorAlarm: 2
+          SomAlarme:  1
+          SaidaPAl:   17
+
+          Grupo:      4
+          Dispositiv: 1
+          Mneumonico: Fim
+          Msg:        Fim de efeito anodico
+          EvCuba:     1
+          TipoParEv:  3
+          TipoParEv:  4
+          TipoParEv:  4
+          TipoParEv:  4
+          TipoParEv:  4
+          CodEvCompl: 6
+          TipoAlarme: 2
+          PriorAlarm: 2
+          SomAlarme:  0
+          SaidaPAl:   0
+
+3) Entrar no diretorio /score/objs/util e incorporar a tabela "descr_ev"  ao
+   comum pelo programa "IniDescrEv". Esse passo deve ser  executado  somente
+   com o SCORE desativado.
+
+   # cd /score/objs/util
+   # IniDescrEv -e
+
+4) Colocar o evento para ser gerado pela funcao GeraEvento no programa,  com
+   seus parametros devidamente preparados e preenchidos.
+
+5) Gerar novamente a tela  de  parametros  do  relatorio  de  eventos  pelos
+   seguintes passos:
+
+   5.1) Ativar o QNX WINDOWS e abrir uma shell
+
+   5.2) Entrar no diretorio /score/objs/util e ativar o  programa  "PictEv",
+        o qual gerara as novas telas do QXN WINDOWS
+        # cd /score/objs/util
+        # PictEv LisEventos
+
+   5.3) Sair do QNX WINDOWS e dar boot no computador
+
+   OBSERVACAO: Esse passo tambem deve ser  executado  somente  com  o  SCORE
+               desativado.
+
+
+
+
+
+
+

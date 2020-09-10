@@ -1,0 +1,38 @@
+                    Relatorio Historico De Alimentacao
+
+                      Lay-Out e Descricao dos Campos
+
+       Alimentacao -      [1]      - Alg    [2]      - [3] ate [4] - Tur [5]
+ IAlvo = [6] KA      IReal = [7]   KA      Sistema = [8] %      Linha = [9] %
+      --------- QUEBRADORES --------     ------- ALIMENTADORES -------
+Cuba      1      2      3      4            1      2      3      4
+[10]     [11]   [12]   [13]   [14]         [15]   [16]   [17]   [18]
+
+Med      [19]   [20]   [21]   [22]         [23]   [24]   [25]   [26]
+
+1)  Indica a selecao de cubas (grupos de cubas ou selecao especial).
+2)  Indica quais os algoritmos utilizados como filtro para o relatorio.
+3)  Data inicial do relatorio.
+4)  Data final do relatorio.
+5)  Turno do relatorio.
+6)  Corrente alvo (IAlvo) media da sala no periodo.
+7)  Corrente real (IReal) media da sala no periodo.
+8)  Percentual de tempo que o sistema ficou ativo no periodo.
+9)  Percentual de tempo que a linha ficou habilitada no periodo.
+10) Numero da cuba.
+11) Tempo medio de inibicao do quebrador 1 no periodo selecionado
+12) Tempo medio de inibicao do quebrador 2 no periodo selecionado
+13) Tempo medio de inibicao do quebrador 3 no periodo selecionado
+14) Tempo medio de inibicao do quebrador 4 no periodo selecionado
+15) Tempo medio de inibicao do alimentador 1 no periodo selecionado
+16) Tempo medio de inibicao do alimentador 2 no periodo selecionado
+17) Tempo medio de inibicao do alimentador 3 no periodo selecionado
+18) Tempo medio de inibicao do alimentador 4 no periodo selecionado
+19) Tempo medio total de inibicao do quebrador 1 no periodo selecionado
+20) Tempo medio total de inibicao do quebrador 2 no periodo selecionado
+21) Tempo medio total de inibicao do quebrador 3 no periodo selecionado
+22) Tempo medio total de inibicao do quebrador 4 no periodo selecionado
+23) Tempo medio total de inibicao do alimentador 1 no periodo selecionado
+24) Tempo medio total de inibicao do alimentador 2 no periodo selecionado
+25) Tempo medio total de inibicao do alimentador 3 no periodo selecionado
+26) Tempo medio total de inibicao do alimentador 4 no periodo selecionado

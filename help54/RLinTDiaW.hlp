@@ -1,0 +1,44 @@
+       Historical Line Report - Alg [1]        -  [2]     to  [3] - Shf [4]
+    Syst AvrCurr(KA) Pots Num- -Voltage-  -----Pot(V)---- AE Num-  Energ(MWh)
+Day  %   Main  Sec.  Norm  O+S Tot.  V/p  Tot.  Net  Grss Tot Pot  Tot.   Pot
+[5] [6]  [7]   [8]   [9]  [10] [11] [12]  [13]  [14] [15] [16][17] [18]  [19]
+Avr [20] [21]  [22]  [23] [24] [25] [26]  [27]  [28] [29] [30][31] [32]  [33]
+
+1-  Control Algorithm
+2-  Initial date
+3-  Final date 
+4-  Shift being shown at the report
+5-  Date
+6-  Time (in percentage) in which the System remained active
+7-  Average line current (main measure)
+8-  Average line current (secondary measure)
+9-  Average number of pots in normal state (recalculated every control cycle)
+       Avr{t+1} = (Avr{t}*(NACC-1) +NormPot)/NACC
+    where
+       Avr{t} is the average number of pots in normal state at time "t"
+       NACC is the number of control cycles in which the control was enabled
+       NormPot is the number of pots in the normal state in the last Control
+          Cycle
+10- Average number of pots in "warming-up" or "on-line" state
+       Avr{t+1} = (Avr{t}*(NACC-1) +WarmOnPot)/NACC
+    where
+       Avr{t} is the average number of pots in warming/on-line state at 
+          time "t"
+       NACC is the number of control cycles in which the control was enabled
+       WarmOnPot is the number of pots in the warming/on-line state in the 
+          last Control Cycle
+11- Average line voltage 
+12- Average voltage per pot (the "jumped" pots are excluded from the average)
+       Avr = LineVoltage/(NumPots - NumJumpedPots)
+13- Accumulated gross voltage (sum of the voltages of all pots during that 
+    day, excluding the "jumped" pots)
+14- Average of the net voltage of all the pots that are in normal state
+15- Average of the gross voltage of all the pots that are in normal, warming
+    or on-line state
+16- Accumulated number of anode effects for those pots in normal state
+17- Average number of anode effects per pot, for those pots in normal state
+18- Total amount of energy consumed by the pot line
+19- Average energy consumed by each pot, i.e., the total energy consumed by
+    the pot line diveded by the number of pots (excluding the "jumped" ones)
+20 to 33- Average of the fields 6 to 19, respectively
+

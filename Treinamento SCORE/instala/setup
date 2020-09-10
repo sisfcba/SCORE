@@ -1,0 +1,56 @@
+#****************************************************************************
+# SCORE 4.1 - ARQUIVO DE COMANDOS A SER EXECUTADO APOS A INSTALACAO DOS
+#             ARQUIVOS DO KIT DE CONTROLE DO SCORE NO WINCHESTER.
+#			  SERA EXECUTADO AUTOMATICAMENTE PELO COMANDO install DO QNX
+# Autor: Leonel Vicente Mota Ivo
+# Versao: 2.0	-	Data: 19/09/2012
+#****************************************************************************
+
+# Renomeia prologos
+if test ! -r /usr/score/srcs/include/Score.h
+then
+  cp -vp /usr/score/srcs/include/Score.h.user /usr/score/srcs/include/Score.h
+fi
+if test ! -r /usr/score/srcs/include/DescrArqVar.h
+then
+  cp -vp /usr/score/srcs/include/DescrArqVar.h.user /usr/score/srcs/include/DescrArqVar.h
+fi
+if test ! -r /usr/score/srcs/include/ScoreConst.h
+then
+  cp -vp /usr/score/srcs/include/ScoreConst.h.user /usr/score/srcs/include/ScoreConst.h
+fi
+if test ! -r /usr/score/srcs/util/makefile
+then
+  cp -vp /usr/score/srcs/util/makefile.user /usr/score/srcs/util/makefile
+fi
+if test ! -r /usr/score/srcs/rel/tela/makefile
+then
+  cp -vp /usr/score/srcs/rel/tela/makefile.exemplo /usr/score/srcs/rel/tela/makefile
+fi
+if test ! -r /usr/score/srcs/ope/cba/makefile
+then
+  cp -vp /usr/score/srcs/ope/cba/makefile.exemplo /usr/score/srcs/ope/cba/makefile
+fi
+if test ! -r /usr/score/srcs/outros/makefile
+then
+  cp -vp /usr/score/srcs/outros/makefile.user /usr/score/srcs/outros/makefile
+fi
+if test ! -r /usr/score/srcs/outros/FuncRecChavesCBA.c
+then
+  cp -vp /usr/score/srcs/outros/FuncRecChavesCBA.c.user /usr/score/srcs/outros/FuncRecChavesCBA.c
+fi
+
+rm -f /usr/watcom/10.6/usr/include/queue.h
+ln -sf /usr/score/srcs/queue/queue.h /usr/watcom/10.6/usr/include/queue.h
+rm -f /usr/lib/queuef.lib
+ln -sf /usr/score/srcs/queue/queuef.lib /usr/lib/queuef.lib
+rm /score/base_dados/comum*.fmt
+
+# Torna os arquivos protegidos contra escrita
+##chmod a-w /usr/score/srcs/include/*
+##chmod a-w /usr/score/srcs/lib_score/*
+##chmod a-w /usr/score/srcs/mcc/*
+##chmod a-w /usr/score/srcs/mcp/*
+
+echo "INSTALACAO COMPLETA!"
+echo "\007"

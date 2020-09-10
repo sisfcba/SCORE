@@ -1,0 +1,122 @@
+              Relatorio Historico de Efeito Anodico por Turno
+
+                      Lay-Out e Descricao dos Campos
+
+ Relatorio de Efeito Anodico das Cubas [1] a [2] de [3] ate [4] - Turno [5]
+ IAlvo = [6] KA      IReal = [7] KA      Sistema = [8] %      Linha = [9] %
+     ----Tensoes  Medias---- --------Efeito Anodico-------- Previsao  Quebrada
+Cuba Placa Alvo  Liq.  Tot.   Qtd Med. Max. Dur  -Previsao- -- EA --  Prevent.
+      (V)   (V)   (V)   (V)        (V)  (V)  mm   Dur   %   Qt   %     Qt  %
+
+[10] [11]  [12]  [13]  [14]   [15  16   17  18]  [19   20]  [21  22]  [23  24]
+
+Med  [25]  [26]  [27]  [28]   [29  30   31  32]  [33   34]  [35  36]  [37  38]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Turno do relatorio
+6)  Corrente alvo (IAlvo) media da sala no periodo
+7)  Corrente real (IReal) media da sala no periodo
+8)  Percentual de tempo que o sistema ficou ativo no periodo
+9)  Percentual de tempo que a linha ficou habilitada no periodo
+10) Numero da cuba. Marcado com (+) se  a cuba  ficou  por algum  instante  em
+    estado ligado ou desligado no periodo
+11) Media da tensao de placa (VSetPointDia) no periodo
+12) Media da tensao alvo no periodo, conforme a seguinte formula:
+      VAlvo = (RAlvoDia * INominal) + BemfDia
+13) Media da tensao liquida no periodo (RDiaLiq * IAlvoDia). Para as cubas  em
+    estado  normal  ou  partido   esse  valor   recebe  o  acrescimo  do  bemf
+    (RDiaLiq * IAlvoDia) + BemfDia.
+14) Media da tensao total no periodo (RDiaBruta * IAlvoDia). Para as cubas  em
+    estado  normal  ou  partido  esse   valor   recebe  o  acrescimo  do  bemf
+    (RDiaBruta * IAlvoDia) + BemfDia.
+15) Quantidade media de efeito anodico no periodo
+16) Media ponderada  da tensao de efeito anodico no periodo
+17) Media das tensoes maximas de efeito anodico no periodo
+18) Duracao media de efeito anodico no periodo
+19) Duracao media de previsoes terminadas com  ocorrencia  de  efeito anodico,
+    conforme a seguinte formula:
+      DurPrevEa = DurPrevEaDia / EfPrevEaDia
+        Sendo : DurPrevEaDia duracao total de previsoes terminadas com  efeito
+                anodico no dia
+                EfPrevEaDia numero de previsoes terminadas com efeito anodico
+20) Percentual medio de eficiencia de previsoes ocorridas  com  efeito anodico
+    no periodo, conforme a seguinte formula:
+      EfcPrevEa = EfPrevEaDia / NumEaDia
+        Sendo : EfPrevEaDia numero de previsoes terminadas com efeito anodico
+                NumEaDia o numero medio de efeito anodico ocorrido no periodo
+21) Numero medio de previsoes de efeito anodico ocorridas no periodo
+22) Percentual medio de eficiencia de previsoes de efeito anodico ocorridas no
+    periodo, conforme a seguinte formula:
+      EfcPrev = NumFimOkPrev /NumPrevEaDia
+        Sendo : NumFimOkPrev o numero de vezes que a cuba saiu de previsao por
+                    efeito anodico, quebrada, corrida ou movimentacao manual
+                NumPrevEaDia o numero de vezes que a cuba entrou em previsao
+23) Numero medio de quebradas preventivas ocorridas no periodo
+24) Percentual medio  de  eficiencia  de  quebradas preventivas  ocorridas  no
+    periodo, conforme a seguinte formula:
+      EfcQPrev = NumQuebPrev / NumPrevQPrev
+        Sendo : NumQuebPrev o numero de quebradas preventivas
+                NumPrevQPrev o numero de previsoes terminadas devido a quebra-
+				    das preventivas
+
+25 a 28) Media dos campos 11 a 14 respectivamente
+
+29) Media do numero  de  efeitos  por  cubas  normais  com  algum  no periodo,
+    conforme a seguinte formula:
+      NumMedEa = NumEaAcum / NumCubasNormAcum
+         Sendo : NumEaAcum o numero acumulado de efeitos de todos os  dias  do
+                    periodo
+                 NumCubasNormAcum o numero acumulado de cubas em estado normal
+                    que tiveram algum efeito anodico do periodo
+30) Media ponderada da tensao media de efeitos no periodo, conforme a seguinte
+    formula:
+      VMedEa = VMedEaAcum / NumLEaAcum
+         Sendo : VMedEaAcum a tensao efeito anodico acumulada no periodo
+                 NumLEaAcum  o  numero de leituras  de  tensao  com  efeito no
+				    periodo
+31) Media das  tensoes  maximas  de  efeito anodico  no  periodo,  conforme  a
+    seguinte formula:
+      VMedEa = VMaxEaAcum / NumEaAcum
+         Sendo : VMaxEaAcum as tensoes maximas  de  efeito anodico  acumuladas
+		            das no periodo
+                 NumEaAcum o numero de efeitos considerados no periodo
+32) Media da duracao de efeito anodico no periodo, conforme a formula:
+      MedDurEa = DurEaAcum / NumEaAcum
+         Sendo : DurEaAcum a duracao de efeito anodico acumulada no periodo
+                 NumEaAcum o numero de efeitos no periodo
+33) Media da duracao media de previsoes com efeito anodico pelo seu numero  de
+    ocorrencia no periodo, conforme seguinte formula:
+      DurPrevEaMed = DurPrevEaAcum / EfPrevEaDiaAcum
+         Sendo : DurPrevEaAcum a duracao media de previsao com efeito  anodico
+                    acumulada no periodo
+                 EfPrevEaDiaAcum numero de  previsoes  terminadas  com  efeito
+                    anodico no periodo
+34) Media do percentual de eficiencia de previsao por efeito anodico, conforme
+    a seguinte formula:
+      EfPrevEaMed = EfPrevEaDiaAcum / NumEaAcum
+         Sendo : EfPrevEaDiaAcum numero de  previsoes  terminadas  com  efeito
+                    anodico no periodo
+                 NumEaAcum o numero de efeito anodico acumulado no periodo
+35) Numero medio previsoes  de  efeito anodico das cubas normais  que  tiveram
+    alguma no periodo, conforme a seguinte formula:
+      NumPrevMed = NumPrevAcum / NumCubasNormPrevEaAcum
+         Sendo : NumPrevAcum  numero medio  de  previsoes  de  efeito  anodico
+                    acumulado das cubas em estado normal no periodo
+                 NumCubasNormPrevEaAcum o numero de cubas em estado normal que
+                    tiveram  alguma previsao de efeito anodico no periodo
+36) Percentual medio de  eficiencia de previsao de  efeito anodico  das  cubas
+    normais que tiveram alguma no periodo, conforme a seguinte formula:
+      EfcPrevMed = EfcPrevEaAcum / NumCubasNormPrevEaAcum
+         Sendo : EfcPrevEaAcum percentual medio de previsoes de efeito anodico
+                    acumulado das cubas em estado normal no periodo
+                 NumCubasNormPrevEaAcum numero de cubas em  estado  normal que
+                    tiveram alguma previsao de efeito anodico no periodo
+37 a 39) Media dos campos 21 a 24 respectivamente
+
+    Observacao
+    - As cubas que estiveram em estado ligado ou desligado no periodo
+      nao serao consideradas no calculo das medias
+

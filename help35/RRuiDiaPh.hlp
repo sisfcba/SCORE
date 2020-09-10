@@ -1,0 +1,50 @@
+                    Relatorio Historico Diario de Ruido
+
+                      Lay-Out e Descricao dos Campos
+
+        Relatorio de Ruido das Cubas [1] a [2] de [3] ate [4]
+     ---------Ruido Lento--------- ---------Ruido Rapido-------- Inc --Normal-
+     -----Fraco---- -----Forte---- -----Fraco---- -----Forte---- Tot RLen RRap
+Cuba Int. Dur  Inc  Int. Dur  Inc  Int. Dur  Inc  Int. Dur  Inc   mV  mV   mV 
+
+[5]  [6]  [7]  [8]  [9]  [10] [11] [12] [13] [14] [15] [16] [17] [18  19   20]
+
+Med  [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33  34   35]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Numero da cuba. Marcado com (+) se a  cuba  ficou  por  algum  instante em
+    estado ligado ou desligado no periodo
+6)  Tensao media [mV] de ruido lento fraco no periodo, conforme a formula:
+       VRLentFraco = RLentFracoDia * IAlvoDia
+7)  Tempo medio [hh:mm] que a cuba permaneceu em  tratamento  por  ruido lento
+    fraco no periodo
+8)  Tensao media [mV] de incremento por ruido lento fraco no periodo
+9)  Tensao media [mV] de ruido lento forte no periodo, conforme a formula:
+       VRLentForte = RLentForteDia * IAlvoDia
+10) Tempo medio [hh:mm] que a cuba permaneceu em  tratamento  por  ruido lento
+    forte no periodo
+11) Tensao media [mV] de incremento por ruido lento forte no periodo
+12) Tensao media [mV] de ruido rapido fraco no periodo, conforme a formula:
+       VRRapFraco = RRapFracoDia * IAlvoDia
+13) Tempo medio [hh:mm] que a cuba permaneceu em tratamento  por  ruido rapido
+    fraco no periodo
+14) Tensao media [mV] de incremento por ruido rapido fraco no periodo
+15) Tensao media [mV] de ruido rapido forte no periodo, conforme a formula:
+       VRRapForte = RRapForteDia * IAlvoDia
+16) Tempo medio [hh:mm] que a cuba permaneceu em tratamento  por  ruido rapido
+    forte no periodo
+17) Tensao media [mV] de incremento por a ruido rapido forte no periodo
+18) Tensao media diaria de incremento por ruido no periodo
+19) Tensao media de ruido lento da cuba no periodo, conforme a formula:
+       VRLentNorm = RLentNormDia * IAlvoDia
+20) Tensao media de ruido rapido da cuba no periodo, conforme a formula:
+       VRRapNorm = RRapNormDia * IAlvoDia
+
+21 a 35) Media dos campos 6 a 20 respectivamente
+
+	Observacao
+    - As cubas que estiveram em estado ligado ou desligado no periodo
+      nao serao consideradas no calculo das medias

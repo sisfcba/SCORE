@@ -1,0 +1,144 @@
+                           RELATORIO ATUAL DAS CUBAS
+
+                                   DESCRICAO
+
+    Esse  relatorio exibe informacoes  referentes  as  tensoes e alguns tempos
+adicionais de condicoes das cubas, ou seja, a tensao de Incremento  em  mV;  a
+tensao  de  Placa;  a  tensao Alvo; a tensao Atual; a diferenca entre a tensao
+Alvo e a Atual (Erro); tempo decorrido entre a  hora  que  a  cuba  entrou  em
+Desvio  de  Tensao  e  a  atual;  tempo  decorrido entre a hora que a cuba foi
+colocada em Manual-Local ou  Manual-Remoto  e  a  atual;  hora  prevista  para
+ocorrencia  do Efeito Anodico; o tempo de Atraso de EA; a  Situacao que a cuba
+esta  atualmente, ou  seja, Man-Loc, Man-Rem, EA, Quebrada  ou  Corrida.  Alem
+disso, exibe no  cabecalho  a  Corrente Alvo,  a Corrente media  do  ciclo  de
+controle e o numero de  Ciclos de Controle  contabilizados ate  o  momento  do
+pedido do relatorio.
+
+
+                                    SINTAXE
+
+    O relatorio pode ser pedido por faixa  ou  grupo de cubas, como  pode  ser
+visto a seguir:
+
+
+                          LAY-OUT DA TELA DE CHAMADA
+
+                  +-----------------------------------------+
+                  | Geral                                   |
+                  | Cuba Inicial....: [1]                   |
+                  | Cuba Final......: [2]                   |
+                  | Cubas Excluidas.: [3]                   |
+                  |                                         |
+                  +--Esc-Abandona F1-Ajuda F10-Confirma ----+
+
+
+                                  PARAMETROS
+
+1) Numero da primeira cuba a ser selecionada no relatorio.
+2) Numero da ultima cuba a ser selecionada relatorio.
+
+   Observacao:
+   - A  chamada do relatorio pode ser feita por faixa ou  grupo  de cubas.  Na
+     chamada por faixa, os parametros 1 e  2  aceitam  valores  de  101-172  e
+     201-272. Na  chamada  por  grupo,  os parametros 1 e 2 aceitam valores de
+     01-72, os quais permitem a selecao conjugada das cubas 101-172 e 201-272.
+
+3) Lista  de  cubas a serem excluidas do relatorio dentro da faixa solicitada.
+   Recebe valores de 101-172 e 201-272 separados por hifen (-),  virgula  (,),
+   ou ponto (.), sendo permitido no maximo 7 cubas.
+
+
+                          EXEMPLO 1 - FAIXA DE CUBAS
+
+                  +-----------------------------------------+
+                  |  Geral                                  |
+                  |  Cuba Inicial....: 117                  |
+                  |  Cuba Final......: 135                  |
+                  |  Cubas Excluidas.: 120-125-132          |
+                  |                                         |
+                  +--Esc-Abandona F1-Ajuda F10-Confirma ----+
+
+Exibe o relatorio das cubas 117 a 135, excluindo a 120, 125 e 132.
+
+
+
+
+
+                          EXEMPLO 2 - GRUPO DE CUBAS
+
+                  +-----------------------------------------+
+                  |  Geral                                  |
+                  |  Cuba Inicial....: 17                   |
+                  |  Cuba Final......: 35                   |
+                  |  Cubas Excluidas.: 120-132-222-229      |
+                  |                                         |
+                  +--Esc-Abandona F1-Ajuda F10-Confirma ----+
+
+ Exibe relatorio das cubas 117-135 e 217-235, excluindo 120, 132, 222 e 229.
+
+
+
+
+                       DESCRICAO DOS CAMPOS DO RELATORIO
+
+
+                    RELATORIO ATUAL DAS CUBAS [1] A [2]
+      IAlvo = [3] KA         ICicCont = [4] KA         NCicCont = [5]
+Cuba  VInc  VPlaca VAlvo  VAtual VErro  VDesv  Manual PrevEa AtraEa  Condicao
+      [mV]  ---------- [V] -----------  --------- [hh:mm] ---------
+[6]   [7]    [8]    [9]    [10]  [11]   [12]   [13]    [14]   [15]    [16]
+
+MEDIA [17]   [18]    [19]    [20]   [21]
+
+1) Numero da primeira cuba a ser exibida no relatorio.
+2) Numero da ultima cuba a ser exibida no relatorio.
+3) Valor da corrente alvo em KA.
+4) Valor da corrente media do ciclo de controle em KA.
+5) Numero de ciclos de controle contabilizados ate o momento.
+6) Numero da  cuba.  E  marcada  com o sinal (+) quando a cuba estiver Fora de
+   Leitura ou nos estados Desligado, Ligado ou Partido.
+7) Tensao de Incremento total que esta sendo dado na cuba em mV.
+8) Tensao de Placa da cuba em Volts.
+9) Tensao Alvo da cuba em Volts.
+10) Tensao Atual da cuba em Volts.
+11) Diferenca entre a Tensao Alvo e a Tensao Atual da cuba em Volts.
+12) Tempo decorrido entre a hora que a cuba entrou em Desvio  de  Tensao  e  a
+    atual.
+13) Tempo  decorrido  entre  a hora que a cuba foi colocada em Manual-Local ou
+    Manual-Remoto e a atual.
+14) Hora prevista para ocorrencia do Efeito Anodico da cuba.
+15) Tempo de atraso de efeito anodico.
+
+
+16) Estado em que a cuba se encontra atualmente, conforme a tabela seguinte:
+
+               Situacao  -  Descricao da Situacao
+
+               Corrida   -  Cuba em Corrida.
+               EA        -  Cuba em Efeito Anodico.
+               Man-Loc   -  Chave da cuba no campo em Manual.
+               Man-Rem   -  Cuba em operacao Manual Remoto.
+               Quebrada  -  Cuba em Quebrada.
+
+17) Media das tensoes de Incremento das cubas.
+18) Media das tensoes de Placa das cubas.
+19) Media das tensoes Alvo das cubas.
+20) Media das tensoes Atuais das cubas.
+21) Media das diferencas entre as tensoes Alvo e Atual das cubas.
+
+    Observacao
+    - As cubas que estiverem Fora de Leitura, ou nos estados Desligado, Ligado
+      ou Partido nao serao consideradas no calculo das medias.
+
+
+
+
+
+
+
+
+
+
+
+
+

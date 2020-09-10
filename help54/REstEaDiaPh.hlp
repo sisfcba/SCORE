@@ -1,0 +1,53 @@
+           Relatorio de Estatistica de Efeito Anodico Detalhado
+
+--Estatistica--  -------------Detalhamento de Cubas------------- ----EA-----
+---Dur--- Cubas  --Cuba--  --Cuba--  --Cuba--  --Cuba-- --Cuba-- ---DxLim---
+Min     % Total  Nº  %Dx   Nº  %Dx   Nº  %Dx   Nº  %Dx  Nº  %Dx  Med     %Dx
+[1]   [2]   [3]  [4]  [5]  [6]  [7]  [8]  [9]  [10][11] [12][13] [14]   [15]
+
+      Total de Efeitos: [16]                 Efeitos com Previsao: [17]
+
+ 1) Duracao em minutos do efeito anodico. Esses valores sao fixos: 0, 1, 2, 3,
+    4, 5, 6, 7, 8, 9 e >9.
+ 2) Percentual de distribuicao dos efeitos entre os ranges de duracao.
+    O somatorio dessa coluna e 100 (se houve pelo menos um efeito anodico).
+ 3) Para um dado range de duracao dos efeitos anodicos, essa coluna apresenta
+    o total de cubas onde esses efeitos ocorreram.
+ 4) Numero da cuba onde ocorreu efeito anodico.
+ 5) Percentual do tempo em que VInst foi superior a VEaXLim. Campo referente a
+    cuba [4].
+ 6) Numero da cuba onde ocorreu efeito anodico.
+ 7) Percentual do tempo em que VInst foi superior a VEaXLim. Campo referente a
+    cuba [6].
+ 8) Numero da cuba onde ocorreu efeito anodico.
+ 9) Percentual do tempo em que VInst foi superior a VEaXLim. Campo referente a
+    cuba [8].
+10) Numero da cuba onde ocorreu efeito anodico.
+11) Percentual do tempo em que VInst foi superior a VEaXLim. Campo referente a
+    cuba [10].
+12) Numero da cuba onde ocorreu efeito anodico.
+13) Percentual do tempo em que VInst foi superior a VEaXLim. Campo referente a
+    cuba [12].
+14) Tempo medio, em minutos, em que VInst foi superior a VEaXLim.
+15) Percentual medio em que VInst foi superior a VEaXLim.
+16) Numero total de efeitos anodicos.
+17) Numero de efeitos com previsao.
+
+Exemplo:
+
+--Estatistica--  -------------Detalhamento de Cubas------------- ----EA-----
+---Dur--- Cubas  --Cuba--  --Cuba--  --Cuba--  --Cuba-- --Cuba-- ---DxLim---
+Min     % Total  Nº  %Dx   Nº  %Dx   Nº  %Dx   Nº  %Dx  Nº  %Dx  Med     %Dx
+ 0    0.0     0
+ 1    0.0     0
+ 2   40.0     4   944  88   966  95  1252  82  1233  94          1.88   89.8
+ 3   20.0     2   917  97   922 100                              3.25   98.5
+ 4   20.0     2   905  94  1046  84                              3.65   89.0
+ 5   10.0     1   971  74                                        3.90   74.0
+ 6   10.0     1  1157  57                                        3.20   57.0  
+ 7    0.0     0
+ 8    0.0     0
+ 9    0.0     0
+> 9   0.0     0
+
+      Total de Efeitos: 10                  Efeitos com Previsao: 5

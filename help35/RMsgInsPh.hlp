@@ -1,0 +1,44 @@
+                         Relatorio de Mensagens de Eventos
+
+                  Relacao das Classes de Eventos Pre-Definidas
+
+    Classe   -  Descricao    
+    EVLINHA  -  Eventos gerados para linha
+    EVCUBA   -  Eventos gerados para cubas
+    EVPROC   -  Eventos gerados para cuba e linha, ou seja, EVLINHA + EVCUBA
+    EVSIST   -  Mensagens geradas pelo sistema devido a alguma anormalidade  
+    EVTOTAL  -  Todos eventos e mensagens  gerados, ou seja, EVPROC + EVSIST
+    EVMENS   -  Mensagens exibidas na linha de alarmes
+
+                             Lay-Out do Relatorio
+                       Relatorio de Mensagens de Eventos
+Filtro: [ [1]     ]
+Data  Hora      Cub-Cub Evento     Par1     Par2     Par3     Par4     Par5
+xx/xx xx:xx:xx  xxx-xxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+[2]   [3]       [4]     [5]
+xx/xx xx:xx:xx  xxx-xxx xxxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx
+[2]   [3]       [4]     [5.1]      [5.2]    [5.3]    [5.4]    [5.5]    [5.6]
+
+1) Filtro de evento selecionado
+2) Data que o evento foi gerado
+3) Hora que o evento foi gerado
+4) Cuba ou faixa de cubas relacionadas ao evento, conforme o dominio abaixo:
+
+                Valores    -  Referencia
+
+                xxx-xxx    -  Evento gerado para faixa de cubas
+                  xxx      -  Evento gerado para uma cuba
+                  000      -  Evento gerado para linha
+                -------    -  Mensagem interna do sistema
+
+5) Quando forem exibidas mensagens, esse campo sera composto somente  por  ela
+   ([5]), quando  forem  eventos  no  padrao  normal, sera composto por varios
+   itens variaveis de dependendo do evento, conforme a descricao abaixo:
+
+             Item  -  Descricao
+              5.1  -  Mneumonico do evento
+              5.2  -  1o. Parametro do evento
+              5.3  -  2o. Parametro do evento
+              5.4  -  3o. Parametro do evento
+              5.5  -  4o. Parametro do evento
+              5.6  -  5o. Parametro do evento

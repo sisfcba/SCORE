@@ -1,0 +1,70 @@
+
+                    Relatorio Instantaneo de Alimentacao
+
+                      Lay-Out e Descricao dos Campos
+
+           Relatorio Instantaneo de Alimentacao - Secao [1] 
+
+Num. [mh] - Status  - -Estado- [Kg] Num. [mh]  - Status  -  -Estado- [Kg]
+Cuba Res  Os C  S  Si Ali  Dur  QAA Cuba Res   Os C  S  Si  Ali  Dur  QAA
+[2]  [3] [4  5  6  7] [8]  [9] [10] [11] [12] [13 14 15 16] [12] [13] [14]
+
+1) Numero da secao
+2) Numero da cuba. Marcado com (+) quando a cuba esta ligada ou desligada
+3) Resitencia instantanea da cuba em MiOhms.
+4) Estado atual de oscilacao
+               Estado -  Descricao
+                 n    -  Oscilacao estavel
+                 f1   -  Oscilacao fraca 1
+                 f2   -  Oscilacao fraca 2
+                 f3   -  Oscilacao fraca 3
+                 F1   -  Oscilacao forte 1
+                 F2   -  Oscilacao forte 2
+                 F3   -  Oscilacao forte 3
+5) Estado do controle automatico de resistencia (CAR)
+               Estado -  Descricao
+                 I    -  CAR inibido
+                 A    -  CAR ativo ,SEA inativo e cuba fora de check
+6) Estado da supressao de efeito anodico
+               Estado -  Descricao
+                 I    -  SEA inativo
+                 A    -  SEA ativo
+6) Estado de sifonamento
+               Estado -  Descricao
+                 A    -  Sifonamento ativo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

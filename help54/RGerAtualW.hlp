@@ -1,0 +1,41 @@
+      General Control Cycle Report - [1]           - Alg [2]
+        RCurr = [3]   KA    CtrlCycCurr = [4]   KA     CtrlCycNum = [5]
+Pot   Incr SetP  Targ  CCVtg Error VoltD Manual AEDel AEPrd HRDer  Inc Status
+      [mV] ----------[V]---------- ---------[hh:mm]-------- [uO/h] Stp
+[6]   [7]  [8]    [9]  [10]  [11]  [12]   [13]   [14]  [15]  [16]  [17]  [18]
+Avr   [19] [20]  [21]  [22]  [23]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Rated line current
+4-  Average value of the line current at the present control cycle
+5-  Number of control cycles on the current day
+6-  Pot number
+7-  Total incremental resistance (mV)
+8-  Set Point Voltage
+9-  Target resistance (V)
+10- Average control cycle resistance expressed in volts (CCNetRes*RatedCur).
+    For those pots who are in the Normal or On-Line state, this value is 
+    increased by Bemf.
+11- Difference between the target resistance and the control cycle gross
+    resistance (TargetRes-CCGrossRes)*RatedCur [V]
+12- Duration of the voltage deviation (it is reset whenever the pot leaves
+    the voltage deviation state)
+13- How much time the pot is in Manual mode (it is reset whenever the pot 
+    leaves the Manual mode)
+14- How much time the anode effect for this pot is late:
+       PresTime - (AEStartTime + MaxAEDel)
+    where:
+       PresTime=    Present Time
+       AEStartTime= Anode Effect Start Time
+       MaxAEDel=    Maximum Anode Effect Delay
+15- Time when the anode effect prediction has started
+16- Historical average of the smoothed resistance derivative
+17- Step of the incremental table being executed
+18- Pot operational status (this field displays information of some events
+    like tapping, crust breaking, anode effect, pot in manual mode, etc.)
+19 to 23- Average of the fields 7 to 11, respectively
+
+PS
+The pots who have been in the states "jumped" or "on-line" in this interval
+are not considered when calculating the averages.    

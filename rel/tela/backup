@@ -1,0 +1,106 @@
+  for( ContDia = 0; ContDia < Arg->DiasDatas; ++ContDia )
+  {
+	if (ValidaData(Arg, TimeT) ne VERDADEIRO)
+	{
+	  TimeT += (time_t)( NUM_SEGUNDOS_DIA * TIMES_PER_SEC ); /* avanca um dia */
+	  memcpy(&DataTm, localtime(&TimeT), sizeof(struct tm));  /* converte para struct tm */
+	  continue; /* proxima ContDia */
+	}
+
+	++NumDias; /* incrementa numero de dias para calculo das medias */
+
+#ifdef	REL_TURNO
+    HAvlAvc = CarBufTurno(&DataTm, Arg);
+#else
+    HAvlAvc = CarBufCubas(&DataTm, Arg);
+#endif
+
+    if( HAvlAvc eq (void *) NULL ) /* houve erro */
+      return(-1);
+    
+    Indice = 0; /* inicializa numero de linhas */
+    /* executa para todas as cubas */
+#ifndef OPERACAO_WINDOWS
+	for (Cuba = Arg->CubaInicial; Cuba <= Arg->CubaFinal; ++Cuba)
+	{
+	  CubaAtual = ConvCubOperScore(Cuba);
+printf("\n Cheguei Aqui!!!\n");
+
+	  if ((CubaAtual ne -1) and (ValidaCuba(Arg->TabCubas, CubaAtual) eq VERDADEIRO))
+	  {
+		CalcAreaDados(Dad, CubaAtual, Indice, HAvlAvc);
+        ++Indice; /* incrementa numero de linhas */
+	  }
+	}
+#else
+	/*-- Montagem da area de dados do relatorio --*/
+	IndCuba = 0;
+	do
+	{
+	  CubaAtual=filtro.Par.IndCuba[IndCuba];
+	  CalcAreaDados(Dad, CubaAtual, Indice, HAvlAvc);
+	  ++Indice; /* incrementa numero de linhas */
+	  ++IndCuba;
+	} while (IndCuba < filtro.Par.Total);
+#endif
+	
+    TimeT += (time_t)( NUM_SEGUNDOS_DIA * TIMES_PER_SEC ); /* avanca um dia */
+    memcpy (&DataTm, localtime(&TimeT), sizeof(struct tm)); /* converte para struct tm */
+
+  } /*-- for (ContDia ...) --*/
+
+  /*-- Sai da funcao quando nao houver informacoes a exibir --*/
+  if (Indice eq 0 || NumDias eq 0)
+	return(0);
+
+  ContMed = 0;
+  for( Cuba = 0; Cuba < Indice; ++Cuba )
+  {
+    /* monta valores da area de dados */
+	(Dad+Cuba)->RLent    = ((Dad+Cuba)->RLent / NumDias);
+	(Dad+Cuba)->RRap     = ((Dad+Cuba)->RRap  / NumDias);
+    (Dad+Cuba)->VRLent   = ((Dad+Cuba)->VRLent / NumDias);
+    (Dad+Cuba)->VRRap    = ((Dad+Cuba)->VRRap / NumDias);
+    (Dad+Cuba)->SigS     = ((Dad+Cuba)->SigS / NumDias);
+    (Dad+Cuba)->SigL     = ((Dad+Cuba)->SigL / NumDias);
+    (Dad+Cuba)->VSigS    = ((Dad+Cuba)->VSigS / NumDias);
+    (Dad+Cuba)->VSigL    = ((Dad+Cuba)->VSigL / NumDias);
+
+    /* acumula valores para o calculo das medias */
+	if ((Dad+Cuba)->SinEst[0] ne '+')
+	{
+	  Rod->RLent  += (Dad+Cuba)->RLent;
+	  Rod->RRap	  += (Dad+Cuba)->RRap;
+	  Rod->VRLent += (Dad+Cuba)->VRLent;
+	  Rod->VRRap  += (Dad+Cuba)->VRRap;
+	  Rod->SigS   += (Dad+Cuba)->SigS;
+	  Rod->SigL   += (Dad+Cuba)->SigL;
+	  Rod->VSigS  += (Dad+Cuba)->VSigS;
+	  Rod->VSigL  += (Dad+Cuba)->VSigL;
+	  ++ContMed;
+	}
+	else
+	{
+	  (Dad+Cuba)->RLent	 = 0.0;
+	  (Dad+Cuba)->RRap	 = 0.0;
+	  (Dad+Cuba)->VRLent = 0.0;
+	  (Dad+Cuba)->VRRap  = 0.0;
+	  (Dad+Cuba)->SigS	 = 0.0;
+	  (Dad+Cuba)->SigL	 = 0.0;
+	  (Dad+Cuba)->VSigS  = 0.0;
+  	  (Dad+Cuba)->VSigL	 = 0.0;
+	}
+  }
+
+  if ( ContMed > 0 )
+  {
+	/* calcula as medias montando-as no rodape */
+	Rod->RLent  = Rod->RLent / ContMed;
+	Rod->RRap	= Rod->RRap	 / ContMed;
+	Rod->VRLent = Rod->VRLent/ ContMed;
+	Rod->VRRap	= Rod->VRRap / ContMed;
+	Rod->SigS	= Rod->SigS	 / ContMed;
+	Rod->SigL	= Rod->SigL	 / ContMed;
+	Rod->VSigS	= Rod->VSigS / ContMed;
+	Rod->VSigL  = Rod->VSigL / ContMed;
+}

@@ -1,0 +1,26 @@
+/******************************************************************************
+
+			 ATAN - SISTEMAS DE AUTOMACAO E TELECOMUNICACOES LTDA.
+	   SSCORE - SOFTWARE DO SISTEMA DE CONTROLE DE REDUCOES - VERSAO 4.0
+
+	PROJETO		: CBA - COMPANHIA BRASILEIRA DE ALUMINIO
+
+	SISTEMA		: AUTOMACAO DA SALA 120 KA II e III
+
+	ARQUIVO		:
+
+	CONTEUDO	:
+
+	AUTOR		: Leonel Vicente Mota Ivo
+
+	SISTEMA OPERACIONAL:  QNX 4.20		-		COMPILADOR: WATCOM C - V9.5
+
+	VERSAO		: 1.0		  -		  DATA  : 05/08/94
+
+	HISTORICO DAS EDICOES
+-------------------------------------------------------------------------------
+dd/mm/aa | Descricao                                            | autor
+-------------------------------------------------------------------------------
+23/08/94 | Edicao inicial de migracao para o QNX 4.2			| Leonel
+-------------------------------------------------------------------------------
+******************************************************************************/

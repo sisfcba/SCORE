@@ -1,0 +1,5 @@
+print "Salva .o do kit de desenvolvimento..." 
+cp -vp /score/srcs/outros/RecChavesCBA.o /score/srcs/outros/RecChavesCBA.o.kitsav
+find . -name "*.o" -exec rm -v {}
+print "Restaura .o do kit de desenvolvimento..." 
+cp -vp /score/srcs/outros/RecChavesCBA.o.kitsav /score/srcs/outros/RecChavesCBA.o

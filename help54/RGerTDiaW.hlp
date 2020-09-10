@@ -1,0 +1,44 @@
+ Historical Report - [1]           - Alg [2]      -    [3]   to  [4] - Shf [5]
+      RCurr =  [6] KA          MCurr =  [7]  KA         LinVtg =  [8]  V
+      System =  [9]  %                                  Line =  [10]  %
+Pot   --Average Voltages [V]--  --Errors [V]--  Volt. Dev. Err  -Manual Error-
+      SetP  Target  Net  Gross   Total  Contrl   [V]   [Time]    [V]   [Time]
+[11]  [12]   [13]   [14]  [15]   [16]    [17]   [18]   [19]     [20]   [21]
+Avr   [22]   [23]   [24]  [25]   [26]    [27]   [28]   [29]     [30]   [31]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Shift being shown at the report
+6-  Rated Line Current
+7-  Measured Line Current
+8-  Average pot line voltage during the period
+9-  Time (in percentage) in which the System remained active
+10- Time (in percentage) in which the Line remained active
+11- Pot Number
+12- Average Set Point Voltage in the interval under consideration
+13- Average Target Voltage in the interval under consideration
+14- Average of the net voltage in the interval under consideration    
+15- Average of the gross voltage in the interval under consideration
+16- Average error voltage during the period
+       Error Voltage= TargetVol-NetVol
+    where:
+       NetVol is the pot voltage without any extra voltage during an anode
+          effect (during an AE, the voltage is made equal to the target voltage 
+          when calculating this variable)
+17- Average error voltage during the period, when the pot is under control
+18- Average of the voltage deviation per control cycle
+19- Average of the duration of the voltage deviation in the period
+20- Average of the pot voltage during the time the pot was in manual mode,
+    per control cycle 
+21- Average of the time the pot was in manual mode during the period examined
+22 to 31- Average of the fields 12 to 21, respectively
+
+
+PS
+The pots who have been in the states "jumped", "on-line" or "warming-up"
+in this interval are not considered when calculating the averages.    
+     
+
+

@@ -1,0 +1,55 @@
+                     Relatorio Historico Geral Diario
+
+                      Lay-Out e Descricao dos Campos
+
+          Relatorio Geral das Cubas [1] a [2] de [3] ate [4]
+      IAlvo = [5] KA            IReal = [6] KA         VLinha =  [7] %
+      Sistema = [8] %           Linha = [9] %          VCuba  = [10] V
+Cuba  ---Tensoes Medias [V]---  ---Erros [V]--  --Erro VDesv--  --Erro Manual-
+      Placa Alvo   Liqui Total   Total  Contrl    [V]  [Tempo]    [V]  [Tempo]
+[11]  [12]  [13]   [14]  [15]    [16]    [17]     [18]  [19]      [20]  [21]
+
+Media [22]  [23]   [24]  [25]    [26]    [27]     [28]  [29]      [30]  [31]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Tensao media da linha no periodo
+8)  Percentual de tempo que o sistema ficou ativo no periodo
+9)  Percentual de tempo que a linha ficou habilitada no periodo
+10) Tensao media da  sala por cuba em estado normal, ligado ou partido no dia,
+    conforme a seguinte formula:
+       VCuba = VLinhaDia / (CubasNormDia + CubasLigParDia)
+11) Numero da cuba. Marcado com (+) se a cuba esteve em estado ligado, partido
+    ou desligado no periodo
+12) Media da tensao de placa (VSetPointDia) no periodo
+13) Media da tensao alvo no periodo.
+14) Media da tensao liquida no periodo (RDiaLiq * IAlvoDia). Para as cubas  em
+    estado   normal  ou  partido   esse  valor  recebe  o  acrescimo  do  bemf
+    (RDiaLiq * IAlvoDia) + BemfDia.
+15) Media da tensao total no periodo (RDiaBruta * IAlvoDia). Para as cubas  em
+    estado   normal  ou  partido  esse  valor   recebe  o  acrescimo  do  bemf
+    (RDiaBruta * IAlvoDia) + BemfDia
+16) Media da tensao erro total no periodo, conforme a seguinte formula:
+      VTotErr = VAlvo - VLiq
+17) Media da tensao erro de controle no periodo, conforme a seguinte formula:
+      VCtrlErr = VTotErr - (VDesv + VFora)
+18) Media da tensao erro de desvio no periodo, conforme a seguinte formula:
+      VDesv = VDesvDia / NCContDia
+       Sendo: NCContDia = Numero de ciclos de controle no dia
+19) Media do tempo de desvio de tensao no periodo
+20) Media de tensao  no  tempo que a cuba  esteve  fora de leitura no periodo,
+    conforme a seguinte formula:
+      VFora = VForaContDia / NCContDia
+      Sendo : NCContDia = Numero de ciclos de controle no dia
+21) Media de tempo que a cuba esteve fora de leitura no periodo
+
+22 a 31) Media dos campos 12 a 21 respectivamente
+
+    Observacao
+    - As cubas que estiveram em estado ligado, desligado ou partido no
+      periodo nao serao consideradas no calculo das medias
+

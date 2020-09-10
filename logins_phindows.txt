@@ -1,0 +1,25 @@
+LOGINS PHINDOWS PARA O SCORE
+
+Foram criados logins no QNX para serem utilizados pelas estacoes
+phindows. Um shortcut no windows deve ser criado no padrao abaixo:
+c:\usr\photon\phindows.bat
+
+Onde o arquivo phindows.bat deve conter:
+start /high phwindows.exe -txx.xx.xx.xx -sscore7 -Uuser:password
+
+Onde:
+xx.xx.xx.xx = IP do servidor photon da reducao.
+user:password = login e senha para o phindows no QNX. Deve ser utilizado
+                um login para cada phindows (maquina) utilizado.
+				
+Os logins criados seguem o padrao abaixo:
+
+login			senha			IP
+ScorePhw1		atnph1			10.10.11.101
+ScorePhw2		atnph2			10.10.11.102
+...
+ScorePhw13		atnph13			10.10.11.113
+ScorePhw14		atnph14			10.10.11.114
+...
+ScorePhw21		atnph21			10.10.11.121
+ScorePhw22		atnph22			10.10.11.122

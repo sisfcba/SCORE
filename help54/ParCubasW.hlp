@@ -1,0 +1,263 @@
+[AEEffectTime]
+Time  interval that the flag AeEffect stays "TRUE" 
+after anode effect detection. 
+[AEEndPredDer]
+The   pot   historical   derivative    resistance, 
+HistSmResDer,  must  stay  (during  a certain time 
+interval) below the AeEndPredDer  value,  for  the 
+pot be considered out of Ae prediction. 
+[AEEndPredDerTime]
+Interval that the historical resistance derivative 
+must  stay  below  AEEndPredDer  for  the  pot  be 
+considered out of Ae prediction. 
+[AEPDerResSmPar]
+Anode   effect  prediction  derivative  resistance 
+smoothing parameter.
+[AEPredDer]
+When the  historical  resistance  derivative  must 
+remain above AEPredDer so that the pot cell may be 
+declared as in "anode effect prediciton".
+[AEPredDerTime]
+Interval the historical resistance derivative must 
+remain above AEPredDer so that the pot cell may be 
+declared as in "anode effect prediciton".
+[AETermWaitTime]
+Time interval that the pot voltage must stay below 
+AeVolLim before be declared out of anode effect.
+[AEVolLim]
+Anode  effect  voltage  limit.   The  Score system 
+considers that an anode effect ended only when its 
+voltage stays below AeVolLim by  a  time  interval 
+equal or greater than AeTermWaitTime. 
+[AnodeMovInhDer]
+If    the    historical    resistance   derivative 
+HistSmResDer supersedes the AnodeMovInhDer  value, 
+the  anode  movement  will be inhibited. The anode 
+movement   will   be   resumed   only   when   the 
+HistSmResDer becomes inferior to this limit  by  a 
+time   interval  defined  by  the  InhibMovDerTime 
+variable.
+[Bemf]
+Represents  the  aluminum  electrolytic  reduction 
+process Counter Electromotive Force. 
+[BreakEffectTime]
+Time interval  that  the  flag  BreakEffect  stays 
+"TRUE" after the crust breaking.
+[BreakIncTime]
+Time interval duration of the breaking increment.
+[BreakIncType]
+Break increment type.
+[FastAEHDer]
+Utilized   in  the  anode  effect  classification. 
+Indicates  the  Historical  resistance  derivative 
+limit to consider an anode effect  "Fast".  Beyond 
+this  value,  the anode effect is considered "Very 
+Fast".
+[FastResSamWin]
+Size of the fast resistance sampling window.
+[HF1Noise]
+Limit between the "No  noise"  and  "Light  noise" 
+bands,   utilized  in  the  high  frequency  noise 
+classification. 
+[HF2Noise]
+Limit between the " Light noise" and "Heavy noise" 
+bands,  utilized  in  the  high  frequency   noise 
+classification.
+[HFNoiseIncEn]
+This flag enables the increment due to HF Noise (1 
+= increment enabled)
+[IncHeavyHFNoise]
+Target  resistance  increment  due  to  heavy high 
+frequency noise.
+[IncHeavyLFNoise]
+Target  resistance  increment  due  to  heavy  low 
+frequency noise.
+[IncLiteHFNoise]
+Target resistance  increment  due  to  light  high 
+frequency noise.
+[IncLiteLFNoise]
+Target  resistance  increment  due  to  light  low 
+frequency noise.
+[InhMovDerTime]
+Interval  for analysing the historical derivative. 
+During  this  interval  the  anode   movement   is 
+inhibited.
+[InitBreakInc]
+Initial   target   resistance   increment  due  to 
+breaking.
+[InitTapInc]
+Initial  target  resistance   increment   due   to 
+tapping.
+[LCBBreakDec]
+Utilized  to  decrease  the lower limit of the LCB 
+(Lower Control Band)  after  crust  breaking.  The 
+objective  is  to keep the resistance value in the 
+control range after feeding the pot with alumina.
+[LCBBreakDecTime]
+Time interval,  after  breaking,  that  the  lower 
+control band stays modified.
+[LF1Noise]
+Limit  between  the  "No  noise" and "Light noise" 
+bands,  utilized  in  the  low   frequency   noise 
+classification.
+[LF2Noise]
+Limit between the " Light noise" and "Heavy noise" 
+bands,   utilized   in  the  low  frequency  noise 
+classification.
+[LFNoiseIncEn]
+Enable/Disable the low frequency  noise  increment 
+(1 = enabled; 0 = disabled)
+[LowCtrlBand]
+Lower Control Band Limit.
+[LowDeadBand]
+Lower Dead Band Limit.
+[MaxAEDelay]
+This  variable  defines  the maximum time interval 
+that the pot can stay with no occurrence of  anode 
+effect. 
+[MaxAnDMovDur]
+Maximum limit to the anode down movement duration. 
+If  the  anode  movement  intends to last for more 
+than the established by this  variable,  than  the 
+final  movement  will be "clipped" to this maximum 
+value.
+[MaxAnUpMovDur]
+Maximum limit to the anode up  movement  duration. 
+If  the  anode  movement  intends to last for more 
+than the established by this  variable,  than  the 
+final  movement  will be "clipped" to this maximum 
+value.
+[MaxIncVol]
+Maximum Incremental Voltage: maximum value that is 
+allowed to the sum of all increments  to  the  pot 
+voltage.
+[MaxISmResDer]
+Maximum    Instantaneous    Smoothed    Resistance 
+Derivative:  upper  limit  for  the  instantaneous 
+smoothed resistance derivative .
+[MaxOpeIncTime]
+Maximum   duration   allowed   to  the  operator's 
+increment.
+[MaxResJumpSup]
+Maximum  resistance  for  the  supervision  of   a 
+"jumped" pot.
+[MaxResOnLSup]
+Maximum  resistance  for  the  supervision  of  an 
+"on-line" pot.
+[MaxResWarmSup]
+Maximum   resistance  for  the  supervision  of  a 
+"warming-up" pot.
+[MinAnDMovDur]
+Minimum limit to the anode down movement duration. 
+If the anode movement intends  to  last  for  less 
+than  the  established  by  this variable, than no 
+anode movement will be done.
+[MinAnodeDMovConst]
+Minimum PWM (Pulse  Width  Modulation)  value  for 
+moving the anode downwards.
+[MinAnodeUMovConst]
+Minimum  PWM  (Pulse  Width  Modulation) value for 
+moving the anode upwards.
+[MinAnUpMovDur]
+Minimum limit to the anode up  movement  duration. 
+If  the  anode  movement  intends to last for less 
+than the established by  this  variable,  than  no 
+anode movement will be done.
+[MinISmResDer]
+Minimum    Instantaneous    Smoothed    Resistance 
+Derivative:  lower  limit  for  the  instantaneous 
+smoothed resistance derivative.
+[MinResJumpSup]
+Minimum   resistance  for  the  supervision  of  a 
+"jumped" pot.
+[MinResOnLSup]
+Minimum  resistance  for  the  supervision  of  an 
+"on-line" pot.
+[MinResWarmSup]
+Minimum  resistance  for  the  supervision  of   a 
+"warming-up" pot.
+[MotDrvAdjTime]
+Maximum time that the algorithm waits while trying 
+to    adjust    the    "Motor   Drive   Adjustment 
+Coefficient".
+[MovEffectTime]
+Interval the flag MovEffect stays "TRUE" after  an 
+anode movement.
+[NCycAEStart]
+Number of read cycles that the pot resistance must 
+remain   above   AeResLim,  before  the  algorithm 
+identifies an anode effect.
+[NCycAEStartStChg]
+The same as NCycAEStart, but valid  only  after  a 
+stud change.
+[NoiseEventEn]
+Enable/Disable   the   event  that  indicates  the 
+beginning and the  end  of  the  noise  treatment. 
+(enabled = 1)
+[NumWinHFNoise]
+Number   of   windows  for  high  frequency  noise 
+resistance sampling.
+[OpeAnDMovConst]
+Operator defined coefficient  used  to  drive  the 
+anode motor downwards. 
+[OpeAnUMovConst]
+Operator  defined  coefficient  used  to drive the 
+anode motor upwards. 
+[OpIncEn]
+Flag   that   enables/disables   the    operator's 
+increment. (enabled = 1)
+[OpTabEn]
+Flag  that enables/disables the operation table of 
+increments. (enabled = 1)
+[SlowAEHDer]
+Utilized  in  the  anode  effect   classification. 
+Indicates  the  limit to the Historical resistance 
+derivative to consider an anode effect as "Slow".
+[StChgIncTime]
+Duration of the stud change increment.
+[StChgIncType]
+Stud change increment type.
+[StudChgEffectTime]
+Duration of the effect of  stud  change,  used  to 
+inhibit a false anode effect prediction.
+[StudChgIncEn]
+Flag   that   enables/disables   the  stud  change 
+increment.
+[StudChgInitInc]
+Initial  value  of  the  stud  increment.  If  the 
+increment type is constant,  this  value  is  used 
+through out the increment interval.
+[TapEffectTime]
+This  variable  determines  the  duration  of  the 
+tapping treatment. During this interval, the anode 
+may  be  moved  with  a  higher frequency and both 
+anode effect prediction and  noise  treatment  are 
+disabled.
+[TapIncTime]
+Duration of the tapping increment.
+[TapIncType]
+Type of tapping increment (constant or ramp).
+[TapTreatTime]
+During  this  interval  the  algorithm  treats the 
+tapping event. The anode effect prediction and the 
+movimentation of the anode upwards are  inhibited. 
+This variable may be bigger than TapEffectTime.
+[TypicAnodDMovCst]
+Value  assumed  by  the AnodeDMovConst in case its 
+adjustment fails.
+[TypicAnodUMovCst]
+Value assumed by the AnodeUpMovConst in  case  its 
+adjustment fails.
+[UCBTapInc]
+Increment  in  the Upper Control Band due to metal 
+tapping.
+[UDBDAEInc]
+Increment in the Upper Dead Band in case of  delay 
+in the anode effect occurence.
+[UpperCtrlBand]
+Value atributed to the Upper Control Band.
+[UpperDeadBand]
+Value atributed to the Upper Dead Band.
+[VolSetPoint]
+Set point voltage.
+[]

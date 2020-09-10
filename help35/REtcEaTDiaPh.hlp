@@ -1,0 +1,38 @@
+        Relatorio Historico Diario de Estatistica de Efeito Anodico
+
+                      Lay-Out e Descricao dos Campos
+
+ Estatistica de EA - [1]           - Alg [2]        - [3] a [4]    - Tur [5]
+ IAlvo = [6] KA      IReal = [7] KA      Sistema = [8] %      Linha = [9] %
+  Duracao   %         VMax    %         Interv   %       Interv Prev   %
+   [Min]                                [Hora]              [Min]
+     0     [10]        <=15  [11]        <=4    [12]         <=10     [13] 
+     1     [10]       15-20  [11]        4-8    [12]        11-20     [13] 
+     2      .         20-25   .          8-12    .          20-30      .   
+     3      .         25-30   .         12-16    .          30-40      .   
+     4      .         30-35   .         16-20    .          40-50      .   
+     5      .         35-40   .         20-24    .          50-60     [13] 
+     6     [10]       40-45  [11]       24-28   [12]          >60     [13] 
+    > 6    [10]         >45  [11]         >28   [12] 
+
+1)  Codigo das cubas selecionadas na tela de pre-selecao
+2)  Algoritmo definido na tela de pre-selecao
+3)  Data inicial definida na tela de pre-selecao
+4)  Data final definida na tela de pre_selecao
+5)  Turno do relatorio
+6)  Corrente alvo (IAlvo) media da sala no periodo
+7)  Corrente real (IReal) media da sala no periodo
+8)  Percentual de tempo que o sistema ficou ativo no periodo
+9)  Percentual de tempo que a linha ficou habilitada no periodo
+10) Percentual de efeito anodico distribuido respectivamente por sua duracao,
+    conforme os valores estabelecidos pelo campo duracao
+11) Percentual de efeito anodico distribuido respectivamente por sua  tensao
+    maxima, conforme as faixas estabelecidas pelo campo VMax
+12) Percentual de  efeito anodico  distribuido  respectivamente  pelo  tempo
+    decorrido entre o inicio do efeito considerado e o anterior, conforme as
+    as faixas estabelecidas pelo campo Interv
+13) Percentual de  efeito anodico  distribuido  respectivamente  pelo  tempo
+    decorrido entre  o  inicio da previsao e o inicio do efeito, conforme as
+    as faixas estabelecidas pelo campo Interv Prev
+
+

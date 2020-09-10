@@ -1,0 +1,75 @@
+                      Relatorio Historico Operacional
+
+                      Lay-Out e Descricao dos Campos
+
+  Relatorio Operacional - [1] - Alg [2]    -  [3] ate [4] - Tur [5]
+  IAlvo = [6] KA   IReal = [7] KA   Analise = [8]   Operacional = [9]
+     -Tensoes  Medias- -----E.A.----- --Ruido--  ---Dados Operacionais---
+Cuba Placa Alvo   Tot. Prev Qtd  Max. RLen RRap  AlF3  CaF2 Metal  Banho
+      (V)   (V)   (V)  Qtd       (V)   mV	mV    %     %    Cm    Cm  °C
+
+[10] [11]  [12]  [13]  [14  15   16]  [17   18]  [19    20   21    22  23]
+
+Med  [24]  [25]  [26]  [27  28   29]  [30   31]  [32    33   34    35  36]
+
+1)  Codigo das cubas selecionadas na tela de pre-selecao
+2)  Algoritmo definido na tela de pre-selecao
+3)  Data inicial definida na tela de pre-selecao
+4)  Data final definida na tela de pre_selecao
+5)  Turno do relatorio
+6)  Corrente alvo (IAlvo) media da sala no periodo
+7)  Corrente real (IReal) media da sala no periodo
+8)  Data ultima atualizacao dos dados de analise
+9)  Data ultima atualizacao dos dados operacionais
+10) Numero da cuba. Marcado com (+) se  a cuba  ficou  por algum  instante  em
+    estado ligado ou desligado no periodo
+11) Media da tensao de placa (VSetPointDia) no periodo
+12) Media da tensao alvo no periodo, conforme a seguinte formula:
+      VAlvo = (RAlvoDia * INominal) + BemfDia
+13) Media da tensao total no periodo (RDiaBruta * IAlvoDia). Para as cubas  em
+    estado  normal  ou  partido  esse   valor   recebe  o  acrescimo  do  bemf
+    (RDiaBruta * IAlvoDia) + BemfDia.
+14) Numero medio de previsoes de efeito anodico ocorridas no periodo
+15) Quantidade media de efeito anodico no periodo
+16) Media das tensoes maximas de efeito anodico no periodo
+17) Tensao media de ruido lento da cuba no periodo, conforme a formula:
+       VRLentNorm = RLentNormDia * IAlvoDia
+18) Tensao media de ruido rapido da cuba no periodo, conforme a formula:
+       VRRapNorm = RRapNormDia * IAlvoDia
+19) Media de fluoreto adicionada no periodo
+20) Media de fluorita adicionada no periodo
+21) Media de metal medido no periodo
+22) Media de banho medido no periodo
+23) Temperatura media de banho medida no periodo
+
+24 a 26) Media dos campos 11 a 13 respectivamente
+28) Numero medio previsoes  de  efeito anodico das cubas normais  que  tiveram
+    alguma no periodo, conforme a seguinte formula:
+      NumPrevMed = NumPrevAcum / NumCubasNormPrevEaAcum
+         Sendo : NumPrevAcum  numero medio  de  previsoes  de  efeito  anodico
+                    acumulado das cubas em estado normal no periodo
+                 NumCubasNormPrevEaAcum o numero de cubas em estado normal que
+                    tiveram  alguma previsao de efeito anodico no periodo
+29) Media do numero  de  efeitos  por  cubas  normais  com  algum  no periodo,
+    conforme a seguinte formula:
+      NumMedEa = NumEaAcum / NumCubasNormAcum
+         Sendo : NumEaAcum o numero acumulado de efeitos de todos os  dias  do
+                    periodo
+                 NumCubasNormAcum o numero acumulado de cubas em estado normal
+                    que tiveram algum efeito anodico do periodo
+30) Media das  tensoes  maximas  de  efeito anodico  no  periodo,  conforme  a
+    seguinte formula:
+      VMedEa = VMaxEaAcum / NumEaAcum
+         Sendo : VMaxEaAcum as tensoes maximas  de  efeito anodico  acumuladas
+		            das no periodo
+                 NumEaAcum o numero de efeitos considerados no periodo
+
+30 a 36) Media dos campos 17 a 23 respectivamente
+
+    Observacoes
+    - As cubas que estiveram em estado ligado ou desligado no periodo nao
+      serao consideradas no calculo das medias
+    - Os dados operacionais (Fluoreto, Fluorita, Metal e Banho) na virada 
+      do dia/turno sao inicializados com os valores do dia anterior.
+	  Portanto, esses dados continuam persistindo e propagando pelos dias
+	  seguintes ate que sejam atualizados novamente.

@@ -1,0 +1,43 @@
+ Historical Report - [1]           - Alg [2]        -    [3]   to  [4]
+      RCurr =  [5] KA          MCurr =  [6]  KA         LinVtg =  [7]  V
+      System =  [8]  %                                  Line =  [9]   %
+Pot   --Average Voltages [V]--  --Errors [V]--  Volt. Dev. Err  -Manual Error-
+      SetP  Target  Net  Gross   Total  Contrl   [V]   [Time]    [V]   [Time]
+[10]  [11]   [12]   [13]  [14]   [15]    [16]   [17]   [18]     [19]   [20]
+Avr   [21]   [22]   [23]  [24]   [25]    [26]   [27]   [28]     [29]   [30]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Rated Line Current
+6-  Measured Line Current
+7-  Average pot line voltage during the period
+8-  Time (in percentage) in which the System remained active
+9-  Time (in percentage) in which the Line remained active
+10- Pot Number
+11- Average Set Point Voltage in the interval under consideration
+12- Average Target Voltage in the interval under consideration
+13- Average of the net voltage in the interval under consideration    
+14- Average of the gross voltage in the interval under consideration
+15- Average error voltage during the period
+       Error Voltage= TargetVol-NetVol
+    where:
+       NetVol is the pot voltage without any extra voltage during an anode
+       effect (during an AE, the voltage is made equal to the target voltage 
+       when calculating this variable)
+16- Average error voltage during the period, when the pot is under control
+17- Average of the voltage deviation per control cycle
+18- Average of the duration of the voltage deviation in the period
+19- Average of the pot voltage during the time the pot was in manual mode,
+    per control cycle 
+20- Average of the time the pot was in manual mode during the period examined
+21 to 30- Average of the fields 11 to 20, respectively
+
+
+PS
+The pots who have been in the states "jumped", "on-line" or "warming-up"
+in this interval are not considered when calculating the averages.    
+     
+
+

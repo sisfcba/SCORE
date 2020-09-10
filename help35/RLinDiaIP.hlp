@@ -1,0 +1,54 @@
+              Relatorio Historico Diario de Resumo da Linha
+
+                     Lay-Out e Descricao dos Campos
+
+               Relatorio Resumo da Linha de [1] ate [2]
+    Sist IMedia(KA) Num Cubas Retif.(V) ----Cuba(V)---- Num.  Ea  Energ(MWh)
+Dia  %   Tit.  Res. Norm  L+P Tot. V/f  Tot.  s/Ea c/Ea Tot  Cub  Tot.  Cuba
+
+[3] [4]  [5]   [6]  [7]   [8] [9]  [10] [11]  [12] [13] [14] [15] [16]  [17]
+
+Me  [18] [19]  [20] [21] [22] [23] [24] [25]  [26] [27] [28] [29] [30]  [31]
+
+1)  Data inicial do relatorio
+2)  Data final do relatorio
+3)  Numero da linha
+4)  Percentual de tempo que o sistema ficou ativo no dia 
+5)  Corrente media da linha do canal principal no dia 
+6)  Corrente media da linha do canal secundario no dia
+7)  Numero medio  das  cubas  em  estado normal  no  dia, conforme a  seguinte
+    formula:
+       CubasNormDia = (CubasNormDia * (NCicAtivoDia - 1) + NumCubasNorm) /
+                       NumCicAtivoDia
+          Sendo : CubasNormDia o numero  de  cubas em estado normal  do  ciclo
+                     anterior
+                  NCicAtivoDia o  numero  de  ciclos  que  o  controle  esteve
+                     habilitado do ciclo atual
+                  NumCubasNorm numero de cubas em estado normal do ciclo atual
+8)  Numero medio  das  cubas  em  estado ligado e partido no dia , conforme  a
+    seguinte formula:
+       CubasLigParDia = (CubasLigParDia * (NCicAtivoDia - 1) +
+                         NumCubasLigPar) / NumCicAtivoDia
+          Sendo : CubasLigParDia o numero de cubas em estado ligado ou partido
+                     do ciclo anterior
+                  NCicAtivoDia o  numero  de  ciclos  que  o  controle  esteve
+                     habilitado do ciclo atual
+                  NumCubasLigPar o numero de cubas em estado ligado ou partido
+                     do ciclo atual
+9)  Tensao media da sala (VLinhaDia) no dia
+10) Tensao media da  sala por cuba em estado normal, ligado ou partido no dia,
+    conforme a seguinte formula:
+       VMedSala = VLinhaDia / (CubasNormDia + CubasLigParDia)
+11) Tensao bruta acumulada das cubas  em  estado normal, partido ou ligado  no
+    dia
+12) Media da tensao liquida das cubas em estado normal no dia
+13) Media da tensao bruta das cubas em estado normal, ligado ou partido no dia
+14) Numero de efeito anodico acumulado das cubas em estado normal no dia
+15) Numero medio de efeito anodico por cubas em estado normal no dia
+16) Energia total consumida pela sala no dia, conforme a seguinte formula:
+       EnergSala = PotLinhaDia * NumSegDia
+          Sendo : NumSegDia o numero de segundos do dia
+17) Energia media consumida por cuba no dia, conforme a seguinte formula:
+       EnergMedSala = EnergSala / (CubasNormDia + CubasLigParDia)
+
+18 a 31) Media dos campos 4 a 17 respectivamente

@@ -1,0 +1,22 @@
+                           Relatorio de Excecoes 
+                       Lay-Out e Descricao dos Campos
+                   Relatorio de Excecoes - [1]        - Alg [2]
+     ---------Efeito Anodico--------- R.Rap R. Len Desvio Prev Lam.Inb Lev.
+Cuba Atras. Forte Fraco 0.Min >FreqEa >NJan >NHor  Tensao E.A. Prv.EA  Ponta
+ [3]  [4]    [5]   [6]   [7]    [8]    [9]   [10]   [11]  [12]  [13]    [14]
+1)  Codigo das cubas selecionadas na tela de pre-selecao
+2)  Algoritmo definido na tela de pre-selecao
+3)  Numero da cuba
+4)  Tempo que a cuba ja esta em atraso de EA
+5)  Tensao maxima de EA VEaMax quando for maior que VEaForte (parametro)
+6)  Tensao maxima de EA VEaMax quando for menor que VEaFraco (parametro)
+7)  Sinalizacao com 0 quando a duracao do EA for menor que 29 segundos
+8)  Numero de EA das ultimas 24 horas quando esse valor for maior que FreqEa
+    (parametro)
+9)  Tempo de tratamento de ruido rapido alem de NJanRRapCons * IntervJanRRap
+10) Tempo de tratamento de ruido lento alem de NHorRLenCons
+11) Tempo de desvio de tensao
+12) Tempo de previsao de EA
+13) Sinalizacao de inibicao de sinalizacao da lampada de previsao de EA
+    (este item ainda nao esta implementado)
+14) Tempo de tratamento por levantamento de pontas

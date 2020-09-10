@@ -1,0 +1,69 @@
+               Relatorio Historico Diario de Previsao de Efeito Anodico
+
+                      Lay-Out e Descricao dos Campos
+
+ Relatorio de Efeito Anodico das Cubas [1] a [2] de [3] ate [4]
+ IAlvo = [5] KA      IReal = [6] KA      Sistema = [7] %      Linha = [8] %
+     -Efeito Anodico-  ---Previsao EA---  -----Prev c/ Queb-----  --EA QPrev--
+Cuba Qtd   Qtd    Dur  Qtd  Qtd  Dur      Qtd  Qtd     Qtd Atend  Qtd  Qtd
+     Tot   Med    min  Tot  Med  min   %  Tot  Atend   Med   %    Tot  Med   % 
+
+[9]  [10    11    12]  [13  14   15   16] [17  18      19    20]  [21  22  23] 
+
+Med  [24    25    26]  [27  28   29   30] [31  32      33    34]  [35  36  37]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Percentual de tempo que o sistema ficou ativo no periodo
+8)  Percentual de tempo que a linha ficou habilitada no periodo
+9)  Numero da cuba. Marcado com (+) se  a cuba  ficou  por algum  instante  em
+    estado ligado ou desligado no periodo
+10) Quantidade total de EA no periodo para cada forno
+11) Media de EA para cada forno no periodo
+12) Duracao media dos EA do forno no periodo
+13) Quantidade total de Previsao de EA no periodo para cada forno
+14) Media de Previsao de EA para cada forno no periodo
+15) Duracao media da Previsao de EA para cada forno no periodo
+16) Percentual de Previsao de EA verdadeira para cada forno no periodo
+    (Previsao util)
+17) Quantidade total de Previsao de EA com quebrada no periodo para cada forno
+18) Quantidade total de Previsao de EA com quebrada atendidas no periodo para 
+    cada forno
+19) Media de Previsao de EA com quebrada atendidas no periodo para cada forno
+20) Percentual das Previsoes de EA com quebrada atendidas no periodo para cada
+    forno
+21) Quantidade total de EA durante QPrev no periodo para cada forno (Fim de
+    Previsao com EA)
+22) Media de EA durante QPrev no periodo para cada forno (Fim de Previsao com
+    EA)
+23) Percentual de EA durante QPrev no periodo em relacao ao total de EA para
+    cada forno
+24) Quantidade total de EA no período de todos os fornos
+25) Media de EA de todos os fornos no periodo
+26) Duracao media dos EA de todos os fornos no periodo
+27) Quantidade total de Previsao de EA no periodo para todos os fornos
+28) Media de Previsao de EA de todos os fornos no periodo
+29) Duracao media da Previsao de EA de todos os fornos no periodo
+30) Percentual de Previsao de EA vedadeira de todos os fornos no periodo
+    (Previsao util)
+31) Quantidade total de Previsao de EA com quebrada no periodo para todos os
+    fornos
+32) Quantidade total de Previsao de EA com quebrada atendidas no periodo para
+    todos os fornos
+33) Media de Previsao de EA com quebrada atendidas no periodo para todos os
+    fornos
+34) Percentual das Previsoes de EA com quebrada atendidas no periodo para
+    todos os fornos
+35) Quantidade total de EA durante QPrev no periodo de todos os fornos 
+36) Media de EA durante QPrev no periodo de todos os fornos
+37) Percentual de EA durante QPrev no periodo em relacao ao total de EA de
+    todos os fornos
+
+    Observacao
+    - As cubas que estiveram em estado ligado ou desligado no periodo
+      nao serao consideradas no calculo das medias
+

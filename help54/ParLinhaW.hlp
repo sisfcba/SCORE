@@ -1,0 +1,157 @@
+[DASMaxErr]
+Data Acquisition System Maximum Number  of  Errors:  maximum
+number of consecutive convertion errors.
+[EndDayTime]
+Hour used to end the daily reports.
+[HiLineCur]
+If  the  instantaneous  line  current  supersedes  the value
+ILinhaAlta, the system generates an alarm.
+[LineActTime]
+Time interval, after line start or restart, to  declare  the
+line active. 
+[LineVolChannel]
+Channel  at  ATN1.4  where  the  system  finds  the pot line
+voltage.
+[LowLineCur]
+If the instantaneous line  current  falls  below  the  value
+LowLineCur, the system generates an alarm.
+[LsbNMux-1(A)]
+Constant  that is used to convert a non-multiplexed value in
+order to stablish the engineer unity to be used.
+[LsbNMux-2(A)]
+Constant that is used to convert a non-multiplexed value  in
+order to stablish the engineer unity to be used.
+[LsbNMux-3]
+Constant  that is used to convert a non-multiplexed value in
+order to stablish the engineer unity to be used.
+[LsbNMux-4]
+Constant that is used to convert a non-multiplexed value  in
+order to stablish the engineer unity to be used.
+[LsbNMux-5]
+Constant  that is used to convert a non-multiplexed value in
+order to stablish the engineer unity to be used.
+[LsbNMux-6]
+Constant that is used to convert a non-multiplexed value  in
+order to stablish the engineer unity to be used.
+[LsbNMux-7]
+Constant  that is used to convert a non-multiplexed value in
+order to stablish the engineer unity to be used.
+[LsbNMux-8]
+Constant that is used to convert a non-multiplexed value  in
+order to stablish the engineer unity to be used.
+[LsbVol]
+Constant that is used to convert the pot voltage to a proper
+engineer unity.
+[MainCurChannel]
+Channel  at  ATN1.4 where the system finds the main pot line
+current.
+[MaxAnDMovDur]
+Maximum limit to the anode down movement  duration.  If  the
+anode movement intends to last for more than the established
+by  this variable, than the final movement will be "clipped"
+to this maximum value.
+[MaxAnUpMovDur]
+Maximum limit to the anode  up  movement  duration.  If  the
+anode movement intends to last for more than the established
+by  this variable, than the final movement will be "clipped"
+to this maximum value.
+[MaxCurDev]
+If the difference between the measured current and the rated
+current  becomes  higher than MaxCurDev, then noise analysis
+is not made.
+[MaxCurDiff]
+If the difference between the main current and the secondary
+current becomes higher than MaxCurDiff, then an  alarm  will
+be generated.
+[MaxHFNoiseCur]
+Maximum  high  frequency noise current. If it becomes higher
+than this value, then the noise analysis will be inhibited.
+[MaxMuxVol]
+Maximum voltage value of the multiplexed inputs.
+[MinAnDMovDur]
+Minimum limit to the anode down movement  duration.  If  the
+anode movement intends to last for less than the established
+by this variable, than no anode movement will be done.
+[MinAnUpMovDur]
+Minimum  limit  to  the  anode  up movement duration. If the
+anode movement intends to last for less than the established
+by this variable, than no anode movement will be done.
+[MinLineCur]
+If the instantaneous line  current  falls  below  the  value
+MinLineCur,  the  system  turns "FALSE" the variable LineEn,
+disabling the Score control algorithm. 
+[NChnNMux]
+Number of non-multipled channels.
+[NumShf]
+Number of shifts configured for the reports (1-6).
+[OffLineTime]
+When the line becomes disabled, the system waits an interval
+equal to OffLineTime. If the  line  remains  disabled  after
+this  interval,  the  pots  will be placed in manual control
+mode.
+[OpeLogEn]
+Flag that enables the creation of logs.
+[RatedCur]
+Rated line current.
+[SecCurChannel]
+Second measure of the line current. It is used  to  validate
+the main measure.
+[ShfIdent1]
+Identification  of  the  first shift that is used during the
+system reports (two characters).
+[ShfIdent2]
+Identification of the first second that is used  during  the
+system reports (two characters).
+[ShfIdent3]
+Identification  of  the  third shift that is used during the
+system reports (two characters).
+[ShfIdent4]
+Identification of the fourth shift that is used  during  the
+system reports (two characters).
+[ShfIdent5]
+Identification  of  the  fifth shift that is used during the
+system reports (two characters).
+[ShfIdent6]
+Identification of the sixth shift that is  used  during  the
+system reports (two characters).
+[ShfStartTime1]
+Start time of the first shift.
+[ShfStartTime2]
+Start  time  of  the second shift. All the shifts start time
+must be in ascending hours.
+[ShfStartTime3]
+Start time of the third shift.
+[ShfStartTime4]
+Start time of the fourth shift.
+[ShfStartTime5]
+Start time of the fifth shift.
+[ShfStartTime6]
+Start time of the sixth shift.
+[SimulEventPrintCtrlN]
+Simultaneous Event Print in  Control  Node:  every  time  an
+event  occurs,  besides being sent to the screen, it is also
+sent to the printer.
+[SimulEventPrintN1]
+Simultaneous Event Print in Node  1:  every  time  an  event
+occurs, besides being sent to the screen, it is also sent to
+the printer.
+[SimulEventPrintN2]
+Simultaneous  Event  Print  in  Node  2: every time an event
+occurs, besides being sent to the screen, it is also sent to
+the printer.
+[SimulEventPrintN3]
+Simultaneous Event Print in Node  3:  every  time  an  event
+occurs, besides being sent to the screen, it is also sent to
+the printer.
+[SimulEventPrintN4]
+Simultaneous  Event  Print  in  Node  4: every time an event
+occurs, besides being sent to the screen, it is also sent to
+the printer.
+[TapCycAdj]
+During tapping, the anode  movement  can  be  done  in  time
+intervals smaller than the established in the control cycle.
+The   user   configures  the  time  interval  between  anode
+movements, using the variable TapCycAdj. The procedure is to
+set this variable to  a  value  equivalent  to  the  desired
+number of reading cycles between movements during tapping. 
+[]

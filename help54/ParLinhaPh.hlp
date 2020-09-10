@@ -1,0 +1,435 @@
+[ILinhaAlta]
+Limite para indicar corrente da linha alta.
+[ILinhaBaixa]
+Limite para gerar evento de corrente da linha baixa.
+[ILinhaMin]
+Corrente minima para considerar linha ativa.
+Abaixo desse valor a linha e considerada desativada.
+[INominal]
+Corrente nominal de trabalho da linha.
+[IdesvMax]
+Desvio maximo de corrente em relacao ao seu valor
+nominal apartir do qual e inibida a analise
+de ruido.
+[IRapMax]
+Valor maximo de ruido rapido na corrente
+admissivel para analise de ruido das cubas.
+[IDifMax]
+Diferenca maxima entre as correntes
+principal e reserva para geracao de alarme.
+[CanalIPrinc]
+Indica o canal da ATN onde esta a corrente principal.
+[CanalISec]
+Indica o canal da ATN onde esta a corrente secundaria.
+[SelecaoCanalI]
+Comanda rele de selecao de fonte do sinal de corrente para
+salas que utilizam ATN 8.0
+0 = Nao comanda selecao.
+1 = Comanda selecao para canal principal
+2 = Comanda selecao para canal reserva.
+[TAtivaLinha]
+Intervalo de tempo na partida ou religamento da linha para ativa-la.
+[TDesabLinha]
+Intervalo apos linha desabilitada para colocar
+cubas em Manual-Controle.
+[CicloAjCorrida]
+Numero de ciclos de leitura que compoe o ciclo
+de ajuste de AC durante corrida.
+[DurMovBMinCorr]
+Duracao minima de movimentacao para baixo durante a corrida.
+[DurMovBMaxCorr]
+Duracao maxima de movimentacao para baixo durante a corrida.
+[DurMovCMinCorr]
+Duracao minima de movimentacao para cima durante a corrida.
+[DurMovCMaxCorr]
+Duracao maxima de movimentacao para cima durante a corrida.
+[LimInfMovElim]
+Duracao minina de movimentacao permitida por passo da tabela
+de eliminacao de efeito anodico.
+[LimSupMovElim]
+Duracao maxima de movimentacao permitida por passo da tabela
+de eliminacao de efeito anodico.
+[NumTurnos]
+Numero de turnos configurado para relatorios.
+[HoraIniTurno-1]
+Hora de inicio do turno.
+OBS.:
+O horario de inicio dos turnos deve estar em ordem
+ascendente.
+[HoraIniTurno-2]
+Hora de inicio do turno 2.
+[HoraIniTurno-3]
+Hora de inicio do turno 3.
+[HoraIniTurno-4]
+Hora de inicio do turno 4.
+[HoraIniTurno-5]
+Hora de inicio do turno 5.
+[HoraIniTurno-6]
+Hora de inicio do turno 6.
+[IdentTurno-1]
+Identificacao do turno 1 da selecao/grupo.
+[IdentTurno-2]
+Identificacao do turno 2 da selecao/grupo.
+[IdentTurno-3]
+Identificacao do turno 3 da selecao/grupo.
+[IdentTurno-4]
+Identificacao do turno 4 da selecao/grupo.
+[IdentTurno-5]
+Identificacao do turno 5 da selecao/grupo.
+[IdentTurno-6]
+Identificacao do turno 6 da selecao/grupo.
+[HoraFechaDia]
+Hora para fechamento de dia para relatorios
+historicos.
+[HabLogOper]
+Habilita/Desabilita o log de operacao.
+[ImpSimulNodoPri]
+Quando 1 habilita impressao simultanea de eventos
+no nodo de controle.
+[ImpSimulNodoOp-1]
+Quando 1 habilita impressao simultanea de eventos.
+[ImpSimulNodoOp-2]
+Quando 1 habilita impressao simultanea de eventos.
+[ImpSimulNodoOp-3]
+Quando 1 habilita impressao simultanea de eventos.
+[ImpSimulNodoOp-4]
+Quando 1 habilita impressao simultanea de eventos.
+[Atn8TempLimInf]
+Limite inferior de temperatura da ATN 8.0
+[Atn8TempLimSup]
+Limite superior da temperatura da ATN 8.0
+[TmpMaxSinalCorr]
+Tempo de sinalizacao do icone de corrida na tela de sinalizacao
+de corrida.
+[TmpMaxSinalQueb]
+Tenpo de sinalizacao do icone de quebrada na tela de sinalizacao
+de quebrada.
+[TmpMaxSinalTrPi]
+Tempo de sinalizacao do icone de troca de pinos na tela de
+sinalizacao de troca de pinos.
+[TmpMaxSinalCruz]
+Tempo de sinalizacao do icone de manobra de cruzeiro na tela de
+sinalizacao de manobra de cruzeiro.
+[ErroMaxReserva]
+Porcentagem de diferenca entre sistemas para geracao do evento de 
+diferenca de corrente entre o principal e o reserva.
+[NumCubas]
+Quantidade de cubas existente na sala.
+[OffInicNCubaOp]
+Uso interno do Score.
+[TempoMovCimaOpMovel]
+Tempo para movimentacao para cima a cada indicacao na tela de HbAtEa.
+[TempoMovBaixOpMovel]
+Tempo para movimentacao para baixo a cada indicacao na tela de HbAtEa.
+[TempoSoproOpMovel]
+Tempo de acionamento do sopro a cada indicacao na tela de HbAtEa.
+[LimMovBAtEa]
+Numero maximo de indicacao de movimento para baixo na tela de HbAtEa.
+[LimMovCAtEa]
+Numero maximo de indicacao de movimento para cima na tela de HbAtEa.
+[LimSoproAtEa]
+Numero maximo de indicacao de acionamento de sopro na tela de HbAtEa.
+[TLimSoproEspec]
+Limite de tempo para o sopro especial.
+[TIntervSoproEspec]
+Tempo de intervalo entre o sopro especial.
+[VLimSoproEspec]
+Tensao limite para o acionamento de sopro especial.
+[DurAcionaSoproEspec]
+Tempo de duracao do acionamento do sopro especial.
+[SadMaxErr]
+Numero de erros consecutivos permitidos na conversao analogica/digital.
+[NCanaisNMux]
+Numero de canais nao multiplexados ativos.
+[LsbTensao]
+Fator de conversao dos valores de tensao de cuba
+lidos p/ unidade de engenharia.
+[LsbNaoMux-1(A)]
+Fator de conversao dos valores nao multiplexados
+lidos pelo canal 1.
+[LsbNaoMux-2(A)]
+Fator de conversao dos valores nao multiplexados
+lidos pelo canal 2.
+[LsbNaoMux-3]
+Fator de conversao dos valores nao multiplexados
+lidos pelo canal 3.
+[LsbNaoMux-4]
+Fator de conversao dos valores nao multiplexados
+lidos pelo canal 4.
+[LsbNaoMux-5]
+Fator de conversao dos valores nao multiplexados
+lidos pelo canal 5.
+[LsbNaoMux-6]
+Fator de conversao dos valores nao multiplexados
+pelo canal 6.
+[LsbNaoMux-7]
+Fator de conversao dos valores nao multiplexados 
+pelo canal 7.
+[LsbNaoMux-8]
+Fator de conversao dos valores nao multiplexados
+lidos pelo canal 8.
+[VMuxMax]
+Valor maximo de tensao nas entradas multiplexadas.
+[CanalVLinha]
+Canal do Atn1.4 onde esta a tensao 
+[IIndex-0]
+Indice da remota (comecando de 0) de onde sera lida a
+corrente principal.Quando nao utilizada deve
+conter o valor -1.
+[IChannel-0]
+Canal da remota de onde sera lida a corrente principal. Comeca
+de 0. Exemplo:  1o. canal -> 0, 2o. canal -> 1 etc.
+[IIndex-1]
+Indice da remota (comecando de 0) de onde sera lida a
+corrente reserva.Quando nao utilizado deve conter o valor -1.
+[IChannel-1]
+Canal da remota de onde sera lida a corrente reserva. Comeca
+de 0. Exemplo:  1o. canal -> 0, 2o. canal -> 1 etc.
+[IIndex-2]
+Indice da remota (comecando de 0) de onde sera lida a terceira
+corrente de comparacao.Quando nao utilizada deve conter o valor -1.
+[IChannel-2]
+Canal da remota de onde sera lida a 3a. corrente de comparacao.
+Comeca de 0. Exemplo:  1o. canal -> 0, 2o. canal -> 1 etc.
+[IIndex-3]
+Indice da remota(comecando de 0) de onde sera lida a quarta
+corrente de comparacao.Quando nao utilizada deve conter o valor -1.
+[IChannel-3]
+Canal da remota de onde sera lida a 4a. corrente de comparacao.
+Comeca de 0. Exemplo:  1o. canal -> 0, 2o. canal -> 1 etc.
+[IIndex-4]
+Reserva
+[IChannel-4]
+Reserva
+[IIndex-5]
+Reserva
+[IChannel-5]
+Reserva
+[IIndex-6]
+Reserva
+[IChannel-6]
+Reserva
+[IIndex-7]
+Reserva
+[IChannel-7]
+Reserva
+[VLineIndex]
+Indice da remota(comecando de 0) de onde sera lida a tensao de linha.
+[VLineChannel]
+Canal da remota de onde sera lida a tensao da linha. Comeca
+de 0. Exemplo:  1o. canal -> 0, 2o. canal -> 1 etc.
+[IndRemEsp-0]
+Indice da remota de onde sera lida a entrada especial.
+[CanalEntEsp-1]
+Canal da remota de onde sera lida a entrada especial.
+[LsbEsp-0]
+Lsb do modulo correspondente a entrada especial. Exemplo:
+Modulo 0a50V -> 50/65536=0.76294 mV/bit
+Modulo 0a10V -> 10/65536=0.15259 mV/bit
+Modulo 4a20mA -> 16/65536=0.24414 mA/bit
+[OffEsp-0]
+Offset de calibracao do modulo
+[GanhoEsp-0]
+Ganho de calibracao do modulo
+[CalibEsp-0]
+Fator de correcao do transdutor ligado a esta entrada.
+[RelacaoEsp-0]
+Relacao da grande em unidade de engenharia. Exemplos:
+Tensao de cuba -> 1
+Tensao de linha -> 300V no transdutor = 10V na saida
+                   relacao=300V/10V=30
+Corrente da linha -> 140Ka=16mA(20-4ma) -> 8750
+[IndRemEsp-1]
+Indice da remota de onde sera lida a entrada especial.
+[LsbEsp-1]
+Lsb do modulo correspondente a entrada especial. Exemplo:
+Modulo 0a50V -> 50/65536=0.76294 mV/bit
+Modulo 0a10V -> 10/65536=0.15259 mV/bit
+Modulo 4a20mA -> 16/65536=0.24414 mA/bit
+[OffEsp-1]
+Offset de calibracao do modulo
+[GanhoEsp-1]
+Ganho de calibracao do modulo
+[CalibEsp-1]
+Fator de correcao do transdutor ligado a esta entrada.
+[RelacaoEsp-1]
+Relacao da grande em unidade de engenharia. Exemplos:
+Tensao de cuba -> 1
+Tensao de linha -> 300V no transdutor = 10V na saida
+                   relacao=300V/10V=30
+Corrente da linha -> 140Ka=16mA(20-4ma) -> 8750
+[IndRemEsp-2]
+Indice da remota de onde sera lida a entrada especial.
+[CanalEntEsp-2]
+Canal da remota de onde sera lida a entrada especial.
+[LsbEsp-2]
+Lsb do modulo correspondente a entrada especial. Exemplo:
+Modulo 0a50V -> 50/65536=0.76294 mV/bit
+Modulo 0a10V -> 10/65536=0.15259 mV/bit
+Modulo 4a20mA -> 16/65536=0.24414 mA/bit
+[OffEsp-2]
+Offset de calibracao do modulo
+[GanhoEsp-2]
+Ganho de calibracao do modulo
+[CalibEsp-2]
+Fator de correcao do transdutor ligado a esta entrada.
+[RelacaoEsp-2]
+Relacao da grande em unidade de engenharia. Exemplos:
+Tensao de cuba -> 1
+Tensao de linha -> 300V no transdutor = 10V na saida
+                   relacao=300V/10V=30
+Modulo 4a20mA -> 16/65536=0.24414 mA/bit
+[IndRemEsp-3]
+Indice da remota de onde sera lida a entrada especial.
+[CanalEntEsp-3]
+Canal da remota de onde sera lida a entrada especial.
+[LsbEsp-3]
+Lsb do modulo correspondente a entrada especial. Exemplo:
+Modulo 0a50V -> 50/65536=0.76294 mV/bit
+Modulo 0a10V -> 10/65536=0.15259 mV/bit
+Modulo 4a20mA -> 16/65536=0.24414 mA/bit
+[OffEsp-3]
+Offset de calibracao do modulo
+[GanhoEsp-3]
+Ganho de calibracao do modulo
+[CalibEsp-3]
+Fator de correcao do transdutor ligado a esta entrada.
+[RelacaoEsp-3]
+Relacao da grande em unidade de engenharia. Exemplos:
+Tensao de cuba -> 1
+Tensao de linha -> 300V no transdutor = 10V na saida
+                   relacao=300V/10V=30
+Corrente da linha -> 140Ka=16mA(20-4ma) -> 8750
+[NumEntEspeciais]
+Numero de entradas analogicas a serem lidas nas AtnCAs.
+Estas entradas devem estar configuradas na configuracao
+ATN8 ENT ESP.
+[IndRemEsp-4]
+Indice da remota de onde sera lida a entrada especial.
+[CanalEntEsp-4]
+Canal da remota de onde sera lida a entrada especial.
+[LsbEsp-4]
+Lsb do modulo correspondente a entrada especial. Exemplo:
+Modulo 0a50V -> 50/65536=0.76294 mV/bit
+Modulo 0a10V -> 10/65536=0.15259 mV/bit
+Modulo 4a20mA -> 16/65536=0.24414 mA/bit
+[OffEsp-4]
+Offsete de calibracao do modulo.
+[GanhoEsp-4]
+Ganho de calibracao do modulo.
+[CalibEsp-4]
+Fator de correcao do transdutor ligada a entrada especial.
+[RelacaoEsp-4]
+Relacao da grande em unidade de engenharia. Exemplos:
+Tensao de cuba -> 1
+Tensao de linha -> 300V no transdutor = 10V na saida
+                   relacao=300V/10V=30
+Corrente da linha -> 140Ka=16mA(20-4ma) -> 8750
+[IndRemEsp-5]
+Indice da remota de onde sera lida a entrada especial.
+[CanalEntEsp-5]
+Canal da remota de onde sera lida a entrada especial.
+[LsbEsp-5]
+Lsb do modulo correspondente a entrada especial. Exemplo:
+Modulo 0a50V -> 50/65536=0.76294 mV/bit
+Modulo 0a10V -> 10/65536=0.15259 mV/bit
+Modulo 4a20mA -> 16/65536=0.24414 mA/bit
+[OffEsp-5]
+Offset de calibracao do modulo.
+[GanhoEsp-5]
+Ganho de calibracao do modulo.
+[CalibEsp-5]
+Fator de correcao do transdutor ligado a essa entrada.
+[RelacaoEsp-5]
+Relacao de grandeza em unidade de engenharia. Exemplos:
+Tensao de cuba -> 1
+Tensao de linha -> 300V no transdutor = 10V na saida
+                   relacao=300V/10V=30
+Corrente da linha -> 140Ka=16mA(20-4ma) -> 8750
+[NCanaisNMux]
+Numero de canais nao multiplexados ativos.
+[LsbTensao]
+Fator de conversao dos valores de tensao de cuba.
+[VMuxMax]
+Valor maximo de tensao permitido nas entradas nao multiplexadas.
+[CanalVLinha]
+Canal da ATN onde esta a leitura de tensao de linha.
+[CanalEntEsp-0]
+Canal da remota de onde sera lida a entrada especial.Comeca de 0.
+Exemplo: 1o.canal ->0 e 2o.canal ->1 , etc.
+[NumEntEspeciais]
+Numero de entradas analogicas a serem lidas nas ATNCAs.Essas entradas
+devem ser configuradas na configuracao ATN8 ENT ESP.
+[RelNaoMux-0]
+Relacao de grandeza na unidade de engenharia dos valores nao multiplexados
+lidos pelo canal 0.
+[RelNaoMux-1]
+Relacao de grandeza na unidade de engenharia dos valores nao multiplexados
+lidos pelo canal 1.
+[RelNaoMux-2]
+Relacao de grandeza na unidade de engenharia dos valores nao multiplexados
+lidos pelo canal 2.
+[RelEntEsp-0]
+Relacao de grandeza na unidade de engenharia dos valores nao multiplexados
+lidos pelo canal especial 0.
+[RelEntEsp-1]
+Relacao de grandeza na unidade de engenharia dos valores nao multiplexados
+lidos pelo canal especial 1.
+[RelEntEsp-2]
+Relacao de grandeza na unidade de engenharia dos valores nao multiplexados
+lidos pelo canal especial 2.
+[LsbTensaoCuba]
+Fator de conversao dos valores de tensao de cuba.
+[LsbNaoMux-0]
+Fator de conversao dos valores nao multiplexados lidos pelo canal 0.
+[CalibNaoMux-0]
+Fator de calibracao dos valores nao multiplexados lidos pelo canal 0.
+[CalibNaoMux-1]
+Fator de calibracao dos valores nao multiplexados lidos pelo canal 1.
+[CalibNaoMux-2]
+Fator de calibracao dos valores nao multiplexados lidos pelo canal 2.
+[OffNaoMux-0]
+Fator de correcao de offset dos valores nao multiplexados lidos pelo 
+canal 0.
+[OffNaoMux-1]
+Fator de correcao de offset dos valores nao multiplexados lidos pelo
+canal 1.
+[OffNaoMux-2]
+Fator de correcao de offset dos valores nao multiplexados lidos pelo
+canal 2.
+[GanhoNaoMux-0]
+Fator de correcao de ganho dos valores nao multiplexados lidos pelo
+canal 0.
+[GanhoNaoMux-1]
+Fator de correcao de ganho dos valores nao multiplexados lidos pelo 
+canal 1.
+[GanhoNaoMux-2]
+Fator de correcao de ganho dos valores nao multiplexados lidos pelo 
+canal 2.
+[IndSadEntEsp-0]
+Indice de entradas especiais.
+[LsbEntEsp-0]
+Fator de conversao dos valores lidos pelo canal especial 0.
+[LsbEntEsp-1]
+Fator de conversao dos valores lidos pelo canal especial 1.
+[LsbEntEsp-2]
+Fator de conversao dos valores lidos pelo canal especial 2.
+[OffEntEsp-0]
+Fator de correcao de offset dos valores lidos pelo canal especial 0.
+[OffEntEsp-1]
+Fator de correcao de offset dos valores lidos pelo canal especial 1.
+[OffEntEsp-2]
+Fator de correcao de offset dos valores lidos pelo canal especial 2.
+[GanhoEntEsp-0]
+Fator de correcao de ganho dos valores lidos pelo canal especial 0.
+[GanhoEntEsp-1]
+Fator de correcao de ganho dos valores lidos pelo canal especial 1.
+[GanhoEntEsp-2]
+Fator de correcao de ganho dos valores lidos pelo canal especial 2.
+[CalibEntEsp-0]
+Fator de calibracao dos valores lidos pelo canal especial 0.
+[CalibEntEsp-1]
+Fator de calibracao dos valores lidos pelo canal especial 1.
+[CalibEntEsp-2]
+Fator de calibracao dos valores lidos pelo canal especial 2.
+[]

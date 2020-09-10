@@ -1,0 +1,38 @@
+                   Relatorio de Condicoes do Ciclo de Controle 
+
+                        Lay-Out e Descricao dos Campos
+
+               Relatorio Atual das Condicoes das Cubas [1] a [2]
+
+Cuba Est. ----EA----- -R. Lento-- -R. Rapido-  Cor-  Queb. Manual Fora  Desv
+          Clas. Tempo Clas. Tempo Clas. Tempo  rida               Leit  Tens
+[3]  [4]  [5]    [6]   [7]   [8]   [9]   [10]  [11]  [12]  [13]   [14]  [15]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Numero da cuba. Ele pode vir associado aos seguintes sinais indicadores:
+                Sinal      -  Descricao
+                  e        -  Somente eliminacao de EA ativa
+                  b        -  Somente booster de corrente ativo
+                  T        -  Eliminacao e Booster ativados
+4)  Estado atual da cuba
+               Estado      -  Descricao
+                DESL       -  Cuba desligada
+                LIG        -  Cuba ligada
+                NORM       -  Cuba normal
+                PART       -  Cuba partida
+5)  Classificacao do efeito anodico
+            Classificacao  -  Descricao
+                LENTO      -  Cuba em efeito anodico lento
+                RAPID      -  Cuba em efeito anodico rapido
+                MRAP       -  Cuba em efeito anodico muito rapido
+6)  Tempo que a cuba ja esta em efeito anodico
+7)  Classificacao do ruido lento (fraco ou forte)
+8)  Tempo que a cuba ja esta em tratamento de ruido lento
+9)  Classificacao do ruido rapido (fraco ou forte)  
+10) Tempo que a cuba ja esta em tratamento de ruido rapido
+11) Tempo que a cuba ja esta em tratamento de corrida
+12) Tempo que a cuba ja esta em tratamento de quebrada
+13) Tempo que a cuba ja esta em Manual-Local, Manual-Remoto ou Manual-Controle
+14) Tempo que a cuba ja esta fora de leitura
+15) Tempo que a cuba ja esta em desvio de tensao

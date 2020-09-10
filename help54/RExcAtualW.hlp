@@ -1,0 +1,37 @@
+                  Exceptions Report - [1]        - Alg [2]
+
+      ----------Anode Effect---------- HFRes  LFRes  Volt   A.E.        Stud
+Pot   Delay  Heavy Light 0.Min >AEFreq >NWin  >NHrs  Dev    Pred        Chg
+[3]    [4]    [5]   [6]   [7]    [8]    [9]    [10]  [11]   [12]        [13]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Pot Number
+4-  Delay in Anode Effect (amount of time that has passed after the average
+    time between anode effects)
+5-  Maximum AE Voltage, MaxAEVol (this field is displayed only when MaxAEVol
+    is higher than a configured parameter, StrAEVol - Strong Anode Effect 
+    Voltage)
+6-  Maximum AE Voltage, MaxAEVol (this field is displayed only when MaxAEVol
+    is smaller than a configured parameter, WkAEVol - Weak Anode Effect 
+    Voltage)
+7-  This field is fullfilled with 0 (zero) whenever the Anode Effect lasts 
+    less than 29 seconds (the value in the report reflects the last AE)
+8-  Number of Anode Effects is the last 24 hours (this field is displayed
+    only when the number of anode effects is higher than the configured 
+    parameter AEFreq, Anode Effect Frequency)
+9-  Duration of the HF Noise Treatment (this field is displayed only when the
+    HF Noise Treatment lasts more than the product NWinHFNoisePar -Number of 
+    Windows of HF Noise- times the FastResSamWin -Fast Resistance Sample 
+    Window, NWinHFNoisePar*FastResSamWin)
+10- Duration of the LF Noise Treatment (this field is displayed only when the
+    LF Noise Treatment lasts more than NHrsLFNoisePar, Number of hours of
+    LF Noise)
+11- Duration of the pot voltage deviation
+12- Duration of the anode effect prediction
+13- Duration of the stud change treatment
+
+
+
+
+

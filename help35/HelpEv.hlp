@@ -1,0 +1,317 @@
+# HelpEv.hlp
+# Arquivo de Help de Eventos
+# 2 linhas de comentario de ate' 68 caracteres (OBS. tem que existir as duas,
+# podendo uma ser em branco).
+# + 1 linha de 44 caracteres separado em 5 palavras de 8 caracteres contendo
+# branco entre elas ( declaracao de cada iten do evento, max. 5 ).
+#
+[AjusCamisa]
+
+
+Acao     Duracao  Tempo    -------- --------
+[AtrasoEa]
+
+
+-------- -------- -------- -------- --------
+[ChaveLocal]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[FimQuebrad]
+
+
+-------- -------- VCicCont VInst    VAlvo
+[IniQuebrad]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[SubAutAnod]
+
+
+Origem   Duracao  VCicCont VInst    VAlvo
+[DesManAnod] 
+
+
+Origem   Duracao  VCicCont VInst    VAlvo
+[SubAutCnf]
+
+
+Aproveit -------- -------- -------- --------
+[IniTenPrEa]
+
+
+-------- -------- VCicCont -------- VAlvo
+[IniDesTens]
+
+
+Origem   -------- VCicCont -------- VAlvo
+[InicioEa]
+
+
+TipoEA   DifPrvEA DifEAAnt VMaxAnt  DerivHMx 
+[FimEa]
+
+
+Duracao  EaVMax   EnergLiq EaVBrut  EnerBrut
+[CorrenInv]
+
+
+-------- StatConv -------- -------- --------
+[FalhaMov]
+
+
+Origem   -------- -------- -------- --------  
+[SupervEsp]
+
+
+EstaCuba -------- VCicCont VInst    --------  
+[CubaFLeit]
+
+
+Origem   CodErro  -------- VInst    --------
+[LinHabilit]
+
+
+DurDesab IInst    -------- -------- --------
+[LDesabilit]
+
+
+-------- IInst    -------- -------- --------
+[DifCorrent]
+
+
+ICicPrin ICicRes  Diferen  -------- --------
+[ResAtivo]
+
+
+NodoRes  -------- -------- -------- --------
+[ResDesativ]
+
+
+-------- -------- -------- -------- --------                
+[IntegLinha]
+
+
+IIntPrin VInteg   IIntRes  -------- --------
+[IniCorrida]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[TenLinInv]
+
+
+-------- CodErro  -------- -------- --------
+[OperManual]
+
+
+Origem   -------- VCicCont VInst    VAlvo   
+[EvMudaEsta]
+
+
+NovoEst  Origem   -------- -------- --------     
+[ILinBaixa]
+
+
+ICCtrMed IInst    IAlvo    -------- --------
+[ILinAlta]
+
+
+ICCtrMed IInst    IAlvo    -------- --------
+[DesAutAnod]
+
+
+Origem   Duracao  VCicCont VInst    VAlvo
+[DesAutCnf]
+
+
+Aproveit -------- -------- -------- --------
+[FimTenPrEa]
+
+
+-------- -------- VCicCont -------- VAlvo
+[FimDesTens]
+
+
+Origem   -------- VCicCont -------  VAlvo
+[FimCorrida]
+
+
+Origem   VMa-VAlv VCicCont VInst    VAlvo
+[DesAutCor]
+
+
+Origem  Duracao  VCicCont VInst    VAlvo
+[ChaveRemot]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[OperAuto]
+
+
+Origem   -------- -------- -------- --------  
+[IniPrevEa]
+
+
+RSuavDer -------- VCicCont -------- VAlvo
+[FimPrevEa]  
+
+
+RSuavDeH VRapCCtr VCicCont -------- VAlvo  
+[SisAtivado]
+
+
+DurDesat Nodo     -------- -------- -------- 
+[LinhaAtiva]
+
+
+-------- -------- -------- -------- --------
+[InibeRuido]
+
+
+Duracao  -------- -------- -------- --------  
+[TabIncOpe]
+
+
+Origem   Acao     Tabela   Passo    --------
+[LogCuba]
+
+
+IdentAlt Operador ParAlter ValAnter ValAtual
+[CfgParCuba]
+
+
+Operador ParAlter ValAnter ValAtual --------
+[LogLinha]
+
+
+IdentAlt Operador ParAlter ValAlter ValAtual  
+[IniInibMov]
+
+
+RSuavDer -------- VCicCont -------- VAlvo
+[FimInibMov]
+
+
+RSuavDeH -------- VCicCont -------- VAlvo
+[Ruido]
+
+
+Acao     TipoRui  ClassRui -------- --------  
+[InicQPrev]
+
+
+No QPrev No QPDia Resist.  T. UltEA -------- 
+[FimQPrev]
+
+
+Motivo   Compl.   -------- -------- -------- 
+[InibQPrev]
+
+
+Origem   Tipo     Tempo    -------- -------- 
+[CamNAjust]
+
+
+Motivo   Compl.   -------- -------- -------- 
+[MovManCami]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[TabEaNAtiv]
+
+
+Tabela   Motivo   -------- -------- -------- 
+[TabelaEa]
+
+
+Tabela   Estado   Motivo   -------- -------- 
+[TabelaPart] 
+
+
+Estado   NumTab.  Descr.   NumPasso --------
+[EaNaoTerm]
+
+
+Tabela   Estado   Motivo   -------- -------- 
+[DifCorrCub] 
+
+
+IInstLin IInstCub DifCor Nenhum Nenhum
+[SubAutCami]
+
+
+Duracao  VCicCont VInst    VAlvo    --------
+[SubManAnod]
+
+
+Origem   Duracao  VCicCont VInst    VAlvo
+[DifResCub]
+
+
+Param    VCicPrin VCicRes  Diferen  --------
+[DifResLin]
+
+
+Param    ICicPrin ICicRes  Diferen  --------
+[FalhaRuido]
+
+
+Motivo   -------- -------- -------- --------
+[ManobCruz]
+
+
+Origem   -------- -------- -------- --------
+[Sopro]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[SoproEspec]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[IncTPinos]
+
+
+Origem   Duracao  TipoIncr Valor   Acao
+[EvIncOper]
+
+
+Origem   Duracao  TipoIncr Valor   Acao
+[DerivBaixa]
+
+
+NoDBDia  NQuebDia NoDBEA   NoQuebEA
+[Oscilacao]
+
+
+NoOscDia DifMax   Incr.
+[EaLinha]
+
+
+Soma     Linha    F.Rede   Ea Sim.
+[IEmergCuba]
+
+
+Status   IPrinc   ICuba    Cond    ---------
+[CorreBanho]
+
+
+Origem   -------- VCicCont VInst    VAlvo
+[AEK]
+
+
+Origem   VMaxIni  VMax     N Sobe   DpVea
+[MudaAlim]
+
+
+Est_Ant  DurEst   KgAlumin EstAtual Origem
+[MudaEstAli]
+
+
+SubE_Ant DurSubE  KgAlumin SubE_Atu Modulo
+[Check]
+
+
+ConAtual ConcAnt  ConcBal  EC_Atual ECAnt
+
+[]

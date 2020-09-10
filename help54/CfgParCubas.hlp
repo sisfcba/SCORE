@@ -1,0 +1,48 @@
+                      CONFIGURACAO DOS PARAMETROS DA CUBA
+
+ FUNCAO : Esse comando permite a alteracao dos parametros das cubas.
+
+                           LAY-OUT DA TELA DE CHAMADA
+
+                   +-----------------------------------------+
+                   | Parametros das Cubas                    |
+                   | Cuba Inicial: [1]                       |
+                   | Cuba Final..: [2]                       |
+                   | Parametro...: [3]                       |
+                   | Valor.......: [4]                       |
+                   |                                         |
+                   +--Esc-Abandona F1-Ajuda F10-Confirma ----+
+
+
+                                     SINTAXE
+
+    A alteracao pode ser feita para uma unica cuba, por faixa, ou por grupo  de
+ cubas, como pode ser visto a seguir:
+
+                                   PARAMETROS
+
+ 1) Numero da primeira cuba.
+ 2) Numero da ultima cuba.
+    Observacao:
+    - A  chamada  pode ser feita para uma unica cuba, por faixa ou por grupo de
+      cubas. Na chamada para uma unica cuba, o parametro 2 deve ter o valor  -1
+      (default).  Na  chamada por faixa, os parametros 1 e 2 aceitam valores de
+      101-172 e 201-272. Na chamada por grupo, os  parametros  1  e  2  aceitam
+      valores de 01-72, os quais permitem a selecao conjugada das cubas 101-172
+      e 201-272.
+
+ 3) Nome do parametro a ser alterado.
+    Observacao:
+    - Na  chamada para uma unica cuba, todos os parametros  da cuba  solicitada
+      serao acessados, sendo  esse  nome  ignorado. Na chamada por faixa ou por
+      grupo, esse parametro sera obrigatorio e somente ele sera  alterado  para
+      as cubas especificadas nos campos [1] e [2].
+
+ 4) Valor que o parametro devera assumir.
+    Observacao:
+    - Esse parametro tambem sera ignorado  na  chamada  para uma  unica  cuba e
+      obrigatorio na chamada por faixa ou grupo de cubas.
+
+
+
+

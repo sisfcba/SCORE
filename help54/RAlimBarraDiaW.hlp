@@ -1,0 +1,28 @@
+ Feeding Algorithm - [1]           - Alg [2]         -    [3]  to  [4]
+  RCurr =  [5]  KA   MCurr =  [6]  KA    System =  [7]  %    Line =  [8]  %
+      --Standard--  -Suspended-  -----AE-----  ---Manual---  Auto-     
+Pot   -Dur- Breaks     -Dur-     -Dur- Breaks  -Dur- Breaks  -Dur-     
+[9]   [10]  [11]       [12]      [13]  [14]    [15]  [16]    [17] 
+Avr   [18]  [19]       [20]      [21]  [22]    [23]  [24]    [25]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Rated Line Current
+6-  Measured Line Current
+7-  Time (in percentage) in which the System remained active
+8-  Time (in percentage) in which the Line remained active
+9-  Pot Number
+10- Average duration of Standard Feeding in the period examined
+11- Average number of breaks (algorithm) in Standard Feeding during the 
+    period examined
+12- Average duration of Suspended Feeding in the period examined
+13- Average duration of Anode Effect Feeding in the period examined
+14- Average number of breaks (algorithm) in Anode Effect Feeding during the 
+    period examined
+15- Average duration of Manual Feeding in the period examined
+16- Average number of breaks in Manual Feeding during the period examined
+17- Average duration of automatic feeding (Standard + Suspended + AE) in the 
+    period
+18 to 25- Average of the fields 10 to 17, respectively

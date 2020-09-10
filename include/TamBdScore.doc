@@ -1,0 +1,29 @@
+TAMANHO DOS TIPOS DE DADOS DEFINIDOS NA BASE DE DADOS
+
+t_comum=2160 [0870H] 
+  t_estado_avc=9216 [2400H] 
+  t_uavl=1024 [0400H] 
+  t_log=684 [02acH] 
+  t_descprog=4200 [1068H] 
+  t_tabs_elim_ea=800 [0320H] 
+  t_senhas_operacao=1500 [05dcH] 
+  t_desc_ev=10700 [29ccH] 
+  t_comum+t_estado_avc+t_uavl+t_log+t_descprog+
+  t_tabs_elim_ea+t_senhas_operacao+
+  t_desc_ev=30284 [764cH]
+
+t_superv_avc=36864 [9000H] 
+t_avc_supervisao=216 [00d8H] - AVC_SUP_REC=256 [0100H]
+t_est_avc=36 [0024H] - AVC_EST_REC=64 [0040H]
+t_avl=518 [0206H] - AVL_REC=1024 [0400H]
+
+t_avc=1216 [04c0H] - AVC_REC=2048 [0800] - t_comum_avc=65536 [10000H]
+  t_abs_avc=64 [0040H]
+  t_param_avc=400 [0190H]
+  t_cicleit_avc=128 [0080H]
+  t_ccont_mcp_avc=64 [0040H]
+  t_ciccont_avc=128 [0080H]
+  t_ea_avc=256 [0100H]
+  t_ruido_avc=176 [00b0H]
+Eventos: t_rec_ev=73 [0049H] 
+

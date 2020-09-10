@@ -1,0 +1,36 @@
+
+Inicializa base dados
+
+Para interromper acione <CTRL><BREAK>
+
+EstadoIO : 268372987 
+
+BitSobeAnodo : 11
+BitDesceAnodo : 12
+BitLampEa : 13
+BitLampRec : 14
+BitAvPistaoAQuebA : 15
+BitRecPistaoAQuebB : 16
+BitAvPistaoBQuebC : 17
+BitRecPistaoBouM2QuebD : 18
+BitSopro : 19
+BitSobeCamisaouM1 : 20
+BitDescCamOuAvPCAlimA : 21
+BitRecuoPistCAlimB : 22
+BitAvancoPistDAlimC : 23
+BitRecuoPistDAlimD : 24
+BitSireneEA : 255
+BitLiberaMCruzeiro : 255
+BitChaveQueb : 1
+BitChaveCorr : 2
+BitChaveLocRem : 3
+BitResetEa : 5
+BitSubiuAnodo : 6
+BitDesceuAnodo : 7
+BitSubOuMovCamisaouM2 : 8
+BitDesCamOuPFAutoouM1 : 9
+BitCheckUp : 10
+BitTrocaPinos : 4
+BitSoprou : 255
+BitReleFalhaMM : 255
+BitChaveMCruzeiro : 255

@@ -1,0 +1,47 @@
+        Relatorio Historico Diario de Controle de Processos
+                      Lay-Out e Descricao dos Campos
+ Controle Processos - [1]        - Alg [2]         - [3] a [4] - Tur [5]
+ Cuba/Data  [6] ... [6]
+    [7]     [8]     [8]
+1)  Codigo das cubas selecionadas na tela de pre-selecao
+2)  Algoritmo definido na tela de pre-selecao
+3)  Data inicial definida na tela de pre-selecao
+4)  Data final definida na tela de pre_selecao
+5)  Turno definido na tela de pre_selecao
+6)  Data no formato dd/mm relativa as "palavras descritoras" de estado  das
+    cubas exibidas na coluna. Essa data varia da data inicial ate a final.
+7)  Numero da cuba analisada.
+8)  Palavra que descreve as condicoes em que a cuba esteve no dia, conforme
+    o significado dos codigos que a compoem descritos abaixo:
+
+         Codigo  -  Descricao
+           At    -  Atraso de efeito anodico
+           Fo    -  EA classificado como forte
+           Fr    -  EA classificado como fraco
+           No    -  EA classificado como normal
+           Fa    -  Numero de EA > FreqEa (parametro)
+           Ru    -  Ocorrencia de tratamento de ruido
+
+
+          Algoritmo de classificacao de EA
+
+          Se (AVC.EaVMax > AVC.VEaForte)
+            Entao
+              - Efeito anodico considerado FORTE
+            Senao
+              Se (AVC.EaVMax < AVC.VEaFraco)
+                Entao
+                  - Efeito anodico considerado FRACO
+                Senao
+                  - Efeito anodico considerado NORMAL
+              FimSe
+          FimSe
+
+          Onde : EaVMax e' a tensao maxima do EA e,
+                 VEaFraco e VEaForte parametros configurados
+
+    Observacao
+    - Uma vez que esse relatorio pode ser solicitado com uma faixa  de  ate
+      35 dias, quando o numero de datas (colunas) ultrapassar o  limite  de
+      uma tela, a exibicao das colunas seguintes prosseguira apos o  fecha-
+      mento da faixa de cubas.

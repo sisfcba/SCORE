@@ -1,0 +1,31 @@
+#
+#	Make do programa exemplo McpUser
+#
+DEBUG	=	-g
+#DEBUG	=	
+DEPURA	=	-D ATIVA_DEPURACAO=1
+#DEPURA	=
+CC= 	cc -D CBA_120KAII_III=1
+FLAGS=	-mf -O -w3 $(DEBUG) -5 -fpi87 -fp3
+CFLAGS= 	$(FLAGS) -I $(DIR_HDRS1) -I $(DIR_HDRS2) $(DEPURA)
+LDFLAGS= $(FLAGS) -b -l /usr/lib/queuef.lib
+LINK=	$(LD) $(LDFLAGS) -o $@
+DIR_SRCS= ../mcp/
+DIR_HDRS1=	../include
+DIR_HDRS2=	../mcp
+LIB1=		../lib_score/Score.lib
+LIB2=		../interfrem/lib/InterfRem.lib
+DEFLIB= 	-l $(LIB1) -l $(LIB2)
+OBJS=		McpUser.o
+HEADERS1=	$(DIR_HDRS1)/Eventos.h
+HEADERS=	$(DIR_HDRS1)/Definicao.h $(DIR_HDRS1)/Score.h \
+			$(DIR_HDRS1)/Prototipos.h $(DIR_HDRS1)/VarsComum.h \
+			$(DIR_HDRS2)/McpUser.h $(HEADERS1)
+
+all:	McpUser
+
+McpUser:	$(OBJS) $(LIB1) $(LIB2)
+	$(LINK) $(OBJS) $(DEFLIB)
+#	cp -v McpUser ../../exec
+
+McpUser.o: $(DIR_SRCS)McpUser.c $(HEADERS) 

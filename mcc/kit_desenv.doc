@@ -1,0 +1,177 @@
+                           DIRETORIOS  DO  SCORE
+                           ---------------------
+
+                   MICRO DE CONTROLE E MICRO DE OPERACAO
+                   -------------------------------------
+
+
+
+/usr/score/+-base_dados-+- * Nao pode ser alterado
+           |            |  * Os unicos arquivos que podem sofrer atualizacoes
+           |            |    externas por novos desenvolvimento sao:
+           |            |      - arqvar.dat
+           |            |      - arqvar1.dat
+           |            +-     - descr_ev
+           |
+           +-bin--------+- * Pode receber alteracoes pela Atan
+           |            +- * Nao sera alterado pelo Cliente
+           |
+           +-config------- * Pode receber alteracoes do Cliente ou  Atan  nos
+           |                 arquivos "ihm_config.*"
+           |
+           +-erros-------- * Contem arquivos de depuracao do Score
+           |
+           +-eventos------ * Nao alterado
+           |
+           +-exec--------- * Pode receber alteracoes do  Cliente  quando  for
+           |                 alterado algum programa
+           |
+           +-help--------- * Pode ser alterado pelo Cliente  ou  Atan  quando
+           |                 mudar algum arquivo de ajuda
+           |
+           +-hist--------- * Nao alterado
+           |
+           +-home--------- * Nao alterado
+           |
+           +-log---------- * Nao alterado
+           |
+           +-logrelcuba--- * Nao alterado
+           |
+           +-telas-------- * Pode receber alteracoes de telas do  Cliente  ou
+           |                 Atan
+           +-testes------- * Nao alterado
+           |
+           +-tmp---------- * Nao alterado
+           |
+           +-util--------- * Pode receber alteracoes do Cliente ou Atan  pela
+                             geracao do arquivo "IniArqVar"
+
+
+
+                              OBSERVACOES
+                              -----------
+
+  1) O upgrade de alteracoes  deve  conter  apenas  os  arquivos  alterados e
+     somente nos diretorios citados acima.
+
+  2) NENHUM arquivo dos diretorios /usr/score/objs e /usr/scoreQNX4 do  micro
+     de desenvolvimento deve ser copiado para os micros de controle.
+
+
+
+                    PROCEDIMENTO DE PREPARACAO DE UPGRADE
+                    -------------------------------------
+
+  1) Alterar e compilar os programas.
+
+  2) Testar no simulador.
+
+  3) Gerar lista de arquivos alterados.
+ 
+        # filesd data_ultimo_upgrade /usr/score >/tmp/lixo
+
+          onde: data_ultimo_upgrade = data em que foi feito o ultimo upgrade
+                                      pelo usuario.
+        # vedit /tmp/lixo
+
+		  Retira da lista todos os arquivos que NAO devem ser enviados para o
+		  controle (exemplo: /usr/score/objs/*)
+		  
+		# cp -v /tmp/lixo /score/altdd_mm_aa
+		
+		# vedit /tmp/lixo
+		
+		  Apagar informacoes de data etc e deixar apenas os nomes dos
+		  arquivos.
+		  
+  4) Gerar arquivos de upgrade em disquete
+
+      - Formatar disquetes se necessario
+
+        # fdformat /dev/fd0
+        # dcheck /dev/fd0
+
+      - Gerar o upgrade
+
+        # upgrade /tmp/lixo
+
+  5) Salvar arquivos a serem alterados do controle
+
+      - Copiar o arquivo com a lista de upgrade (lixo)  para  um  disquete  e
+        instala-lo no computador de controle.
+
+      - Gerar um backup dos arquivos a serem instalados a partir do micro  de
+        de controle em disquete
+
+        # upgrade /tmp/lixo
+
+  6) Instalar os arquivos alterados a partir do disquete de  upgrade  atraves
+     do disquete de upgrade pelo comando install
+
+        # install
+
+  7) Consolidar as alteracoes instaladas
+
+      - Acompanhar o comportamento das alteracoes no sistema.
+
+      - Caso esteja tudo funcionando bem, instalar as alteracoes  nos  outros
+        micros da rede.
+
+      - Caso ocorra algum problema, reinstalar os arquivos anteriores  salvos
+        em disquete e verificar a causa do  problema, reiniciando  o  passo 1
+        apos corrigi-lo.
+
+
+
+                  INSERIR NOVAS VARIAVEIS DE CONFIGURACAO
+                  ---------------------------------------
+
+
+  1) Inserir as novas variaveis no arquivo "DescrArqVar.h"
+
+      - Editar o arquivo "DescrArqVar.h"
+
+        # vedit /score3.0/fontes/include/DescrArqVar.h
+
+      - Inserir as novas variaveis  no  arquivo  seguindo  algum  exemplo  ja
+        existente.
+
+  2) Compilar o arquivo "IniArqVar" pelo comanto "GeraScore"
+
+        # cd /score/objs
+
+        # GeraScore
+
+  3) Gerar o novo arquivo com as novas variaveis incluidas
+
+        # cd /score/util
+
+        # IniArqVar
+
+      - Depois  da  execucao  do  programa  "IniArqVar"  serao  alterados  os
+        arquivos "arqvar.dat" e "arqvar1.dat".
+
+
+
+                  INSERIR/RETIRAR/ALTERAR EVENTOS
+                  -------------------------------
+
+
+  1) Executar o comando abaixo e seguir suas indicacoes
+  
+      # /score/util/AlteraEv
+
+
+                         PROCEDIMENTOS DE BACKUP
+                         -----------------------
+
+  1) Os backups  do  Score  sao  feitos  atraves  do  programa  "ManutScore",
+     cujas opcoes podem ser vistas  com  mais  detalhes  navegando  por  suas
+     telas.
+
+        #/score/bin/ManutScore
+
+
+
+
+

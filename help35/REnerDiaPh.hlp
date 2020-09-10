@@ -1,0 +1,49 @@
+                  Relatorio Historico Diario de Energia
+
+                      Lay-Out e Descricao dos Campos
+
+      Relatorio de Energia das Cubas [1] a [2] de [3] ate [4]
+IAlvo = [5] KA      IReal = [6] KA        VLinha: [7] V
+PMed  = [8] MW      ETot  = [9] KA        Sistema = [10] %  Linha = [11] %
+Cuba  PAlvo  PReal L.  PReal T.   EAlvo  EReal L.  EReal T.  E_EA L.  E_EA T.
+      ---------[KW]------------   -------------------[MWH]-------------------
+[12]  [13]    [14]      [15]      [16]    [17]      [18]      [19]     [20]
+
+Media [21]    [22]      [23]      [24]    [25]      [26]      [27]     [28]
+Total                             [29]    [30]      [31]      [32]     [33]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Tensao media da sala no periodo
+8)  Potencia media da sala no periodo
+9)  Energia total da sala no periodo
+10) Percentual de tempo que o sistema ficou ativo no periodo
+11) Percentual de tempo que a linha ficou habilitada no periodo
+12) Numero da cuba. Marcado com (+) se a cuba  ficou  por  algum  instante  em
+    estado ligado ou desligado no periodo
+13) Potencia alvo media no periodo (PotDiaAlvo)
+14) Potencia media sem efeito anodico no periodo (PotDiaLiq)
+15) Potencia media com efeito anodico no periodo (PotDiaBruta)
+16) Energia alvo media no periodo, conforme a seguinte formula:
+      EnerAlvo  = PotDiaAlvo * DurCtrlDia
+          Sendo : DurCtrlDia o tempo que a cuba esteve no controle no dia
+17) Energia media sem efeito anodico no periodo, conforme a seguinte formula:
+      EnerLiq   = PotDiaLiq * DurCtrlDia
+          Sendo : DurCtrlDia o tempo que a cuba esteve no controle no dia
+18) Energia media com efeito anodico no periodo, conforme a seguinte formula:
+      EnerBruta = PotDiaBruta * DurCtrlDia
+          Sendo : DurCtrlDia o tempo que a cuba esteve no controle no dia
+19) Energia media dissipada pelo efeito anodico no periodo (EaEnergLiq)
+20) Energia media dissipada durante efeito anodico no periodo (EaEnergBruta)
+
+21 a 28) Media das colunas 13 a 20 respectivamente
+
+29 a 33) Valor acumulado das colunas 16 a 20 respectivamente
+
+	Observacao
+    - As cubas que estiveram em estado ligado ou desligado no periodo
+      nao serao consideradas no calculo das medias

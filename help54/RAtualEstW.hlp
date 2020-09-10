@@ -1,0 +1,36 @@
+          Status Control Cycle Report - [1]   - Alg [2]
+
+Pot Stat. ----AE----- -L.F.Noise- -H.F.Noise-  Tap-  Crust Manual Scan  Vtg
+          Class Time  Class Time  Class Time   ping  Brk          Off   Dev.
+
+[3] [4]    [5]   [6]   [7]   [8]   [9]  [10]   [11]  [12]   [13]  [14]  [15]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Pot Number
+4-  Present pot status:
+        Jumped     - excluded from pot line
+        Warming-Up - pot start-up
+        On-Line    - pot under monitoring (not controlled)
+        Normal     - pot being controlled
+
+5-  Classification of anode effect:
+        Slow
+        Fast
+        Very Fast
+
+6-  Duration of the anode effect
+7-  Classification of the Low Frequency Noise
+        Light
+        Heavy
+8-  Duration of the Low Frequency Noise
+9-  Classification of the High Frequency Noise
+        Light
+        Heavy
+10- Duration of the High Frequency Noise
+11- Duration of the Tapping Treatment
+12- Duration of the Crust Breaking Treatment
+13- Interval in which the pot remains in Manual mode
+14- Interval in which the data from that pot is not being acquired 
+15- Interval the pot remains in voltage deviation
+		

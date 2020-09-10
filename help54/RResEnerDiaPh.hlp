@@ -1,0 +1,40 @@
+                  Relatorio Historico Diario de Energia
+
+                      Lay-Out e Descricao dos Campos
+
+   Resumo Energia - [1]           - Alg [2]        -   [3] ate   [4]
+IAlvo = [5] KA      IReal = [6] KA        VLinha: [7] V
+PMed  = [8] MW      ETot  = [9] KA        Sistema = [10] %  Linha = [11] %
+Dia   PAlvo  PReal L.  PReal T.   EAlvo  EReal L.  EReal T.  E_EA L.  E_EA T.
+      ---------[KW]------------   -------------------[MWH]-------------------
+[12]  [13]    [14]      [15]      [16]    [17]      [18]      [19]     [20]
+
+1)  Selecao de cubas consideradas no relatorio
+2)  Algoritmo selecionado na pre-selecao
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Tensao media da sala no periodo
+8)  Potencia media da sala no periodo
+9)  Energia total da sala no periodo
+10) Percentual de tempo que o sistema ficou ativo no periodo
+11) Percentual de tempo que a linha ficou habilitada no periodo
+12) Dia referente a linha do relatorio
+
+13) Media da potencia alvo (PotDiaAlvo) no dia das cubas selecionadas
+14) Media da potencia sem efeito anodico (PotDiaLiq)  no dia das cubas
+    selecionadas
+15) Media da Potencia com efeito anodico (PotDiaBruta) no dia das cubas
+    selecionadas
+16) Media da energia alvo no dia das cubas selecionadas
+17) Media da energia sem efeito anodico no dia das cubas selecionadas
+18) Media da energia com efeito anodico no dia das cubas selecionadas
+19) Media da energia dissipada pelo efeito anodico (EaEnergLiq) no dia das
+    cubas selecionadas
+20) Media da energia dissipada durante efeito anodico (EaEnergBruta) no dia
+    das cubas selecionadas
+
+	Observacao
+    - As cubas que estiveram em estado ligado ou desligado no periodo
+      nao serao consideradas no calculo das medias

@@ -1,0 +1,141 @@
+#
+#	Make dos relatorios de exemplo
+#
+
+DEBUG	=
+##DEBUG	=	-g
+FLAGS=		-mf -WC,-we -Wc,-we -O -wx -j $(DEBUG) -5 -fpi87 -fp3
+FLAGS=		-mf -Wc,-we -O -wx -j $(DEBUG) -5 -fpi87 -fp3
+CFLAGS=		$(FLAGS) -D CBA_120KAII_III=1 -I $(DIR_HDRS) -I $(DIR_SRCS)
+LDFLAGS=	$(FLAGS) -b -l /usr/lib/queuef.lib -l termlib
+LINK=		$(LD) $(LDFLAGS) -o $@
+DIR_SRCS=	../tela
+DIR_HDRS=	../../include
+
+DIR_EXEC=	../../../exec/
+DIR_LIB1=	../../rel/lib
+DIR_LIB2=   ../../lib_score
+DIR_LIB3=   ../../ihm/lib
+DIR_LIB4=   lib
+DIR_LIB10=  libexp
+DIR_LIB12=  /qnx4/phtk/lib
+DIR_LIB13=  ../../lib_ph
+DIR_LIB14=	../imp/libph
+DIR_LIB15=  libph
+
+HEADERS=	$(DIR_HDRS)/Definicao.h $(DIR_HDRS)/ScoreConst.h \
+			$(DIR_HDRS)/Macros.h $(DIR_HDRS)/Score.h \
+			$(DIR_HDRS)/Prototipos.h $(DIR_HDRS)/VarsComum.h \
+			$(DIR_HDRS)/TiposOpeW.h $(DIR_SRCS)/MainRelatCC.c \
+			$(DIR_SRCS)/MainRelatHT.c
+			
+HEADERS1=	$(HEADERS) $(DIR_HDRS)/WindowsCBA.h $(DIR_HDRS)/OperacaoBib.h \
+			$(DIR_HDRS)/Relatorios.h $(DIR_HDRS)/RelPrototipos.h \
+			$(DIR_HDRS)/KeysCBA.h $(DIR_HDRS)/BdScore.h \
+			$(DIR_HDRS)/ScoreMsgs.h $(DIR_HDRS)/IniArqVar.h  
+
+DEPCTRL=	$(DIR_SRCS)/MainRelatCC.c $(HEADERS1)
+
+
+LIB1=		$(DIR_LIB1)/BibRel.lib
+LIB2=		$(DIR_LIB2)/Score.lib
+LIB3=		$(DIR_LIB3)/Console.lib
+LIB4=		$(DIR_LIB4)/RelTelaLib.lib
+LIB11=  	$(DIR_LIB10)/RelTelaLibexp.lib
+LIB12=  	$(DIR_LIB12)/photon_s.lib $(DIR_LIB12)/phexlib3r.lib
+LIB13=      $(DIR_LIB13)/ScorePh.lib
+LIB14=      $(DIR_LIB14)/RelImpLibPH.lib
+LIB15=  	$(DIR_LIB15)/RelTelaLibph.lib
+
+LIB=		$(LIB1) $(LIB2) $(LIB3) $(LIB4)
+DEFLIB= 	-l$(LIB1) -l$(LIB2) -l$(LIB3) -l$(LIB4)
+
+LIBH=		$(LIB1) $(LIB2) $(LIB11) $(LIB12) $(LIB13)
+DEFLIBH=	-l$(LIB1) -l$(LIB2) -l$(LIB11) -l$(LIB12) -l$(LIB13)
+
+LIBHIP=		$(LIB1) $(LIB2) $(LIB11) $(LIB12) $(LIB13) $(LIB14)
+DEFLIBHIP=	-l$(LIB1) -l$(LIB2) -l$(LIB11) -l$(LIB12) -l$(LIB13) -l$(LIB14)
+
+LIBPH=		$(LIB1) $(LIB2) $(LIB15) $(LIB12) $(LIB13)
+DEFLIBPH=	-l$(LIB1) -l$(LIB2) -l$(LIB15) -l$(LIB12) -l$(LIB13)
+
+LIBPHIP=		$(LIB1) $(LIB2) $(LIB15) $(LIB12) $(LIB13) $(LIB14)
+DEFLIBPHIP=	-l$(LIB1) -l$(LIB2) -l$(LIB15) -l$(LIB12) -l$(LIB13) -l$(LIB14)
+
+all: rel_cons rel_ph rel_exp
+	@echo Todos os arquivos de relatorio estao atualizados!
+
+################################## Relatorios de console ######################################
+rel_cons:	$(DIR_EXEC)RelExemploCC $(DIR_EXEC)RelExemploDia $(DIR_EXEC)RelExemploTDia
+	@echo Relatorios console atualizados ! 
+
+#					*** Relatorios do Ciclo de Controle ***
+
+RelExemploCC.o: $(DEPCTRL) $(DIR_SRCS)/RelExemploCC.c $(DIR_SRCS)/RelExemploCC.h
+
+#					*** Relatorios de Historico Diarios ***
+
+RelExemploDia.o:   $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h $(HEADERS1)
+
+#					*** Relatorios Historicos de Turno ***
+
+RelExemploTDia.o:  $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h $(HEADERS1)
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploDia.c -DREL_TURNO
+
+
+#			*** Relatorios do Ciclo de Controle ***
+
+$(DIR_EXEC)RelExemploCC: RelExemploCC.o $(LIB)
+	$(LINK) $(DEFLIB) RelExemploCC.o
+
+#			*** Relatorios de Historico Diarios ***
+
+$(DIR_EXEC)RelExemploDia:   RelExemploDia.o $(LIB)
+	$(LINK) $(DEFLIB) RelExemploDia.o
+
+#			*** Relatorios Historicos de Turno ***
+
+$(DIR_EXEC)RelExemploTDia:   RelExemploTDia.o $(LIB)
+	$(LINK) $(DEFLIB) RelExemploTDia.o
+
+################################## Relatorios da interface Photon ################################
+rel_ph:	$(DIR_EXEC)RExemploCCPh $(DIR_EXEC)RExemploDiaPh $(DIR_EXEC)RExemploTDiaPh \
+		$(DIR_EXEC)RExemploCCPhIP
+	@echo Relatorios Photon atualizados ! 
+
+#--------- 
+RExemploCCPh.o: $(DEPCTRL) $(DIR_SRCS)/RelExemploCC.c $(DIR_SRCS)/RelExemploCC.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploCC.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)RExemploCCPh: RExemploCCPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RExemploCCPh.o  
+
+$(DIR_EXEC)RExemploCCPhIP: RExemploCCPh.o $(LIBPHIP)
+	$(LINK) $(DEFLIBPHIP) RExemploCCPh.o  
+
+#----------
+RExemploDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploDia.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)RExemploDiaPh: RExemploDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RExemploDiaPh.o
+
+#----------
+RExemploTDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploDia.c -DOPERACAO_WINDOWS -DREL_TURNO
+
+$(DIR_EXEC)RExemploTDiaPh: RExemploTDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RExemploTDiaPh.o
+
+################################## Relatorios de Exportacao ######################################
+rel_exp:	$(DIR_EXEC)RExemploCCPhEXP $(DIR_EXEC)RExemploDiaPhEXP $(DIR_EXEC)RExemploTDiaPhEXP
+	@echo Relatorios exportacao atualizados ! 
+
+$(DIR_EXEC)RExemploCCPhEXP: RExemploCCPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RExemploCCPh.o  
+
+$(DIR_EXEC)RExemploDiaPhEXP: RExemploDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RExemploDiaPh.o
+
+$(DIR_EXEC)RExemploTDiaPhEXP: RExemploTDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RExemploTDiaPh.o

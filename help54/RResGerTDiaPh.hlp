@@ -1,0 +1,37 @@
+                     Relatorio Historico Geral Diario
+
+                      Lay-Out e Descricao dos Campos
+
+      Resumo Geral - [1]         - Alg [2]        -   [3] ate   [4] - Tur [5]
+      IAlvo = [6] KA            IReal = [7] KA         VLinha = [8] %
+      Sistema = [9] %                                  Linha = [10] %
+Dia   ---Tensoes Medias [V]---  ---Erros [V]--  --Erro VDesv--  --Erro Manual-
+      Placa Alvo   Liqui Total   Total  Contrl    [V]  [Tempo]    [V]  [Tempo]
+[11]  [12]  [13]   [14]  [15]    [16]    [17]     [18]  [19]      [20]  [21]
+
+1)  Selecao de cubas consideradas no relatorio
+2)  Algoritmo selecionado na pre-selecao
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)	Turno do relatorio
+6)  Corrente alvo (IAlvo) media da sala no periodo
+7)	Corrente real (IReal) media da sala no periodo
+8)	Tensao de linha media da sala no periodo
+9)	Percentual de tempo que o sistema ficou ativo no periodo
+10) Percentual de tempo que a linha ficou habilitada no periodo
+11) Dia referente a linha do relatorio
+12) Media da tensao de placa das cubas selecionadas no dia
+13) Media da tensao alvo das cubas selecionadas no dia
+14) Media da tensao liquida (RDiaLiq * IAlvoDia) das cubas selecionadas no dia
+15) Media da tensao total (RDiaBruta * IAlvoDia) das cubas selecionadas no dia
+16) Media da tensao erro total do dia para as cubas selecionadas
+17) Media da tensao erro de controle  do dia para as cubas selecionadas
+18) Media da tensao erro de desvio do dia para as cubas selecionadas
+19) Media do tempo de desvio de tensao  do dia para as cubas selecionadas
+20) Media de tensao durante cuba fora de leitura do dia para as cubas
+    selecionadas
+21) Media de tempo de cuba fora de leitura do dia para as cubas selecionadas
+
+    Observacao
+    - As cubas que estiveram em estado ligado, desligado ou partido no
+      periodo nao serao consideradas no calculo das medias

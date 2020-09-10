@@ -1,0 +1,34 @@
+Instability Report - [1]           - Alg [2]        -  [3]  to  [4] - Shf [5]
+     -----Low Frequency Noise----- -----High Frequency Noise---- Tot --Normal-
+     -----Light---- -----Heavy---- -----Light---- -----Heavy---- Inc -LF- -HF-
+Pot  Int.  Dur  Inc Int.  Dur  Inc Int.  Dur  Inc Int.  Dur  Inc mV   mV   mV
+[6]  [7]   [8]  [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19][20] [21]
+Avr  [22] [23]  [24][25] [26] [27] [28] [29] [30] [31] [32] [33] [34][35] [36]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Shift being shown at the report
+6-  Pot number
+7-  Average light LF Noise voltage [mV]
+8-  Average time [hh:mm] the pot has been under light LF Noise treatment
+9-  Average increment voltage [mV] due to light LF Noise
+10- Average heavy LF Noise voltage [mV]
+11- Average time [hh:mm] the pot has been under heavy LF Noise treatment
+12- Average increment voltage [mV] due to heavy LF Noise
+13- Average light HF Noise voltage [mV]
+14- Average time [hh:mm] the pot has been under light HF Noise treatment
+15- Average increment voltage [mV] due to light HF Noise
+16- Average heavy HF Noise voltage [mV]
+17- Average time [hh:mm] the pot has been under heavy HF Noise treatment
+18- Average increment voltage [mV] due to heavy HF Noise
+19- Average increment voltage due to noise
+20- Average LF Noise voltage
+21- Average HF Noise voltage
+22 to 36- Average of the fields 7 to 21, respectively
+
+PS
+The pots that have been in the states "on-line" or "jumped" during the period
+of evaluation are not taken into consideration when calculating fields 22 to
+36

@@ -1,0 +1,48 @@
+                          INCREMENTO DE TENSAO NA CUBA
+
+ FUNCAO : Esse comando permite o incremento temporario de tensao da cuba.
+
+                           LAY-OUT DA TELA DE CHAMADA
+
+                   +-----------------------------------------+
+                   | Ativar-Desat Inc. Operacao              |
+                   | Cuba Inicial................: [1]       |
+                   | Cuba Final..................: [2]       |
+                   | Acao [1=Ativar 2=Desativar].: [3]       |
+                   | Tipo Inc. [1=Const. 2=Rampa]: [4]       |
+                   | Tensao Inicial de Inc. (mV).: [5]       |
+                   | Duracao do Inc (hh:mm)......: [6]       |
+                   |                                         |
+                   +--Esc-Abandona   F10-Confirma -----------+
+                                     SINTAXE
+
+    A incremento pode ser feita para uma unica cuba, por faixa, ou por grupo de
+ cubas, como pode ser visto a seguir:
+
+                                   PARAMETROS
+
+ 1) Numero da primeira cuba.
+ 2) Numero da ultima cuba.
+    Observacao:
+    - A  chamada  pode ser feita para uma unica cuba, por faixa ou por grupo de
+      cubas. Na chamada para uma unica cuba, o parametro 2 deve ter o valor  -1
+      (default).  Na  chamada por faixa, os parametros 1 e 2 aceitam valores de
+      101-172 e 201-272. Na chamada por grupo, os  parametros  1  e  2  aceitam
+      valores de 01-72, os quais permitem a selecao conjugada das cubas 101-172
+      e 201-272.
+ 3) Operacao efetuada com o incremento.
+                                  No. - Acao
+                                   1  - Ativar.
+                                   2  - Desativar.
+ 4) Tipo de incremento.
+                                  No. - Tipo
+                                   1  - Constante.
+                                   2  - Rampa.
+ 5) Tensao inicial de incremento em mV.
+
+ 6) Duracao do  incremento. Ela pode ser colocada apenas em horas ( hh ), ou em
+    horas e minutos ( hh:mm, hh-mm  ou  hh.mm),  sendo  permitida  uma  duracao
+    maxima de 9 horas.
+
+
+

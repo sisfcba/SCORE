@@ -1,0 +1,160 @@
+                            RELATORIO DE RUIDO DAS CUBAS
+
+                                    DESCRICAO
+
+   Esse relatorio exibe as medias de algumas informacoes das cubas do dia atual
+ ate  os  35 dias anteriores que tenham sido registradas no arquivo, ou seja, o
+ valor, tempo e incremento medio de ruido lento fraco e forte; o valor, tempo e
+ incremento medio de ruido rapido fraco e forte; valor medio diario do total de
+ incremento  de  ruido aplicado a cuba; valor  medio  diario  de  ruido lento e
+ rapido quando nao estava em tratamento de ruido.
+
+                                     SINTAXE
+
+     O relatorio pode ser pedido por faixa  ou  grupo de cubas, como  pode  ser
+ visto a seguir:
+
+                           LAY-OUT DA TELA DE CHAMADA
+
+                   +-----------------------------------------+
+                   | Ruido                                   |
+                   | Cuba Inicial....: [1]                   |
+                   | Cuba Final......: [2]                   |
+                   | Data Inicial....: [3]                   |
+                   | Data Final......: [4]                   |
+                   | Cubas Excluidas.: [5]                   |
+                   |                                         |
+                   +--Esc-Abandona F1-Ajuda F10-Confirma ----+
+
+
+
+
+
+                                   PARAMETROS
+
+ 1) Numero da primeira cuba a ser selecionada no relatorio.
+ 2) Numero da ultima cuba a ser selecionada relatorio.
+
+    Observacao:
+    - A  chamada do relatorio pode ser feita por faixa ou  grupo  de cubas.  Na
+      chamada por faixa, os parametros 1 e  2  aceitam  valores  de  101-172  e
+      201-272. Na  chamada  por  grupo,  os parametros 1 e 2 aceitam valores de
+      01-72, os quais permitem a selecao conjugada das cubas 101-172 e 201-272.
+
+ 3) Data do primeiro dia a ser selecionado no relatorio. Ela deve ser  colocada
+    no padrao  dd/mm/aa,  dd.mm.aa  ou dd-mm-aa.  Alem desse padrao, esse campo
+    aceita tambem a palavra "Atual", interpretada pelo sistema como a  data  do
+    dia atual.
+
+ 4) Data do  ultimo  dia a ser selecionado no relatorio. Ela  deve ser colocada
+    no padrao dd/mm/aa, dd.mm.aa ou  dd-mm-aa. Alem desse  padrao,  esse  campo
+    aceita tambem a  palavra "Atual", interpretada pelo sistema como a data  do
+    dia atual.
+ 5) Lista  de  cubas a serem excluidas do relatorio dentro da faixa solicitada.
+    Recebe valores de 101-172 e 201-272 separados por hifen (-),  virgula  (,),
+    ou ponto (.), sendo permitido no maximo 7 cubas.
+
+
+
+
+
+
+
+
+
+                           EXEMPLO 1 - FAIXA DE CUBAS
+
+                   +-----------------------------------------+
+                   |  Ruido                                  |
+                   |  Cuba Inicial....: 117                  |
+                   |  Cuba Final......: 135                  |
+                   |  Data Inicial....: 03/03/93             |
+                   |  Data Final......: 15/03/93             |
+                   |  Cubas Excluidas.: 120-125-132          |
+                   |                                         |
+                   +--Esc-Abandona F1-Ajuda F10-Confirma ----+
+
+ Exibe o relatorio das cubas 117 a 135 no periodo  de  03/03/93  ate  15/03/93,
+ excluindo a 120, 125 e 132.
+
+
+                           EXEMPLO 2 - GRUPO DE CUBAS
+
+                   +-----------------------------------------+
+                   |  Ruido                                  |
+                   |  Cuba Inicial....: 17                   |
+                   |  Cuba Final......: 35                   |
+                   |  Data Inicial....: 03/03/93             |
+                   |  Data Final......: 15/03/93             |
+                   |  Cubas Excluidas.: 120-132-222-229      |
+                   |                                         |
+                   +--Esc-Abandona F1-Ajuda F10-Confirma ----+
+
+   Exibe  relatorio  das  cubas  117-135  e  217-235 no periodo de 03/03/93 ate
+ 15/03/93, excluindo a 120, 132, 222 e 229.
+
+
+                        DESCRICAO DOS CAMPOS DO RELATORIO
+
+ RELATORIO DE RUIDO DAS CUBAS DE [1] A [2] DO DIA [3] AO DIA [4]
+      -------- Ruido Lento -------- -------- Ruido Rapido ------- Incr --Normal-
+      ---- Fraco --- ---- Forte --- ---- Fraco --- ---- Forte --- Tot  RLen RRap
+ Cuba Int.  Dur  Inc Int.  Dur  Inc Int.  Dur  Inc Int.  Dur  Inc  mV   mV   mV 
+ xxx+ xxxx xx:xx xxx xxxx xx:xx xxx xxxx xx:xx xxx xxxx xx:xx xxx xxxx xxxx xxxx
+
+ [5]  [6     7   8   9    10   11  12   13   14  15   16   17] [18] [19]  [20]
+
+ ME   [21    22  23  24   25   26  27   28   29  30   31   32] [33] [34]  [35]
+
+ 1) Numero da primeira cuba solicitada no relatorio.
+ 2) Numero da ultima cuba solicitada no relatorio.
+ 3) Data inicial solicitada no relatorio.
+ 4) Data final solicitada no relatorio.
+ 5) Numero da cuba. E marcado com o  sinal  (+)  se  a  cuba  ficou  por  algum
+    instante em estado Ligado ou Desligado no periodo solicitado.
+ 6) Valor medio diario [mV] de ruido lento fraco no periodo solicitado.
+ 7) Tempo medio  diario [hh:mm] que  a  cuba  esteve  em  ruido lento fraco  no
+    periodo solicitado.
+ 8) Valor medio diario [mV] do incremento devido a ruido lento fraco no periodo
+    solicitado.
+ 9) Valor medio diario [mV] de ruido lento forte no periodo solicitado.
+ 10) Tempo  medio  diario [hh:mm]  que  a cuba esteve em  ruido lento forte  no
+     periodo solicitado.
+ 11) Valor  medio  diario [mV]  do  incremento devido a ruido  lento  forte  no
+     periodo solicitado.
+ 12) Valor  medio  diario [mV]  de ruido rapido fraco no periodo solicitado.
+ 13) Tempo  medio  diario [hh:mm]  que a cuba esteve em  ruido rapido fraco  no
+     periodo solicitado.
+
+ 14) Valor  medio  diario [mV]  do incremento  devido  a ruido  rapido fraco no
+     periodo solicitado.
+ 15) Valor medio diario [mV] de ruido rapido forte no periodo solicitado.
+ 16) Tempo  medio  diario [hh:mm]  que a cuba esteve em  ruido rapido forte  no
+     periodo solicitado.
+ 17) Valor  medio [mV]  diario do incremento  devido  a  ruido rapido forte  no
+     periodo solicitado.
+ 18) Valor medio diario do total de  incremento  devido a ruido aplicado a cuba
+     no periodo solicitado.
+ 19) Valor medio diario do ruido lento da cuba quando nao estava em  tratamento
+     de ruido no periodo solicitado.
+ 20) Valor medio diario do ruido rapido da cuba quando nao estava em tratamento
+     de ruido no periodo solicitado.
+
+
+
+ 21 a 35) Media dos campos 6 a 20 respectivamente.
+
+     Observacao
+     - As cubas  que ficaram nos estados Ligado ou Desligado por algum instante
+       no periodo do relatorio nao serao consideradas no calculo das medias.
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+                    Relatorio Historico De Alimentacao
+
+                      Lay-Out e Descricao dos Campos
+
+       Alimentacao -      [1]      - Alg    [2]      - [3] ate [4]  Tur [5]
+ IAlvo = [6] KA      IReal = [7]   KA      Sistema = [8] %      Linha = [9] %
+      ---Padrao---  -----EA-----  Susp. ---Excecao-- Total- Inib. -MLoc Auto-
+Cuba  -Dur- --Kg--  -Dur- --Kg--  -Dur- -Dur- --Kg-- --Kg-- Move- -Dur- -Dur-
+[10]  [11]   [12]   [13]   [14]   [15]  [16]   [17]   [18]  [19]  [20]  [21]
+
+Med   [22]   [23]   [24]   [25]   [26]  [27]   [28]   [29]  [30]  [31]  [32]
+
+1)  Indica a selecao de cubas (grupos de cubas ou selecao especial).
+2)  Indica quais os algoritmos utilizados como filtro para o relatorio.
+3)  Data inicial do relatorio.
+4)  Data final do relatorio.
+5)  Turno do relatorio.
+6)  Corrente alvo (IAlvo) media da sala no periodo.
+7)  Corrente real (IReal) media da sala no periodo.
+8)  Percentual de tempo que o sistema ficou ativo no periodo.
+9)  Percentual de tempo que a linha ficou habilitada no periodo.
+10) Numero da cuba.
+11) Duracao media do algoritmo de alimentacao padrao no periodo selecionado.
+12) Quantidade media de alumina fornecida durante a alimentacao padrao no 
+    periodo selecionado.
+13) Duracao media do algoritmo de alimentacao de efeito anodico no periodo 
+    selecionado.
+14) Quantidade media de alumina fornecida durante a alimentacao de efeito 
+    anodico no periodo selecionado.
+15) Duracao media do algoritmo de alimentacao suspensa no periodo selecionado.
+16) Duracao media do algoritmo de alimentacao de excecao no periodo 
+    selecionado.
+17) Quantidade media de alumina fornecida durante a alimentacao de excecao no 
+    periodo selecionado.
+18) Quantidade media total de alumina fornecida para a cuba no periodo
+    selecionado.
+19) Tempo medio que a cuba permaneceu com movimentacao do anodo inibida pela
+    alimentacao no periodo selecionado.
+20) Tempo medio que a alimentacao permaneceu em manual local (campo) no 
+    periodo selecionado.
+21) Tempo medio que a cuba permaneceu em alimentacao automatica no periodo 
+    selecionado.	
+22) Duracao media do algoritmo de alimentacao padrao no periodo selecionado.
+23) Quantidade media de alumina fornecida durante a alimentacao padrao no 
+    periodo selecionado.
+24) Duracao media do algoritmo de alimentacao de efeito anodico no periodo 
+    selecionado.
+25) Quantidade media de alumina fornecida durante a alimentacao de efeito 
+    anodico no periodo selecionado.
+26) Duracao media do algoritmo de alimentacao suspensa no periodo selecionado.
+27) Duracao media do algoritmo de alimentacao de excecao no periodo 
+    selecionado.
+28) Quantidade media de alumina fornecida durante a alimentacao de excecao no 
+    periodo selecionado.
+29) Quantidade media total de alumina fornecida para a cuba no periodo
+    selecionado.
+30) Tempo medio que a cuba permaneceu com movimentacao do anodo inibida pela
+    alimentacao no periodo selecionado.
+31) Tempo medio que a alimentacao permaneceu em manual local (campo) no 
+    periodo selecionado.
+32) Tempo medio que a cuba permaneceu em alimentacao automatica no periodo 
+    selecionado.	
+	
+OBS.:
+Nos campos 11 a 21, o termo "media" se refere a uma media diaria do dado em
+questao, de acordo com o periodo selecionado. Nos campos 22 a 32, o termo
+"media" se refere a uma media por cuba do dado em questao. Por exemplo, o
+campo 22 eh uma media do campo 11 de todas as cubas que estao sendo exibidas 
+pelo relatorio.

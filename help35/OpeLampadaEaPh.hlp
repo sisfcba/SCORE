@@ -1,0 +1,32 @@
+                   RESET DA LAMPADA DE EFEITO ANODICO DA CUBA
+
+ FUNCAO : Esse comando permite dar reset na lampada de efeito anodico da cuba.
+
+                           LAY-OUT DA TELA DE CHAMADA
+
+                   +-----------------------------------------+
+                   | Reset Lampada Efeito Anodico            |
+                   | Cuba Inicial: [1]                       |
+                   | Cuba Final..: [2]                       |
+                   |                                         |
+                   +--Esc-Abandona   F10-Confirma -----------+
+
+
+
+
+                                     SINTAXE
+
+   O reset da lampada de efeito anodico pode ser feita para uma unica cuba, por
+ faixa, ou por grupo de cubas, como pode ser visto a seguir:
+
+                                   PARAMETROS
+
+ 1) Numero da primeira cuba.
+ 2) Numero da ultima cuba.
+    Observacao:
+    - A  chamada  pode ser feita para uma unica cuba, por faixa ou por grupo de
+      cubas. Na chamada para uma unica cuba, o parametro 2 deve ter o valor  -1
+      (default).   Na chamada por faixa, os parametros 1 e 2 aceitam valores de
+      101-172 e 201-272. Na chamada por grupo, os  parametros  1  e  2  aceitam
+      valores de 01-72, os quais permitem a selecao conjugada das cubas 101-172
+      e 201-272.

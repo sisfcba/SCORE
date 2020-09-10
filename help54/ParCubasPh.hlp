@@ -1,0 +1,509 @@
+[VSetPoint]
+Tensao de placa da cuba.
+[Bemf]
+Potencial de reducao do Al - Forca Contra EletroMotriz.
+[VIncMax]
+Valor Maximo de Somataria dos incrementos permitido por cuba (em mV).
+[TMaxIncOper]
+Tempo maximo de incremento de operacao.
+[HabTabOpe]
+Habilita/Desabilita tabela de operacao de incrementos.
+[NumTabOpe]
+Numero da tabela de incremento de operacao.
+[IncCorrInic]
+Incremento inicial devido a corrida.
+[TIncCorr]
+Tempo de incremento devido a corrida.
+[TTrataCorr]
+Tempo tratamento de corrida para inibir previsao e liberar
+movimentacao para cima e para baixo do controle em cada
+ciclo. Pode ser maior do que o TEfeitoCorr.
+[TEfeitoCorr]
+Tempo do efeito da Corrida na Cuba. Determina o tempo de tratamento
+de movimentacao rapida de anodo, ou em outras palavras, determina a
+duracao da corrida. Durante este tempo inibe previsao e ruido.
+[AcresBCSCorr]
+Incremento adicionado a banda superior de controle durante a corrida
+por um tempo determinado.
+[IncQuebInic]
+Incremento inicial de tensao devido a quebrada por um determinado tempo.
+[TIncQueb]
+Tempo de incremento devido a quebrada.
+[TipoIncQueb]
+Tipo de incremento de quebrada, constante ou rampa.
+[TEfeitoQueb]
+Tempo de efeito de quebrada.Durante esse tempo inibe ruido e previsao de EA
+Permite movimentacao apenas para cima durante esse periodo.
+[AcresBCIQueb]
+Acrescimo a banda de controle inferior por quebrada por um periodo de tempo.
+[TAcresBCIQueb]
+Tempo de acrescimo da banda de controle inferior por quebrada.
+[IncTPinosInic]
+Incremento inicial de tensao devido a quebrada durante TIncTPinos.
+[TIncTPinos]
+Tempo de incremento de tensao devido a troca de pinos.
+[TipoIncTPinos]
+Tipo de incremento de troca de pinos, constante ou rampa.
+[HabIncTPinos]
+Habilita/Desabilita incremento de troca de pinos.
+[TEfeitoTPinos]
+Tempo de efeito da troca de pinos. Durante este tempo inibe ruido e
+previsao.
+[HabIncQPrevEa]
+Habilita/Desabilita incremento em quebrada durante previsao de EA.
+[IncQPrevEa]
+Incremento inicial durante a quebrada em previsao de EA.
+[TIncQPrevEa]
+Tempo de incremento de tensao devido a quebrada de previsao de EA.
+[TipoIncQPrevEa]
+Tipo de incremento, constante ou rampa, utilizado em quebrada 
+de previsao de EA.
+[TEfeitoMCruzeiro]
+Tempo do efeito da manobra de cruzeiro.Durante esse tempo inibe 
+quebrada preventiva e calculo de ruido.
+[HabBooster]
+Habilita/Desabilita booster de corrente da linha
+[IBoosterNominal]
+Valor de acrescimo de corrente devido ao booster na cuba.
+[BandaContInf]
+Banda de controle Inferior.
+[BandaContSup]
+Banda de controle Superior.
+[BandaMortaInf]
+Banda morta Inferior.
+[BandaMortaSup]
+Banda morta Superior.
+[AcrescBMortaSup]
+Acrescimo a banda de controle superior, em caso de atraso de EA.
+[TEfeitoEa]
+Tempo do efeito do EA na Cuba. E computado a partir do termino do
+efeito anodico.
+Inibe ruido, movimentacao e previsao durante o efeito mais
+este periodo.
+[EaAtrasoMax]
+Tempo de atraso maximo de EA. Define acrescimo de resistencia
+na banda morta superior
+[EaTempoEspera]
+Tempo de espera para fim de EA.
+[EaVoltLim]
+Patamar de tensao para identificacao de EA.
+[EaEspLim]
+Tensao para calculo de fim de EA.
+[HabEliminaEa]
+Habilita/Desabilita a eliminacao de EA.
+[NumTabEliEaLento]
+Numero da tabela para eliminacao de EA Lento.
+Pode ser configurada no menu Configuracoes,Tabelas de Eliminacao de EA.
+[NumTabEliEaRapido]
+Numero da tabela de eliminacao de EA Rapido.
+Pode ser configurada no menu Configuracoes,Tabelas de Eliminacao de EA.
+[NumTabEliEaMRapido]
+Numero da tabela de eliminacao de EA Muito Rapido.
+Pode ser configurada no menu Configuracoes,Tabelas de Eliminacao de EA.
+[NumTabAlternativa]
+Numero da tabela alternativa para eliminacao de EA.
+Tabela configurada no menu Configuracoes,Tabelas de EA.
+[TempoAtivaTEa]
+Tempo para ativar tabela de EA, apos seu inicio.
+Deve ser menor que o TempoEfeitoEa.
+Quando igual a 0 ativa tabela imediatamente.
+A tabela so sera ativada se HabEliminaEA for 1 e a chave do painel estiver
+em automatico e a cuba em remoto no computador.
+[VEaForte]
+Define limite na categoria de EA para classificacao como forte.
+[VEaFraco]
+Define limite na categoria de EA para classificacao como fraco.
+[FreqEa]
+Frequencia de EA na cuba.
+[HabAtEa]
+Habilita a tabela de movimentacao, sopro e calar sirene.Quando:
+0=Desabilitada,1=Habilita somente em EA,2=Habilita 
+somente em QP e 3=Habilita em EA e QP.
+[VEaXLim]
+Tensao para calculo do valor DxLm.E o calculo da % do tempo de
+EA acima do valor limite.
+[HabPrevEa]
+Habilita/Desabilita indicacao de previsao de EA.
+[EaPrevDeriv]
+Patamar de RSuaveDeriv acima do qual
+inicia-se a previsao de efeito anodico.
+[IntervEaPrevDeriv]
+Intervalo para analise da derivada historica para inicio de previsao.
+[RSuaveDerivMin]
+Derivada instantanea minima valida.
+[RSuaveDerivMax]
+Derivada instantanea maxima valida.
+[DerivHEaLento]
+Derivada historica p/ classificacao de EA Lento.
+[DerivHEaRap]
+Derivada historica p/ classificacao de EA Rapido.
+[DerivInibeMovBaixa]
+Valor inferior da derivada para inibicao de movimentacao de anodo.
+[DerivInibeMovAlta]
+Valor superior da derivada para inibicao de movimentacao de anodo.
+[IntervDerivInibeMov]
+Intervalo para analise da derivada historica para fim da 
+inibicao de movimento.
+[EaPrevDerivFim]
+Patamar maximo de RSuaveDeriv para dar fim de previsao de efeito anodico.
+[IntervFimEaPrevDeriv]
+Intervalo para analise de derivada historica para fim 
+de previsao de efeito anodico.
+[KSuaveDeriv]
+Parametro de suavizacao da derivada da resistencia para previsao de EA.
+[HabIncRLent]
+Habilita/desabilita incremento devido a ruido lento.
+[NumJanRLent]
+Numero de janelas considerado no calculo do ruido lento. Valores validos: 1, 2, 3, 4, 6 e 8.
+[IntervJanRLent]
+Duracao de cada janela considerada no calculo do ruido lento.
+[RuidoLFra1]
+Patamar para classificacao de ruido lento fraco 1.
+[RuidoLFra2]
+Patamar para classificacao de ruido lento fraco 2.
+[RuidoLFra3]
+Patamar para classificacao de ruido lento fraco 3.
+[RuidoLFor1]
+Patamar para classificacao de ruido lento forte 1.
+[RuidoLFor2]
+Patamar para classificacao de ruido lento forte 2.
+[IncRuidoLentFra1]
+Incremento por ruido lento fraco 1.
+[IncRuidoLentFra2]
+Incremento por ruido lento fraco 2.
+[IncRuidoLentFra3]
+Incremento por ruido lento fraco 3.
+[IncRuidoLentFor1]
+Incremento por ruido lento forte 1.
+[IncRuidoLentFor2]
+Incremento por ruido lento forte 2.
+[HabIncRRap]
+Habilita/desabilita incremento devido a ruido rapido
+[NumJanRRap]
+Numero de janelas considerado no calculo do ruido rapido. Valores validos: 1, 2, 3, 4, 6 e 8.
+[IntervJanRRap]
+Duracao de cada janela considerada no calculo do ruido rapido.
+[RuidoRFra1]
+Patamar para classificacao de ruido rapido fraco 1.
+[RuidoRFra2]
+Patamar para classificacao de ruido rapido fraco 2.
+[RuidoRFra3]
+Patamar para classificacao de ruido rapido fraco 3.
+[RuidoRFor1]
+Patamar para classificacao de ruido rapido forte 1.
+[RuidoRFor2]
+Patamar para classificacao de ruido rapido forte 2.
+[IncRuidoRapFra1]
+Incremento por ruido rapido fraco 1.
+[IncRuidoRapFra2]
+Incremento por ruido rapido fraco 2.
+[IncRuidoRapFra3]
+Incremento por ruido rapido fraco 3.
+[IncRuidoRapFor1]
+Incremento por ruido rapido forte 1.
+[IncRuidoRapFor2]
+Incremento por ruido rapido forte 2.
+[HabEvRuido]
+Habilita/desabilita geracao de evento de inicio/fim de tratamento
+de ruido.
+[NJanRRapCons]
+Numero de janelas consecutivas de ruido rapido para exibir em relatorio.
+[NJanRLenCons]
+Numero de janelas consecutivas de ruido lento para exibir em relatorio.
+[HabContResist]
+Habilita/Desabilita o controle de resistencia.
+[TEfeitoMoveBaixo]
+Tempo minimo em relacao a ultima movimentacao na qual sera
+permitida outra movimentacao para baixo.
+[TEfeitoMoveCima]
+Tempo minimo em relacao a ultima movimentacao na qual sera
+permitida outra movimentacao para cima.
+[DurMovBaixoMin]
+Tempo minimo permitido de movimentacao automatica para baixo.
+[DurMovBaixoMax]
+Tempo Maximo permitido de movimentacao automatica para baixo.
+[KPb]
+Ganho para acionamento dos motores para baixo.
+[KbpwmTipico]
+Constante pwm tipica para acionamento dos motores para baixo.
+[MinKbpwm]
+Constante pwm minima para acionamento dos motores para baixo.
+[DurMovCimaMin]
+Tempo minimo permitido de movimentacao automatica para cima.
+[DurMovCimaMax]
+Tempo maximo permitido de movimentacao automatica para cima.
+[KPc]
+Ganho para acionamento dos motores para cima.
+[KcpwmTipico]
+Constante pwm tipica para acionamento dos motores para cima.
+[MinKcpwm]
+Constante pwm minima para acionamento dos motores para cima.
+[MaxAgarraAnodo]
+Numero de provaveis agarramentos do anodo calculados para passar cuba para
+manual. Quando igual a 0 inibe logica de agarramento de anodo.
+A contagem de provaveis agarramentos so e reinicializada na partida do
+sistema ou quando a cuba e passada para manual ou automatico.
+[RMinPartidoSupEsp]
+Resistencia minima p/ supervisao especial de cuba partida.
+[RMaxPartidoSupEsp]
+Resistencia maxima p/ supervisao especial de cuba partida.
+[RMinLigadoSupEsp]
+Resistencia minima p/ supervisao especial de cuba ligada.
+[RMaxLigadoSupEsp].
+Resistencia maxima p/ supervisao especial de cuba ligada.
+[RMinDesligSupEsp]
+Resistencia minima p/ supervisao especial de cuba desligada.
+[RMaxDesligSupEsp]
+Resistencia maxima p/ supervisao especial de cuba desligada.
+[NumAlgControle]
+Numero de algoritmo de controle.
+[TempoEvCuba]
+Tempo para calculo de alarme de evento maximo.
+[MaxEvCuba]
+Numero de eventos durante o TempoEvCuba para geracao de alarmes.
+[NCicIniEaTPinos]
+Numero de ciclos de leitura(0,5 seg) acima de EaVoltLim para
+identificar inicio de efeito anodico quando em troca de pinos, 
+se igual a 0 detecta efeito anodico imediatamente.
+[NCicIniEaNormal]
+Numero de ciclos de leitura(0,5 seg) acima de EaVoltLim para
+identicar inicio de efeito anodico, se igual a 0 detecta imediatamente.
+[ForaLeitura]
+Cuba fora de leitura e controle.
+[EstadoCuba]
+Indica o estado da cuba:ligada, desligada, partida ou normal.
+[ManualRemoto]
+Cuba em manual remoto.
+[ManualLocal]
+Cuba em manual local.
+[Corrida]
+Cuba em tempo de efeito de corrida.
+[Quebrada]
+Cuba em tempo de efeito de quebrada.
+[DesvioTensao]
+Indica que a tensao da cuba esta fora da regiao de controle
+(Banda proibida Superior e Banda proibida Inferior).
+A movimentacao de anodo e inibida.
+[Ea]
+Cuba em efeito anodico.
+[EaPrev]
+Cuba em previsao de efeito anodico.
+[InibeMovEaPrev]
+Cuba com movimentacao de anodo inibida por valor de derivada.
+[EliminaEa]
+Status da eliminacao de efeito anodico.
+[RuidoLent]
+Cuba em tratamento de ruido lento.
+[RuidoRap]
+Cuba em tratamento de ruido rapido.
+[ElimEaAtivo]
+Status da eliminacao de efeito anodico.
+[EvCubaMax]
+Se verdadeiro, indica que os eventos gerados pela cuba atingiram
+seu valor maximo.
+[Atn7Status]
+Status da ATN.
+[EmCalibracao]
+Se verdadeiro, cuba esta em calibracao.
+[CheckAtivo]
+Se verdadeiro, indica que o algoritmo de alimentacao esta em check.
+[ManualAlimRem]
+Indica que a cuba foi colocada em alimentacao manual pelo supervisorio.
+[ManualAlimLoc]
+Indica que a cuba foi colocada em alimentacao manual em campo.
+[AlimSuspensa]
+Se verdadeiro, indica que a cuba esta com alimentacao suspensa.
+[QuebPrev]
+Se verdadeiro, indica que a cuba esta em quebrada preventiva.
+[RuidoAlim]
+Se verdadeiro, indica a existencia de ruido na alimentacao.
+[QuebPrevInib]
+Se verdadeiro, indica que a quebrada preventiva esta inibida.
+[OpeSoproEspec]
+Se verdadeiro, indica a ocorrencia de sopro especial na cuba.
+[ForaControle]
+Se verdadeiro indica que a cuba esta fora de controle.
+[EfeitoMove]
+Se verdadeiro, indica que na cuba houve movimentacao de anodo e permanece
+nessa condicao por um intervalo de tempo.
+[EfeitoEa]
+Cuba em tempo de efeito de EA.
+[EfeitoQueb]
+Cuba em tempo de efeito de quebrada.
+[EfeitoCorr]
+Cuba em tempo de efeito de corrida.
+[EsperaConfMove]
+Aguardando confirmacao de movimentacao de anodo.
+[DeuAcresBMSup]
+Se verdadeiro, indica que houve acrescimo na banda morta superior.
+[TrataTPinos]
+Cuba em tratamento de troca de pinos.
+[TrataMCruzeiro]
+Cuba em tratamento de manobra de cruzeiro.
+[ManualControle]
+Cuba em manual remoto.
+[TabOpeAtiva]
+Tabela de operacao ativa.
+[InibeControleUsu]
+Uso interno do Score.
+[EaPrevVirada]
+Uso interno do Score.
+[TrataIncUsuario]
+Cuba com incremento definido pelo usuario.
+[ProvAgarraAnodo]
+Se verdadeiro, indica que houve agarramento de anodo.
+[AjusteCamisa]
+Indica se no momento esta ocorrendo ajuste de camisa na cuba.
+[AbortaAjuste]
+Indica cancelamento de ajuste de camisa.
+[CamNAjust]
+Indica que a camisa nao foi ajustada.
+[AtivCamOpe]
+Uso interno do Score.
+[HabQPrevOpe]
+Indica se esta habilita a quebrada preventiva.
+[FalhaCalcRuido]
+Indica se houve falha no calculo de ruido.
+[HabAjCam]
+Habilita/Desabilita o ajuste de camisa.
+[LimMaxAjCam]
+Limite de tempo maximo de subida de camisa permitido.
+[LimTAjMov]
+Limite maximo de subida de camisa permitido por movimentacao durante o
+ciclo de controle.
+[IntAjCamCorr]
+Intervalo minimo em relacao ao ultimo ajuste de camisa, para que possa
+ocorrer um novo tratamento.
+[DifResAgarraAnodo]
+Diferenca de resistencia para deteccao de agarramento de camisa no anodo.
+[HabTabPartida]
+Habilita tratamento de tabela de partida para esta cuba. A ativacao e
+feita atraves do programa de operacao e so e feita se estiver habilitada
+[NumTabPartida]
+Numero da tabela de partida a utilizar para esta cuba. A ativacao e
+feita atraves do programa de operacao e so e feita se estiver habilitada
+[CadenciaEARemota]
+Tempo de cadencia na remota quando o sistema esta offline e a cuba esta 
+em efeito anodico.
+[TempoFimAEARemota]
+Tempo total da cadencia de EA executada quando o sistema esta offline e
+a cuba esta em efeito anodico.
+[HabQPrev]
+Habilita/Desabilita algoritmo de quebrada preventiva.
+[LimInfQPrevEa]
+Tempo a partir do inicio de EA, apos o qual sera permitido outra sinalizacao
+de quebrada preventiva.
+[LimSupQPrevEa]
+Tempo anterior a hora prevista para ocorrencia de atraso de EA
+a partir da qual nao e permitido mais a sinalizacao de quebrada preventiva.
+[MaxQPrevEa]
+Numero maximo de quebradas preventivas permitidas por intervalo entre EA
+[NHorRefQPrev]
+Tempo [horas] em  relacao a ultima  quebrada  preventiva  a partir do qual 
+e permitida outra quebrada preventiva.
+[IntMinQQPrev]
+Intervalo minimo(em minutos) a partir da quebrada no qual podera ser
+sinalizada a quebrada preventiva.
+[UsaRLent]
+Habilita/Desabilita teste de ruido lento como condicao de  inicio de quebrada
+preventiva.
+[UsaRRap]
+Habilita/Desabilita teste de ruido rapido como condicao de inicio de quebrada
+preventiva.
+[UsaIncOpe]
+Habilita/Desabilita teste de incremento de operacao como condicao  de  inicio
+de quebrada preventiva.
+[UsaAtrasoEa]
+Habilita/Desabilita teste de atraso de EA como condicao
+de inicio de quebrada preventiva.
+[UsaMaxEa]
+Habilita/Desabilita teste de tensao maxima de EA como condicao  de  inicio de
+quebrada preventiva.
+[HabSoproEspec]
+Habilita/Desabilita o sopro especial.
+[TMaxRuidoInv.]
+Intervalo de tempo sem calculo, no qual se considera o ruido invalido.
+[ContTAjCam]
+Contador de tempo de ajuste de camisa que ira ser executado no proximo
+ciclo de controle.
+[ContTAjAcum]
+Contador de tempo de ajuste de camisa ja executado.
+[ContInibAjCam]
+Este contador indica o tempo em que a cuba ficara com o ajuste de camisa
+inibido.
+[NumQuebPrev]
+Contador que indica o numero de quebradas preventivas realizadas
+entre o intervalo de EA.
+[NumPrevQPrev]
+Contador que indica o numero de previsoes que terminaram por
+execucao da quebrada preventiva.
+[ContDurQPrev]
+Contador que indica a duracao de quebrada preventiva.
+[ContInibQPrev}
+Contador que indica a duracao da inibicao de quebrada preventiva.
+[PassoCadencia]
+Uso interno do Score
+[IndCuba]
+Indice da remota no Score.
+[Lsb-O]
+Fator de conversao dos valores nao multiplexados lidos pelo canal 0.
+[Lsb-1]
+Fator de conversao dos valores nao multiplexados lidos pelo canal 1.
+[Lsb-2]
+Fator de conversao dos valores nao multiplexados lidos pelo canal 2.
+[Lsb-3]
+Fator de conversao dos valores nao multiplexados lidos pelo canal 3.
+[Offset-0]
+Fator de correcao de offset de leituras dos valores nao multiplexados 
+lidos pelo canal 0.
+[Offset-1]
+Fator de correcao de offset de leituras dos valores nao multiplexados 
+lidos pelo canal 1.
+[Offset-2]
+Fator de correcao de offset de leituras dos valores nao multiplexados 
+lidos pelo canal 2.
+[Offset-3]
+Fator de correcao de offset de leituras dos valores nao multiplexados 
+lidos pelo canal 3.
+[Ganho-0]
+Fator de correcao de ganho na leitura dos valores nao multiplexados 
+lidos pelo canal 0.
+[Ganho-1]
+Fator de correcao de ganho na leitura dos valores nao multiplexados 
+lidos pelo canal 1.
+[Ganho-2]
+Fator de correcao de ganho na leitura dos valores nao multiplexados 
+lidos pelo canal 2.
+[Ganho-3}
+Fator de correcao de ganho na leitura dos valores nao multiplexados 
+lidos pelo canal 3.
+[Calib-0]
+Fator de calibracao dos valores nao multiplexados lidos pelo canal 0.
+[Calib-1]
+Fator de calibracao dos valores nao multiplexados lidos pelo canal 1.
+[Calib-2]
+Fator de calibracao dos valores nao multiplexados lidos pelo canal 2.
+[Calib-3]
+Fator de calibracao dos valores nao multiplexados lidos pelo canal 3.
+[Relacao-0]
+Relacao de grandeza dos valores nao multiplexados lidos pelo canal 0.
+[Relacao-1]
+Relacao de grandeza dos valores nao multiplexados lidos pelo canal 1.
+[Relacao-2]
+Relacao de grandeza dos valores nao multiplexados lidos pelo canal 2.
+[Relacao-3]
+Relacao de grandeza dos valores nao multiplexados lidos pelo canal 3.
+[IndSad]
+Indice da remota no score.
+[FcOffTensao]
+Fator de correcao de offset dos valores nao multiplexados de tensao da cuba.
+[FcGanhoTensao]
+Fator de correcao de ganho dos valores nao multiplexados de tensao da cuba. 
+[HabMCruzeiro]
+Habilita algoritmo de automacao da manobra de cruzeiro. So deve ser
+habilitado para cubas onde o painel estiver alterado para permitir
+esta operacao.
+[TMaxPermMCruzeiro]
+Tempo maximo para permissao de manobra de cruzeiro ativa. Apos este
+periodo sera retirada a permissao de manobra de cruzeiro.
+[]

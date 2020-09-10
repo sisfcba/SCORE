@@ -1,0 +1,741 @@
+/******************************************************************************
+
+			 ATAN - SISTEMAS DE AUTOMACAO E TELECOMUNICACOES LTDA.
+	   SSCORE - SOFTWARE DO SISTEMA DE CONTROLE DE REDUCOES - VERSAO 4.1
+
+	PROJETO		: ALBRAS - ALUMINIO BRASILEIRO SA
+
+	SISTEMA		: PROTOTIPO PARA UMA SECAO DA REDUCAO II
+
+	ARQUIVO		: LibScore.doc
+
+	CONTEUDO	: Prototipos das funcoes da biblioteca geral do Score
+
+	AUTOR		: Leonel Vicente Mota Ivo
+
+	SISTEMA OPERACIONAL:  QNX 4.20		-		COMPILADOR: WATCOM C - V9.5
+
+	VERSAO		: 1.0			-		DATA	:	26/11/93
+
+	HISTORICO DAS EDICOES
+-------------------------------------------------------------------------------
+Data     | Descricao                                            | Autor 
+-------------------------------------------------------------------------------
+21/11/95 | Acrescentados prototipos de novas funcoes            | Leonel
+-------------------------------------------------------------------------------
+******************************************************************************/
+
+LISTA DAS FUNCOES
+=================
+
+void	AguardaPartida(void);
+int		ApagaArq(char *Arquivo);
+int		CfgAlimRem(int TipoRem, int Indice);
+int		ComandaAlimRem(int Cuba,int Tempo,int Quebrador);
+int		ComandaLampEa(int Cuba,int Acao);
+int		ComandaSaidaRem(int Cuba,int Acao,int BitAcao,int Tempo);
+void	ComandaSalvaBd(int Acao,int TipoResp);
+int		ComandaSirene(int Cuba,int Acao);
+void	ComandaSirenes(int CubaIni,int CubaFim,int Acao);
+int		ConsCubasOpe( int CubaInicial, int CubaFinal );
+int		ConsisteCubas ( int CubaInicial, int CubaFinal );
+int		ConvCubOperScore ( int CubaOperador );
+int		ConvCubScoreOper ( int CubaScore );
+int		ConvRemCuba(int Canal,int Nodo);
+int		CopiaArq(char *ArqFonte, char *ArqDestino, int TipoCopia);
+int		CopiaDir(char *DirFonte, char *DirDestino, int TipoCopia, int Verbose);
+int		CriaAreaGlobal(int nodo,t_comum **PComum);
+int		CriaTarefa(int Modulo,int InformaBd);
+char *	DataHora(void);
+char *	DataHoraMin(void);
+void	EmiteAlarmeFor(int Dispositivo,char *Formato, ... );
+void	EmiteErroFor(int Dispositivo,char *Formato, ... );
+void *	EnderTab(int tabela, unsigned long offset, int *semaf);
+int		EnvTabEliminaEa(int Cuba, t_elimina_ea *PTab);
+void	error(char *format, ...);
+char *	FileName(char *Path);
+void	FimScore(void);
+int		GeraEvento(int CodeEv, int CubaIni, int CubaFim, ... );
+int		LeEntRem(int Cuba,t_mascara_bits *Masc);
+int		LocalizaScore(int IdentReducao);
+int		MoveAnodo(int Cuba,int DuracaoMov,int SentidoMov);
+int		PegaComum(t_comum **PComum);
+int		PegaRelGraf(void);
+int		ScoreBd(nid_t nodo,int tabela,int acao,void *ptab,unsigned long offset,
+				long int tamanho);
+int		SeletorQueb(int Cuba,t_mascara_bits *Inclui,t_mascara_bits *Exclui);
+int		SolicitaSemaf(int NumSemaf,int Acao);
+int		ValExcCubas(char *PtStr, int *PTab);
+int		ValidaCuba( int *PTab, int Cuba, int ExcCuba );
+
+
+
+PROTOTIPO DAS FUNCOES
+=====================
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  AguardaPartida                                                |
+| OBJETIVO    :  Aguardar sinalizacao de partida do modulo de inicializacao    |
+| CHAMADA     :  AguardaPartida();                                             |
+| PARAMETROS  :  -                                                             |
+| RETORNO     :  -                                                             |
+| VERSAO      :  1.0 - 25/09/92            EDICAO: 01 - 25/09/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+void AguardaPartida(void);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ApagaArq                                                      |
+| OBJETIVO    :  Apaga arquivo indicado atraves da funcao Open (trata colisao  |
+|                de usuarios).                                                 |
+| CHAMADA     :  ApagaArq(Arquivo)                                             |
+| PARAMETROS  :  Arquivo - Arquivo a apagar.                                   |
+| RETORNO     :  0 = ok, <> 0 = erro e errno contem o codigo de erro.          |
+| VERSAO      :  1.0 - 15/10/92            EDICAO: 01 - 15/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ApagaArq(char *Arquivo);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  CfgAlimRem                                                    |
+| OBJETIVO    :  Configura parametros de sequencia de alimentacao na remota    |
+| CHAMADA     :  CfgAlimRem(int TipoRem, int Indice);                          |
+| PARAMETROS  :  TipoRem - Tipo de remota: REMOTA_CUBA ou REMOTA_PAL           |
+|                Indice - Se TipoRem=REMOTA_CUBA entao Indice=numero da cuba   |
+|						     (indice do Score).                                |
+|						  Se TipoRem=REMOTA_PAL entao Indice=numero do PAl (co-|
+|						     mecando de 0).                                    |
+| RETORNO     :  STATUS_OK = ok. <> STATUS_OK => Erro de comunicacao           |
+| VERSAO      :  1.0 - 19/01/96            EDICAO: 01 - 19/01/96               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int CfgAlimRem(int TipoRem, int Indice);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ComandaAlimRem                                                |
+| OBJETIVO    :  Comanda acionamento de sequencia de alimentacao para a cuba   |
+| CHAMADA     :  ComandaAlimRem(Cuba,Tempo,Quebrador);                         |
+| PARAMETROS  :  Cuba - Numero da cuba                                         |
+|                Tempo - Tempo em segundos entre cada sequencia.               |
+|						 Qdo. 0, remota inicia sequencia imediatamente         |
+|						 Qdo <>0, remota inicial sequenciamento automatico no  |
+|						 no tempo dado. Se Tempo e' igual ao ja' programado,   |
+|						 remota nao faz nada (apenas refresh)                  |
+|				 Quebrador - Usado apenas qdo. TempoSeq==0.                    |
+|							 Se Quebrador==0 remota executa sequencia fazendo  |
+|							 a ciranda de quebradores automaticamente.         |
+|							 Qdo <> 0, indica numero do quebrador a ser acio-  |
+|                            nado (comecando de 1)                             |
+| RETORNO     :  STATUS_OK = ok. <> STATUS_OK => Erro de comunicacao           |
+| VERSAO      :  1.0 - 19/01/96            EDICAO: 01 - 19/01/96               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ComandaAlimRem(int Cuba,int Tempo,int Quebrador);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ComandaLampEa                                                 |
+| OBJETIVO    :  Comanda lampada indicativa de Efeito anodico e Previsao de EA |
+|                da cuba dada.                                                 |
+| CHAMADA     :  ComandaLampEa(Cuba,Acao);                                     |
+| PARAMETROS  :  Cuba - Numero da cuba                                         |
+|                Acao - Ligar, Desligar ou piscar a lampada.                   |
+| RETORNO     :  0 = ok. <> 0 => Erro de comunicacao                           |
+| VERSAO      :  1.0 - 30/09/92            EDICAO: 01 - 30/09/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ComandaLampEa(int Cuba,int Acao);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ComandaSaidaRem                                               |
+| OBJETIVO    :  Comanda um bit de saida da remota associada a cuba dada.      |
+| CHAMADA     :  ComandaSaidaRem(Cuba,Acao,Tempo);                             |
+| PARAMETROS  :  Cuba - Numero da cuba                                         |
+|                Acao - LIGAR, DESLIGAR                                        |
+|                BitAcao - Bit a comandar (comecando de 1)                     |
+|                Tempo - Tempo em ticks da remota a manter a saida ligada ou   |
+|                        desligada. Se 0 apenas liga ou desliga a saida.       |
+| RETORNO     :  0 = ok. <> 0 => Erro de comunicacao                           |
+| VERSAO      :  1.0 - 29/11/93            EDICAO: 01 - 29/11/93               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ComandaSaidaRem(int Cuba,int Acao,int BitAcao,int Tempo);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ComandaSalvaBd                                                |
+| OBJETIVO    :  Ativa modulo SalvaBd para salvar em disco as tabelas do Score |
+| CHAMADA     :  ComandaSalvaBd(Acao,TipoResp)                                 |
+| PARAMETROS  :  Acao - SALVA_TABELAS: Comanda salvamento das tabelas          |
+|                       MUDANCA_DIA : Comanda salvamento das tabelas c/ mudan- |
+|                                     ca de dia.                               |
+|                TipoResp - ESPERA_GRAVACAO: a funcao so retorna apos gravacao |
+|                                            das tabelas.                      |
+|                           NAO_ESPERA_GRAVACAO: o comando e' liberado ime-    |
+|                                                diatamente pelo modulo SalvaBd|
+| RETORNO     :  -                                                             |
+| VERSAO      :  1.0 - 13/10/92            EDICAO: 01 - 13/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+void ComandaSalvaBd(int Acao,int TipoResp);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ComandaSirene                                                 |
+| OBJETIVO    :  Comanda sirene de Efeito anodico associada a cuba dada.       |
+| CHAMADA     :  ComandaSirene(Cuba,Acao);                                     |
+| PARAMETROS  :  Cuba - Indice no Score para a cuba (cuba score)               |
+|                Acao - LIGAR, DESLIGAR ou PISCAR.                             |
+| RETORNO     :  0 = ok. <> 0 => Erro de comunicacao                           |
+| VERSAO      :  1.0 - 05/05/93            EDICAO: 01 - 05/05/93               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ComandaSirene(int Cuba,int Acao);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ComandaSirenes                                                |
+| OBJETIVO    :  Comanda sirenes de Efeito anodico associadas as cubas dadas.  |
+| CHAMADA     :  ComandaSirenes(CubaIni,CubaFim,Acao);                         |
+| PARAMETROS  :  CubaIni - Numero de operacao da 1a. cuba (cuba oper)          |
+|                CubaFim - Numero de operacao da ult. cuba (cuba oper)         |
+|                Acao - LIGAR, DESLIGAR ou PISCAR.                             |
+| RETORNO     :  -                                                             |
+| VERSAO      :  1.0 - 05/05/93            EDICAO: 01 - 05/05/93               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+void ComandaSirenes(int CubaIni,int CubaFim,int Acao);
+
+
+/*
+--------------------------------------------------------------------------------
+| NOME		  : ConsCubasOpe												   |
+| OBJETIVO	  : Consistir  os   valores  de  Cuba Inicial  e  Cuba Final  	   |
+|				conforme passados pelo operador.							   |
+| CHAMADA	  : ConsCubasOpe ( CubaInicial, CubaFinal )						   |
+| PARAMETROS  : CubaInicial - Numero da cuba inicial.						   |
+|				CubaFinal   - Numero da cuba final.							   |
+| RETORNO	  : ERRO_OK - Indica que os valores  de  Cuba Inicial			   |
+|						e Cuba Final estao corretos.						   |
+|				<>ERRO_OK - Erro, conforme tabela abaixo:					   |
+|				ECUBAINIMFIM: cuba inicial > cuba final						   |
+|				ECUBAINIINV: cuba inicial invalida							   |
+|				ECUBAFIMINV: cuba final invalida							   |
+| VERSAO	  : 00 - 09/11/95                 EDICAO: 00 - 09/11/95			   |
+| AUTOR		  : Leonel Vicente Mota Ivo										   |
+| OBSERVACOES : 															   |
+--------------------------------------------------------------------------------
+*/
+int ConsCubasOpe( int CubaInicial, int CubaFinal );
+
+/*
+--------------------------------------------------------------------------------
+|	NOME		: ConsisteCubas                                                |
+|	OBJETIVO	: Consistir  os   valores  de  Cuba Inicial  e  Cuba Final     |
+|				  passados pelo operador  na  chamada de qualquer programa	   |
+|				  do sistema que receba essas informacoes como parametro.	   |
+|	CHAMADA		: ConsisteCubas ( CubaInicial, CubaFinal )					   |
+|	PARAMETROS	: CubaInicial - Numero da cuba inicial.						   |
+|				  CubaFinal   - Numero da cuba final.						   |
+|	RETORNO		: VERDADEIRO  - Indica que os valores  de  Cuba Inicial		   |
+|					   OU		   e Cuba Final estao corretos.				   |
+|				  FALSO - Indica que os valores  de  Cuba Inicial			   |
+|								   e/ou Cuba Final estao errados.			   |
+|	VERSAO		: 00 - 17/09/92                 EDICAO: 00 - 17/09/92		   |
+|	AUTOR		: Carlos Cezar Silva Lage									   |
+|	OBSERVACOES	: 															   |
+--------------------------------------------------------------------------------
+*/
+int ConsisteCubas ( int CubaInicial, int CubaFinal );
+
+/*
+--------------------------------------------------------------------------------
+|	NOME		: ConvCubOperScore											   |
+|	OBJETIVO	: Converter o numero da cuba fornecido pelo operador  para	   |
+|				  o valor utilizado internamente pelo SCORE.				   |
+|	CHAMADA		: ConvCubOperScore ( CubaOperador )							   |
+|	PARAMETROS	: CubaOperador - Numero da cuba fornecido pelo operador.	   |
+|	RETORNO		: Numero  da  cuba   convertido para  o  valor   utilizado     |
+|				  internamente pelo SCORE.									   |
+|	VERSAO		: 00 - 18/09/92                 EDICAO: 00 - 18/09/92		   |
+|	AUTOR		: Carlos Cezar Silva Lage									   |
+|	OBSERVACOES	: O numero da cuba deve ser fornecido padrao inteiro.		   |
+--------------------------------------------------------------------------------
+*/
+int ConvCubOperScore ( int CubaOperador );
+
+/*
+--------------------------------------------------------------------------------
+|	NOME		: ConvCubScoreOper											   |
+|	OBJETIVO	: Converter o  numero da cuba  utilizado internamente pelo	   |
+|				  SCORE para o valor referido externamente pelo operador.	   |
+|	CHAMADA		: ConvCubScoreOper ( CubaScore )							   |
+|	PARAMETROS	: CubaScore - Numero da cuba utilizado internamente  pelo	   |
+|							   SCORE.										   |
+|	RETORNO		: Numero  da  cuba  convertido  para  o  valor   referido	   |
+|				  externamente pelo operador.								   |
+|	VERSAO		: 00 - 18/09/92                 EDICAO: 00 - 18/09/92		   |
+|	AUTOR		: Carlos Cezar Silva Lage									   |
+|	OBSERVACOES	: 															   |
+--------------------------------------------------------------------------------
+*/
+int ConvCubScoreOper ( int CubaScore );
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ConvRemCuba                                                   |
+| OBJETIVO    :  Converter o numero do canal e do nodo da remota para o numero |
+|                da cuba associada.                                            |
+| CHAMADA     :  Cuba=ConvRemCuba(Canal,Nodo);                                 |
+| PARAMETROS  :  Canal - Numero do canal (rede) onde esta a remota             |
+|                Nodo - Numero do nodo da remota na rede.                      |
+| RETORNO     :  Numero da Cuba se ok e -1 se erro.                            |
+| VERSAO      :  1.0 - 28/10/92            EDICAO: 01 - 28/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ConvRemCuba(int Canal,int Nodo);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  CopiaArq                                                      |
+| OBJETIVO    :  Copia arquivo fonte para arquivo destino atraves da funcao    |
+|                Open (trata colisao de usuarios).                             |
+| CHAMADA     :  CopiaArq(ArqFonte,ArqDestino)                                 |
+| PARAMETROS  :  ArqFonte - Ponteiro para o arquivo fonte                      |
+|                ArqDestino - Ponteiro para o arquivo destino                  |
+|                TipoCopia - TODO_ARQUIVO -> Copia todo o arquivo fonte        |
+|                            DIF_ARQUIVO -> Copia apenas a diferenca de tamanho|
+|                                           entre o arquivo fonte e o destino  |                                           fonte        |
+|                                           para o arquivo destino.            |                                           fonte        |
+| RETORNO     :  0 = ok, <> 0 = erro e errno contem o codigo de erro.          |
+| VERSAO      :  1.0 - 15/10/92            EDICAO: 01 - 15/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int CopiaArq(char *ArqFonte, char *ArqDestino, int TipoCopia);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  CopiaDir                                                      |
+| OBJETIVO    :  Copia todos os arquivos do diretorio fonte para o diretorio   |
+|                destino atraves da funcao CopiaArq.                           |
+| CHAMADA     :  CopiaDir(DirFonte,DirDestino,Verbose)                         |
+| PARAMETROS  :  DirFonte - Ponteiro para o diretorio fonte                    |
+|                DirDestino - Ponteiro para o diretorio destino                |
+|                TipoCopia - TODO_ARQUIVO -> Copia todo o arquivo fonte        |
+|                            DIF_ARQUIVO -> Copia apenas a diferenca de tamanho|
+|                                           entre o arquivo fonte e o destino  |                                           fonte        |
+|                                           para o arquivo destino.            |                                           fonte        |
+|                Verbose - Quando VERDADEIRO exibe na tela os arquivos que es- |
+|                          tao sendo copiados.                                 |
+| RETORNO     :  0 = ok, <> 0 = erro e errno contem o codigo do erro           |
+| VERSAO      :  1.0 - 15/10/92            EDICAO: 01 - 15/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int CopiaDir(char *DirFonte, char *DirDestino, int TipoCopia, int Verbose);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        : CriaAreaGlobal                                                 |
+| OBJETIVO    : Alocacao das tabelas globais do SCORE                          |
+| CHAMADA     : CriaAreaGlobal(nodo,&Comum)                                    |
+| PARAMETROS  : nodo - nodo de onde ler os arquivos das tabelas                |
+|               PComum - Endereco para ponteiro onde colocar o ponteiro para a |
+|                        area comum alocada.                                   |
+| RETORNO     : 0 = 0k, diferente de 0 = codigo de erro                        |
+| VERSAO      : 1.0 - 21/08/92            EDICAO: 02 - 29/09/94                |
+| AUTOR       : Leonel Vicente Mota Ivo                                        |
+| OBSERVACOES : Aloca os segmentos para as tabelas e as inicializa com os va-  |
+|               lores lidos dos arquivos em disco.                             |
+|               nodo=0 -> nodo corrente                                        |
+--------------------------------------------------------------------------------
+*/
+int CriaAreaGlobal(int nodo,t_comum **PComum);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  CriaTarefa                                                    |
+| OBJETIVO    :  Criar tarefa descrita na base de dados do sistema.            |
+| CHAMADA     :  CriaTarefa(Modulo,InformaBd)                                  |
+| PARAMETROS  :  Modulo - Indice para a descricao da tarefa na base de dados.  |
+|                         Este indice e' a identificacao da tarefa no sistema. |
+|                InformaBd - Quando verdadeiro indica que e' para informar o   |
+|                            endereco do segmento global atraves de um send p/ |
+|                            a tarefa criada. Caso contrario apenas cria.      |
+| RETORNO     :  tid da tarefa criada ou -1 se erro                            |
+| VERSAO      :  1.0 - 05/10/92            EDICAO: 01 - 05/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int CriaTarefa(int Modulo,int InformaBd);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  DataHora                                                      |
+| OBJETIVO    :  Obter data e hora no formato "dia/mes hh:mm:ss"               |
+| CHAMADA     :  PDataHora = DataHora()                                        |
+| PARAMETROS  :  -                                                             |
+| RETORNO     :  string estatico "dd/mm hh:mm:ss" contendo a data atual        |
+| VERSAO      :  1.0 - 28/05/92            EDICAO: 01 - 28/05/92               |
+| AUTOR       :  Joao Thomaz Pereira                                           |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+char *DataHora(void);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  DataHoraMin                                                   |
+| OBJETIVO    :  Obter data e hora no formato "dd/mm/aa hh:mm"                 |
+| CHAMADA     :  PDataHora = DataHoraMin()                                     |
+| PARAMETROS  :  -                                                             |
+| RETORNO     :  string estatico "dd/mm/aa hh:mm" contendo a data atual        |
+| VERSAO      :  1.0 - 28/05/92            EDICAO: 01 - 05/11/92               |
+| AUTOR       :  Joao Thomaz Pereira                                           |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+char *DataHoraMin(void);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  EmiteAlarmeFor                                                |
+| OBJETIVO    :  Emitir alarme formatado atraves do modulo de eventos          |
+| CHAMADA     :  EmiteAlarmeFor(Dispositivo,Formato,...(argumentos)...);       |
+| PARAMETROS  :  Dispositivo - Dispositivo a emitir o alarme. (Todos, console, |
+|                              Sealtouch etc). Definidos no prologo Score.h    |
+|                Formato - Descricao do formato na forma utilizada pela funcao |
+|                          printf.                                             |
+|                Argumentos - argumentos para o formato descrito. Devem seguir |
+|                             a ordem definida no formato exatamente  como  na |
+|                             chamada da funcao printf.                        |
+| RETORNO     :  -                                                             |
+| VERSAO      :  1.0 - 18/09/92            EDICAO: 01 - 18/09/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+void EmiteAlarmeFor(int Dispositivo,char *Formato, ... );
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  EmiteErroFor                                                  |
+| OBJETIVO    :  Emitir mensagem de erro formatada atraves do modulo de eventos|
+|                e colocar tarefa que efetuou a chamada em hold.               |
+| CHAMADA     :  EmiteErroFor(Dispositivo,Formato,...(argumentos)...);         |
+| PARAMETROS  :  Dispositivo - Dispositivo a emitir o alarme. (Todos, console, |
+|                              Sealtouch etc). Definidos no prologo Score.h    |
+|                Formato - Descricao do formato na forma utilizada pela funcao |
+|                          printf.                                             |
+|                Argumentos - argumentos para o formato descrito. Devem seguir |
+|                             a ordem definida no formato exatamente  como  na |
+|                             chamada da funcao printf.                        |
+| RETORNO     :  Nao retorna.                                                  |
+| VERSAO      :  1.0 - 18/09/92            EDICAO: 01 - 18/09/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :  Emite a mensagem atraves da funcao EmiteAlarmeFor e termina o |
+|                programa que chamou. NAO RETORNA.                             |
+--------------------------------------------------------------------------------
+*/
+void EmiteErroFor(int Dispositivo,char *Formato, ... );
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  EnderTab                                                      |
+| OBJETIVO    :  Funcao que retorna o ponteiro e o semaforo para uma determi-  |
+|                nada tabela dado o numero da tabela e o offset em bytes para  |
+|                para a mesma.                                                 |
+| CHAMADA     :  ptab=EnderTab(tabela,offset,&semaf);                          |
+| PARAMETROS  :  tabela - Numero da tabela da base de dados que se deseja obter|
+|                         o endereco (definido em ScoreConst.h)                |
+|                offset - offset em bytes na tabela.                           |
+|                semaf - ponteiro para variavel onde sera' colocado o numero do|
+|                        semaforo correspondente a tabela dada.                |
+| RETORNO     :  Endereco para a tabela.                                       |
+| VERSAO      :  1.0 - 01/11/94            EDICAO: 01 - 28/03/95               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+--------------------------------------------------------------------------------
+*/
+void *EnderTab(int tabela, unsigned long offset, int *semaf);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  EnvTabEliminaEa                                               |
+| OBJETIVO    :  Enviar tabela de acoes para eliminacao de efeito anodico para |
+|                a remota associada a cuba dada.                               |
+| CHAMADA     :  EnvTabEliminaEa(Cuba,Tabela);                                 |
+| PARAMETROS  :  Cuba - Numero da cuba (numero do sistema)                     |
+|                Tabela - Ponteiro para a tabela de acoes.                     |
+| RETORNO     :  STATUS_OK ou codigo de erro                                   |
+| VERSAO      :  1.0 - 20/10/92            EDICAO: 01 - 20/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int EnvTabEliminaEa(int Cuba, t_elimina_ea *PTab);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  error                                                         |
+| OBJETIVO    :  Emitir mensagem em stderr e abortar programa.                 |
+| CHAMADA     :  error(formato, ...)                                           |
+| PARAMETROS  :  formato - Formato a emitir, conforme funcao printf.           |
+| RETORNO     :  -                                                             |
+| VERSAO      :  1.0 - 07/07/94            EDICAO: 01 - 07/07/94               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :  ESTA FUNCAO NAO RETORNA. TERMINA COM EXIT(EXIT_FAILURE).      |
+--------------------------------------------------------------------------------
+*/
+void error(char *format, ...);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  FileName                                                      |
+| OBJETIVO    :  Dado um path completo (diretorio+nomearq) retorna apenas o no-|
+|                me do arquivo sem o path                                      |
+| CHAMADA     :  NomeArq = FileName(PathArq)                                   |
+| PARAMETROS  :  Path - ponteiro para o string contendo o path completo.       |
+| RETORNO     :  ponteiro para o nome do arquivo dentro do path.               |
+| VERSAO      :  1.0 - 28/05/92            EDICAO: 01 - 28/05/92               |
+| AUTOR       :  Joao Thomaz Pereira                                           |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+char *FileName(char *Path);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  FimScore                                                      |
+| OBJETIVO    :  Solicita desativacao do sistema no nodo corrente.             |
+| CHAMADA     :  FimScore();                                                   |
+| PARAMETROS  :  -                                                             |
+| RETORNO     :  Nao retorna.                                                  |
+| VERSAO      :  1.0 - 05/11/92            EDICAO: 01 - 05/11/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :  ESTA FUNCAO NAO RETORNA.                                      |
+--------------------------------------------------------------------------------
+*/
+void FimScore(void);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  GeraEvento                                                    |
+| OBJETIVO    :  Gera um evento de acordo com o indice da tabela de eventos    |
+| CHAMADA     :  GeraEvento(CodeEv,CubaIni,CubaFim[,Param1,..Param5]);         |
+| PARAMETROS  :  CodeEv - Codigo do evento                                     |
+|                CubaIni - Numero de operacao da cuba inicial                  |
+|                CubaFim - Numero de operacao da cuba final (-1 qdo apenas uma)|
+|                Param1 a 5 - Parametros do evento (dependende de cada tipo de |
+|                             evento).                                         |
+| RETORNO     :  0 - ok.                                                       |
+| VERSAO      :  1.0 - 05/05/94            EDICAO: 01 - 31/03/95               |
+| AUTOR       :  Joao Thomaz Pereira                                           |
+--------------------------------------------------------------------------------
+*/
+int		GeraEvento(int CodeEv, int CubaIni, int CubaFim, ... );
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  LeEntRem                                                      |
+| OBJETIVO    :  Ler a mascara das entradas da remota associada `a cuba dada.  |
+| CHAMADA     :  LeEntRem(Cuba,Masc);                                          |
+| PARAMETROS  :  Cuba - Numero da cuba                                         |
+|                Masc - Ponteiro para onde colocar a mascara lida.             |
+| RETORNO     :  0 = ok. <> 0 => Erro de comunicacao                           |
+| VERSAO      :  1.0 - 28/10/92            EDICAO: 01 - 28/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int LeEntRem(int Cuba,t_mascara_bits *Masc);
+
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  LocalizaScore                                                 |
+| OBJETIVO    :  Localizar o nodo onde esta rodando o Score para a reducao dada|
+| CHAMADA     :  LocalizaScore(IdentReducao);                                  |
+| PARAMETROS  :  IdentReducao - Numero da reducao que se deseja localizar      |
+| RETORNO     :  -1 = nao localizou                                            |
+|                nodo = numero do nodo onde esta rodando o Score               |
+| VERSAO      :  1.0 - 19/01/93            EDICAO: 01 - 29/09/94               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int LocalizaScore(int IdentReducao);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  MoveAnodo                                                     |
+| OBJETIVO    :  Movimentar o anodo da cuba dada no sentido e na duracao indi- |
+|                cados.                                                        |
+| CHAMADA     :  MoveAnodo(Cuba,DuracaoMovimento,SentidoMovimento);            |
+| PARAMETROS  :  Cuba - Numero da cuba a movimentar (numero do sistema)        |
+|                DuracaoMov - Tempo de duracao do movimento em multiplos do    |
+|                             tick da remota                                   |
+|                SentidoMov - Sentido do movimento (SUBIR ou DESCER)           |
+| RETORNO     :  STATUS_OK se nao deu erro de comunicacao                      |
+| VERSAO      :  1.0 - 19/10/92            EDICAO: 01 - 04/12/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int MoveAnodo(int Cuba,int DuracaoMov,int SentidoMov);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  PegaComum                                                     |
+| OBJETIVO    :  Localizar o segmento da base de dados comum do Score.         |
+| CHAMADA     :  PegaComum(&Comum);                                            |
+| PARAMETROS  :  Comum - ponteiro para ponteiro da area comum.                 |
+| RETORNO     :  0 = ok , <> 0 = erro                                          |
+| VERSAO      :  1.0 - 07/10/92            EDICAO: 01 - 07/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int PegaComum(t_comum **PComum);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  PegaRelGraf                                                   |
+| OBJETIVO    :  Localizar os segmentos dos relatorios graficos                |
+| CHAMADA     :  PegaRelGraf();                                                |
+| PARAMETROS  :  Comum - ponteiro para ponteiro da area comum.                 |
+| RETORNO     :  0 = ok , <> 0 = erro                                          |
+| VERSAO      :  1.0 - 02/11/94            EDICAO: 01 - 02/11/94               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int PegaRelGraf(void);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        : ScoreBd                                                        |
+| OBJETIVO    : Permitir leitura e escrita nas tabelas do Score via rede       |
+| CHAMADA     : ScoreBd(nodo,tabela,acao,&tab,offset,tamanho);                 |
+| PARAMETROS  : nodo=numero do nodo de onde ler ou escrever a tabela (controle)|
+|               tabela=numero da tabela a acessar.                             |
+|               acao=BD_LER ou BD_ESCREVER                                     |
+|               tab=endereco inicial da tabela p/ onde ler ou de onde escrever |
+|                   do nodo onde estiver rodando a funcao.                     |
+|               offset=offset apartir de 0 da tabela de onde ler ou p/ onde es-|
+|                      crever.                                                 |
+|               tamanho=numero de bytes a ler ou escrever.                     |
+| RETORNO     : 0 = 0k, diferente de 0 = codigo de erro                        |
+| VERSAO      : 1.0 - 27/09/94            EDICAO: 01 - 27/09/94                |
+| AUTOR       : Leonel Vicente Mota Ivo                                        |
+| OBSERVACOES : Mantem um circuito virtual permanente com o nodo no controle   |
+--------------------------------------------------------------------------------
+*/
+int ScoreBd(nid_t nodo,int tabela,int acao,void *ptab,unsigned long offset,
+			long int tamanho);
+
+/*
+-----------------------------------------------------------------------------
+| NOME        :  SeletorQueb                                                |
+| OBJETIVO    :  Altera o estado (ativo/inativo) dos quebradores de uma cuba|
+| CHAMADA     :  SeletorQueb(Cuba,Inclui,Exclui);                           |
+| PARAMETROS  :  Cuba - Indice da cuba                                      |
+|                Inclui - mascara de inclusao de quebradores (bit=1)        |
+|                Exclui - mascara de exclusao de quebradores (bit=0)        |
+| RETORNO     :  STATUS_OK = ok. <> STATUS_OK => Erro de comunicacao        |
+| VERSAO      :  1.0 - 06/02/96            EDICAO: 01 - 06/02/96            |
+| AUTOR       :  Ricardo Teixeira Leite Mourao                              |
+| OBSERVACOES :                                                             |
+-----------------------------------------------------------------------------
+*/
+int SeletorQueb(int Cuba,t_mascara_bits *Inclui,t_mascara_bits *Exclui);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  SolicitaSemaf                                                 |
+| OBJETIVO    :  Solicita ou libera posse do semaforo indicado ao modulo       |
+|                AdminSemaf.                                                   |
+| CHAMADA     :  SolicitaSemaf(NumSemaf,Acao)                                  |
+| PARAMETROS  :  NumSemaf - Numero do semaforo (0 a NUM_SEMAF-1)               |
+|                Acao - WAIT_SEMAFORO = Solicita posse do semaforo             |
+|                       SIGNAL_SEMAFORO = Libera posse do semaforo             |
+|						TEST_SEMAFORO = Verifica se semaforo esta ocupado.     |
+|						   Se livre ja aloca, se nao retorna RSP_SEMAF_OCUPADO |
+| RETORNO     :  0 = ok. <> 0 Falha.                                           |
+| VERSAO      :  1.0 - 14/10/92            EDICAO: 01 - 14/10/92               |
+| AUTOR       :  Leonel Vicente Mota Ivo                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int SolicitaSemaf(int NumSemaf,int Acao);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ValExcCubas                                                   |
+| OBJETIVO    :  Dada uma linha de cubas a serem excluidas, separar essas      |
+|                cubas, valida-las e coloca-las na tabela de exclusao da       |
+|				 estrutura de argumentos.                                      |
+| CHAMADA     :  ValExcCubas(PtStr,PTab);                                      |
+| PARAMETROS  :  PtStr - ponteiro para o string contendo a linha de cubas a    |
+|                        excluir.                                              |
+|                PTab - ponteiro para a tabela de exclusao da estrutura de arg.|
+| RETORNO     :  FALSO - erro, VERDADEIRO - ok.                                |
+| VERSAO      :  1.0 - 15/01/93            EDICAO: 01 - 05/08/94               |
+| AUTOR       :  Carlos Cezar Silva Lage                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ValExcCubas(char *PtStr, int *PTab);
+
+/*
+--------------------------------------------------------------------------------
+| NOME        :  ValidaCubas                                                   |
+| OBJETIVO    :  Depois que o numero da cuba processada  foi  convertido do    |
+|                padrao do operador para seu respectivo  indice  na  tabela    |
+|                AVC, essa funcao e' chamada para  verificar  se  essa cuba    |
+|                faz parte da lista de cubas a serem excluidas do relatorio.   |
+|                Essa lista esta definida na tabela "TabCubas" da estrutura    |
+|                de argumentos.                                                |
+| CHAMADA     :  ValidaCuba(PTab,Cuba,ExcCuba);                                |
+| PARAMETROS  :  PTab    - ponteiro para a  tabela  que  contem a lista  de    |
+|                          cubas que serao excluidas do relatorio.             |
+|                Cuba    - cuba a ser checada na lista de exclusao             |
+|                ExcCuba - flag que indica se existe  alguma  cuba na lista    |
+|                          de exclusao.                                        |
+| RETORNO     :  FALSO - erro, VERDADEIRO - ok.                                |
+| VERSAO      :  1.0 - 15/01/93            EDICAO: 01 - 05/08/94               |
+| AUTOR       :  Carlos Cezar Silva Lage                                       |
+| OBSERVACOES :                                                                |
+--------------------------------------------------------------------------------
+*/
+int ValidaCuba( int *PTab, int Cuba, int ExcCuba );
+
+/* -- fim LibScore.doc -- */

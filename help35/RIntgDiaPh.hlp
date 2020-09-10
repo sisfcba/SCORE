@@ -1,0 +1,36 @@
+Integration Report - [1]           - Alg [2]        -   [3]    to   [4]
+ RCurr =  [5]  KA    MCurr =  [6]  KA     System =  [7]  %     Line =  [8]  %
+              Line Current Integral
+Time/Date  [9] ... [9]
+00-01      [10]    [10]
+01-02      [10]    [10]
+  :
+  :
+23-24      [10]    [10]
+
+              Line Voltage Integral
+Time/Date  [9] ... [9]
+00-01      [11]    [11]
+01-02      [11]    [11]
+  :
+  :
+23-24      [11]    [11]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Average rated line current during the period
+6-  Average measured line current during the period
+7-  Time (in percentage) in which the System remained active
+8-  Time (in percentage) in which the Line remained active
+9-  Date [dd/mm]
+10- Integral of the line current [KA] (reevaluated every hour)
+11- Integral of the line voltage [V]  (reevaluated every hour)
+
+PS
+As the exibition of all days requested may require more than just one screen,
+the missing days will be exibited after the last line of the previous screen
+(after the "23-24" data line)
+
+

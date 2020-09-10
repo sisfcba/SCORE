@@ -1,0 +1,48 @@
+                    SELECIONAR MODO MANUAL-AUTOMATICO DA CUBA
+
+ FUNCAO : Esse comando permite a mudanca do modo da cuba.
+
+                           LAY-OUT DA TELA DE CHAMADA
+
+                   +-----------------------------------------+
+                   | Selecao Auto-Manual                     |
+                   | Cuba Inicial.......: [1]                |
+                   | Cuba Final.........: [2]                |
+                   | Modo [ 1=Aut 2=Man]: [3]                |
+                   |                                         |
+                   +--Esc-Abandona   F10-Confirma -----------+
+
+
+
+                                     SINTAXE
+
+     A mudanca pode ser feita para uma unica cuba, por  faixa, ou por grupo de
+ cubas, como pode ser visto a seguir:
+
+                                   PARAMETROS
+
+ 1) Numero da primeira cuba.
+ 2) Numero da ultima cuba.
+    Observacao:
+    - A  mudanca  pode ser feita para uma unica cuba, por faixa ou por grupo de
+      cubas. Na mudanca para uma unica cuba, o parametro 2 deve ter o valor  -1
+      (default).  Na  chamada por faixa, os parametros 1 e 2 aceitam valores de
+      101-172 e 201-272. Na chamada por grupo, os  parametros  1  e  2  aceitam
+      valores de 01-72, os quais permitem a selecao conjugada das cubas 101-172
+      e 201-272.
+ 3) Modo que a cuba sera colocada.
+
+                                   No. - Modo
+                                    1  - Automatico.
+                                    2  - Manual.
+
+
+
+
+
+
+
+
+
+
+

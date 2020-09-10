@@ -1,0 +1,44 @@
+               Relatorio Historico Diario de Integracao de Cubas
+
+                      Lay-Out e Descricao dos Campos
+
+   Historico Integracao - [1] - Alg [2] - [3] ate [4] - Tur [5]
+ IAlvo = [6] KA      IReal = [7] KA      Sistema = [8] %      Linha = [9] %
+            ---Linha--- ----Tensoes  Medias---- Inc  ----Efeito Anodico----
+Data  Hora  IMed  VMed  Placa Alvo  Liq.  Tot.  Tot  Qtd  Med.  Max.  Dur  Prv
+dd/mm hh:mm (kA)  (V)    (V)   (V)   (V)  (V)   mV        (V)   (V)   mm   Qtd
+
+[10]  [11]  [12   13]   [14    15    16    17]  [18] [19   20    21   22    23]
+
+1)  Pre-Selecao de cubas
+2)  Algoritmo pre-selecionado
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Turno do relatorio
+6)  Corrente alvo (IAlvo) media da sala no periodo
+7)  Corrente real (IReal) media da sala no periodo
+8)  Percentual de tempo que o sistema ficou ativo no periodo
+9)  Percentual de tempo que a linha ficou habilitada no periodo
+10) Data a que se refere a linha do relatorio
+11) Hora a que se refere a linha do relatorio
+12) Corrente integrada [KA] da sala  calculada  no  fechamento  da  hora. Cada
+    valor de corrente exibido  e'  determinado pela combinacao do intervalo	de
+    hora e a data da integracao.
+13) Tensao integrada [V] da sala calculada  no  fechamento de hora. Cada valor
+    de tensao exibido e' determinado pela combinacao do intervalo  de hora e a
+    data da integracao.
+14) Valor integrado da tensao de placa media das cubas.
+15) Valor integrado da tensao alvo media das cubas.
+16) Valor integrado da tensao liquida media das cubas.
+17) Valor integrado da tensao total media das cubas.
+18) Valor integrado da tensao de incremento media das cubas.
+19) Quantidade de efeito anodico ocorrida na hora integrada
+20) Valor integrado da tensao media de efeito anodico.
+21) Valor maximo da tensao de efeito anodico ocorrido
+22) Valor integrado da duracao de efeito anodico.
+23) Quantidade de efeito anodico com previsao ocorrida na hora integrada
+
+    Observacao
+    - A cada ciclo de leitura,  as cubas que estiveram fora de leitura  ou  em
+	  estado diferente de normal serao ignoradas nesse ciclo para o calculo da
+	  integracao

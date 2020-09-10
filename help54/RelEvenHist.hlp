@@ -1,0 +1,399 @@
+                         Relatorio de Eventos Historicos
+
+                  Relacao das Classes de Eventos Pre-Definidas
+
+    Classe   -  Descricao    
+
+    EVLINHA  -  Eventos gerados para linha
+    EVCUBA   -  Eventos gerados para cubas
+    EVPROC   -  Eventos gerados para cuba e linha, ou seja, EVLINHA + EVCUBA
+    EVSIST   -  Mensagens geradas pelo sistema devido a alguma anormalidade  
+    EVTOTAL  -  Todos eventos e mensagens  gerados, ou seja, EVPROC + EVSIST
+
+
+                        Lay-Out do Relatorio
+
+  Relatorio de Eventos Historicos de [1] - [2] ate [3] - [4]
+Eventos: [ [5]                                                    ]
+         [                                                        ]
+Data  Hora      Cub-Cub Evento     Par1     Par2     Par3     Par4     Par5
+xx/xx xx:xx:xx  xxx-xxx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+[6]   [7]       [8]     [9]
+xx/xx xx:xx:xx  xxx-xxx xxxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx
+[6]   [7]       [8]     [9.1]      [9.2]    [9.3]    [9.4]    [9.5]    [9.6]
+
+1) Data inicial do relatorio
+2) Hora inicial do relatorio
+3) Data final do relatorio
+4) Hora final do relatorio
+5) Relacao de eventos selecionados
+6) Data que o evento foi gerado
+7) Hora que o evento foi gerado
+8) Cuba ou faixa de cubas relacionadas ao evento, conforme o dominio abaixo:
+
+                Valores    -  Referencia
+
+                xxx-xxx    -  Evento gerado para faixa de cubas
+                  xxx      -  Evento gerado para uma cuba
+                  000      -  Evento gerado para linha
+                -------    -  Mensagem interna do sistema
+
+9) Quando o evento gerado  for  uma  mensagem  interna do sistema, esse  campo
+   exibe seu conteudo ( [9] ),  quando for  em funcao do controle do processo,
+   sera composto por varios itens variaveis de dependendo do evento,  conforme
+   a descricao abaixo:
+
+             Item  -  Descricao
+              9.1  -  Mneumonico do evento
+              9.2  -  1o. Parametro do evento
+              9.3  -  2o. Parametro do evento
+              9.4  -  3o. Parametro do evento
+              9.5  -  4o. Parametro do evento
+              9.6  -  5o. Parametro do evento
+
+
+                Relacao de Eventos e Parametros do Relatorio 
+
+
+01) AjusCamisa - Cancelamento e inibicao de ajuste de camisa via tabela
+		  Par1 - Origem da operacao,ou seja, Terminal (Opcao de operacao) ou
+				 Controle (Ajuste manual de camisa via painel de operacao)
+		  Par2 - Operacao efetuada, ou seja, inibicao ou cancelamento
+		  Par3 - Numero da tabela cancelada/inibida
+		  Par4 - Passo da tabela cancelada/inibida
+		  Par5 - Quando operacao for inibicao, mostra seu tempo
+02) AtrasoEa   - Cuba em atraso de ocorrencia de Ea
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+03) ChaveLocal - Alteracao de chave para modo local
+		  Par1 - Origem da operacao de alteracao da chave (Painel)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+04) ChaveRemot - Alteracao chave para modo remoto
+		  Par1 - Origem da operacao de alteracao da chave (Painel)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+05) CorrenInv  - Corrente invalida
+		  Par1 - Nenhum
+		  Par2 - Corrente instantanea (IInst)
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+06) CubaFLeit  - Cuba retirada (fora) de leitura
+		  Par1 - Origem da operacao de retirada (Terminal ou Controle)
+		  Par2 - Codigo do erro que causou a retirada
+		  Par3 - Nenhum
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Nenhum
+07) DesAutAnod - Descida automatica de anodo comandada
+		  Par1 - Nenhum
+		  Par2 - Duracao da descida
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+08) DesAutCami - Descida automatica de camisa comandada por tabela
+		  Par1 - Indicacao de operacao do controle
+		  Par2 - Duracao da descida em segundos
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+09) DesAutCnf  - Descida automatica de anodo confirmada
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+10) DesManAnod - Descida manual de anodo comandada
+		  Par1 - Origem da operacao de descida (Painel ou Terminal)
+		  Par2 - Duracao da descida
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+11) DesManCami - Descida manual de camisa
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+12) DifCorrent - Diferenca leitura entre correntes principal e secundaria
+		  Par1 - Corrente principal (ITit) em KA
+		  Par2 - Corrente reserva (IRes) em KA
+		  Par3 - Diferenca entre a corrente principal e reserva (ITit - IRes)
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+13) EvIncOper  - Ativa/desativa incremento de operacao
+		  Par1 - Origem da operacao de incremento (Terminal)
+		  Par2 - Duracao do incremento
+		  Par3 - Tipo de incremento (Rampa ou Constante)
+		  Par4 - Intensidade do incremento em mV
+		  Par5 - Operacao efetuada (Ativar ou Desativar)
+14) EvMudaEsta - Mudanca de estado da cuba pelo operador
+		  Par1 - Novo estado da cuba (Partida, Ligada, Desligada ou Normal)
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+15) FalhaMov   - Falha na confirmacao de movimentacao automatica de anodo
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+16) FimCorrida - Fim de corrida
+		  Par1 - Nenhum
+		  Par2 - Tensao maxima durante corrida-VAlvo antes da corrida
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+17) FimDesTens - Fim de desvio de tensao
+		  Par1 - Origem do desvio, corrida (Corrida) ou controle (--------)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+18) FimEa      - Fim de efeito anodico
+		  Par1 - Duracao do efeito anodico
+		  Par2 - Tensao maxima do efeito anodico
+		  Par3 - Energia liquida do efeito anodico (KWh)
+		  Par4 - Tensao media bruta do efeito anodico
+		  Par5 - Energia bruta do efeito anodico (KWh)
+19) FimInibMov - Fim de inibicao de movimentacao por previsao
+		  Par1 - Derivada historica no inicio da previsao (uOhms/h)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+20) FimPrevEa  - Fim de previsao de Ea
+		  Par1 - Derivada historica no fim da previsao (uOhms/h)
+		  Par2 - Tensao rapida do ciclo de controle
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+21) FimQuebrad - Fim de quebrada
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+22) FimTenPrEa - Fim desvio de tensao em previsao de Ea
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+23) ILinAlta   - Corrente de linha alta
+		  Par1 - Corrente do ciclo de controle (ICicCont) em KA
+		  Par2 - Corrente instantanea (IInst) em KA
+		  Par3 - Corrente alvo (IAlvo) em KA
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+24) ILinBaixa  - Corrente de linha baixa
+		  Par1 - Corrente do ciclo de controle (ICicCont) em KA
+		  Par2 - Corrente instantanea (IInst) em KA
+		  Par3 - Corrente alvo (IAlvo) em KA
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+25) IncTPinos  - Ativa/desativa incremento de troca de pinos
+		  Par1 - Origem da operacao de incremento (Terminal)
+		  Par2 - Duracao do incremento
+		  Par3 - Tipo de incremento (Rampa ou Constante)
+		  Par4 - Intensidade do incremento em mV
+		  Par5 - Operacao efetuada (Ativar ou Desativar)
+26) IniCorrida - Inicio de corrida
+		  Par1 - Origem sinalizacao de corrida (Painel ou Terminal)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+27) IniDesTens - Inicio desvio de tensao
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+28) IniInibMov - Inicio de inibicao de movimentacao por previsao
+		  Par1 - Derivada historica no inicio da previsao (uOhms/h)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+29) IniPrevEa  - Inicio de previsao de Ea
+		  Par1 - Derivada historica no inicio da previsao (uOhms/h)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+30) IniQuebrad - Inicio de quebrada
+		  Par1 - Origem sinalizacao de quebrada (Painel ou Terminal)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+31) IniTenPrEa - Inicio desvio de tensao em previsao de Ea
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Nenhum
+		  Par5 - Tensao alvo (VAlvo)
+32) InibeRuido - Inibicao temporaria do tratamento de ruido
+		  Par1 - Tempo que o ruido ficara inibido em minutos
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+33) InicioEa   - Inicio de efeito anodico
+		  Par1 - Classificacao do efeito (Lento, Rapido ou Muito Rapido)
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+34) IntegLinha - Integracao horaria de linha
+		  Par1 - Integracao da corrente da linha em KA da ultima hora
+		  Par2 - Integracao da tensao da linha em V na ultima hora
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+35) LDesabilit - Linha desativada
+		  Par1 - Nenhum
+		  Par2 - Corrente instantanea (IInst) em KA
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+36) LinHabilit - Linha ativa
+		  Par1 - Nenhum
+		  Par2 - Corrente instantanea (IInst) em KA
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+37) LinhaAtiva - Linha habilitada para o controle
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+38) LogCuba    - Log de operacao e configuracao da cuba
+		  Par1 - Programa que executou a operacao
+		  Par2 - Operador que executou operacao
+		  Par3 - Variavel configurada ou acao efetuada
+		  Par4 - Antigo valor da variavel configurada ou parametro da operacao
+                 efetuada
+		  Par5 - Novo  valor  da variavel configurada ou parametro da operacao
+                 efetuada
+39) LogLinha   - Log de operacao e configuracao da linha
+		  Par1 - Programa que executou a operacao
+		  Par2 - Operador que executou operacao
+		  Par3 - Variavel configurada ou acao efetuada
+		  Par4 - Antigo valor da variavel configurada ou parametro da operacao
+                 efetuada
+		  Par5 - Novo  valor  da variavel configurada ou parametro da operacao
+                 efetuada
+40) MudaAlim   - Mudanca do algoritmo de alimentacao (PF)
+		  Par1 - Nome do algoritmo anterior
+		  Par2 - Tempo que o algoritmo permeneceu em execucao (hh:mm)
+		  Par3 - Quantidade de alumina fornecida durante o algoritmo (Kg) 
+		  Par4 - Nome do algoritmo que entrou em execucao 
+		  Par5 - Origem da mudanca de estados (Operador/Controle) 
+41) MudaEstAli - Mudanca do estado de alimentacao (PF)
+		  Par1 - Numero do estado anterior
+		  Par2 - Quantidade de alumina fornecida durante o estado (Kg) 
+		  Par3 - Tempo que o estado permeneceu em execucao (hh:mm)
+		  Par4 - Numero do estado que entrou em execucao 
+		  Par5 - Nenhum
+42) MudaEstBar - Mudanca do estado de alimentacao (Barra-Lateral)
+		  Par1 - Nome do estado anterior
+		  Par2 - Numero de quebradas no estado anterior
+		  Par2 - Tempo que o estado permeneceu em execucao (hh:mm)
+		  Par4 - Nome do estado que entrou em execucao 
+		  Par5 - Origem da mudanca de estados (Operador/Controle) 
+43) OperAuto   - Operacao em modo automatico (remoto)
+		  Par1 - Origem operacao de mudanca do modo (Terminal)
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+44) OperManual - Operacao em modo manual (remoto)
+		  Par1 - Origem operacao de mudanca do modo (Terminal ou Controle)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+45) ResAtivo   - Computador secundario disponivel
+		  Par1 - Nodo do computador secundario
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+46) ResDesativ - Computador secundario nao disponivel
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+47) Ruido      - Inicio/Fim tratamendo de ruido
+		  Par1 - Inicio ou Fim
+		  Par2 - Tipo (Lento ou Rapido)
+		  Par3 - Classificacao (Forte ou Fraco)
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+48) SisAtivado - Sistema ativado
+		  Par1 - Tempo que o sistema ficou desativado
+		  Par2 - Nodo do computador que partiu o sistema
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+49) SubAutAnod - Subida automatica de anodo comandada
+		  Par1 - Origem do comando, corrida (CORRIDA) ou controle (--------)
+		  Par2 - Duracao da subida
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+50) SubAutCami - Subida automatica de camisa comandada por tabela
+		  Par1 - Indicacao de operacao do controle
+		  Par2 - Duracao da subida em segundos
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+51) SubAutCnf  - Subida automatica de anodo confirmada
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+52) SubManAnod - Subida manual de anodo comandada
+		  Par1 - Origem da operacao de subida (Painel ou Terminal)
+		  Par2 - Duracao da subida
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+53) SubManCami - Subida manual da camisa
+		  Par1 - Nenhum
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Tensao alvo (VAlvo)
+54) SupervEsp  - Valor de resistencia fora de faixa
+		  Par1 - Estado da cuba (Partida, Ligada, Desligada ou Normal)
+		  Par2 - Nenhum
+		  Par3 - Tensao do ciclo de controle (VCicCont)
+		  Par4 - Tensao instantanea (VInst)
+		  Par5 - Nenhum
+55) TabIncOpe  - Ativa/desativa tabela de incrementos de operacao
+		  Par1 - Origem da operacao na tabela (Terminal)
+		  Par2 - Operacao efetuada na tabela
+		  Par3 - Numero da tabela associada a cuba
+		  Par4 - Passo corrente da tabela
+		  Par5 - Nenhum
+56) TenLinInv  - Erro leitura de tensao de linha
+		  Par1 - Nenhum
+		  Par2 - Codigo do erro de leitura
+		  Par3 - Nenhum
+		  Par4 - Nenhum
+		  Par5 - Nenhum
+ 

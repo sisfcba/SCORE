@@ -1,0 +1,78 @@
+                   Relatorio de Incrementos do Ciclo de Controle 
+
+                      Lay-Out e Descricao dos Campos
+
+               Relatorio Atual de Incrementos das Cubas [1] a [2]
+Cuba R. Rapido R. Lento- T. Pinos-- --Corrida--  -Quebrada-- --Operacao--  Tot
+     mV   Dur  mV   Dur  mV  Dur  T mV   Dur  T  mV   Dur  T  mV   Dur  T  mV
+[3] [ 4    5    6    7    8   9  10 11    2  13  14   15  16  17   18  19  20]
+
+Med [21   22   23   24   25  26     27   28      29   30      31   32      33]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Numero da cuba.  Marcado com (t) quando estiver sob o efeito da tabela  de
+    incrementos.
+4)  Tensao de incremento por ruido rapido (mV)
+5)  Tempo que a cuba ja esta em tratamento por ruido rapido
+6)  Tensao de incremento por ruido lento (mV)
+7)  Tempo que a cuba ja esta em tratamento por ruido lento
+8)  Tensao de incremento por troca de pinos (mV)
+9)  Tempo que a cuba ja esta em tratamento por troca de pinos
+10) Tipo de incremento por troca de pinos
+               Tipo  -  Descricao
+                C    -  Incremento constante
+                R    -  Incremento decrescente (rampa)
+11) Tensao de incremento por corrida (mV)
+12) Duracao do tratamento por corrida
+13) Tipo de incremento por corrida
+               Tipo  -  Descricao
+                C    -  Incremento constante.
+                R    -  Incremento decrescente (rampa)
+                E    -  Incremento invalido (erro)
+14) Resistencia de incremento por quebrada expressa em tensao (mV)
+15) Duracao do tratamento por quebrada
+16) Tipo de incremento dado por quebrada
+               Tipo  -  Descricao
+                C    -  Incremento constante
+                R    -  Incremento decrescente (rampa)
+                E    -  Incremento invalido (erro)
+17) Resistencia de incremento por operacao expressa em tensao (mV)
+18) Duracao do incremento por operacao
+19) Tipo de incremento por operacao
+               Tipo  -  Descricao
+                C    -  Incremento constante
+                R    -  Incremento decrescente (rampa)
+                E    -  Incremento invalido (erro)
+20) Resistencia  total  de  incremento   da  cuba  expressa  em  tensao  (mV),
+    considerando o limite de incremento permitido
+
+21) Media da resistencia de incremento por ruido rapido das cubas expressa  em
+    tensao (mV)
+22) Media do tempo que as cubas estao em tratamento por ruido rapido
+23) Media da resistencia de incremento por ruido lento  das cubas expressa  em
+    tensao (mV)
+24) Media do tempo que as cubas estao em tratamento por ruido lento
+25) Media da resistencia de incremento por troca de pinos das cubas  expressa
+    em tensao (mV)
+26) Media do duracoes do tratamento por troca de pinos das cubas
+27) Media da resistencia  de  incremento por corrida  das  cubas  expressa  em
+    tensao (mV)
+28) Media das duracoes do tratamento por corrida das cubas
+29) Media da resistencia  de  incremento por quebrada  das  cubas expressa  em
+    tensao (mV)
+30) Media dos tempos de incremento por quebrada das cubas
+31) Media da resistencia  de  incremento pela operacao  das cubas expressa  em
+    tensao (mV)
+32) Media dos tempos de incremento dado pela operacao das cubas
+33) Media da resistencia total  de  incremento  das  cubas expressa  em tensao
+    (mV)
+
+    Observacao
+    - As cubas que estiverem fora de leitura, ou nos estados desligado, ligado
+      ou partido nao serao consideradas no calculo das medias
+
+
+
+
+

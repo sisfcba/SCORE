@@ -1,0 +1,87 @@
+cp -Vrp //54/score/base_dados/descr_ev*  //1/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*  //2/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*  //3/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //49/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //30/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*  //4/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*  //5/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //13/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //14/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //12/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //17/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //47/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //15/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //16/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*	 //7/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*	 //8/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*	 //6/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //40/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //48/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev*	 //9/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //10/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //19/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //20/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //18/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //39/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //41/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //21/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //22/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //12/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //35/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //36/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //11/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //37/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //38/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //43/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //44/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //42/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //45/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //46/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //51/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //52/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //50/score/base_dados/
+cp -Vrp //54/score/base_dados/descr_ev* //53/score/base_dados/
+
+on -f1  /score/util/IniDescrEv -e -v
+on -f2  /score/util/IniDescrEv -e -v
+on -f3  /score/util/IniDescrEv -e -v
+on -f49 /score/util/IniDescrEv -e -v
+on -f30 /score/util/IniDescrEv -e -v
+on -f4  /score/util/IniDescrEv -e -v
+on -f5  /score/util/IniDescrEv -e -v
+on -f13	/score/util/IniDescrEv -e -v
+on -f14	/score/util/IniDescrEv -e -v
+on -f12	/score/util/IniDescrEv -e -v
+on -f17	/score/util/IniDescrEv -e -v
+on -f47	/score/util/IniDescrEv -e -v
+on -f15 /score/util/IniDescrEv -e -v
+on -f16	/score/util/IniDescrEv -e -v
+on -f7	/score/util/IniDescrEv -e -v
+on -f8	/score/util/IniDescrEv -e -v
+on -f6	/score/util/IniDescrEv -e -v
+on -f40	/score/util/IniDescrEv -e -v
+on -f48 /score/util/IniDescrEv -e -v
+on -f9	/score/util/IniDescrEv -e -v
+on -f10	/score/util/IniDescrEv -e -v
+on -f19	/score/util/IniDescrEv -e -v
+on -f20	/score/util/IniDescrEv -e -v
+on -f18	/score/util/IniDescrEv -e -v
+on -f39 /score/util/IniDescrEv -e -v
+on -f41	/score/util/IniDescrEv -e -v
+on -f21	/score/util/IniDescrEv -e -v
+on -f22	/score/util/IniDescrEv -e -v
+on -f12	/score/util/IniDescrEv -e -v
+on -f35	/score/util/IniDescrEv -e -v
+on -f36 /score/util/IniDescrEv -e -v
+on -f11	/score/util/IniDescrEv -e -v
+on -f37	/score/util/IniDescrEv -e -v
+on -f38	/score/util/IniDescrEv -e -v
+on -f43	/score/util/IniDescrEv -e -v
+on -f44	/score/util/IniDescrEv -e -v
+on -f42 /score/util/IniDescrEv -e -v
+on -f45	/score/util/IniDescrEv -e -v
+on -f46	/score/util/IniDescrEv -e -v
+on -f51	/score/util/IniDescrEv -e -v
+on -f52	/score/util/IniDescrEv -e -v
+on -f50	/score/util/IniDescrEv -e -v
+on -f53 /score/util/IniDescrEv -e -v

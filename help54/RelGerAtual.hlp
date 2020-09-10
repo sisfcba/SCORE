@@ -1,0 +1,49 @@
+                   Relatorio Geral do Ciclo de Controle 
+
+                      Lay-Out e Descricao dos Campos
+
+                    Relatorio Atual das Cubas [1] a [2]
+      IAlvo = [3] KA          ICicCont = [4] KA         NCicCont = [5]
+Cuba VInc VPlac VAlvo VAtua VErro Manual TUlEa AtrEa PrvEa RDrvH  Pas Condicao
+     [mV] ----------[V]---------- ---------[hh:mm]-------- [uO/h] Inc
+[6]  [7]   [8]   [9]  [10]  [11]  [12]   [13]  [14]  [15]   [16]  [17]  [18]
+
+Med  [19]  [20]  [21] [22]  [23]
+
+1)  Numero da primeira cuba do relatorio
+2)  Numero da ultima cuba do relatorio
+3)  Valor da corrente alvo da linha (kA)
+4)  Valor da corrente media da linha no ciclo de controle (kA)
+5)  Numero de ciclos de controle ocorridos ate o momento
+6)  Numero da cuba. Marcada  com (+) quando a cuba  estiver fora de leitura ou
+    em estado diferente de normal e,  com (t) quando  estiver  sob  efeito  da
+    tabela de incrementos de operacao.
+7)  Resistencia incremento total da cuba expressa em tensao (mV)
+8)  Tensao de placa da cuba (V)
+9)  Resistencia alvo da cuba expressa em tensao (V)
+10) Resistencia media liquida do ciclo de controle da cuba expressa em  tensao
+    (RCicContlLiq * INominal). Para as cubas em estado normal ou partido  esse
+    valor recebe o acrescimo do Bemf (RCicContlLiq * INominal + Bemf). 
+11) Diferenca entre a resistencia alvo  e  a  media bruta do ciclo de controle
+    expressa em tensao, ou seja ((RAlvo - RCicContlBruta) * INominal) [V]
+12) Tempo que a cuba ja esta em Manual-Local, Manual-Remoto ou Manual-Controle
+13) Tempo desde o ultimo Ea
+14) Tempo que a cuba ja esta em  atraso de efeito anodico, conforme a seguinte
+    formula:  HoraAtual - (EaHoraInicio + EaAtrasoMax) 
+15) Hora em que se iniciou a previsao de ocorrencia do efeito anodico na cuba
+16) Media historica da derivada da resistencia suavizada
+17) Numero do passo da tabela de incrementos que esta sendo executado.
+18) Situacao atual da cuba, conforme a tabela seguinte:
+               Situacao  -  Descricao
+               Corrida   -  Cuba em corrida
+               EA        -  Cuba em efeito anodico
+               Man-Ctrl  -  Cuba em manual local pelo controle
+               Man-Loc   -  Cuba em manual local pela operacao
+               Man-Rem   -  Cuba em manual remoto pela operacao
+               Quebrada  -  Cuba em quebrada
+
+19 a 23) Media dos campos 7 a 11 respectivamente
+
+    Observacao
+    - As cubas que estiverem fora de leitura, ou nos estados desligado, ligado
+      ou partido nao serao consideradas no calculo das medias

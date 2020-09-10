@@ -1,0 +1,37 @@
+        Relatorio Historico Diario de Estatistica de Efeito Anodico
+
+                      Lay-Out e Descricao dos Campos
+
+ Estatistica de EA - [1]           - Alg [2]        - [3] ate [4]
+ IAlvo = [5] KA      IReal = [6] KA      Sistema = [7] %      Linha = [8] %
+  Duracao   %         VMax    %         Interv   %       Interv Prev   %
+   [Min]                                [Hora]              [Min]
+     0     [9]         <=15  [10]        <=4    [11]         <=10     [12] 
+     1     [9]        15-20  [10]        4-8    [11]        11-20     [12] 
+     2      .         20-25   .          8-12    .          20-30      .   
+     3      .         25-30   .         12-16    .          30-40      .   
+     4      .         30-35   .         16-20    .          40-50      .   
+     5      .         35-40   .         20-24    .          50-60     [12] 
+     6     [9]        40-45  [10]       24-28   [11]          >60     [12] 
+    > 6    [9]          >45  [10]         >28   [11] 
+
+1)  Codigo das cubas selecionadas na tela de pre-selecao
+2)  Algoritmo definido na tela de pre-selecao
+3)  Data inicial definida na tela de pre-selecao
+4)  Data final definida na tela de pre_selecao
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Percentual de tempo que o sistema ficou ativo no periodo
+8)  Percentual de tempo que a linha ficou habilitada no periodo
+9)  Percentual de efeito anodico distribuido respectivamente por sua duracao,
+    conforme os valores estabelecidos pelo campo duracao
+10) Percentual de efeito anodico distribuido respectivamente por sua  tensao
+    maxima, conforme as faixas estabelecidas pelo campo VMax
+11) Percentual de  efeito anodico  distribuido  respectivamente  pelo  tempo
+    decorrido entre o inicio do efeito considerado e o anterior, conforme as
+    as faixas estabelecidas pelo campo Interv
+12) Percentual de  efeito anodico  distribuido  respectivamente  pelo  tempo
+    decorrido entre  o  inicio da previsao e o inicio do efeito, conforme as
+    as faixas estabelecidas pelo campo Interv Prev
+
+

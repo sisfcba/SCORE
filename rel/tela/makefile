@@ -1,0 +1,369 @@
+#
+#	Make dos relatorios de exemplo
+#
+
+###DEBUG	=
+DEBUG	=	-g
+FLAGS=		-mf -WC,-we -Wc,-we -O -wx -j $(DEBUG) -5 -fpi87 -fp3
+#FLAGS=		-mf -Wc,-we -O -wx -j $(DEBUG) -5 -fpi87 -fp3
+CFLAGS=		$(FLAGS) -D CBA_120KAII_III=1 -I $(DIR_HDRS) -I $(DIR_SRCS)
+LDFLAGS=	$(FLAGS) -b -l /usr/lib/queuef.lib -l termlib
+LINK=		$(LD) $(LDFLAGS) -o $@
+DIR_SRCS=	../tela
+DIR_HDRS=	../../include
+
+DIR_EXEC=	../../../exec/
+DIR_LIB1=	../../rel/lib
+DIR_LIB2=   ../../lib_score
+DIR_LIB3=   ../../ihm/lib
+DIR_LIB4=   lib
+DIR_LIB10=  libexp
+DIR_LIB12=  /qnx4/phtk/lib
+DIR_LIB13=  ../../lib_ph
+DIR_LIB14=	../imp/libph
+DIR_LIB15=  libph
+
+HEADERS=	$(DIR_HDRS)/Definicao.h $(DIR_HDRS)/ScoreConst.h \
+			$(DIR_HDRS)/Macros.h $(DIR_HDRS)/Score.h \
+			$(DIR_HDRS)/Prototipos.h $(DIR_HDRS)/VarsComum.h \
+			$(DIR_HDRS)/TiposOpeW.h $(DIR_SRCS)/MainRelatCC.c \
+			$(DIR_SRCS)/MainRelatHT.c
+			
+HEADERS1=	$(HEADERS) $(DIR_HDRS)/WindowsCBA.h $(DIR_HDRS)/OperacaoBib.h \
+			$(DIR_HDRS)/Relatorios.h $(DIR_HDRS)/RelPrototipos.h \
+			$(DIR_HDRS)/KeysCBA.h $(DIR_HDRS)/BdScore.h \
+			$(DIR_HDRS)/ScoreMsgs.h $(DIR_HDRS)/IniArqVar.h  
+
+DEPCTRL=	$(DIR_SRCS)/MainRelatCC.c $(HEADERS1)
+
+
+LIB1=		$(DIR_LIB1)/BibRel.lib
+LIB2=		$(DIR_LIB2)/Score.lib
+LIB3=		$(DIR_LIB3)/Console.lib
+LIB4=		$(DIR_LIB4)/RelTelaLib.lib
+LIB11=  	$(DIR_LIB10)/RelTelaLibexp.lib
+LIB12=  	$(DIR_LIB12)/photon_s.lib $(DIR_LIB12)/phexlib3r.lib
+LIB13=      $(DIR_LIB13)/ScorePh.lib
+LIB14=      $(DIR_LIB14)/RelImpLibPH.lib
+LIB15=  	$(DIR_LIB15)/RelTelaLibph.lib
+
+LIB=		$(LIB1) $(LIB2) $(LIB3) $(LIB4)
+DEFLIB= 	-l$(LIB1) -l$(LIB2) -l$(LIB3) -l$(LIB4)
+
+LIBH=		$(LIB1) $(LIB2) $(LIB11) $(LIB12) $(LIB13)
+DEFLIBH=	-l$(LIB1) -l$(LIB2) -l$(LIB11) -l$(LIB12) -l$(LIB13)
+
+LIBHIP=		$(LIB1) $(LIB2) $(LIB11) $(LIB12) $(LIB13) $(LIB14)
+DEFLIBHIP=	-l$(LIB1) -l$(LIB2) -l$(LIB11) -l$(LIB12) -l$(LIB13) -l$(LIB14)
+
+LIBPH=		$(LIB1) $(LIB2) $(LIB15) $(LIB12) $(LIB13)
+DEFLIBPH=	-l$(LIB1) -l$(LIB2) -l$(LIB15) -l$(LIB12) -l$(LIB13)
+
+LIBPHIP=		$(LIB1) $(LIB2) $(LIB15) $(LIB12) $(LIB13) $(LIB14)
+DEFLIBPHIP=	-l$(LIB1) -l$(LIB2) -l$(LIB15) -l$(LIB12) -l$(LIB13) -l$(LIB14)
+
+all: rel_cons rel_ph rel_exp
+	@echo Todos os arquivos de relatorio estao atualizados!
+
+################################## Relatorios de console ######################################
+rel_cons:	$(DIR_EXEC)RelExemploCC $(DIR_EXEC)RelExemploDia $(DIR_EXEC)RelExemploTDia  $(DIR_EXEC)RArqTen \
+            $(DIR_EXEC)RelMovDia $(DIR_EXEC)RelMovTDia $(DIR_EXEC)RelSSF \
+            $(DIR_EXEC)RRuiSigDia $(DIR_EXEC)RRuiSigTDia $(DIR_EXEC)REtcEaDia $(DIR_EXEC)REtcEaTDia \
+			$(DIR_EXEC)RelHistPF $(DIR_EXEC)RMigraEventos
+	@echo Relatorios console atualizados ! 
+
+#					*** Relatorios do Ciclo de Controle ***
+
+RelExemploCC.o: $(DEPCTRL) $(DIR_SRCS)/RelExemploCC.c $(DIR_SRCS)/RelExemploCC.h
+
+#					*** Relatorios de Historico Diarios ***
+
+RelExemploDia.o:   $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h $(HEADERS1)
+
+RRuiSigDia.o:   $(DIR_SRCS)/RRuiSigDia.c $(DIR_SRCS)/RRuiSigDia.h $(HEADERS1)
+
+RelMovDia.o:   $(DIR_SRCS)/RelMovDia.c $(DIR_SRCS)/RelMovDia.h $(HEADERS1)
+
+RelSSF.o:   $(DIR_SRCS)/RelSSF.c $(DIR_SRCS)/RelSSF.h $(HEADERS1)
+
+RMigraEventos.o:   $(DIR_SRCS)/RMigraEventos.c $(DIR_SRCS)/RMigraEventos.h $(HEADERS1)
+
+REtcEaDia.o:   $(DIR_SRCS)/REtcEaDia.c $(DIR_SRCS)/REtcEaDia.h $(HEADERS1)
+
+RelHistPF.o:   $(DIR_SRCS)/RelHistPF.c $(DIR_SRCS)/RelHistPF.h $(HEADERS1)
+
+#					*** Relatorios Historicos de Turno ***
+
+RelExemploTDia.o:  $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h $(HEADERS1)
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploDia.c -DREL_TURNO
+
+RelMovTDia.o:  $(DIR_SRCS)/RelMovDia.c $(DIR_SRCS)/RelMovDia.h $(HEADERS1)
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelMovDia.c -DREL_TURNO
+
+RRuiSigTDia.o:  $(DIR_SRCS)/RRuiSigDia.c $(DIR_SRCS)/RRuiSigDia.h $(HEADERS1)
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RRuiSigDia.c -DREL_TURNO
+
+RArqTen.o:   $(DIR_SRCS)/RArqTen.c $(DIR_SRCS)/RArqTen.h $(HEADERS1)
+
+
+REtcEaTDia.o:  $(DIR_SRCS)/REtcEaDia.c $(DIR_SRCS)/REtcEaDia.h $(HEADERS1)
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/REtcEaDia.c -DREL_TURNO
+
+RelHistTPF.o:  $(DIR_SRCS)/RelHistPF.c $(DIR_SRCS)/RelHistPF.h $(HEADERS1)
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelHistPF.c -DREL_TURNO
+
+
+#			*** Relatorios do Ciclo de Controle ***
+
+$(DIR_EXEC)RelExemploCC: RelExemploCC.o $(LIB)
+	$(LINK) $(DEFLIB) RelExemploCC.o
+
+#			*** Relatorios de Historico Diarios ***
+
+$(DIR_EXEC)RelExemploDia:   RelExemploDia.o $(LIB)
+	$(LINK) $(DEFLIB) RelExemploDia.o
+
+$(DIR_EXEC)RelMovDia:   RelMovDia.o $(LIB)
+	$(LINK) $(DEFLIB) RelMovDia.o
+
+$(DIR_EXEC)RRuiSigDia:   RRuiSigDia.o $(LIB)
+	$(LINK) $(DEFLIB) RRuiSigDia.o
+
+$(DIR_EXEC)RArqTen:	 RArqTen.o $(LIB)
+	$(LINK) $(DEFLIB) RArqTen.o
+
+$(DIR_EXEC)RelSSF:	 RelSSF.o $(LIB)
+	$(LINK) $(DEFLIB) RelSSF.o
+
+$(DIR_EXEC)RMigraEventos:	 RMigraEventos.o $(LIB)
+	$(LINK) $(DEFLIB) RMigraEventos.o
+
+$(DIR_EXEC)REtcEaDia:	 REtcEaDia.o $(LIB)
+	$(LINK) $(DEFLIB) REtcEaDia.o
+
+$(DIR_EXEC)RelHistPF:	 RelHistPF.o $(LIB)
+	$(LINK) $(DEFLIB) RelHistPF.o
+
+
+
+#			*** Relatorios Historicos de Turno ***
+
+$(DIR_EXEC)RelExemploTDia:   RelExemploTDia.o $(LIB)
+	$(LINK) $(DEFLIB) RelExemploTDia.o
+
+$(DIR_EXEC)RelMovTDia:   RelMovTDia.o $(LIB)
+	$(LINK) $(DEFLIB) RelMovTDia.o
+
+$(DIR_EXEC)RRuiSigTDia:   RRuiSigTDia.o $(LIB)
+	$(LINK) $(DEFLIB) RRuiSigTDia.o
+
+$(DIR_EXEC)REtcEaTDia:   REtcEaTDia.o $(LIB)
+	$(LINK) $(DEFLIB) REtcEaTDia.o
+
+$(DIR_EXEC)RelHistTPF:   RelHistTPF.o $(LIB)
+	$(LINK) $(DEFLIB) RelHistTPF.o
+
+
+################################## Relatorios da interface Photon ################################
+rel_ph:	$(DIR_EXEC)RExemploCCPh $(DIR_EXEC)RExemploDiaPh $(DIR_EXEC)RExemploTDiaPh \
+		$(DIR_EXEC)RExemploCCPhIP $(DIR_EXEC)RRuiSigDiaPh $(DIR_EXEC)RRuiSigTDiaPh \
+		$(DIR_EXEC)RelMovDiaPh $(DIR_EXEC)RelMovTDiaPh $(DIR_EXEC)RelPerdEnPh \
+		$(DIR_EXEC)REtcEaDiaPh $(DIR_EXEC)REtcEaTDiaPh \
+		$(DIR_EXEC)RAlimDiaPh  $(DIR_EXEC)RAlimTDiaPh \
+		$(DIR_EXEC)RAlimDia2Ph  $(DIR_EXEC)RAlimTDia2Ph \
+		$(DIR_EXEC)RelHistPFPh  $(DIR_EXEC)RelHistTPFPh 
+
+
+	@echo Relatorios Photon atualizados ! 
+
+#--------- 
+RExemploCCPh.o: $(DEPCTRL) $(DIR_SRCS)/RelExemploCC.c $(DIR_SRCS)/RelExemploCC.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploCC.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)RExemploCCPh: RExemploCCPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RExemploCCPh.o  
+
+$(DIR_EXEC)RExemploCCPhIP: RExemploCCPh.o $(LIBPHIP)
+	$(LINK) $(DEFLIBPHIP) RExemploCCPh.o  
+
+#----------
+RExemploDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploDia.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)RExemploDiaPh: RExemploDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RExemploDiaPh.o
+
+RelMovDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelMovDia.c $(DIR_SRCS)/RelMovDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelMovDia.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)RelMovDiaPh: RelMovDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RelMovDiaPh.o
+
+RelPerdEnPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelPerdEn.c $(DIR_SRCS)/RelPerdEn.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelPerdEn.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)RelPerdEnPh: RelPerdEnPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RelPerdEnPh.o
+
+
+
+#----------
+RExemploTDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelExemploDia.c $(DIR_SRCS)/RelExemploDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelExemploDia.c -DOPERACAO_WINDOWS -DREL_TURNO
+
+$(DIR_EXEC)RExemploTDiaPh: RExemploTDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RExemploTDiaPh.o
+
+RelMovTDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelMovDia.c $(DIR_SRCS)/RelMovDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelMovDia.c -DOPERACAO_WINDOWS -DREL_TURNO
+
+$(DIR_EXEC)RelMovTDiaPh: RelMovTDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RelMovTDiaPh.o
+
+
+#----------
+RRuiSigDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RRuiSigDia.c $(DIR_SRCS)/RRuiSigDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RRuiSigDia.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)RRuiSigDiaPh: RRuiSigDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RRuiSigDiaPh.o
+
+RRuiSigTDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RRuiSigDia.c $(DIR_SRCS)/RRuiSigDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RRuiSigDia.c -DOPERACAO_WINDOWS -DREL_TURNO
+
+$(DIR_EXEC)RRuiSigTDiaPh: RRuiSigTDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RRuiSigTDiaPh.o
+
+
+#----------
+REtcEaDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/REtcEaDia.c $(DIR_SRCS)/REtcEaDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/REtcEaDia.c -DOPERACAO_WINDOWS
+
+$(DIR_EXEC)REtcEaDiaPh: REtcEaDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) REtcEaDiaPh.o
+
+REtcEaTDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/REtcEaDia.c $(DIR_SRCS)/REtcEaDia.h
+	$(COMPILE.c) -fo=$@ $(DIR_SRCS)/REtcEaDia.c -DOPERACAO_WINDOWS -DREL_TURNO
+
+$(DIR_EXEC)REtcEaTDiaPh: REtcEaTDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) REtcEaTDiaPh.o
+
+#---------
+
+RAlimDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelAlimDia.c $(DIR_SRCS)/RelAlimDia.h
+				@echo "Compilando RAlimDiaPh!!"
+				@echo "---------------------"
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelAlimDia.c -DOPERACAO_WINDOWS 
+
+$(DIR_EXEC)RAlimDiaPh: RAlimDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RAlimDiaPh.o
+
+
+#---------
+
+RAlimTDiaPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelAlimDia.c $(DIR_SRCS)/RelAlimDia.h
+				@echo "Compilando RAlimTDiaPh!!"
+				@echo "---------------------"
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelAlimDia.c -DOPERACAO_WINDOWS -DREL_TURNO
+
+$(DIR_EXEC)RAlimTDiaPh: RAlimTDiaPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RAlimTDiaPh.o
+
+
+#---------
+
+RAlimDia2Ph.o:  $(DEPCTRL) $(DIR_SRCS)/RelAlimDia2.c $(DIR_SRCS)/RelAlimDia2.h
+				@echo "Compilando RAlimDia2Ph!!"
+				@echo "---------------------"
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelAlimDia2.c -DOPERACAO_WINDOWS 
+
+$(DIR_EXEC)RAlimDia2Ph: RAlimDia2Ph.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RAlimDia2Ph.o
+
+
+#---------
+
+RAlimTDia2Ph.o:  $(DEPCTRL) $(DIR_SRCS)/RelAlimDia2.c $(DIR_SRCS)/RelAlimDia2.h
+				@echo "Compilando RAlimTDia2Ph!!"
+				@echo "---------------------"
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelAlimDia2.c -DOPERACAO_WINDOWS -DREL_TURNO
+
+$(DIR_EXEC)RAlimTDia2Ph: RAlimTDia2Ph.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RAlimTDia2Ph.o
+
+#---------
+
+RelHistPFPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelHistPF.c $(DIR_SRCS)/RelHistPF.h
+				@echo "Compilando RelHistPFPh!!"
+				@echo "---------------------"
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelHistPF.c -DOPERACAO_WINDOWS 
+
+$(DIR_EXEC)RelHistPFPh: RelHistPFPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RelHistPFPh.o
+
+#---------
+
+RelHistTPFPh.o:  $(DEPCTRL) $(DIR_SRCS)/RelHistPF.c $(DIR_SRCS)/RelHistPF.h
+				@echo "Compilando RelHistTPFPh!!"
+				@echo "---------------------"
+				$(COMPILE.c) -fo=$@ $(DIR_SRCS)/RelHistPF.c -DOPERACAO_WINDOWS -DREL_TURNO 
+
+$(DIR_EXEC)RelHistTPFPh: RelHistTPFPh.o $(LIBPH)
+	$(LINK) $(DEFLIBPH) RelHistTPFPh.o
+
+
+
+################################## Relatorios de Exportacao ######################################
+rel_exp:	$(DIR_EXEC)RExemploCCPhEXP $(DIR_EXEC)RExemploDiaPhEXP $(DIR_EXEC)RExemploTDiaPhEXP \
+			$(DIR_EXEC)RRuiSigDiaPhEXP $(DIR_EXEC)RRuiSigTDiaPhEXP $(DIR_EXEC)RelMovDiaPhEXP \
+			$(DIR_EXEC)RelMovTDiaPhEXP $(DIR_EXEC)REtcEaDiaPhEXP $(DIR_EXEC)REtcEaTDiaPhEXP	\
+			$(DIR_EXEC)RAlimDiaPhEXP  $(DIR_EXEC)RAlimTDiaPhEXP \
+			$(DIR_EXEC)RAlimDia2PhEXP  $(DIR_EXEC)RAlimTDia2PhEXP \
+			$(DIR_EXEC)RelHistPFPhEXP
+
+	@echo Relatorios exportacao atualizados ! 
+
+$(DIR_EXEC)RExemploCCPhEXP: RExemploCCPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RExemploCCPh.o  
+
+$(DIR_EXEC)RExemploDiaPhEXP: RExemploDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RExemploDiaPh.o
+
+$(DIR_EXEC)RelMovDiaPhEXP: RelMovDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RelMovDiaPh.o
+
+$(DIR_EXEC)RExemploTDiaPhEXP: RExemploTDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RExemploTDiaPh.o
+
+$(DIR_EXEC)RelMovTDiaPhEXP: RelMovTDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RelMovTDiaPh.o
+
+$(DIR_EXEC)RRuiSigDiaPhEXP: RRuiSigDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RRuiSigDiaPh.o
+
+$(DIR_EXEC)RRuiSigTDiaPhEXP: RRuiSigTDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RRuiSigTDiaPh.o
+
+$(DIR_EXEC)REtcEaDiaPhEXP: REtcEaDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) REtcEaDiaPh.o
+
+$(DIR_EXEC)REtcEaTDiaPhEXP: REtcEaTDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) REtcEaTDiaPh.o
+
+$(DIR_EXEC)RAlimDiaPhEXP: RAlimDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RAlimDiaPh.o
+
+$(DIR_EXEC)RAlimTDiaPhEXP: RAlimTDiaPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RAlimTDiaPh.o
+
+$(DIR_EXEC)RAlimDia2PhEXP: RAlimDia2Ph.o $(LIBH)
+	$(LINK) $(DEFLIBH) RAlimDia2Ph.o
+
+$(DIR_EXEC)RAlimTDia2PhEXP: RAlimTDia2Ph.o $(LIBH)
+	$(LINK) $(DEFLIBH) RAlimTDia2Ph.o
+
+$(DIR_EXEC)RelHistPFPhEXP: RelHistPFPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RelHistPFPh.o
+
+$(DIR_EXEC)RelHistTPFPhEXP: RelHistTPFPh.o $(LIBH)
+	$(LINK) $(DEFLIBH) RelHistTPFPh.o

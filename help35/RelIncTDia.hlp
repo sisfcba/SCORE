@@ -1,0 +1,58 @@
+                 Relatorio Historico de Incrementos por Turno
+
+                       Lay-Out e Descricao dos Campos
+
+      Relatorio de Incrementos das Cubas [1] a [2] de [3] ate [4] - Turno [5]
+  IAlvo = [6] KA     IReal = [7] KA     Sistema = [8] %    Linha = [9] %
+Cuba R. Rapido R. Lento- -Corrida- -Quebrada Lev.Pinos -Operacao- ---Total---
+     hh:mm  mV hh:mm  mV hh:mm  mV hh:mm  mV hh:mm  mV hh:mm  mV   hh:mm   mV
+[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]   [23]  [24]
+
+Med  [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]   [37]  [38]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Turno do relatorio
+6)  Corrente alvo (IAlvo) media da sala no periodo
+7)  Corrente real (IReal) media da sala no periodo
+8)  Percentual de tempo que o sistema ficou ativo no periodo
+9)  Percentual de tempo que a linha ficou habilitada no periodo
+10) Numero da cuba. Marcado com (+) se a cuba esteve em estado ligado, partido
+    ou desligado no periodo
+11) Tempo medio de incremento por ruido rapido fraco  e  forte no periodo,  ou
+    seja,  RRapDurDia = (RRapFraDurDia + RRapForDurDia) / NumDias
+12) Tensao media de incremento por ruido rapido no periodo, conforme calculo
+    seguinte:
+       IncRFraco = RRapFraIncDia * (RRapFraDurDia/NMinCCont)
+       IncRForte = RRapForIncDia * (RRapForDurDia/NMinCCont)
+       ContRuido = (RRapFraDurDia/NMinCCont) + (RRapForDurDia/NMinCCont)
+       VIncRRap  = ((IncRFraco + IncRForte)/ContRuido) * 1000
+           Sendo : NMinCCont = Numero de minutos de um ciclo de controle
+13) Tempo medio de incremento  por ruido lento fraco  e  forte no  periodo, ou
+    seja,  RLentDurDia = (RLentFraDurDia + RLentForDurDia) / NumDias
+14) Tensao media de incremento por ruido lento no periodo, conforme calculo
+    seguinte:
+       IncRFraco = RLentFraIncDia * (RLentFraDurDia/NMinCCont)
+       IncRForte = RLentForIncDia * (RLentForDurDia/NMinCCont)
+       ContRuido = (RLentFraDurDia/NMinCCont) + (RLentForDurDia/NMinCCont)
+       VIncRLent = ((IncRFraco + IncRForte)/ContRuido) * 1000
+           Sendo : NMinCCont = Numero de minutos de um ciclo de controle
+15) Tempo medio de incremento por corrida no periodo
+16) Tensao media de incremento por corrida no periodo 
+17) Tempo medio de incremento por quebrada no periodo
+18) Tensao media de incremento por quebrada no periodo 
+19) Tempo medio de incremento por troda de pinos no periodo
+20) Tensao media de incremento por quebrada no periodo 
+21) Tempo medio de incremento pela operacao no periodo
+22) Tensao media de incremento pela operacao no periodo 
+23) Tempo medio de incremento total no periodo
+24) Tensao media  diaria  de  incremento  no  periodo, considerando  o  limite
+    permitido 
+
+25 a 38) Media dos campos 11 a 24 respectivamente
+
+    Observacao
+    - As cubas que estiveram em estado ligado, desligado ou partido no
+      periodo nao serao consideradas no calculo das medias

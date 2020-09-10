@@ -1,0 +1,36 @@
+ Raport calosciowy - [1]        - Alg [2]         - [3] to [4]      Zmi [5]
+ PrNom = [6] KA PradMierz = [7] KA      System = [8] %      Seria= [9] %
+           Calkowity prad serii	
+ Czas/Data  [10] ...[10]
+   00-01    [11]    [11]
+   01-02    [11]    [11]
+     .       .       .
+     .       .       .
+   23-24    [11]    [11]
+           Calkowity napiecie serii	
+ Czas/Data  [10] ...[10]
+   00-01    [12]    [12]
+   01-02    [12]    [12]
+     .       .       .
+     .       .       .
+   23-24    [12]    [12]
+
+1)  Typ wstepnego wyboru
+2)  Algorytm regulacji
+3)  Data poczatkowa
+4)  Data koncowa
+5)  Zmiana pojawiajaca sie na raporcie
+6)  Znamionowy prad serii podczas okresu
+7)  Zmierzony prad serii podczas okresu
+8)  Czas (w porcentach), w ktorych system pozostawal aktywny
+9)  Czas (w porcentach), w ktorych seria pozostawala aktywna
+10)  Data [dd/mm]
+11) Calkowity prad serii [kA] (wyliczany w kazdej godzinie)
+12) Calkowity napiecie serii [V] (wyliczane w kazdej godzinie)
+
+PS
+As the exibition of all days requested may require more than just one screen
+the missing days will be exibited after the last line of the previous screen
+(after the "23-24" data line)
+pokazanie wszystkich zadanych dni moze wymagac wiecej niz jednego ekranu,
+(po linii z data 23-24)

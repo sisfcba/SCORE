@@ -1,0 +1,48 @@
+                            MUDANCA DE ESTADO DA CUBA
+
+   FUNCAO : Esse comando permite a mudanca do estado da cuba.
+
+                           LAY-OUT DA TELA DE CHAMADA
+
+                   +-----------------------------------------+
+                   | Mudar Estado                            |
+                   | Cuba Inicial.............: [1]          |
+                   | Cuba Final...............: [2]          |
+                   | Estado [ 1=N 2=P 3=L 4=D]: [3]          |
+                   |                                         |
+                   +--Esc-Abandona   F10-Confirma -----------+
+
+
+
+                                     SINTAXE
+
+     A mudanca pode ser feita para uma unica cuba, por  faixa, ou por grupo de
+ cubas, como pode ser visto a seguir:
+
+                                   PARAMETROS
+
+ 1) Numero da primeira cuba a ter seu estado alterado.
+ 2) Numero da ultima cuba a ter seu estado alterado.
+    Observacao:
+    - A  mudanca  pode ser feita para uma unica cuba, por faixa ou por grupo de
+      cubas. Na mudanca para uma unica cuba, o parametro 2 deve ter o valor  -1
+      (default).  Na  chamada por faixa, os parametros 1 e 2 aceitam valores de
+      101-172 e 201-272. Na chamada por grupo, os  parametros  1  e  2  aceitam
+      valores de 01-72, os quais permitem a selecao conjugada das cubas 101-172
+      e 201-272.
+ 3) Estado que a cuba sera colocada.
+
+                                  No. - Estado
+                                   1  - Normal.
+                                   2  - Partido.
+                                   3  - Ligado.
+                                   4  - Desligado.
+
+
+
+
+
+
+
+
+

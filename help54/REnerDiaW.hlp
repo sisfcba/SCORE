@@ -1,0 +1,40 @@
+     Energy Report - [1]           - Alg [2] - [3] to [4]
+RCurr =  [5]  KA    MCurr =  [6]  KA      LinVtg = [7]  V
+AvPow =  [8]  MW    GEner =  [9]   MWH    Line = [10]  %     System = [11]  %
+Pot   Target    Net     Gross     Target    Net     Gross   Net AE  Gross AE
+      ---------[KW]----------     ------------------[MWH]-------------------
+[12]  [13]     [14]      [15]     [16]     [17]      [18]    [19]     [20]
+Avrg  [21]     [22]      [23]     [24]     [25]      [26]    [27]     [28]
+Total                             [29]     [30]      [31]    [32]     [33]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Average rated line current during the period
+6-  Average measured line current during the period
+7-  Average pot room voltage during the period
+8-  Average pot room power during the period 
+9-  Total energy consumed by the pot room in the period
+10- Time (in percentage) in which the Line remained active
+11- Time (in percentage) in which the System remained active
+12- Pot number 
+13- Average target power during the period
+14- Average power required (excluding the extra power required during AE)
+15- Average power required (including the extra power required during AE)
+16- Average target energy during the period (product of the target power 
+    times the interval the pot remained under control)
+17- Average energy consumed during the period (excluding the extra energy
+    consumed during AEs)
+18- Average energy consumed during the period (including the extra energy
+    consumed during AEs)
+19- Average extra energy consumed during AEs
+20- Average energy consumed during AEs
+21 to 28- Average of the fields 13 to 20, respectively
+29 to 33- Accumulated value of the fields 16 to 20
+
+PS
+The pots who have been in the states "jumped" or "on-line" in this interval
+are not considered when calculating the averages.    
+
+

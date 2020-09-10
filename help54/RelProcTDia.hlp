@@ -1,0 +1,28 @@
+  Process Control - [1]           - Alg [2]      - [3] to [4] - Shf [5]
+Pot/Date   -- [6] ... [6] --
+  [7]         [8] ... [8]
+
+1-  Type of pre-selection
+2-  Control Algorithm
+3-  Initial date
+4-  Final date
+5-  Shift being shown at the report
+6-  Dates (dd/mm) included in the selected interval
+7-  Pot number
+8-  Word composed by mnemonics that describe the pot conditions during 
+    that day
+	Mnemonic - Meaning
+	Dl	   Delay in anode effect occurrence
+	St	   Strong anode effect
+	Wk	   Weak anode effect
+	Nr	   Normal anode effect
+	Fa	   Frequency of anode effects is higher than AEFreq
+	Ns         Noise Treatment activated
+
+PS
+Once this report can be called with up to 35 days, it may happen that not all
+the dates can be seen at the same time. When this happens, these dates (and
+the related data) will be exibited bellow the last pot in the range
+	
+     
+    

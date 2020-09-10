@@ -1,0 +1,48 @@
+                               MOVER ANODO DA CUBA
+
+ FUNCAO : Esse comando permite a movimentacao de anodo da cuba.
+
+                           LAY-OUT DA TELA DE CHAMADA
+
+                   +-----------------------------------------+
+                   | Mover Anodo                             |
+                   | Cuba Inicial..............: [1]         |
+                   | Cuba Final................: [2]         |
+                   | Sentido [1=Subir 2=Descer]: [3]         |
+                   | Duracao [Segs]............: [4]         |
+                   |                                         |
+                   +--Esc-Abandona   F10-Confirma -----------+
+
+
+                                     SINTAXE
+
+  A movimentacao pode ser feita para uma unica cuba, por faixa, ou por grupo de
+ cubas, como pode ser visto a seguir:
+
+                                   PARAMETROS
+
+ 1) Numero da primeira cuba.
+ 2) Numero da ultima cuba.
+    Observacao:
+    - A  chamada  pode ser feita para uma unica cuba, por faixa ou por grupo de
+      cubas. Na chamada para uma unica cuba, o parametro 2 deve ter o valor  -1
+      (default).  Na  chamada por faixa, os parametros 1 e 2 aceitam valores de
+      101-172 e 201-272. Na chamada por grupo, os  parametros  1  e  2  aceitam
+      valores de 01-72, os quais permitem a selecao conjugada das cubas 101-172
+      e 201-272.
+ 3) Sentido da movimentacao.
+
+                                  No. - Sentido
+                                   1  - Subir.
+                                   2  - Descer.
+ 4) Duracao da movimentacao em segundos.
+
+
+
+
+
+
+
+
+
+

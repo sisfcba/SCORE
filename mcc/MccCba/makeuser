@@ -1,0 +1,33 @@
+#
+#	Make do exemplo de Mcc
+#
+.ALT_DIRS: ../MccCba
+DEBUG	=	-g
+#DEBUG	=	
+CC= 	cc -D CBA_120KAII_III=1
+FLAGS=	-mf -Wc,-we -O -wx -j $(DEBUG) -5 -fpi87 -fp5
+CFLAGS= 	$(FLAGS) -I $(DIR_HDRS1) -I $(DIR_HDRS2)
+LDFLAGS= $(FLAGS) -b -l /usr/lib/queuef.lib
+LINK=	$(LD) $(LDFLAGS) -o $@
+DIR_SRCS=	../MccCba/
+DIR_HDRS1=	../../include
+DIR_HDRS2=	../MccCba
+OBJS1=		MccUser.o
+HEADERS=	$(DIR_HDRS1)/Definicao.h $(DIR_HDRS1)/Score.h \
+			$(DIR_HDRS1)/Prototipos.h $(DIR_HDRS1)/VarsComum.h \
+			$(DIR_HDRS1)/ScoreMsgs.h $(DIR_HDRS1)/ScoreErros.h \
+			$(DIR_HDRS1)/ScoreStr.h	$(DIR_HDRS2)/MccUser.h \
+			$(DIR_HDRS1)/Eventos.h
+
+LIB1=		../../lib_score/Score.lib
+LIB2=		../../interfrem/lib/InterfRem.lib
+DEFLIB= 	-l $(LIB1) -l $(LIB2)
+
+all:	MccUser
+### Copiar MccUser para diretorio de execucao
+###	cp -v MccUser ../../../exec/
+
+MccUser:	MccUser.o $(LIB1) $(LIB2) $(LIB3)
+	$(LINK) MccUser.o $(DEFLIB)
+
+MccUser.o: $(DIR_SRCS)MccUser.c $(HEADERS)

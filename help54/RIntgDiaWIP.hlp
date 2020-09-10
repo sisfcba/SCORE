@@ -1,0 +1,41 @@
+        Relatorio Historico Diario de Integracao de Corrente e Tensao
+                      Lay-Out e Descricao dos Campos
+ Hist. Integracao - [1]        - Alg [2]         - [3] ate [4]
+ IAlvo = [5] KA      IReal = [6] KA      Sistema = [7] %      Linha = [8] %
+           Integracao de Corrente da Linha
+ Data/Hora  [9] ... [9]
+   00-01    [10]    [10]
+   01-02    [10]    [10]
+     .       .       .
+     .       .       .
+   23-24    [10]    [10]
+           Integracao de Tensao da Linha
+ Data/Hora  [9] ... [9]
+   00-01    [11]    [11]
+   01-02    [11]    [11]
+     .       .       .
+     .       .       .
+   23-24    [11]    [11]
+1)  Codigo das cubas selecionadas na tela de pre-selecao
+2)  Algoritmo definido na tela de pre-selecao
+3)  Data inicial definida na tela de pre-selecao
+4)  Data final definida na tela de pre_selecao
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Percentual de tempo que o sistema ficou ativo no periodo
+8)  Percentual de tempo que a linha ficou habilitada no periodo
+9)  Data no formato dd/mm relativa aos valores de corrente/tensao  exibidos
+    na coluna. Essa data varia da data inicial ate a final.
+10) Corrente integrada [KA] da sala calculada a cada fechamento de hora  e,
+    disponibilizada atraves do evento IntegLinha. Cada  valor  de  corrente
+    exibido e' determinado pela combinacao do intervalo de hora e a data da
+    integracao.
+11) Tensao integrada [V] da sala  calculada a cada  fechamento de  hora  e,
+    disponibilizada atraves do  evento  IntegLinha. Cada  valor  de  tensao
+    exibido e' determinado pela combinacao do intervalo de hora e a data da
+    integracao.
+    Observacao
+    - Uma vez que esse relatorio pode ser solicitado com uma faixa  de  ate
+      35 dias, quando o numero de datas (colunas) ultrapassar o  limite  de
+      uma tela, a exibicao das colunas seguintes prosseguira apos o  fecha-
+      mento de um dia, ou seja, apos um intervalo de 24 horas.

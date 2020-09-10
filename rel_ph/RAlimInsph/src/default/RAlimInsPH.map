@@ -1,0 +1,1484 @@
+WATCOM Linker Version 10.6
+Copyright by WATCOM International Corp. 1985, 1996. All rights reserved.
+Created on:       19/09/18 15:40:42
+Executable Image: RAlimInsPH
+creating a QNX 386 executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          001d8000             000a1f10
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+BEGTEXT                CODE                          001c9000        00000006
+_TEXT                  CODE                          001c9010        0000e12b
+sprintf11_DATA         FAR_DATA                      001d713b        00000000
+vsprintf11_DATA        FAR_DATA                      001d713b        00000000
+fprintf11_DATA         FAR_DATA                      001d713b        00000000
+printf11_DATA          FAR_DATA                      001d713b        00000000
+fprtf11_DATA           FAR_DATA                      001d713b        00000000
+efgfmt11_DATA          FAR_DATA                      001d713b        00000000
+_NULL                  BEGDATA        DGROUP         001d8000        00000020
+_AFTERNULL             BEGDATA        DGROUP         001d8020        00000002
+CONST                  DATA           DGROUP         001d8024        00000cf4
+CONST2                 DATA           DGROUP         001d8d18        0000063c
+_DATA                  DATA           DGROUP         001d9354        0000133c
+XIB                    DATA           DGROUP         001da690        00000000
+XI                     DATA           DGROUP         001da690        0000002a
+XIE                    DATA           DGROUP         001da6ba        00000000
+YIB                    DATA           DGROUP         001da6ba        00000000
+YI                     DATA           DGROUP         001da6ba        0000000c
+YIE                    DATA           DGROUP         001da6c6        00000000
+DATA                   DATA           DGROUP         001da6c6        00000000
+DATA32                 DATA           DGROUP         001da6c8        0000011c
+CONST32                CONST          DGROUP         001da7e4        00000000
+_BSS                   BSS            DGROUP         001da7e4        00097728
+BSS32                  BSS            DGROUP         00271f0c        00000000
+STACK                  STACK          DGROUP         00271f10        00008000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+s = symbol is static
+
+Address        Symbol
+=======        ======
+
+Module: Callbacks.o(/usr/score/srcs/rel_ph/RAlimInsph/src/Callbacks.cc)
+001c9700       void near PtSetArg( Pt_arg_entry near *, long unsigned, long unsigned, long unsigned )
+001c9010       int near StartPrincipal( Pt_widget near *, __4tlds1ApInfo_t near *, Pt_callback_info near * )
+001c93ba       int near Pagina( Pt_widget near *, __4tlds1ApInfo_t near *, Pt_callback_info near * )
+001c9486       int near Timer( Pt_widget near *, __4tlds1ApInfo_t near *, Pt_callback_info near * )
+001d8d18s      int const near MAX_TELAS_IHM
+001d8d1cs      int const near MAX_BOTOES_TELA_IHM
+001d8d20s      int const near MAX_BOTOES_LINHA_MENU
+001d8d24s      int const near MAX_ARGS_TAREFA
+001d8d28s      int const near BUTTON_DISABLE
+001d8d2cs      int const near BUTTON_TASK
+001d8d30s      int const near BUTTON_ACTION
+001d8d34s      int const near BUTTON_STAMP
+001d8d38s      int const near BUTTON_TASK_WEB
+001d8d3cs      long unsigned const near NO_COLOR
+001d8d40s      int const near ARG_NOT_INITIALIZED
+001d8d44s      int const near ARG_POTS_SELECTION
+001d8d48s      int const near ARG_POTS_STRING
+001d8d4cs      int const near ARG_POTS_KEYBOARD
+001d8d50s      int const near ARG_ALGORITM
+001d8d54s      int const near ARG_DATE_INITIAL
+001d8d58s      int const near ARG_DATE_END
+001d8d5cs      int const near ARG_POTS_EXCLUDED
+001d8d60s      int const near ARG_DAY_EXCLUDED
+001d8d64s      int const near ARG_SHIFT
+001d8d68s      int const near ARG_REDUCTION
+001d8d6cs      int const near ARG_OPERATOR
+001d8d70s      int const near ARG_LIST
+001d8d74s      int const near ARG_TEXT_STRING
+001d8d78s      int const near ARG_TEXT_STRING_FIXED
+001d8d7cs      int const near ARG_TEXT_STRING_FIXED_HIDDEN
+001d8d80s      int const near ARG_POTS_GROUP
+001d8d84s      int const near ARG_TITLE
+001d8d88s      int const near ARG_CONFIRMS_QUESTION
+001d8d8cs      int const near ARG_HELP
+001d8d90s      int const near LIST_EVENTS
+001d8d94s      int const near ACTION_SELECTION
+001d8d98s      int const near ACTION_END_SYSTEM
+001d8d9cs      int const near PH_TAM_LISTA_ALA_PEND
+001d8da0s      int const near PH_MEM_POR_REDUCAO
+001d8da4s      int const near PH_MAX_REDUCAO_IHM
+001d8da8s      int const near PH_SELECAO_SALA_2
+001d8dacs      int const near PH_SELECAO_SALA_3
+001d8db0s      int const near PH_SELECAO_SALA_4
+001d8db4s      int const near PH_SELECAO_SALA_5
+001d8db8s      int const near PH_SELECAO_SALA_6
+001d8dbcs      int const near PH_SELECAO_SALA_7
+001d8dc0s      int const near PH_SELECAO_SALA_8
+001d8dc4s      int const near PH_SELECAO_TODAS
+001d8dc8s      int const near PH_SELECAO_CUBAS
+001d8dccs      int const near PH_MAX_PRE
+001d8dd0s      int const near PH_MAX_ALG
+001d8dd4s      int const near PH_TAM_CAMPO_PRE
+001d8dd8s      int const near PH_ALG_AUTO
+001d8ddcs      int const near PH_ALG_TODOS
+001d8de0s      int const near PH_MAX_EXC_DATAS
+001d8de4s      int const near PH_MAX_EXC_CUBAS
+001d8de8s      int const near PH_MAX_CUBAS_GRUPO
+001d8decs      int const near PH_MAX_GRUPOS_CUBAS
+001d8df0s      int const near PH_MAX_LINES_HELP
+001d8df4s      int const near PH_MAX_CARS_HELP
+001d8df8s      int const near PH_LINES_PAG_HELP
+001d8dfcs      int const near MAX_ERRO_SCORE_BD
+001d8e00s      int const near PH_NUM_CUBAS_LINHA
+001c94f2       int near Grupo( Pt_widget near *, __4tlds1ApInfo_t near *, Pt_callback_info near * )
+001c964d       int near Sair( Pt_widget near *, __4tlds1ApInfo_t near *, Pt_callback_info near * )
+001d8e04s      int const near MAX_CALLBACKS_LISTVALUETASK
+001da7e4s      int const near BUTTON_MENU
+001da7e8s      int const near LIST_AUTO
+001da7ecs      int const near PH_SELECAO_SALA_1
+001da7f0s      int const near PH_ALG_NENHUM
+Module: RAlimInsPH.o(/usr/score/srcs/rel_ph/RAlimInsph/src/RAlimInsPH.cc)
+001da7f4       _Comum
+001da7f8       _ComumAvc
+001da7fc       _PAvcEst
+001da800       _PAvcSup
+001da804       _PHistTurno
+001da808       _PAvl
+001da80c       _PDescProg
+001da810       _PTabOpe
+001da814       _My_nid
+001da818+      _VarParamAvc
+001daa38+      _VarCLeitAvc
+001dab18+      _VarCcontMcp
+001dab78+      _VarCContAvc
+001dac58+      _VarEAAvc
+001dad58+      _VarRuiAvc
+001dae18+      _VarSuperv
+001db4f8+      _VarEst
+001db5d0+      _VarAvl
+001dcba0+      _VarPar1
+001dce20+      _VarPar2
+001dd0a0+      _VarUser1
+001dd1e0+      _VarUser2
+001dd320+      _VarUser3
+001dd460+      _VarUser4
+001dd5a0+      _VarConvMUX
+001dd5aa+      _VarConvNMUX
+001dd60a+      _VarEntESP
+001dd732+      _VarConvAtn8
+001dd782+      _VarConvEspAtn8
+001ddca2       _PCnfRelGraf
+001ddca6       _PValRelGraf
+001ddcaa       _PValGrafMini
+001ddcae+      _PValRelGrafArq
+001ddcb2       _PEvCuba
+001d8e08s      int const near MAX_TELAS_IHM
+001d8e0cs      int const near MAX_BOTOES_TELA_IHM
+001d8e10s      int const near MAX_BOTOES_LINHA_MENU
+001d8e14s      int const near MAX_ARGS_TAREFA
+001d8e18s      int const near BUTTON_DISABLE
+001d8e1cs      int const near BUTTON_TASK
+001d8e20s      int const near BUTTON_ACTION
+001d8e24s      int const near BUTTON_STAMP
+001d8e28s      int const near BUTTON_TASK_WEB
+001d8e2cs      long unsigned const near NO_COLOR
+001d8e30s      int const near ARG_NOT_INITIALIZED
+001d8e34s      int const near ARG_POTS_SELECTION
+001d8e38s      int const near ARG_POTS_STRING
+001d8e3cs      int const near ARG_POTS_KEYBOARD
+001d8e40s      int const near ARG_ALGORITM
+001d8e44s      int const near ARG_DATE_INITIAL
+001d8e48s      int const near ARG_DATE_END
+001d8e4cs      int const near ARG_POTS_EXCLUDED
+001d8e50s      int const near ARG_DAY_EXCLUDED
+001d8e54s      int const near ARG_SHIFT
+001d8e58s      int const near ARG_REDUCTION
+001d8e5cs      int const near ARG_OPERATOR
+001d8e60s      int const near ARG_LIST
+001d8e64s      int const near ARG_TEXT_STRING
+001d8e68s      int const near ARG_TEXT_STRING_FIXED
+001d8e6cs      int const near ARG_TEXT_STRING_FIXED_HIDDEN
+001d8e70s      int const near ARG_POTS_GROUP
+001d8e74s      int const near ARG_TITLE
+001d8e78s      int const near ARG_CONFIRMS_QUESTION
+001d8e7cs      int const near ARG_HELP
+001d8e80s      int const near LIST_EVENTS
+001d8e84s      int const near ACTION_SELECTION
+001d8e88s      int const near ACTION_END_SYSTEM
+001d8e8cs      int const near PH_TAM_LISTA_ALA_PEND
+001d8e90s      int const near PH_MEM_POR_REDUCAO
+001d8e94s      int const near PH_MAX_REDUCAO_IHM
+001d8e98s      int const near PH_SELECAO_SALA_2
+001d8e9cs      int const near PH_SELECAO_SALA_3
+001d8ea0s      int const near PH_SELECAO_SALA_4
+001d8ea4s      int const near PH_SELECAO_SALA_5
+001d8ea8s      int const near PH_SELECAO_SALA_6
+001d8eacs      int const near PH_SELECAO_SALA_7
+001d8eb0s      int const near PH_SELECAO_SALA_8
+001d8eb4s      int const near PH_SELECAO_TODAS
+001d8eb8s      int const near PH_SELECAO_CUBAS
+001d8ebcs      int const near PH_MAX_PRE
+001d8ec0s      int const near PH_MAX_ALG
+001d8ec4s      int const near PH_TAM_CAMPO_PRE
+001d8ec8s      int const near PH_ALG_AUTO
+001d8eccs      int const near PH_ALG_TODOS
+001d8ed0s      int const near PH_MAX_EXC_DATAS
+001d8ed4s      int const near PH_MAX_EXC_CUBAS
+001d8ed8s      int const near PH_MAX_CUBAS_GRUPO
+001d8edcs      int const near PH_MAX_GRUPOS_CUBAS
+001d8ee0s      int const near PH_MAX_LINES_HELP
+001d8ee4s      int const near PH_MAX_CARS_HELP
+001d8ee8s      int const near PH_LINES_PAG_HELP
+001d8eecs      int const near MAX_ERRO_SCORE_BD
+001d8ef0s      int const near PH_NUM_CUBAS_LINHA
+001ddcb6s      int const near BUTTON_MENU
+001ddcbas      int const near LIST_AUTO
+001ddcbes      int const near PH_SELECAO_SALA_1
+001ddcc2s      int const near PH_ALG_NENHUM
+001c9730+      int near ini_rel( int, char near * near * )
+001d8ef4s      int const near MAX_CALLBACKS_LISTVALUETASK
+001d9354+      _NomeTabelas
+001d93a4+      _ArqLimTabela
+001d93e4       _ApOptions
+001ddcc6       _gGrupo
+001ddcc8       _gFPrincipal
+001ddcca       _gPos
+001ddccc       _gpAlarme
+001ddcd0+      _gArq
+0026ef3a       _gWidgets
+0027035e       _gCnfAla
+Module: abmain.o(/usr/score/srcs/rel_ph/RAlimInsph/src/abmain.cc)
+001c9984       main_
+001d8ef8s      int const near MAX_TELAS_IHM
+001d8efcs      int const near MAX_BOTOES_TELA_IHM
+001d8f00s      int const near MAX_BOTOES_LINHA_MENU
+001d8f04s      int const near MAX_ARGS_TAREFA
+001d8f08s      int const near BUTTON_DISABLE
+001d8f0cs      int const near BUTTON_TASK
+001d8f10s      int const near BUTTON_ACTION
+001d8f14s      int const near BUTTON_STAMP
+001d8f18s      int const near BUTTON_TASK_WEB
+001d8f1cs      long unsigned const near NO_COLOR
+001d8f20s      int const near ARG_NOT_INITIALIZED
+001d8f24s      int const near ARG_POTS_SELECTION
+001d8f28s      int const near ARG_POTS_STRING
+001d8f2cs      int const near ARG_POTS_KEYBOARD
+001d8f30s      int const near ARG_ALGORITM
+001d8f34s      int const near ARG_DATE_INITIAL
+001d8f38s      int const near ARG_DATE_END
+001d8f3cs      int const near ARG_POTS_EXCLUDED
+001d8f40s      int const near ARG_DAY_EXCLUDED
+001d8f44s      int const near ARG_SHIFT
+001d8f48s      int const near ARG_REDUCTION
+001d8f4cs      int const near ARG_OPERATOR
+001d8f50s      int const near ARG_LIST
+001d8f54s      int const near ARG_TEXT_STRING
+001d8f58s      int const near ARG_TEXT_STRING_FIXED
+001d8f5cs      int const near ARG_TEXT_STRING_FIXED_HIDDEN
+001d8f60s      int const near ARG_POTS_GROUP
+001d8f64s      int const near ARG_TITLE
+001d8f68s      int const near ARG_CONFIRMS_QUESTION
+001d8f6cs      int const near ARG_HELP
+001d8f70s      int const near LIST_EVENTS
+001d8f74s      int const near ACTION_SELECTION
+001d8f78s      int const near ACTION_END_SYSTEM
+001d8f7cs      int const near PH_TAM_LISTA_ALA_PEND
+001d8f80s      int const near PH_MEM_POR_REDUCAO
+001d8f84s      int const near PH_MAX_REDUCAO_IHM
+001d8f88s      int const near PH_SELECAO_SALA_2
+001d8f8cs      int const near PH_SELECAO_SALA_3
+001d8f90s      int const near PH_SELECAO_SALA_4
+001d8f94s      int const near PH_SELECAO_SALA_5
+001d8f98s      int const near PH_SELECAO_SALA_6
+001d8f9cs      int const near PH_SELECAO_SALA_7
+001d8fa0s      int const near PH_SELECAO_SALA_8
+001d8fa4s      int const near PH_SELECAO_TODAS
+001d8fa8s      int const near PH_SELECAO_CUBAS
+001d8facs      int const near PH_MAX_PRE
+001d8fb0s      int const near PH_MAX_ALG
+001d8fb4s      int const near PH_TAM_CAMPO_PRE
+001d8fb8s      int const near PH_ALG_AUTO
+001d8fbcs      int const near PH_ALG_TODOS
+001d8fc0s      int const near PH_MAX_EXC_DATAS
+001d8fc4s      int const near PH_MAX_EXC_CUBAS
+001d8fc8s      int const near PH_MAX_CUBAS_GRUPO
+001d8fccs      int const near PH_MAX_GRUPOS_CUBAS
+001d8fd0s      int const near PH_MAX_LINES_HELP
+001d8fd4s      int const near PH_MAX_CARS_HELP
+001d8fd8s      int const near PH_LINES_PAG_HELP
+001d8fdcs      int const near MAX_ERRO_SCORE_BD
+001d8fe0s      int const near PH_NUM_CUBAS_LINHA
+00270fe0s      int const near BUTTON_MENU
+00270fe4s      int const near LIST_AUTO
+00270fe8s      int const near PH_SELECAO_SALA_1
+00270fecs      int const near PH_ALG_NENHUM
+001d8fe4s      int const near MAX_CALLBACKS_LISTVALUETASK
+001d8fe8       _ABI_PRINCIPAL_X
+001d8fec+      _ABN_PRINCIPAL_grupo
+001d8ff0       _ABN_PRINCIPAL_g1
+001d8ff4       _ABN_PRINCIPAL_g2
+001d8ff8       _ABN_PRINCIPAL_g3
+001d8ffc       _ABN_PRINCIPAL_g4
+001d9000       _ABN_PRINCIPAL_g5
+001d9004       _ABN_PRINCIPAL_g6
+001d9008       _ABN_PRINCIPAL_g7
+001d900c       _ABN_PRINCIPAL_g8
+001d9010       _ABN_PRINCIPAL_sair
+001d9014       _ABN_PRINCIPAL_titulo
+001d9018       _ABN_PRINCIPAL_cab1
+001d901c       _ABN_PRINCIPAL_cab2
+001d9020       _ABN_PRINCIPAL_l1
+001d9024       _ABN_PRINCIPAL_scrollbar
+001d9028       _ABN_PRINCIPAL_l2
+001d902c       _ABN_PRINCIPAL_l3
+001d9030       _ABN_PRINCIPAL_l4
+001d9034       _ABN_PRINCIPAL_l5
+001d9038       _ABN_PRINCIPAL_l6
+001d903c       _ABN_PRINCIPAL_l7
+001d9040       _ABN_PRINCIPAL_l8
+001d9044       _ABN_PRINCIPAL_l9
+001d9048       _ABN_PRINCIPAL_l10
+001d904c       _ABN_PRINCIPAL_l11
+001d9050       _ABN_PRINCIPAL_l12
+001d9054       _ABN_PRINCIPAL_l13
+001d9058+      _ABN_PRINCIPAL_timer
+001d905c       _ABN_PRINCIPAL_X_sair
+001d9060       _ABN_PRINCIPAL_X_titulo
+001d9064       _ABN_PRINCIPAL_X_cab1
+001d9068       _ABN_PRINCIPAL_X_cab2
+001d906c       _ABN_PRINCIPAL_X_l1
+001d9070       _ABN_PRINCIPAL_X_scrollbar
+001d9074       _ABN_PRINCIPAL_X_l2
+001d9078       _ABN_PRINCIPAL_X_l3
+001d907c       _ABN_PRINCIPAL_X_l4
+001d9080       _ABN_PRINCIPAL_X_l5
+001d9084       _ABN_PRINCIPAL_X_l6
+001d9088       _ABN_PRINCIPAL_X_l7
+001d908c       _ABN_PRINCIPAL_X_l8
+001d9090       _ABN_PRINCIPAL_X_l9
+001d9094       _ABN_PRINCIPAL_X_l10
+001d9098       _ABN_PRINCIPAL_X_l11
+001d909c       _ABN_PRINCIPAL_X_l12
+001d90a0       _ABN_PRINCIPAL_X_l13
+001d90a4+      _ABN_PRINCIPAL_X_timer
+001d90a8+      _ABN_PRINCIPAL_X_grupo
+001d90ac       _ABN_PRINCIPAL_X_g1
+001c99das      void near ApClassInit()
+001d90b0       _ABN_PRINCIPAL_X_g2
+001d90b4       _ABN_PRINCIPAL_X_g3
+001d90b8       _ABN_PRINCIPAL_X_g4
+001d90bc       _ABN_PRINCIPAL_X_g5
+001d90c0       _ABN_PRINCIPAL_X_g6
+001d90c4       _ABN_PRINCIPAL_X_g7
+001d90c8       _ABN_PRINCIPAL_X_g8
+001d93f4+      _base
+001d9623+      _PRINCIPAL
+001d9852+      _PRINCIPAL_X
+001d9a81+      _appl_links
+001d9af9       _internal_links
+001d9bad+      _PRINCIPAL_links
+001d9cd9+      _PRINCIPAL_X_links
+00270ff0       _dsbase
+00270ff8       _dsPRINCIPAL
+0027106c       _dsPRINCIPAL_X
+002710e0+      _base_links
+0027111c       _ABI_PRINCIPAL
+00271120       _ABN_base
+00271124       _ABN_PRINCIPAL
+00271128       _ABN_PRINCIPAL_X
+0027112c       _ab_exe_path
+Module: Funcs.o(/usr/score/srcs/rel_ph/RAlimInsph/src/Funcs.cc)
+001c9a4c       void near ExibeTela( widgets near &, short, short near & )
+001c9b81       void near MontaTela( widgets near &, alarmePH near *, cnf_rel_alarme volatile near &, short )
+001c9c74+      void near MontaLinha( widgets near &, short, short )
+001c9f2e+      void near TrataAlarmeIns( widgets near &, alarmePH near *, cnf_rel_alarme volatile near &, short, short )
+001d90ccs      int const near MAX_TELAS_IHM
+001d90d0s      int const near MAX_BOTOES_TELA_IHM
+001d90d4s      int const near MAX_BOTOES_LINHA_MENU
+001d90d8s      int const near MAX_ARGS_TAREFA
+001d90dcs      int const near BUTTON_DISABLE
+001d90e0s      int const near BUTTON_TASK
+001d90e4s      int const near BUTTON_ACTION
+001d90e8s      int const near BUTTON_STAMP
+001d90ecs      int const near BUTTON_TASK_WEB
+001d90f0s      long unsigned const near NO_COLOR
+001d90f4s      int const near ARG_NOT_INITIALIZED
+001d90f8s      int const near ARG_POTS_SELECTION
+001d90fcs      int const near ARG_POTS_STRING
+001d9100s      int const near ARG_POTS_KEYBOARD
+001d9104s      int const near ARG_ALGORITM
+001d9108s      int const near ARG_DATE_INITIAL
+001d910cs      int const near ARG_DATE_END
+001d9110s      int const near ARG_POTS_EXCLUDED
+001d9114s      int const near ARG_DAY_EXCLUDED
+001d9118s      int const near ARG_SHIFT
+001d911cs      int const near ARG_REDUCTION
+001d9120s      int const near ARG_OPERATOR
+001d9124s      int const near ARG_LIST
+001d9128s      int const near ARG_TEXT_STRING
+001d912cs      int const near ARG_TEXT_STRING_FIXED
+001d9130s      int const near ARG_TEXT_STRING_FIXED_HIDDEN
+001d9134s      int const near ARG_POTS_GROUP
+001d9138s      int const near ARG_TITLE
+001d913cs      int const near ARG_CONFIRMS_QUESTION
+001d9140s      int const near ARG_HELP
+001d9144s      int const near LIST_EVENTS
+001d9148s      int const near ACTION_SELECTION
+001d914cs      int const near ACTION_END_SYSTEM
+001d9150s      int const near PH_TAM_LISTA_ALA_PEND
+001d9154s      int const near PH_MEM_POR_REDUCAO
+001d9158s      int const near PH_MAX_REDUCAO_IHM
+001d915cs      int const near PH_SELECAO_SALA_2
+001d9160s      int const near PH_SELECAO_SALA_3
+001d9164s      int const near PH_SELECAO_SALA_4
+001d9168s      int const near PH_SELECAO_SALA_5
+001d916cs      int const near PH_SELECAO_SALA_6
+001d9170s      int const near PH_SELECAO_SALA_7
+001d9174s      int const near PH_SELECAO_SALA_8
+001d9178s      int const near PH_SELECAO_TODAS
+001d917cs      int const near PH_SELECAO_CUBAS
+001d9180s      int const near PH_MAX_PRE
+001d9184s      int const near PH_MAX_ALG
+001d9188s      int const near PH_TAM_CAMPO_PRE
+001d918cs      int const near PH_ALG_AUTO
+001d9190s      int const near PH_ALG_TODOS
+001d9194s      int const near PH_MAX_EXC_DATAS
+001d9198s      int const near PH_MAX_EXC_CUBAS
+001d919cs      int const near PH_MAX_CUBAS_GRUPO
+001d91a0s      int const near PH_MAX_GRUPOS_CUBAS
+001d91a4s      int const near PH_MAX_LINES_HELP
+001d91a8s      int const near PH_MAX_CARS_HELP
+001d91acs      int const near PH_LINES_PAG_HELP
+001d91b0s      int const near MAX_ERRO_SCORE_BD
+001d91b4s      int const near PH_NUM_CUBAS_LINHA
+001c9fd0+      char near * near SinalSituacaoAlim( short )
+001ca098+      char near * near SinalSituacao( int )
+001ca20d       void near SetaLimitesScroll( Pt_widget near *, short )
+001ca2ab       void near PegaWidgets( widgets near & )
+001ca627       int near LeTabelas()
+001ca858       char near * near LeComum( char near *, int unsigned )
+001d91b8s      int const near MAX_CALLBACKS_LISTVALUETASK
+001d9dccs      int near int near LeTabelas()::.0::cont_outras_tab
+0027122cs      char near char near * near SinalSituacaoAlim( short )::.0::condicao[]
+00271235s      char near char near * near SinalSituacao( int )::.0::cond[]
+0027123fs      int const near BUTTON_MENU
+00271243s      int const near LIST_AUTO
+00271247s      int const near PH_SELECAO_SALA_1
+0027124bs      int const near PH_ALG_NENHUM
+Module: ../../../../mcp/McpCba/PFLib.o(/usr/score/srcs/mcp/McpCba/PFLib.c)
+001ca968*      MudaEstadoAlim_
+001cab63       NomeModoAlim_
+001cac7ds      NomeOrig_
+001cad36+      MudaEstadoSub_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApModuleParent.c)
+001caf02       ApModuleParent_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/GetLoginPhindows.c)
+001caf09       GetLoginPhindows_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApCreateModule.c)
+001caf70       ApCreateModule_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/ScoreStr.c)
+001cb031       ScoreGetStr_
+001cb120*      ScoreGetNStr_
+001cb263*      ScoreGetStrTam_
+001cb2ff+      PegaScoreStr_
+001d9dd0s      _pmsgbd
+Module: ../../../../lib_ph/ScorePh.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_ph/PtSetGetValues.cc)
+001cb360       PtSetStringValue_
+001cb395*      PtGetStringValue_
+001cb3d2*      PtSetNumericIntValue_
+001cb408*      PtGetNumericIntValue_
+001cb448*      PtSetNumericFloatValue_
+001cb4f3*      PtGetNumericFloatValue_
+001cb53c       PtSetColorValue_
+001cb571*      PtGetColorValue_
+001cb5b0*      PtSetCursorType_
+001cb5e7       PtSetFlags_
+001cb64a*      PtGetFlags_
+001cb69f       PtGetArea_
+001cb6e5       PtSetArea_
+001cb72b*      PtSetPos_
+001cb771       PtSetPosWids_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtDestroyWidget_)
+00071178       PtDestroyWidget_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtGetResources_)
+000710b8       PtGetResources_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/Semaforo.c)
+001cb981       SolicitaSemaf_
+001cba37       SolicitaLeitura_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(exit)
+001cbad1s      _null_exit_rtn_
+001cbad2       exit_
+001cbaf2       _exit_
+001d9e04       ___atexit
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/PegaComum.c)
+001cbaf7       PegaComum_
+001cbc5b*      PegaComumLeitura_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(cmainqnx)
+001cbdbfs      __null_FPE_rtn_
+001cbdc0*      _Not_Enough_Memory_
+001cbdd2s      _s_EFG_printf_
+001cbdd9       __CMain
+002718bc       __argc
+002718c0       __argv
+002718c4*      ___env_mask
+002718c8       __endheap
+002718cc       _environ
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/FileName.c)
+001cbe9f       FileName_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(sprintf)
+001cbef9s      mem_putc_
+001cbf0c       sprintf_
+Module: ../../../../lib_ph/ScorePh.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_ph/NoticeScoreph.cc)
+001cbf44       NoticeScoreph_
+001cc025+      AskQuestion_
+001cd10f+      askresponse1_
+001cd137+      askresponse2_
+001cd15f+      askresponse3_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/PegaRelGraf.c)
+001cd187       PegaRelGraf_
+001cd2b2*      PegaRelGraf2_
+001cd359*      PegaRelGrafCnf_
+001cd3c4*      PegaRelGrafVal_
+001cd42f*      PegaRelGrafEvCuba_
+001cd49a*      PegaRelGrafMini_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(getlogin)
+001cd505       getlogin_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/ScoreBd.c)
+001cd525       ScoreBd_
+001cd745s      AlarmHand_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(memcpy)
+001cd769       memcpy_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApCtrl.c)
+001d9e0c       __Ap_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApInitialize.c)
+001cd78es      getnum_
+001cd7d6s      get_pos_
+001cd822s      apply_pos_
+001cd855       ApInitialize_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApLinkWindow.c)
+001cdafes      win_realized_
+001cdc1cs      win_focus_
+001cdc55       _ApAddCallbacks_
+001cddb0s      clrbase_
+001cddc5       ApLinkWindow_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtMainLoop_)
+00071438       PtMainLoop_
+Module: /usr/lib/photon_s.lib(/src/photon.114.20030306/photon/lib/photon/qnx4/so/vars.c)
+001d9e58       __Ph_
+001d9e5c       __Pt_
+001d9e60       __PtDefaultAppContext
+001d9e64       _PtArc
+001d9e68       _PtBasic
+001d9e6c       _PtBitmap
+001d9e70       _PtBkgd
+001d9e74       _PtButton
+001d9e78       _PtComboBox
+001d9e7c       _PtContainer
+001d9e80       _PtEllipse
+001d9e84       _PtGauge
+001d9e88       _PtGraphic
+001d9e8c       _PtGroup
+001d9e90       _PtIcon
+001d9e94       _PtLabel
+001d9e98       _PtLine
+001d9e9c       _PtList
+001d9ea0       _PtMenu
+001d9ea4       _PtMenuButton
+001d9ea8       _PtMultiText
+001d9eac       _PtOnOffButton
+001d9eb0       _PtPane
+001d9eb4       _PtPixel
+001d9eb8       _PtPolygon
+001d9ebc       _PtRaw
+001d9ec0       _PtRect
+001d9ec4       _PtRegion
+001d9ec8       _PtScrollArea
+001d9ecc       _PtScrollbar
+001d9ed0       _PtSeparator
+001d9ed4       _PtSlider
+001d9ed8       _PtText
+001d9edc       _PtToggleButton
+001d9ee0       _PtWidget
+001d9ee4       _PtWindow
+001d9ee8       _PtMessage
+001d9eec       __PgShmemTrack
+001d9ef0       __PgShmemTrackMax
+001d9ef4       __PgShmemUnique
+001d9ef8       _PtCompound
+001d9efc       _PtBezier
+001d9f00       _PtGenList
+001d9f04       _PtMenuBar
+001d9f08       _PtMenuLabel
+001d9f0c       _PtTimer
+001d9f10       _PtGenTree
+001d9f14       _PtTree
+001d9f18       _PtGrid
+001d9f1c       _RtProgress
+001d9f20       _PtTerminal
+001d9f24       _PtTty
+001d9f28       _PtDivider
+001d9f2c       _PtNumeric
+001d9f30       _PtNumericInteger
+001d9f34       _PtUpDown
+001d9f38       _PtFileSel
+001d9f3c       _PtTab
+001d9f40+      ___PtArc
+001d9f48+      ___PtBasic
+001d9f50+      ___PtBitmap
+001d9f58+      ___PtBkgd
+001d9f60+      ___PtButton
+001d9f68+      ___PtComboBox
+001d9f70+      ___PtContainer
+001d9f78+      ___PtEllipse
+001d9f80+      ___PtGauge
+001d9f88+      ___PtGraphic
+001d9f90+      ___PtGroup
+001d9f98+      ___PtIcon
+001d9fa0+      ___PtLabel
+001d9fa8+      ___PtLine
+001d9fb0+      ___PtList
+001d9fb8+      ___PtMenu
+001d9fc0+      ___PtMenuButton
+001d9fc8+      ___PtMultiText
+001d9fd0+      ___PtOnOffButton
+001d9fd8+      ___PtPane
+001d9fe0+      ___PtPixel
+001d9fe8+      ___PtPolygon
+001d9ff0+      ___PtRaw
+001d9ff8+      ___PtRect
+001da000+      ___PtRegion
+001da008+      ___PtScrollArea
+001da010+      ___PtScrollbar
+001da018+      ___PtSeparator
+001da020+      ___PtSlider
+001da028+      ___PtText
+001da030+      ___PtToggleButton
+001da038+      ___PtWidget
+001da040+      ___PtWindow
+001da048+      ___PtMessage
+001da050+      ___PtCompound
+001da058+      ___PtBezier
+001da060+      ___PtGenList
+001da068+      ___PtMenuBar
+001da070+      ___PtMenuLabel
+001da078+      ___PtTimer
+001da080+      ___PtGenTree
+001da088+      ___PtTree
+001da090+      ___PtGrid
+001da098+      ___RtProgress
+001da0a0+      ___PtTerminal
+001da0a8+      ___PtTty
+001da0b0+      ___PtDivider
+001da0b8+      ___PtNumeric
+001da0c0+      ___PtNumericInteger
+001da0c8+      ___PtUpDown
+001da0d0+      ___PtFileSel
+001da0d8+      ___PtTab
+002718e0*      __BIGSPARE
+00271aac*      _spacer_room
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApGetClass.c)
+001ce118       ApGetClass_
+001ce150       ApAddClass_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(cstrtq32)
+001d8000*      __nullarea
+001da0e0       __slib_func
+001ce1a0       _cstart_
+001ce246       __exit_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtRealizeWidget_)
+00071148       PtRealizeWidget_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtUnrealizeWidget_)
+00071160       PtUnrealizeWidget_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(time)
+001ce28b       time_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/strlenMB.c)
+001ce2a4       strlenMB_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/ConvCuba.c)
+001ce306*      ConvCubOperScore_
+001ce36a       ConvCubScoreOper_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(set386)
+001ce3d0       memset_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strcpy)
+001ce3e8       strcpy_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtSetResources_)
+000710b0       PtSetResources_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(shm_open)
+001ce40d       shm_open_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(ummap)
+001ce426       mmap_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(close)
+001ce43b       close_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(errno)
+001ce454       __get_errno_ptr_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fltused)
+00000000       _fltused_
+Module: /usr/watcom/10.6/usr/lib/emu387.lib(386inite)
+001ce46d*      __fini_387_emulator
+001ce46c       __init_387_emulator
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(_8087386)
+001da0e8       __8087
+001da0e9       __real87
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(stkq32)
+001ce493*      __STK
+001ce497       __CHK
+001ce490*      __GRO
+001ce4b8*      __STKOVERFLOW_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/GeraEvento.c)
+001ce52d       GeraEvento_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(cmp386)
+001ce960       strcmp_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApLinkDialog.c)
+001cea01s      win_focus_
+001cea2as      dlg_destroy_
+001cea45       ApLinkDialog_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApLinkMenu.c)
+001ced1f       ApLinkMenu_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApLinkPicture.c)
+001cf383       ApLinkPicture_
+001cf4a5*      ApLinkPictureFile_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strncpy)
+001cf5b5       strncpy_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strlen)
+001cf5da       strlen_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/ShmMap.c)
+001cf5f3       ShmSize_
+001cf65a       ShmMap_
+001cf6f9       ShmMapRead_
+001cf77c       ShmMapDummy_
+Module: /usr/lib/photon_s.lib(__(initcode)___clphlib_s11_bind)
+001da6a2       _clphlib_s11_bind_xibsym
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(kernel)
+001cf7dc       __send_
+001cf836*      __sendfd_
+001cf88a*      __receive_
+001cf8be*      __reply_
+001cf8f2*      __creceive_
+001cf926*      __readmsg_
+001cf960*      __writemsg_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/EmiteAlaFor.c)
+001cf996*      EmiteAlarmeFor_
+001cfa10       EmiteErroFor_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(inirt386)
+001cfa94       __InitRtns
+001cfadf       __FiniRtns
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(getnid)
+001cfb2e       getnid_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(xmsgqnx)
+001cfb47+      __exit_with_msg_
+001cfb7c       __fatal_runtime_error_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(noefgfmt)
+001cfb99s      _no_support_loaded_
+001da0ec       ___EFG_printf
+001da0f0       ___EFG_scanf
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__setmagicvar)
+001cfbab       __setmagicvar_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(crwd386)
+001da0f4*      __dynend
+001da0f8       __curbrk
+001da0fc       __STACKLOW
+001da100       __STACKTOP
+001da104*      __ASTACKSIZ
+001da108*      __ASTACKPTR
+001da10c*      __cbyte
+001da110*      __cbyte2
+001da114*      __child
+001da11a*      __Envptr
+001da11e*      __Envseg
+001da118       __no87
+001da120*      __FPE_handler
+001da120       ___FPE_handler
+001cfbc4s      __null_FPE_rtn
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(regdata)
+001cfbc5*      __RegisterThreadDataSize_
+001da124       ___ThreadDataSize
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(mainqnx)
+001da128+      ___FirstThreadData
+001da12c       ___GetThreadPtr
+001da130       __AccessFileH
+001da134       __ReleaseFileH
+001da138*      __InitAccessH
+001da13c       __FiniAccessH
+001da140       __AccessIOB
+001da144       __ReleaseIOB
+001da148       __AccessNHeap
+001da14c*      __AccessFHeap
+001cfbda*      __threadid_
+001cfbe4s      __SingleThread_
+001cfbe9s      __NullAccHeapRtn_
+001cfbe9s      __NullAccIOBRtn_
+001cfbe9s      __NullAccessRtn_
+001cfbe9s      __NullInitAccessRtn_
+001cfbea       __QNXInit_
+001da150       __ReleaseNHeap
+001da154*      __ReleaseFHeap
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(amblksiz)
+001da158       __amblksiz
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__prtf)
+001cfc2a       __prtf_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(vsprintf)
+001cfc43s      mem_putc_
+001cfc56       vsprintf_
+Module: ../../../../lib_ph/ScorePh.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_ph/NoticeScorephV2.cc)
+001cfc74*      NoticeScoreph2_
+001cfcc8       AskQuestion2_
+001d0293+      askresponse_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateWidget_)
+00071e08       PtCreateWidget_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtAddCallback_)
+00071660       PtAddCallback_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtContainerGiveFocus_)
+000713c0       PtContainerGiveFocus_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtGetAbsPosition_)
+000712f0       PtGetAbsPosition_
+Module: /usr/lib/photon_s.lib(__(absolute)__PhMoveCursorAbs_)
+00071fa0       PhMoveCursorAbs_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtWindowToFront_)
+000712d8       PtWindowToFront_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtWidgetRid_)
+00071650       PtWidgetRid_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtForwardWindowEvent_)
+000712e8       PtForwardWindowEvent_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtModalStart_)
+00071c50       PtModalStart_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtProcessEvent_)
+00071428       PtProcessEvent_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtModalEnd_)
+00071c58       PtModalEnd_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__getlogin)
+001d033f       __getlogin_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(qnx_name_locate)
+001d0358       qnx_name_locate_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(signal)
+001d0371       signal_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(alarm)
+001d03a7       alarm_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(kererr)
+001d03c0       __kererr_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(gtopt_3s)
+00271bf0s      _errbuf
+001da15c       _optind
+001da160       _opterr
+001da164+      _optopt
+001d03ce       getopt_
+001da168s      __gops
+00271c40       _optarg
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(isdigit)
+001d043b       isdigit_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strtol)
+001d0449s      _stol_
+001d05ac*      strtoul_
+001d05b6       strtol_
+001d05bes      radix_value_
+001da188s      _nearly_overflowing
+Module: /usr/lib/photon_s.lib(__(absolute)__PtInit_)
+00071070       PtInit_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(iob)
+001da214       ___iob
+001da3f4s      _force
+00271c44       ___ClosedStreams
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fprintf)
+001d0622       fprintf_
+Module: /usr/lib/photon_s.lib(__(absolute)__PhWindowQueryVisible_)
+00071b88       PhWindowQueryVisible_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(_cmdname)
+001d0649       _cmdname_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApResOpen.c)
+001d0698s      find_in_executable_
+001d06d7s      check_pathlist_
+001d07f5       ApResOpen_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(getenv)
+001d0860       getenv_
+001d0870       _findenv_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApOpenTrans.c)
+001d08ca+      _ApDeleteTranslation_
+001d08fd       ApOpenTranslation_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApResClose.c)
+001d0923       ApResClose_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApGetResource.c)
+001d094as      _here
+001d0958       ApArgInit_
+001d0979       ApBuildWidget_
+001d098b       ApArgCleanup_
+001d099f       ApGetArg_
+001d09d5       ApUngetArg_
+001d09d9+      ApSetCommonResource_
+001d0b9ds      readalloc_
+001d0bcbs      readallocp_
+001d0bfe       ApGetResource_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApAlloc.c)
+001d1148s      _here
+001d1154s      errmsg_
+001d1177s      nomemory_
+001d11c9       ApAlloc_
+001d11de       ApRealloc_
+001d11f7+      ApHeapAddPtr_
+001d1231       ApHeapAlloc_
+001d12f3       ApHeapStrdup_
+001d1338       ApHeapInit_
+001d1349       ApHeapCleanup_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApEventHandler.c)
+001d1377       ApEventHandler_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApGetTrans.c)
+001d13ea       ApGetTranslation_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(mb2wcqnx)
+001d144c       mbtowc_
+Module: /usr/lib/photon_s.lib(__(absolute)__wctolower_)
+00072818       wctolower_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtSetParentWidget_)
+000710c8       PtSetParentWidget_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApWgtOpen.c)
+001d155c+      ApFindModule_
+001d1608       ApWgtOpen_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApGetWidget.c)
+001d16c9       ApGetWidget_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApLinkAt.c)
+001d176d       ApLinkAt_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApLinkIcon.c)
+001d1a44       ApLinkIcon_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtFlush_)
+00071220       PtFlush_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateArcClass_)
+00071380       PtCreateArcClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateBasicClass_)
+000710c0       PtCreateBasicClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateBitmapClass_)
+00071388       PtCreateBitmapClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateBkgdClass_)
+000713f0       PtCreateBkgdClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateButtonClass_)
+00071320       PtCreateButtonClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateComboBoxClass_)
+000713f8       PtCreateComboBoxClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateContainerClass_)
+00071378       PtCreateContainerClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateEllipseClass_)
+00071460       PtCreateEllipseClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateGaugeClass_)
+00071478       PtCreateGaugeClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateGraphicClass_)
+000714b0       PtCreateGraphicClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateGroupClass_)
+000714b8       PtCreateGroupClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateIconClass_)
+000714c0       PtCreateIconClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateLabelClass_)
+00071358       PtCreateLabelClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateLineClass_)
+000714d8       PtCreateLineClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateListClass_)
+00071450       PtCreateListClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateMenuClass_)
+000714e0       PtCreateMenuClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateMenuButtonClass_)
+00071510       PtCreateMenuButtonClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateMultiTextClass_)
+00071518       PtCreateMultiTextClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateOnOffButtonClass_)
+00071520       PtCreateOnOffButtonClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreatePaneClass_)
+00071550       PtCreatePaneClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreatePixelClass_)
+00071558       PtCreatePixelClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreatePolygonClass_)
+00071640       PtCreatePolygonClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateRawClass_)
+00071560       PtCreateRawClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateRectClass_)
+00071568       PtCreateRectClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateRegionClass_)
+00071570       PtCreateRegionClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateScrollAreaClass_)
+00071578       PtCreateScrollAreaClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateScrollbarClass_)
+00071580       PtCreateScrollbarClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateSeparatorClass_)
+00071590       PtCreateSeparatorClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateSliderClass_)
+000715a0       PtCreateSliderClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateTextClass_)
+000715a8       PtCreateTextClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateToggleButtonClass_)
+000715b8       PtCreateToggleButtonClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateCoreClass_)
+00071610       PtCreateCoreClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateWindowClass_)
+00071628       PtCreateWindowClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateMessageClass_)
+00071638       PtCreateMessageClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateCompoundClass_)
+00071648       PtCreateCompoundClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateBezierClass_)
+00071c30       PtCreateBezierClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateGenListClass_)
+00071de8       PtCreateGenListClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateMenuBarClass_)
+00071df0       PtCreateMenuBarClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateMenuLabelClass_)
+00071df8       PtCreateMenuLabelClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateTimerClass_)
+00071e00       PtCreateTimerClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateGenTreeClass_)
+00071eb8       PtCreateGenTreeClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateTreeClass_)
+00071ec0       PtCreateTreeClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateGridClass_)
+00071ec8       PtCreateGridClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateProgressClass_)
+00071f08       PtCreateProgressClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateTerminalClass_)
+00071f10       PtCreateTerminalClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateTtyClass_)
+00071f18       PtCreateTtyClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateDividerClass_)
+00072100       PtCreateDividerClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateNumericClass_)
+00072280       PtCreateNumericClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateNumericIntegerClass_)
+000711a8       PtCreateNumericIntegerClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateUpDownClass_)
+000715f8       PtCreateUpDownClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateFileSelClass_)
+00071f68       PtCreateFileSelClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtCreateTabClass_)
+00072830       PtCreateTabClass_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nrealloc)
+001d1c6a*      _nrealloc_
+001d1c6a       realloc_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__qnx_exit)
+001d1ce4       __qnx_exit_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(segq32)
+001d1cfe       __QNXseg__
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(ms2wsqnx)
+001d1cff       mbstowcs_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__stos)
+001d1d70       __STOSB
+001d1da7*      __STOSD
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(_mmap)
+001d1e13       _mmap_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__getmagicvar)
+001d1e2c       __getmagicvar_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(setefg)
+001d1e45       __setEFGfmt_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(chk8087)
+001d1e60*      __init_8087_
+001d1e6d*      _fpreset_
+001d1e77       __chk8087_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(printf)
+001d1e91       printf_
+Module: /usr/lib/queuef.lib(/home/leo/score/score_atan.cba125ka/srcs/queue/queuelib.c)
+001d1eb3       queue_open_
+001d2251       queue_write_
+001d22e1*      queue_read_
+001d238e*      queue_wait_
+001d2402*      queue_wait_sig_
+001d247d*      queue_last_status_
+001d24eas      queue_release_
+001d261e       queue_close_
+001d2655*      queue_kill_
+001d268c*      queue_purge_
+001d26f9*      queue_info_
+001d27cd*      queue_return_code_string_
+00271c48+      _queue_table
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strncmp)
+001d2a61       strncmp_
+Module: /usr/lib/photon_s.lib(__(absolute)__PgExtentText_)
+00071848       PgExtentText_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(memmove)
+001d2a90       memmove_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(mblen)
+001d2add       mblen_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtExtentWidgetFamily_)
+00071d10       PtExtentWidgetFamily_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtWidgetExtent_)
+000710e8       PtWidgetExtent_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtFopenR_)
+000726e8       PtFopenR_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApGetString.c)
+001d2afd       ApGetString_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtSeekR_)
+00072700       PtSeekR_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtFcloseR_)
+000726f0       PtFcloseR_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fstat)
+001d2b69       fstat_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/CriaSeg.c)
+001d2b82*      CriaSegmento_
+001d2cf3       CriaSegmentoRead_
+Module: /usr/lib/photon_s.lib(/tmp/mksh_host_226-17316-6.c)
+001d2e3e       _clphlib_s11_bind_
+001da3f8s      _export_tab
+001da520s      _slib_bind
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strcat)
+001d2e70       strcat_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/EmiteAlarme.c)
+001d2ea3       EmiteAlarme_
+Module: ../../../../lib_score/Score.lib(/home/leo/score/score_atan.cba125ka/srcs/lib_score/EmiteErro.c)
+001d2fc2       EmiteErro_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(write)
+001d3100       write_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(enterdb)
+001d3119       __EnterWVIDEO_
+001da5e4+      ___WD_Present
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(getpid)
+001d313f       getpid_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(sigact)
+001d3158       sigaction_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__getopt)
+001d3172       __getopt_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(istable)
+001d91bc       __IsTable
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(seterrno)
+001d318b       __set_EDOM_
+001d3190       __set_errno_
+001d319c       __set_ERANGE_
+001d31a3*      __set_EINVAL_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(tolower)
+001d31b3       tolower_
+001d31b3*      _tolower_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(stinit)
+00271e0c       ___OpenStreams
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fprtf)
+001d31c2s      file_putc_
+001d31d3       __fprtf_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(qnx_psinfo)
+001d3262       qnx_psinfo_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApElfResOpen.c)
+001d3284       ApElfResOpen_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/qnx4/ApLmfResOpen.c)
+001d3404       ApLmfResOpen_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strrchr)
+001d347e       strrchr_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtFilenoR_)
+00072710       PtFilenoR_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fcntl)
+001d349e       fcntl_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApAppendTrans.c)
+001d34b7s      wildsearch_
+001d3547+      _ApFindTranslationFile_
+001d3694       _ApOpenTranslationFile_
+001d37cd*      ApAppendTranslation_
+001d37ea       _ApReadTrans_
+00271e10       __ApTranslationHeap
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nfree)
+001d3929       _nfree_
+001d3929       free_
+00271e2c+      ___MiniHeapFreeRover
+Module: /usr/lib/photon_s.lib(__(absolute)__PtStrtol_)
+00072750       PtStrtol_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(strtod)
+001d39bd       strtod_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtStrtoul_)
+00072758       PtStrtoul_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtRead_)
+00072718       PtRead_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(atoi)
+001d3c22       atoi_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApGetResType.c)
+001d3c8fs      _table
+001d3cdb       ApGetResType_
+001d3d0d*      ApGetResTypeName_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strdup)
+001d3d26       strdup_
+001d3d26*      _strdup_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApFreeData.c)
+001d3d6b       ApFreeData_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nheapchk)
+001d3d7fs      checkFreeList_
+001d3e13s      checkFree_
+001d3e61*      _nheapchk_
+001d3e61       _heapchk_
+00271e30+      ___nheapchk_current
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(calloc)
+001d3f02       calloc_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApLinkOkay.c)
+001d3f1as      okay_or_cancel_
+001d3fa8       ApLinkOkay_
+001d3fb9       ApLinkCancel_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtTellR_)
+00072708       PtTellR_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtFrameSize_)
+00071630       PtFrameSize_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtGetParent_)
+000712f8       PtGetParent_
+Module: /usr/lib/photon_s.lib(__(absolute)__PhGetData_)
+00071b08       PhGetData_
+Module: /usr/lib/photon_s.lib(__(absolute)__PhQueryCursor_)
+00072070       PhQueryCursor_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nmalloc)
+001d3fe3       _nmalloc_
+001d3fe3       malloc_
+001da5e8       ___nheapbeg
+001da5ec       ___MiniHeapRover
+001da5f0       ___LargestSizeB4MiniHeapRover
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nmsize)
+001d40d2       _nmsize_
+001d40d2*      _msize_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nexpand)
+001d40db       _nexpand_
+001d40db*      _expand_
+001d411d+      __HeapManager_expand_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(efgfmt)
+001d42ed       _EFG_Format_
+001d43d1s      forcedecpt_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(cnvs2d)
+001d4430       __cnvs2d_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(8087cw)
+001da5f4       __8087cw
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(ini87386)
+001d443e       __init_80x87
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(osinf386)
+00271e34       ___87
+00271e35       ___r87
+00271e36       __osmajor
+00271e37       __osminor
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(qnx_osinfo)
+001d4466       qnx_osinfo_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(qnx_vc_detach)
+001d447f       qnx_vc_detach_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtGetc_)
+000726f8       PtGetc_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApNLErase.c)
+001d449e       ApNLErase_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(shm_unlink)
+001d44f1       shm_unlink_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(ltrunc)
+001d450a       ltrunc_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(strerror)
+001d4523       strerror_
+00271e38+      _emsg
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(munmap)
+001d4589       munmap_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(atexit)
+001d45a2+      _Full_at_exit_rtn_
+001d45dd       atexit_
+00271e7c+      __ExitList
+00271efc+      __ExitCount
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(setenv)
+001d4619       setenv_
+001d4777+      unsetenv_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(_qspawn)
+001d47ad       qnx_spawn_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(splqnx)
+001d4848       spawnl_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtMessageBox_)
+00071ee8       PtMessageBox_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(qnx_glob)
+001da5f8       _qnx_spawn_options
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(spvpqnx)
+001d486c       spawnvp_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(_sho_open)
+001d487a       _sho_open_
+Module: /usr/lib/photon_s.lib(/tmp/mksh_host__err226-17316-8.c)
+001d4893s      shobj_deferr_
+001da61c       ___shobj_bind_failed
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(sigstub)
+001d495c       __sigstub_
+001d495c*      __sigstub
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__sigaction)
+001d4976       __sigaction_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(initfile)
+001d498f       __InitFiles_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(ioexit)
+001d4a06       __full_io_exit_
+001d4a12*      fcloseall_
+001d4a17s      docloseall_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fputc)
+001d4a6a       fputc_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(ioalloc)
+001d4af8       __ioalloc_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(flush)
+001d4b6f       __flush_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(opendir)
+001d4c2f       opendir_
+001d4c6b       closedir_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(readdir)
+001d4c83       readdir_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fnmatch)
+001d4c9cs      ccl_match_
+001d4d4bs      amatch_
+001d4ee3       fnmatch_
+001d4efcs      gmatch_
+Module: /usr/lib/Aplib3r.lib(/src/photon.114/photon/lib/Aplib/ApMultiStrcat.c)
+001d4f1d       ApMultiStrcat_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(memalloc)
+001d4f4a       __MemAllocator
+001d4ff2       __MemFree
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(heapmod)
+00271f04       ___nheap_clean
+00271f05       ___fheap_clean
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(scale)
+001d50fd       _Scale_
+001d513e       _Scale10V_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(amodf386)
+001d525c*      __ModF
+001d52ec       __ZBuf2F
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(hugeval)
+001d92e0       __HugeValue
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nheapwal)
+001d5388*      _nheapwalk_
+001d5388*      _heapwalk_
+001d53ac       __NHeapWalk_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtFindDisjoint_)
+00072078       PtFindDisjoint_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtWidgetIsClass_)
+000716b0       PtWidgetIsClass_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtWidgetParent_)
+000716b8       PtWidgetParent_
+Module: /usr/lib/photon_s.lib(__(absolute)__PtSyncPhoton_)
+00071c40       PtSyncPhoton_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(grownear)
+001d5461s      __LinkUpNewMHeap_
+001d54d5+      __LastFree_
+001d54ff       __ExpandDGROUP_
+001d55f5s      __AdjustAmount_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(nmemneed)
+001d563b       __nmemneed_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(ftos)
+001d563e*      _SetMaxPrec_
+001d5644s      DoEFormat_
+001d56e7s      DoFFormat_
+001d574as      AdjField_
+001d57bb       _FtoS_
+001da620s      _MaxPrec
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(detosinf)
+001d59f5       __DetOSInfo_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__strnerr)
+001d5a91       __strnerr_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(itoa)
+001d5aaas      _Alphabet
+001d5acf+      utoa_
+001d5b19       itoa_
+001d5b19*      _itoa_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__qnx_spawn_len)
+001d5b34       __qnx_spawn_len_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__qnx_spawn)
+001d5b4d       __qnx_spawn_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(spveqnx)
+001d5b66       spawnve_
+001da624+      ___p_overlay
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(spvpeqnx)
+001d5c5c       spawnvpe_
+00271f08s      ___last_path
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(allocfp)
+001d5d93*      __allocfp_
+001d5e4b+      __freefp_
+001d5e84       __purgefp_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fclose)
+001d5ea2*      fclose_
+001d5ee1       __shutdown_stream_
+001d5ef6+      __doclose_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(chktty)
+001d5f7f       __chktty_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(qwritqnx)
+001d5fae       __qwrite_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(lseek)
+001d5ff6       lseek_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__opendir)
+001d600f       __opendir_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(__closedir)
+001d6028       __closedir_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(i64ts386)
+001d6042       __CmpBigInt
+001d607c       __Rnd2Int
+001d60e7       __Bin2String
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(fpow10)
+001d92e8       __BigPow10Table
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(chipvar)
+001da628       ___chipbug
+001da628       __chipbug
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(chipd32)
+001d631f*      __fdiv_fpr
+001d67e1*      __fdiv_chk
+001d67f4*      __fdiv_m32
+001d6840       __fdiv_m64
+001d688c*      __fdiv_m32r
+001d68d8*      __fdiv_m64r
+001d6208s      fdiv_main_routine
+001d67bbs      __fdivp_sti_st
+001d67ces      __fdivrp_sti_st
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(heapen)
+001d6924*      _heapenable_
+001da62c       ___heap_enabled
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(sbrk)
+001d6945*      sbrk_
+001d694b       __brk_
+001d696c*      brk_
+001d69d4*      __setcbrk_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(nan_inf)
+001d69da       __Nan_Inf_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(log387)
+001d6ab7*      log_
+001d6acf*      log2_
+001d6ac3*      log10_
+001d6a6c*      IF@LOG
+001d6a6c*      IF@DLOG
+001d6aaf*      IF@LOG2
+001d6aaf*      IF@DLOG2
+001d6ab3*      IF@LOG10
+001d6ab3       IF@DLOG10
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(floor)
+001d6adb       floor_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(fchop)
+001d6b18       __CHP
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(cvt)
+001d6b35       __cvt_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(waitpid)
+001d6d12       waitpid_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(ftell)
+001d6d2b       ftell_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(isatty)
+001d6d7c       isatty_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(chipbug)
+001d6d95       verify_pentium_fdiv_bug_
+001da6b4s      ___anon42
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(_brk)
+001d6dea       _brk_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(log87e)
+001d6e03       __log87_err_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(modf387)
+001d6e40       modf_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(frexp)
+001d6e59       frexp_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(tellqnx)
+001d6ec8       tell_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fflush)
+001d6ed9       fflush_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(math2err)
+001d6ee9       __math1err_
+001d6ef3+      __math2err_
+001da630s      _MathFuncNames
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(flushall)
+001d6fce       flushall_
+001d6fd3*      __flushall_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(_matherr)
+001d700e*      _set_matherr_
+001d7014+      __rterrmsg_
+001d705c       _matherr_
+001d9338s      _Msgs
+001da68c+      __RWD_matherr
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(__mtherr)
+001d708c       __matherr
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(iobaddr)
+001d7091       __get_std_stream_
+Module: /usr/watcom/10.6/usr/lib/clib3r.lib(fputs)
+001d70ab       fputs_
+Module: /usr/watcom/10.6/usr/lib/math387r.lib(matherr)
+001d7138+      matherr_
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+/usr/lib/Aplib3r.lib
+/usr/lib/photon_s.lib
+../../../../lib_score/Score.lib
+../../../../lib_ph/ScorePh.lib
+/usr/lib/queuef.lib
+/usr/watcom/10.6/usr/lib/clib3r.lib
+/usr/watcom/10.6/usr/lib/math387r.lib
+/usr/watcom/10.6/usr/lib/emu387.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  8000 (32768.)
+Memory size:  000b004b (720971.)
+Entry point address: 001ce1a0
+Link time: 00:00.60

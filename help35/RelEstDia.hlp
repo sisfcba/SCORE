@@ -1,0 +1,48 @@
+                  Relatorio Historico Diario de Condicoes
+
+                      Lay-Out e Descricao dos Campos
+
+      Relatorio de Condicoes das Cubas [1] a [2] de [3] ate [4]
+ IAlvo = [5] KA      IReal = [6] KA      Sistema = [7] %      Linha = [8] %
+Cuba  ----Ruido----  ------Move Anodo------  Manual Falha  Desv   Queb.  Fora
+      Lento  Rapido  -p/ Cima-   -p/ Baixo-         Move   Tens   Prev.  Leit
+      hh:mm  hh:mm   Mov   Dur    Mov   Dur   hh:mm  Qtd   hh:mm  hh:mm  hh:mm
+[9]   [10]   [11]    [12]  [13]   [14]  [15]  [16]  [17]   [18]    [19]   [20]
+
+Med   [21]   [22]    [23]  [24]   [25]  [26]  [27]  [28]   [29]    [30]   [31]
+
+1)  Primeira cuba do relatorio
+2)  Ultima cuba do relatorio
+3)  Data inicial do relatorio
+4)  Data final do relatorio
+5)  Corrente alvo (IAlvo) media da sala no periodo
+6)  Corrente real (IReal) media da sala no periodo
+7)  Percentual de tempo que o sistema ficou ativo no periodo
+8)  Percentual de tempo que a linha ficou habilitada no periodo
+9)  Numero da cuba. Marcado com (+) se  a cuba  ficou  por algum  instante  em
+    estado ligado ou desligado no periodo
+10) Tempo medio que a cuba ficou em ruido lento no periodo
+11) Tempo medio que a cuba ficou em ruido rapido no periodo
+12) Numero medio de movimentacoes para cima no periodo
+13) Duracao media das movimentacoes para cima por movimento no periodo
+14) Numero medio de movimentacoes para baixo no periodo
+15) Duracao media das movimentacoes para baixo por movimento no periodo
+16) Tempo medio que  a  cuba ficou em manual (local, remoto, e/ou controle) no
+    periodo
+17) Numero medio de falha de movimentacoes no periodo 
+18) Tempo medio que a cuba ficou em desvio de tensao no periodo
+19) Tempo medio que a cuba ficou em quebrada preventiva no periodo
+20) Tempo medio que a cuba ficou fora de leitura no periodo
+
+21 a 22) Media dos campos 10 a 11 respectivamente
+23) Media de movimentos para cima por cubas normais no periodo
+24) Media de duracao de movimentacoes para cima por movimentos
+25) Media de movimentos para cima por cubas normais no periodo
+26) Media de duracao de movimentacoes para cima por movimentos
+27 a 31) Media dos campos 16 a 20 respectivamente
+
+
+    Observacao
+    - As cubas que estiveram em estado ligado ou desligado no periodo
+      nao serao consideradas no calculo das medias
+
