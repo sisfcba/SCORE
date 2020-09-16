@@ -805,10 +805,20 @@ void CalcDadosEa(int Cuba)
 
 void CalcVMaxMin(int Cuba)
 {
-  if (AVC.Cleit[Cuba].Vinst > AVC.Ea[Cuba].EaVMax)   /* Calculo da Tensao Maxima */
-	AVC.Ea[Cuba].EaVMax = AVC.Cleit[Cuba].Vinst;
-  if (AVC.Cleit[Cuba].Vinst < AVC.Ea[Cuba].EaVMin)   /* Calculo da Tensao Minima */
-	AVC.Ea[Cuba].EaVMin = AVC.Cleit[Cuba].Vinst;
+	if (AVC.Cleit[Cuba].Vinst > AVC.Ea[Cuba].EaVMax)   /* Calculo da Tensao Maxima */
+		AVC.Ea[Cuba].EaVMax = AVC.Cleit[Cuba].Vinst;
+	if (AVC.Cleit[Cuba].Vinst < AVC.Ea[Cuba].EaVMin)   /* Calculo da Tensao Minima */
+		AVC.Ea[Cuba].EaVMin = AVC.Cleit[Cuba].Vinst;
+
+	if (AVC.ParUser1[Cuba].HabAEK eq VERDADEIRO)
+	{
+		if (AVC.Cleit[Cuba].Vinst > EaLocal[Cuba].AEK_VMax)
+	  	{
+			EaLocal[Cuba].AEK_VMax = AVC.Cleit[Cuba].Vinst;
+			AVC.User1[Cuba].AEKVMax = EaLocal[Cuba].AEK_VMax;			
+	  	}
+	}
+
 }
 
  #include	<process.h>
@@ -1083,11 +1093,10 @@ void AEK(int Cuba)
 	{
 	  if (AVC.Cleit[Cuba].Vinst > EaLocal[Cuba].AEK_VMax)
 	  {
-		EaLocal[Cuba].AEK_VMax = AVC.Cleit[Cuba].Vinst;
-		AVC.User1[Cuba].AEKVMax = EaLocal[Cuba].AEK_VMax;
-
+		
 		if (EaLocal[Cuba].ContSobe eq 0) 
 		  EaLocal[Cuba].AEK_VMaxIni = EaLocal[Cuba].AEK_VMax;
+		  
 	  }
 
 
