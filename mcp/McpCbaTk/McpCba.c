@@ -1336,7 +1336,7 @@ void MonitoraCalante()
 		{
 		  if ( ((HoraAtualSec - AVC.User2[Cuba].HoraContSirene) > 
 				( AVC.ParUser1[Cuba].TocaSirene * ((AVL.INominal * AVC.ParUser1[Cuba].TenLimCal) / 
-				( AVL.ICicContlMed * AVC.Cleit[Cuba].Vinst)))) and
+				( fabs(AVL.ICicContlMed * AVC.Cleit[Cuba].Vinst))))) and
 				EST_AVC(Cuba).Est.SireneCunha eq FALSO)
 		  {
 		  	EST_AVC(Cuba).Est.SireneCunha = VERDADEIRO;
@@ -1374,7 +1374,7 @@ void MonitoraCalante()
 		{
 		  if ( ((HoraAtualSec - AVC.User2[Cuba].HoraContSirene) > 
 				( AVC.ParUser1[Cuba].DesligaSala * ((AVL.INominal * AVC.ParUser1[Cuba].TenLimCal) / 
-				( AVL.ICicContlMed * AVC.Cleit[Cuba].Vinst)))) and
+				( fabs(AVL.ICicContlMed * AVC.Cleit[Cuba].Vinst))))) and
 				EST_AVC(Cuba).Est.SireneCunha eq VERDADEIRO and
 				EST_AVC(Cuba).Est.DesligaCunha eq FALSO)
 		  {

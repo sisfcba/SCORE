@@ -311,11 +311,11 @@ int TesteStatus(int Cuba, int Condicao)
 			case USA_EA_MAX:
 				if (AVC.ParUser1[Cuba].UsaMaxEa eq VERDADEIRO)
 				{
-					if (AVC.Ea[Cuba].EaVMax >= AVC.Param[Cuba].VEaFraco)
-						//((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) >=
-						//					(AVC.ParUser1[Cuba].LimInfQPrevEa*60L)) and
-						//((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) <=
-						//	((AVC.Param[Cuba].EaAtrasoMax - AVC.ParUser1[Cuba].LimSupQPrevEa) * 60L)))
+					if (AVC.Ea[Cuba].EaVMax >= AVC.Param[Cuba].VEaFraco) and
+						((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) >=
+											(AVC.ParUser1[Cuba].LimInfQPrevEa*60L)) and
+						((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) <=
+							((AVC.Param[Cuba].EaAtrasoMax - AVC.ParUser1[Cuba].LimSupQPrevEa) * 60L)))
 						Status = VERDADEIRO;
 					else
 						Status = FALSO;
@@ -326,10 +326,10 @@ int TesteStatus(int Cuba, int Condicao)
 				if (AVC.ParUser1[Cuba].UsaMaxAEK eq VERDADEIRO)
 				{
 					if (AVC.User1[Cuba].AEKVMax >= AVC.Param[Cuba].VEaFraco)
-						//((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) >=
-						//					(AVC.ParUser1[Cuba].LimInfQPrevEa*60L)) and
-						//((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) <=
-						//	((AVC.Param[Cuba].EaAtrasoMax - AVC.ParUser1[Cuba].LimSupQPrevEa) * 60L)))
+						((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) >=
+											(AVC.ParUser1[Cuba].LimInfQPrevEa*60L)) and
+						((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) <=
+							((AVC.Param[Cuba].EaAtrasoMax - AVC.ParUser1[Cuba].LimSupQPrevEa) * 60L)))
 						Status = VERDADEIRO;
 					else
 						Status = FALSO;

@@ -356,6 +356,7 @@ typedef
 	byte BufferSizeRH;
 	byte Livre1;
 	byte Livre2;
+	byte	UsaMaxAEK;		/* Habilita/desabilita teste AEKMax em quebrada preventiva */
 	
 	float	NivelProvQueb; /* Nível do Coeficiente Angular de RSuaveDerivH para Detecção de Provável Quebra */
 //	float	TempoQuebrador;    /* Tempo de acionamento do quebrador */
@@ -389,7 +390,7 @@ typedef
 	byte	UsaIncOpe;		/* Habilita/desabilita teste incremento operador em quebrada preventiva */
 	byte	UsaAtrasoEa;	/* Habilita/desabilita teste atraso EA em quebrada preventiva */
 	byte	UsaMaxEa;		/* Habilita/desabilita teste EAMax em quebrada preventiva */
-	byte	UsaMaxAEK;		/* Habilita/desabilita teste AEKMax em quebrada preventiva */
+	
 	byte	HabMCruzeiro;	/* Habilita algoritmo de manobra de cruzeiro */
 	short int	TMaxPermMCruzeiro;	/* Tempo maximo para permissao de manobra de cruzeiro ativa */
 	byte	HabLimMov;		/* Habilita o limitador de movimentacao por grupo */
