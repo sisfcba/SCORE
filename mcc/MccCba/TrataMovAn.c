@@ -219,12 +219,11 @@ PosicaoGlobal = 163;
  		  if (EST_AVC(Cuba).InibeMovEaPrev eq FALSO)
 		  {
 			/* Permite movimentacao para cima/baixo
-			   durante corrida sem ajustar equivalente motor e sem esperar
-			   tempo efeito move. PERMITE AJUSTE RAPIDO APOS CORRIDA */
+			durante corrida sem ajustar equivalente motor e sem esperar
+			tempo efeito move. PERMITE AJUSTE RAPIDO APOS CORRIDA */
 			EfetuaMov(Cuba,RErro);
 			/* -- nao faz ajuste do equivalente motor -- */
-			AvcLocal[Cuba].AjustaEqMotor=FALSO;
-
+			AvcLocal[Cuba].AjustaEqMotor=FALSO;			  
 		  }
 		}
 		else

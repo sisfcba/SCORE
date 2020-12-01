@@ -241,9 +241,9 @@ typedef
 ||                  ||                     || 0 to 4,294,967,295      ||
 || short (int)      || 2 bytes             || -32,768 to 32,767       ||
 || unsigned short   || 2 bytes             || 0 to 65,535             ||
-|| long             || 8 bytes             || -9223372036854775808 to ||
+|| long             || 4 bytes (for 32bit) || -9223372036854775808 to ||
 ||                  ||                     || 9223372036854775807     ||
-|| unsigned long    || 8 bytes             || 0 to                    ||
+|| unsigned long    || 4 bytes (for 32bit) || 0 to                    ||
 ||                  ||                     || 18446744073709551615    ||
 ------------------------------------------------------------------------
 ||      F   L   O   A   T   I   N   G   -   P   O   I   N   T         ||
@@ -602,9 +602,14 @@ typedef
 	byte	TipoIncPadrao[6];	/* Tipo de incremento padronizado */
 	short int	DurIncPadrao[6];	/* Duracao de incremento padronizado */
 	float	VIncPadrao[6];	/* Tensao de incremento padronizado */
+	byte	InibIncQuebDB; /* Inibe Incremento e Movimentação em Quebra quando em DB */
+	byte	HabInibeQPposDB; /* Inibe QP quando em DB */
+	long	TInibQPposDB;	/* Tempo de Inibição de QP pos DB */
+	long	TEfeitoInibeMovDB;	/* Tempo de Inibição de Mov apos quebra */
 		
 //	char	ResParUser[502];
-	char	ResParUser[476];   // 512 + 128 = 640   - Expansao 13/11/14 - Red 2 CBA	
+//	char	ResParUser[476];   // 512 + 128 = 640   - Expansao 13/11/14 - Red 2 CBA	
+	char	ResParUser[458];   // 476 -  18 = 458   - 2 bytes, 2 longs: Inibição de IncQueb e QP em DB
   } t_par2_user;
 
 /* -- Tabelas de variaveis de trabalho -- */
@@ -1073,10 +1078,13 @@ typedef
 	byte	CamisaBaixa;	/* Alarme de Camisa Baixa */
 	byte	QuebCab;		/* Estado de Quebra de Cabeceira */
 	byte	EfeitoQuebCab;	/* Efeito de Quebra de Cabeceira */
-	byte	TendOverCancela;	/* Não-sinalização de TendOver no ciclo de Over */	
+	byte	TendOverCancela;	/* Não-sinalização de TendOver no ciclo de Over */
+	byte	InibeMovDB;		/* Inibe Movimentação e Incremento de Quebrada em DB */	
+	byte	InibeQPposDB;		/* Inibe QP em DB */	
 	
 	//byte	ResUsuario[50];	    //  92 + 28  = 120   - Expansao 13/11/14 - Red 2 CBA	
-	byte	ResUsuario[49];	    //  50 - 1   = 49	 - ByteTendOverCancela
+	//byte	ResUsuario[49];	    //  50 - 1   = 49	 - ByteTendOverCancela
+	byte	ResUsuario[47];	    //  49 - 2   = 49	 - Bytes InibeMovDB e InibeQPposDB
 
   } t_est_usu;
 

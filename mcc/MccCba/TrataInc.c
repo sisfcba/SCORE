@@ -255,6 +255,13 @@ PosicaoGlobal = 150;
     AVC.Ccont[Cuba].ContIncQueb=-1;
   }
 
+  if(AVC.ParUser2[Cuba].InibIncQuebDB eq VERDADEIRO and 
+    EST_AVC(Cuba).Est.InibeMovDB eq VERDADEIRO)
+  {
+	AVC.Ccont[Cuba].IncQueb=0.0;
+    AVC.Ccont[Cuba].ContIncQueb=-1;
+  }
+
   if(AVC.User3[Cuba].ContInibeIncQueb > 0)
   {
 	AVC.User3[Cuba].ContInibeIncQueb--;

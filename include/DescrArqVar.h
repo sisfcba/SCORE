@@ -713,6 +713,8 @@ t_par_var_log VarEstDiscAvc[] =
   "TendenciaOver",	"F/V",		&VarEst.Est.TendenciaOver,	NIVEL_SUPER, BYTE,	"%-1.0f",	0.0,	100.0,	1.0,	REL_CUBAS, AT, "", "", G9,
   "CamisaAlta",		"F/V",		&VarEst.Est.CamisaAlta,		NIVEL_SUPER, BYTE,	"%-1.0f",	0.0,	100.0,	1.0,	REL_CUBAS, AT, "CamAlta", "Status3", G9,
   "CamisaBaixa",	"F/V",		&VarEst.Est.CamisaBaixa,	NIVEL_SUPER, BYTE,	"%-1.0f",	0.0,	100.0,	1.0,	REL_CUBAS, AT, "CamBaixa", "Status4", G9,
+  "InibeMovDB",		"F/V",		&VarEst.Est.InibeMovDB,		NIVEL_SUPER, BYTE,	"%-1.0f",	0.0,	100.0,	1.0,	REL_CUBAS, AT, "", "", G7,
+  "InibeQPposDB",		"F/V",		&VarEst.Est.InibeQPposDB,		NIVEL_SUPER, BYTE,	"%-1.0f",	0.0,	100.0,	1.0,	REL_CUBAS, AT, "", "", G7,
 
 
   NULL,	NULL, 0, 0, 0,	NULL, 0.0, 0.0, 0.0, 0, 0, NULL, NULL
@@ -1362,6 +1364,12 @@ t_par_var_log VarParUser2[] =
   "InibIncQuebTemp",	"V/F",		&VarPar2.InibIncQuebTemp,	NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
   "InibIncTpTemp",		"V/F",		&VarPar2.InibIncTpTemp,		NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
   "InibIncOpTemp",		"V/F",		&VarPar2.InibIncOpTemp,		NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
+  "InibIncQuebDB",  	"V/F",		&VarPar2.InibIncQuebDB,	NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
+  "TEfeitoInibeMovDB",		"HH:MM",	&VarPar2.TEfeitoInibeMovDB,		NIVEL_SUPER, T_HORA,	"%-5s",		0.0,	86340,	1.0,	PAR_CUBAS, AT, "", "", G0,
+  "HabInibeQPposDB",  	"V/F",		&VarPar2.HabInibeQPposDB,	NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
+  "TInibQPposDB",		"HH:MM",	&VarPar2.TInibQPposDB,		NIVEL_SUPER, T_HORA,	"%-5s",		0.0,	86340,	1.0,	PAR_CUBAS, AT, "", "", G0,
+  
+
 
   NULL,	NULL, 0, 0, 0,	NULL, 0.0, 0.0, 0.0, 0, 0, NULL, NULL
 };

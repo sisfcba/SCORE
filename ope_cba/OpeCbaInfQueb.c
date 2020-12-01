@@ -185,6 +185,7 @@ void InformaQuebrada(char *argv[], char *PMsg)
 		if(AVC.ParUser1[CubaAtual].HabPrecMovQueb eq VERDADEIRO and
 			(AVC.User3[CubaAtual].Temperatura <= AVC.ParUser2[CubaAtual].TempMaxInibInc or 
 			AVC.ParUser2[CubaAtual].InibIncQuebTemp eq FALSO) and
+			(EST_AVC(Cuba).Est.InibeMovDB eq FALSO or AVC.ParUser2[Cuba].InibIncQuebDB eq FALSO) and
 			((HoraAtual - AVC.Ea[CubaAtual].EaHoraInicio) < 
 			((AVC.Param[CubaAtual].EaAtrasoMax - AVC.ParUser1[CubaAtual].LimSupQPrevEa) * 60) ))
 		{
@@ -322,6 +323,7 @@ void InformaQuebrada(char *argv[], char *PMsg)
   		{ 
 			if( (AVC.User3[CubaAtual].Temperatura <= AVC.ParUser2[CubaAtual].TempMaxInibInc or 
 				AVC.ParUser2[CubaAtual].InibIncQuebTemp eq FALSO) and
+				(EST_AVC(Cuba).Est.InibeMovDB eq FALSO or AVC.ParUser2[Cuba].InibIncQuebDB eq FALSO) and
 				((HoraAtual - AVC.Ea[CubaAtual].EaHoraInicio) < 
 				((AVC.Param[CubaAtual].EaAtrasoMax - AVC.ParUser1[CubaAtual].LimSupQPrevEa) * 60) ))
 			{		

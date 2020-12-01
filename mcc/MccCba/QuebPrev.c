@@ -175,6 +175,7 @@ void QuebradaPreventiva(int Cuba)
 					(TesteStatus(Cuba,USA_EA_MAX) eq VERDADEIRO) and
 					(TesteStatus(Cuba,USA_AEK_MAX) eq VERDADEIRO) and
 					EST_AVC(Cuba).Est.ForcaEA eq FALSO and
+					EST_AVC(Cuba).Est.InibeQPposDB eq FALSO and
 					(fabs(AVC.User2[Cuba].HoraProxQuebReal - HoraAtualCtrl) >= 
 										(AVC.ParUser1[Cuba].InibeQPQuebProg*60)))
 				)

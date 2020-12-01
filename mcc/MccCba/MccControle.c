@@ -467,6 +467,9 @@ void IniMccCtrlCuba(int Cuba)
 	for(i=0; i<30; i++)
 		AvcLocal[Cuba].HistDerivH[i]=0.0;
 	
+	AvcLocal[Cuba].NumCiclosForaDB = 0;
+	AvcLocal[Cuba].NumCiclosDentroDB = 0;
+	
 }
 
 /*
@@ -835,15 +838,54 @@ void VerificaQuebrada(int Cuba)
 							AVC.User1[Cuba].ContPassaQueb < AVC.ParUser1[Cuba].MaxPassaQueb)
 					{
 						EST_AVC(Cuba).Est.DerBaixa = VERDADEIRO;
+						//Inibição de QP após DB
+						if (AVC.ParUser2[Cuba].HabInibeQPposDB eq VERDADEIRO)
+							EST_AVC(Cuba).Est.InibeQPposDB = VERDADEIRO;
 					}
 					else
 					{
-						EST_AVC(Cuba).Est.DerBaixa = FALSO;	
+						EST_AVC(Cuba).Est.DerBaixa = FALSO;
+						EST_AVC(Cuba).Est.InibeQPposDB = FALSO;	
 					}
 				}
 				else if( HoraAtualCtrl > (AVC.User2[Cuba].HoraUltQuebReal + AVC.ParUser1[Cuba].TEfeitoDB))
 				{
 					EST_AVC(Cuba).Est.DerBaixa = FALSO;
+					if( HoraAtualCtrl > (AVC.User2[Cuba].HoraUltQuebReal + AVC.ParUser2[Cuba].TInibQPposDB))
+						EST_AVC(Cuba).Est.InibeQPposDB = FALSO;					
+				}
+				else if( HoraAtualCtrl > (AVC.User2[Cuba].HoraUltQuebReal + AVC.ParUser2[Cuba].TInibQPposDB))
+				{
+					EST_AVC(Cuba).Est.InibeQPposDB = FALSO;
+				}
+
+				//Inibição de Incremento de Quebrada em cuba com tendência de DB
+				if (AVC.ParUser2[Cuba].InibIncQuebDB eq VERDADEIRO)
+				{
+					//Inibe Incremento de Quebra "AlarmeDBQueb" minutos antes da próximo quebra
+					if (HoraAtualCtrl >= (AVC.User2[Cuba].HoraProxQuebReal - AVC.ParUser1[Cuba].AlarmeDBQueb))
+					{
+						//Inibe Movimentação se o forno permaneceu em DB durante "IntervQuebProg" horas
+						if((AVC.User2[Cuba].HoraForaDB + AVC.ParUser1[Cuba].IntervQuebProg) < AVC.User2[Cuba].HoraProxQuebReal)
+						{
+							EST_AVC(Cuba).Est.InibeMovDB = VERDADEIRO;							
+						}
+						//Libera movimentação
+						else
+						{
+							EST_AVC(Cuba).Est.InibeMovDB = FALSO;
+						}
+					}
+					//Libera movimentação "TEfeitoInibeMovDB" minutos após quebra
+					else if( HoraAtualCtrl > (AVC.User2[Cuba].HoraUltQuebReal + AVC.ParUser2[Cuba].TEfeitoInibeMovDB))
+					{
+						EST_AVC(Cuba).Est.InibeMovDB = FALSO;
+					}
+				}
+				else
+				{
+					//Libera movimentação de anodo devido a inibição de DB
+					EST_AVC(Cuba).Est.InibeMovDB = FALSO;
 				}
 			}
 
@@ -1021,6 +1063,8 @@ void VerificaQuebrada(int Cuba)
 		EST_AVC(Cuba).Est.DerBaixa = FALSO;	
 		AvcLocal[Cuba].NumCiclosForaDB = 0;
 		EST_AVC(Cuba).Est.DBUltQueb = FALSO;
+		EST_AVC(Cuba).Est.InibeMovDB = FALSO;
+		EST_AVC(Cuba).Est.InibeQPposDB = FALSO;
 	}
 
 	/* -- Calcula Provável Quebra sem Sinalização -- */
