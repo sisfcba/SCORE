@@ -353,16 +353,18 @@ typedef
 	float	TempoEspera;		/* Tempo de espera depois de uma quebrada */
 /* -- Alteracao - Inicio - 23/07/02 - Robson - cada quebrador/alimentador tera um tempo diferente - */
 	//float	Liver1;
-	byte BufferSizeRH;
-	byte Livre1;
-	byte Livre2;
-	byte	UsaMaxAEK;		/* Habilita/desabilita teste AEKMax em quebrada preventiva */
-	
-	float	NivelProvQueb; /* Nível do Coeficiente Angular de RSuaveDerivH para Detecção de Provável Quebra */
-//	float	TempoQuebrador;    /* Tempo de acionamento do quebrador */
-//	float	TempoAlimentador;  /* Tempo de acionamento do alimentador */
-/* -- Alteracao - Fim - 23/07/02 - Robson - cada quebrador/alimentador tera um tempo diferente - */
-/* -- Alteracao - Inicio - Robson - 15/11/2000 - Quantidades diferentes por acionador -- */
+	//byte BufferSizeRH;
+	//byte Livre1;
+	//byte Livre2;
+	//byte	UsaMaxAEK;		/* Habilita/desabilita teste AEKMax em quebrada preventiva */
+	//float	NivelProvQueb; /* Nível do Coeficiente Angular de RSuaveDerivH para Detecção de Provável Quebra */
+	float	Livre1;
+	float	Livre2;
+
+	//	float	TempoQuebrador;    /* Tempo de acionamento do quebrador */
+	//	float	TempoAlimentador;  /* Tempo de acionamento do alimentador */
+	/* -- Alteracao - Fim - 23/07/02 - Robson - cada quebrador/alimentador tera um tempo diferente - */
+	/* -- Alteracao - Inicio - Robson - 15/11/2000 - Quantidades diferentes por acionador -- */
 	float	QuantAlumCarga[4];	   /* Qtd. alumina para cada acionamento do P. F. (Kg) 
 									  para cada PF tem uma separada - 15/11/2000 */
 /* -- Alteracao - Fim - Robson - 15/11/2000 - Quantidades diferentes por acionador -- */
@@ -602,14 +604,23 @@ typedef
 	byte	TipoIncPadrao[6];	/* Tipo de incremento padronizado */
 	short int	DurIncPadrao[6];	/* Duracao de incremento padronizado */
 	float	VIncPadrao[6];	/* Tensao de incremento padronizado */
+	
 	byte	InibIncQuebDB; /* Inibe Incremento e Movimentação em Quebra quando em DB */
 	byte	HabInibeQPposDB; /* Inibe QP quando em DB */
 	long	TInibQPposDB;	/* Tempo de Inibição de QP pos DB */
-	long	TEfeitoInibeMovDB;	/* Tempo de Inibição de Mov apos quebra */
+
+	byte	BufferSizeRH;	/* Tamanho do Buffer p/ Verif ProvQueb */
+	byte	UsaMaxAEK;		/* Habilita/desabilita teste AEKMax em quebrada preventiva */
+	float	NivelProvQueb; /* Nível do Coeficiente Angular de RSuaveDerivH para Detecção de Provável Quebra */	
+
+	byte	HabProvQueb; /* Inibe QP quando em DB */
 		
 //	char	ResParUser[502];
-//	char	ResParUser[476];   // 512 + 128 = 640   - Expansao 13/11/14 - Red 2 CBA	
-	char	ResParUser[458];   // 476 -  18 = 458   - 2 bytes, 2 longs: Inibição de IncQueb e QP em DB
+//	char	ResParUser[476];	// 512 + 128 = 640   - Expansao 13/11/14 - Red 2 CBA	
+//	char	ResParUser[470];	// 476 -   6 = 470   - 2 bytes, 1 longs: Inibição de IncQueb e QP em DB
+//	char	ResParUser[464];	// 470 -   6 = 464   - 2 bytes e 1 float: ProvQueb, UsaMaxAEK;
+	char	ResParUser[463];	// 464 -   1 = 463   - 1 bytes: HabProvQueb;
+
   } t_par2_user;
 
 /* -- Tabelas de variaveis de trabalho -- */

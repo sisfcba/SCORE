@@ -302,7 +302,7 @@ int TesteStatus(int Cuba, int Condicao)
 				if (AVC.ParUser1[Cuba].UsaAtrasoEa eq VERDADEIRO)
 				{
 					if ((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) <=
-											(AVC.Param[Cuba].EaAtrasoMax*60L))
+						((AVC.Param[Cuba].EaAtrasoMax - AVC.ParUser1[Cuba].LimSupQPrevEa) * 60L))
 						Status = VERDADEIRO;
 					else
 						Status = FALSO;
@@ -324,7 +324,7 @@ int TesteStatus(int Cuba, int Condicao)
 				break;
 			
 			case USA_AEK_MAX:
-				if (AVC.ParUser1[Cuba].UsaMaxAEK eq VERDADEIRO)
+				if (AVC.ParUser2[Cuba].UsaMaxAEK eq VERDADEIRO)
 				{
 					if (AVC.User1[Cuba].AEKVMax >= AVC.Param[Cuba].VEaFraco)
 						((HoraAtualCtrl - AVC.Ea[Cuba].EaHoraInicio) >=

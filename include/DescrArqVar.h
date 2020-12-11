@@ -1049,11 +1049,8 @@ t_par_var_log VarParUser1[] =
   "NQuebInibida",		"",			&VarPar1.NQuebInibida,		NIVEL_CONFIG_1, BYTE,	"%-2.0i",	0.0,	50.0,	1.0,	PAR_CUBAS, AT, "", "", G0,
   "NQuebAtraso",		"",			&VarPar1.NQuebAtraso,		NIVEL_CONFIG_1, BYTE,	"%-2.0i",	0.0,	3.0,	1.0,	PAR_CUBAS, AT, "", "", G0,
   "NQuebForcaEA",		"",			&VarPar1.NQuebForcaEA,		NIVEL_CONFIG_1, BYTE,	"%-2.0i",	0.0,	32.0,	1.0,	PAR_CUBAS, AT, "", "", G0,
-  "NivelProvQueb",      "MiOhm/h2",    &VarPar1.NivelProvQueb,     NIVEL_SUPER, FLOAT, "%-6.3f",   -9.0,   10.0,   1e6,    PAR_CUBAS, AT, "", "", G0,
-
-
-  
- "DER. NEGATIVA",						"",		NULL,	NIVEL_CONFIG_1, FLOAT,	"%-5.2f",	0.0,	0.0,	1.0,	TITULO_1,    AT, "", "", G0,
+      
+  "DER. NEGATIVA",						"",		NULL,	NIVEL_CONFIG_1, FLOAT,	"%-5.2f",	0.0,	0.0,	1.0,	TITULO_1,    AT, "", "", G0,
   "HabCalcDN",			"V/F",		&VarPar1.HabCalcDN,			NIVEL_CONFIG_1, BYTE,	"%-1.0f",	0.0,	  1.0,	1.0,	PAR_CUBAS, AT, "", "", G0,
   "CalcDNQueb",			"HH:MM",	&VarPar1.CalcDNQueb,		NIVEL_CONFIG_1, T_HORA,	"%-5s",		0.0,	86340,	1.0,	PAR_CUBAS, AT, "", "", G0,
   "TEfeitoDN",			"HH:MM",	&VarPar1.TEfeitoDN,			NIVEL_CONFIG_1, T_HORA,	"%-5s",		0.0,	86340,	1.0,	PAR_CUBAS, AT, "", "", G0,
@@ -1365,11 +1362,16 @@ t_par_var_log VarParUser2[] =
   "InibIncTpTemp",		"V/F",		&VarPar2.InibIncTpTemp,		NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
   "InibIncOpTemp",		"V/F",		&VarPar2.InibIncOpTemp,		NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
   "InibIncQuebDB",  	"V/F",		&VarPar2.InibIncQuebDB,	NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
-  "TEfeitoInibeMovDB",		"HH:MM",	&VarPar2.TEfeitoInibeMovDB,		NIVEL_SUPER, T_HORA,	"%-5s",		0.0,	86340,	1.0,	PAR_CUBAS, AT, "", "", G0,
+    
+  "PROV QUEB",		"",			NULL,						NIVEL_SUPER,	FLOAT,	"%-5.2f",	0.0,  	 0.0,	1.0,	TITULO_1, AT, "", "",	G0,
+  "HabProvQueb",  	"V/F",		&VarPar2.HabProvQueb,	NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
+  "NivelProvQueb",      "MiOhm/h2",    &VarPar1.NivelProvQueb,     NIVEL_SUPER, FLOAT, "%-6.3f",   -9.0,   10.0,   1e6,    PAR_CUBAS, AT, "", "", G0,
+  "BufferSizeRH",   "",   &VarPar2.BufferSizeRH,  NIVEL_SUPER,  BYTE,	"%-2.0i",   5.0,	 30.0,   1.0,    PAR_CUBAS, AT, "", "", G0,  
+
+  "QUEB. PREV. 2",		"",			NULL,						NIVEL_CONFIG_0,	FLOAT,	"%-5.2f",	0.0,  	 0.0,	1.0,	TITULO_1, AT, "", "",	G0,
+  "UsaMaxAEK", 			"V/F",		&VarPar12UsaMaxAEK,			NIVEL_CONFIG_0,	BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS,	AT, "", "",	G0,
   "HabInibeQPposDB",  	"V/F",		&VarPar2.HabInibeQPposDB,	NIVEL_SUPER, BYTE,	"%-1.0f",   0.0,	 1.0,   1.0,    PAR_CUBAS, AT, "", "", G0,
   "TInibQPposDB",		"HH:MM",	&VarPar2.TInibQPposDB,		NIVEL_SUPER, T_HORA,	"%-5s",		0.0,	86340,	1.0,	PAR_CUBAS, AT, "", "", G0,
-  
-
 
   NULL,	NULL, 0, 0, 0,	NULL, 0.0, 0.0, 0.0, 0, 0, NULL, NULL
 };
@@ -1446,7 +1448,9 @@ t_par_var_log VarUser2Avc[] =
   "OscilacaoH",			"MiOhm",	&VarUser2.Oscilacao,	NIVEL_SUPER, FLOAT,	"%-7.2f",	0.0,	100.0,	1e6,	TODAS_T orb OPC_R, AT, "Oscil", "Ruido5", G5,
   "TaxaFeedPF",		 	 "",	&VarUser2.TaxaFeedPF,	NIVEL_SUPER, FLOAT,	"%-4.1f",	-1.0,	99.0,	1.0,	TODAS_T orb OPC_R, AT, "TaxaPF", "Status11", G5,
   "EstadoPFCBA",		 "",	&VarUser2.EstadoPFCBA,	NIVEL_SUPER, SHORT_INT,	"%-1.0f",	-3.0,	10.0,	1.0,	TODAS_T orb OPC_R, AT, "EstPF", "Status10", G5,
-  "HoraUltQuebCab",	"",		&VarUser2.HoraUltQuebCab,		NIVEL_SUPER, LONG,	"%-7.0f",	0.0,	100.0,	1.0,	TODAS_T, AT, "", "", G1,
+  "HoraUltQuebCab",	"",		&VarUser2.HoraUltQuebCab,		NIVEL_SUPER, LONG,	"%-7.0f",	0.0,	100.0,	1.0,	TODAS_T, AT, "", "", G1,  
+  "HoraForaDB",			"HH:MM",	&VarUser2.HoraForaDB,		NIVEL_SUPER, T_HORA,	"%-5s",		0.0,	86340,	1.0,	PAR_CUBAS, AT, "", "", G3,
+
 
 
 

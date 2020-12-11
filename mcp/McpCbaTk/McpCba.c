@@ -1436,7 +1436,7 @@ int DurInt;
   if (AVC.ParUser1[Cuba].HabPrecMovQueb eq VERDADEIRO)
   {
     if ( ((HoraAtualSec - AVC.Cleit[Cuba].HoraUltQueb) < 120) and
-	   (EST_AVC(Cuba).Ea eq FALSO))
+	   (EST_AVC(Cuba).Ea eq FALSO) and (EST_AVC(Cuba).Est.InibeMovDB eq FALSO) )
 	{	
 	  pot[Cuba].NumRes4sQueb++;
 	  pot[Cuba].MediaRes4sQueb = ((pot[Cuba].MediaRes4sQueb * (pot[Cuba].NumRes4sQueb-1)) +

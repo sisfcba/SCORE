@@ -862,30 +862,23 @@ void VerificaQuebrada(int Cuba)
 				//Inibição de Incremento de Quebrada em cuba com tendência de DB
 				if (AVC.ParUser2[Cuba].InibIncQuebDB eq VERDADEIRO)
 				{
-					//Inibe Incremento de Quebra "AlarmeDBQueb" minutos antes da próximo quebra
-					if (HoraAtualCtrl >= (AVC.User2[Cuba].HoraProxQuebReal - AVC.ParUser1[Cuba].AlarmeDBQueb))
+					//Inibe Movimentação se o forno permaneceu em DB durante "IntervQuebProg" horas
+					if((AVC.User2[Cuba].HoraForaDB + AVC.ParUser1[Cuba].IntervQuebProg) < AVC.User2[Cuba].HoraProxQuebReal)
 					{
-						//Inibe Movimentação se o forno permaneceu em DB durante "IntervQuebProg" horas
-						if((AVC.User2[Cuba].HoraForaDB + AVC.ParUser1[Cuba].IntervQuebProg) < AVC.User2[Cuba].HoraProxQuebReal)
-						{
-							EST_AVC(Cuba).Est.InibeMovDB = VERDADEIRO;							
-						}
-						//Libera movimentação
-						else
-						{
-							EST_AVC(Cuba).Est.InibeMovDB = FALSO;
-						}
+						EST_AVC(Cuba).Est.InibeMovDB = VERDADEIRO;
+						AVC.Param[Cuba].HabMovIniQueb = 0;							
 					}
-					//Libera movimentação "TEfeitoInibeMovDB" minutos após quebra
-					else if( HoraAtualCtrl > (AVC.User2[Cuba].HoraUltQuebReal + AVC.ParUser2[Cuba].TEfeitoInibeMovDB))
+					//Libera movimentação
+					else
 					{
 						EST_AVC(Cuba).Est.InibeMovDB = FALSO;
+						AVC.Param[Cuba].HabMovIniQueb = 1;
 					}
 				}
 				else
 				{
-					//Libera movimentação de anodo devido a inibição de DB
 					EST_AVC(Cuba).Est.InibeMovDB = FALSO;
+					AVC.Param[Cuba].HabMovIniQueb = 1;
 				}
 			}
 
@@ -1068,82 +1061,98 @@ void VerificaQuebrada(int Cuba)
 	}
 
 	/* -- Calcula Provável Quebra sem Sinalização -- */
-	if ( EST_AVC(Cuba).EfeitoQueb eq FALSO and
-		 ((HoraAtualCtrl-AVC.Cleit[Cuba].HoraUltQueb) > 2700L) and //45 minutos apos ultima quebrada
-		 EST_AVC(Cuba).EfeitoCorr eq FALSO and
-		 (HoraAtualCtrl-AvcLocal[Cuba].HoraUltProvQueb) > 3600L and //60 minutos apos ultima provavel quebrada
-		 ((BuffSize>=5) and (BuffSize<=30)))
-		 //and ((HoraAtualCtrl-AVC.Cleit[Cuba].HoraInicDesLeit) > (60*60L))) //60 minutos apos desligamento
-	{		
-		//HistDerivH array circular shifting: HistDerivH[Last] to HistDerivH[Last-1]
-		memmove(&AvcLocal[Cuba].HistDerivH[0],&AvcLocal[Cuba].HistDerivH[1],
-			(sizeof(AvcLocal[Cuba].HistDerivH)-sizeof(AvcLocal[Cuba].HistDerivH[0])));
+	if(AVC.ParUser2[Cuba].HabProvQueb eq VERDADEIRO)
+	{
+		if ( EST_AVC(Cuba).EfeitoQueb eq FALSO and
+			((HoraAtualCtrl-AVC.Cleit[Cuba].HoraUltQueb) > 2700L) and //45 minutos apos ultima quebrada
+			EST_AVC(Cuba).EfeitoCorr eq FALSO and
+			(HoraAtualCtrl-AvcLocal[Cuba].HoraUltProvQueb) > 3600L and //60 minutos apos ultima provavel quebrada
+			((BuffSize>=5) and (BuffSize<=30)))
+			//and ((HoraAtualCtrl-AVC.Cleit[Cuba].HoraInicDesLeit) > (60*60L))) //60 minutos apos desligamento
+		{		
+			//HistDerivH array circular shifting: HistDerivH[Last] to HistDerivH[Last-1]
+			memmove(&AvcLocal[Cuba].HistDerivH[0],&AvcLocal[Cuba].HistDerivH[1],
+				(sizeof(AvcLocal[Cuba].HistDerivH)-sizeof(AvcLocal[Cuba].HistDerivH[0])));
 
-		//RSuaveDerivH to HistDerivH[Last]
-		AvcLocal[Cuba].HistDerivH[BuffSize-1] = AVC.Ea[Cuba].RSuaveDerivH;
-		
-		if(AvcLocal[Cuba].ContHistDerivH < BuffSize)
-			AvcLocal[Cuba].ContHistDerivH++;
-		
-		if (EST_AVC(Cuba).Est.QuebPrev eq VERDADEIRO)
-			AvcLocal[Cuba].ProvQuebCond = 1;
-		else if (EST_AVC(Cuba).EaPrev eq VERDADEIRO)
-			AvcLocal[Cuba].ProvQuebCond = 2;
-		else if (EST_AVC(Cuba).Est.DerBaixa eq VERDADEIRO)
-			AvcLocal[Cuba].ProvQuebCond = 3;
+			//RSuaveDerivH to HistDerivH[Last]
+			AvcLocal[Cuba].HistDerivH[BuffSize-1] = AVC.Ea[Cuba].RSuaveDerivH;
+			
+			if(AvcLocal[Cuba].ContHistDerivH < BuffSize)
+				AvcLocal[Cuba].ContHistDerivH++;
+			
+			if (EST_AVC(Cuba).Est.QuebPrev eq VERDADEIRO)
+				AvcLocal[Cuba].ProvQuebCond = 1;
+			else if (EST_AVC(Cuba).EaPrev eq VERDADEIRO)
+				AvcLocal[Cuba].ProvQuebCond = 2;
+			else if (EST_AVC(Cuba).Est.DerBaixa eq VERDADEIRO)
+				AvcLocal[Cuba].ProvQuebCond = 3;
 
-		/* Calcula coeficiente angular de RSuaveDerivH */
-		if( AvcLocal[Cuba].ContHistDerivH >= BuffSize)
-		{
-			i = 0;
-			sumx = 0;
-			sumx2 = 0;
-			sumy = 0;
-			sumy2 = 0;
-			sumxy = 0;
-			AVC.ParUser1[Cuba].Livre1 = 0;
-
-			for (i=0;(i+(BuffSize-AvcLocal[Cuba].ContHistDerivH))<BuffSize;++i)
+			/* Calcula coeficiente angular de RSuaveDerivH */
+			if( AvcLocal[Cuba].ContHistDerivH >= BuffSize)
 			{
-				k = i+(BuffSize-AvcLocal[Cuba].ContHistDerivH); 
-				x[i]= i*1;
-				sumx += x[i];  
-				sumx2 += x[i]*x[i]; 
-				sumy += AvcLocal[Cuba].HistDerivH[k];
-				sumy2 += AvcLocal[Cuba].HistDerivH[k]*AvcLocal[Cuba].HistDerivH[k]; 
-				sumxy += x[i]*AvcLocal[Cuba].HistDerivH[k];
-			}
+				i = 0;
+				sumx = 0;
+				sumx2 = 0;
+				sumy = 0;
+				sumy2 = 0;
+				sumxy = 0;
+				AVC.ParUser1[Cuba].Livre1 = 0;
+
+				for (i=0;(i+(BuffSize-AvcLocal[Cuba].ContHistDerivH))<BuffSize;++i)
+				{
+					k = i+(BuffSize-AvcLocal[Cuba].ContHistDerivH); 
+					x[i]= i*1;
+					sumx += x[i];  
+					sumx2 += x[i]*x[i]; 
+					sumy += AvcLocal[Cuba].HistDerivH[k];
+					sumy2 += AvcLocal[Cuba].HistDerivH[k]*AvcLocal[Cuba].HistDerivH[k]; 
+					sumxy += x[i]*AvcLocal[Cuba].HistDerivH[k];
+				}
+						
+				AVC.User1[Cuba].CoefAngDeriv = ((AvcLocal[Cuba].ContHistDerivH*sumxy) - (sumx*sumy))/
+					((AvcLocal[Cuba].ContHistDerivH*sumx2) - (sumx*sumx));
+
+				if (AVC.User1[Cuba].CoefAngDeriv < AVC.ParUser2[Cuba].NivelProvQueb)
+				{
+					AvcLocal[Cuba].HoraUltProvQueb = HoraAtualCtrl;
+					//AvcLocal[Cuba].IntervQueb = (long)((HoraAtualCtrl - AVC.User2[Cuba].HoraEvQuebrada)/60L);
+					AvcLocal[Cuba].IntervQueb = (long)((HoraAtualCtrl - AVC.Cleit[Cuba].HoraUltQueb)/60L);
+					MontaHoraMin((long)AVC.Cleit[Cuba].TUltEa/60L, Par1, "%03d:%02d"); //Tempo em min desde Ult. EA
 					
-			AVC.User1[Cuba].CoefAngDeriv = ((AvcLocal[Cuba].ContHistDerivH*sumxy) - (sumx*sumy))/
-				((AvcLocal[Cuba].ContHistDerivH*sumx2) - (sumx*sumx));
+					//Hora da Prov Queb
+					SecProvQueb = (long)(HoraAtualCtrl-(BuffSize*2*60));
+					HoraProvQueb = SecProvQueb / 3600;
+					MinProvQueb = (SecProvQueb - (HoraProvQueb * 3600)) / 60;
+					sprintf(Par2, "%03d:%02d", HoraProvQueb, MinProvQueb);
 
-			if (AVC.User1[Cuba].CoefAngDeriv < AVC.ParUser1[Cuba].NivelProvQueb)
-			{
-				AvcLocal[Cuba].HoraUltProvQueb = HoraAtualCtrl;
-				//AvcLocal[Cuba].IntervQueb = (long)((HoraAtualCtrl - AVC.User2[Cuba].HoraEvQuebrada)/60L);
-				AvcLocal[Cuba].IntervQueb = (long)((HoraAtualCtrl - AVC.Cleit[Cuba].HoraUltQueb)/60L);
-				MontaHoraMin((long)AVC.Cleit[Cuba].TUltEa/60L, Par1, "%03d:%02d"); //Tempo em min desde Ult. EA
-				
-				//Hora da Prov Queb
-				SecProvQueb = (long)(HoraAtualCtrl-(BuffSize*2*60));
-				HoraProvQueb = SecProvQueb / 3600;
-				MinProvQueb = (SecProvQueb - (HoraProvQueb * 3600)) / 60;
-				sprintf(Par2, "%03d:%02d", HoraProvQueb, MinProvQueb);
+					if(AvcLocal[Cuba].ProvQuebCond==1)
+						GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,"QuebPrev",Par1,Par2);
+					else if(AvcLocal[Cuba].ProvQuebCond==2)
+						GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,"EaPrev  ",Par1,Par2);
+					else if(AvcLocal[Cuba].ProvQuebCond==3)
+						GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,"DerBaixa",Par1,Par2);
+					else
+						GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,STR_TRACO,Par1,Par2);				
+				}
+			}		
+		}	
+		else
+		{ //Zerar buffer da derivada histórica quando em quebrada e corrida
+			
+			memset(Par1,0,strlen(Par1));
+			memset(Par2,0,strlen(Par2));
+			//memset(Par3,0,strlen(Par3));
+			//strcpy(Par3,STR_TRACO);
+			AvcLocal[Cuba].ProvQuebCond = 4;
 
-				if(AvcLocal[Cuba].ProvQuebCond==1)
-					GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,"QuebPrev",Par1,Par2);
-				else if(AvcLocal[Cuba].ProvQuebCond==2)
-					GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,"EaPrev  ",Par1,Par2);
-				else if(AvcLocal[Cuba].ProvQuebCond==3)
-					GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,"DerBaixa",Par1,Par2);
-				else
-					GeraEvento(EV_PROVQUEB,Cuba,-1,	AvcLocal[Cuba].IntervQueb,STR_TRACO,Par1,Par2);				
-			}
-		}		
-	}	
+			AvcLocal[Cuba].ContHistDerivH = 0;
+			for(i=0;i<30;i++)
+				AvcLocal[Cuba].HistDerivH[i]=0.0;
+			
+		}
+	}
 	else
-	{ //Zerar buffer da derivada histórica quando em quebrada e corrida
-		
+	{//Desabilita ProvQueb
 		memset(Par1,0,strlen(Par1));
 		memset(Par2,0,strlen(Par2));
 		//memset(Par3,0,strlen(Par3));
@@ -1153,8 +1162,8 @@ void VerificaQuebrada(int Cuba)
 		AvcLocal[Cuba].ContHistDerivH = 0;
 		for(i=0;i<30;i++)
 			AvcLocal[Cuba].HistDerivH[i]=0.0;
-		
 	}
+	
 }
 
 /*

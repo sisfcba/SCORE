@@ -3,15 +3,56 @@
         {
             "name": "Win32",
             "includePath": [
-                "C:\\Users\\thiagoao1\\Documents\\CBA\\SCORE\\54\\score\\srcs_desenvolvimento\\include",
-                "${workspaceFolder}/mcc/MccCba"
+                "${workspaceFolder}/eventos",
+                "${workspaceFolder}/ihm/config",
+                "${workspaceFolder}/lib_tkt",
+                "${workspaceFolder}/outros",
+                "${workspaceFolder}/rel/imp",
+                "${workspaceFolder}/rel/tela",
+                "${workspaceFolder}/rel_ph/RAlimInsph/src",
+                "${workspaceFolder}/rel_ph/RAlimInsph/src/default",
+                "${workspaceFolder}/source_tkt",
+                "${workspaceFolder}/queue",
+                "${workspaceFolder}/radio_base_tcp",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/mcc/MccCba",
+                "${workspaceFolder}/mcp",
+                "${workspaceFolder}/mcp/McpCba",
+                "${workspaceFolder}/mcp/McpCbaTk",
+                "${workspaceFolder}/watcom",
+                "${workspaceFolder}/watcom/arpa",
+                "${workspaceFolder}/watcom/make",
+                "${workspaceFolder}/watcom/net",
+                "${workspaceFolder}/watcom/netinet",
+                "${workspaceFolder}/watcom/photon",
+                "${workspaceFolder}/watcom/rpc",
+                "${workspaceFolder}/watcom/snmp",
+                "${workspaceFolder}/watcom/sys"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "intelliSenseMode": "msvc-x64"
+            "intelliSenseMode": "msvc-x64",
+            "macFrameworkPath": [],
+            "windowsSdkVersion": "10.0.18362.0",
+            "compilerArgs": [],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseModeIsExplicit": true,
+            "cStandardIsExplicit": true,
+            "cppStandardIsExplicit": true,
+            "compilerPathIsExplicit": true,
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe",
+            "browse": {
+                "path": [
+                    "include",
+                    "${workspaceFolder}/mcc/MccCba",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
         }
     ],
     "version": 4

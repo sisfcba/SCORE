@@ -1,0 +1,69 @@
+#ifndef __PT_H_INCLUDED
+#define __PT_H_INCLUDED
+
+#include <photon/PtT.h>
+
+#include <photon/PtArc.h>
+#include <photon/PtBasic.h>
+#include <photon/PtBezier.h>
+#include <photon/PtBitmap.h>
+#include <photon/PtButton.h>
+#include <photon/PtContainer.h>
+#include <photon/PtComboBox.h>
+#include <photon/PtCompound.h>
+#include <photon/PtDBContainer.h>
+#include <photon/PtDivider.h>
+#include <photon/PtEllipse.h>
+#include <photon/PtFileSel.h>
+#include <photon/PtGauge.h>
+#include <photon/PtGraphic.h>
+#include <photon/PtGroup.h>
+#include <photon/PtIcon.h>
+#include <photon/PtLabel.h>
+#include <photon/PtLine.h>
+#include <photon/PtList.h>
+#include <photon/PtMenu.h>
+#include <photon/PtMenuBar.h>
+#include <photon/PtMenuButton.h>
+#include <photon/PtMultiText.h>
+#include <photon/PtNumeric.h>
+#include <photon/PtNumericInteger.h>
+#include <photon/PtNumericFloat.h>
+#include <photon/PtPane.h>
+#include <photon/PtPixel.h>
+#include <photon/PtPolygon.h>
+#include <photon/PtPrintSel.h>
+#include <photon/PtRaw.h>
+#include <photon/PtRect.h>
+#include <photon/PtScrollArea.h>
+#include <photon/PtScrollbar.h>
+#include <photon/PtSeparator.h>
+#include <photon/PtSlider.h>
+#include <photon/PtText.h>
+#include <photon/PtTerm.h>
+#include <photon/PtToggleButton.h>
+#include <photon/PtTree.h>
+#include <photon/PtTty.h>
+#include <photon/PtUpDown.h>
+#include <photon/PtOnOffButton.h>
+#include <photon/PtWidget.h>
+#include <photon/PtWindow.h>
+#include <photon/PtMessage.h>
+#include <photon/PtRegion.h>
+#include <photon/PtBkgd.h>
+#include <photon/PtTimer.h>
+#include <photon/PtGrid.h>
+#include <photon/PtHtml.h>
+#include <photon/PtFontSel.h>
+#include <photon/PtCalendar.h>
+#include <photon/PtClock.h>
+#include <photon/PtImageArea.h>
+#include <photon/PtImageTree.h>
+#include <photon/PtTab.h>
+
+#include <photon/PtContribs.h>
+#include <photon/PtRealTime.h>
+
+#include <photon/PxProto.h>
+
+#endif

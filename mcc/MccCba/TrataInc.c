@@ -248,6 +248,7 @@ PosicaoGlobal = 150;
 	  AVC.Ccont[Cuba].ContIncQueb=-1;
 	}
   }
+  
   if(AVC.ParUser2[Cuba].InibIncQuebTemp eq VERDADEIRO and
 	AVC.User3[Cuba].Temperatura > AVC.ParUser2[Cuba].TempMaxInibInc)
   {
