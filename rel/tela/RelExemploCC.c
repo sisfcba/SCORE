@@ -10,7 +10,7 @@
 	ARQUIVO		: RelExemploCC.c
 
 	CONTEUDO	: Programa que processa e gera as informacoes que compoem
-				  exemplo de relatorio de ciclo de control
+				  exemplo de relatorio de ciclo de controle
 
 	AUTOR		: Carlos Cezar Silva Lage.
 
@@ -95,7 +95,7 @@ void main ( int argc , char *argv[] )
 
 /*
 --------------------------------------------------------------------------------
-| ConsisteArg - Faz  a  consistencia  dos   Arg  recebidos  pelo |
+| ConsisteArg - Faz  a  consistencia  dos   Arg  recebidos  pelo			   |
 |                sistema, no  caso  desse  relatorio, faz  a  consistencia  de |
 |                Cuba Inicial e Cuba Final.                                    |
 --------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ int ConsisteArgumentos(char *argv[], t_args *Arg)
   /*-- Converte o numero da Cuba Final para o tipo inteiro   --*/
   CubaFinal = atoi (argv[2]);
 
-  /*-- Verifica se o valor de CubaInicial e CubaFinal estao corretos --*/
+   
   if (( Retorno = ConsisteCubas ( CubaInicial, CubaFinal )) eq VERDADEIRO )    
   {
 	/*-- Coloca os valores na estrutura se eles estao corretos --*/
@@ -214,8 +214,7 @@ int ConsisteArgumentos(char *argv[], t_args *Arg)
 	  /*-- Calculo dos dados para cada cuba --*/
 	  CalcAreaDados(AreaDados,CubaAtual,Indice,HoraAtual,&Acum);
 	  Indice++;
-
-	}
+	} 
   }
 #else
   /*-- Montagem da area de dados do relatorio --*/
@@ -267,7 +266,7 @@ void CalcAreaDados(t_dados *AreaDados,int Cuba,int Indice,long HoraAtual,
   /*-- Calculo da hora prevista para ocorrencia de efeito anodico --*/
   CalcHoraPrevEa (AreaDados, Cuba, Indice);
 
-   /*-- Calculo do tempo desde o último EA --*/
+   /*-- Calculo do tempo desde o ï¿½ltimo EA --*/
    CalcTempoEa (AreaDados, Cuba, Indice, HoraAtual);
 
    /*-- Calculo da duracao da cuba em Manual-Local ou Manual-Remoto --*/
@@ -380,7 +379,7 @@ void CalcTensoes ( t_dados *AreaDados, int Cuba, int Indice )
 
 /*
 --------------------------------------------------------------------------------
-| CalcTempoEa - Calcula o tempo desde o último EA                              |
+| CalcTempoEa - Calcula o tempo desde o ï¿½ltimo EA                              |
 --------------------------------------------------------------------------------
 */
 void CalcTempoEa (t_dados *AreaDados, int Cuba, int Indice, long HoraAtual)

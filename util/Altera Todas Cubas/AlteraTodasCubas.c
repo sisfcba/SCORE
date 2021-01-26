@@ -7921,18 +7921,16 @@ Cuba=0;
 	 AVC.Param[Cuba].VSetPointCnf-= 0.01;
    }
 
-   i=0;
-   k=0;
-     CubaOpe = 927;
-     Cuba = ConvCubOperScore(CubaOpe);
+	i=0;
+	k=0;
+    CubaOpe = 927;
+    Cuba = ConvCubOperScore(CubaOpe);
 	printf("\nNumAnasAtn8 : %d", AVC.Abs[Cuba].NumAnasAtn8);
 
-     CubaOpe = 1206;
-     Cuba = ConvCubOperScore(CubaOpe);
+    CubaOpe = 1206;
+    Cuba = ConvCubOperScore(CubaOpe);
 	printf("\nNumAnasAtn8 : %d", AVC.Abs[Cuba].NumAnasAtn8);
-AVC.Abs[Cuba].NumAnasAtn8 = 3;
-	
-	*/
+	AVC.Abs[Cuba].NumAnasAtn8 = 3;
 
 	i = 0;
 	k = 0;
@@ -8204,5 +8202,250 @@ AVC.Abs[Cuba].NumAnasAtn8 = 3;
 	CubaOpe = 519;
 	Cuba = ConvCubOperScore(CubaOpe);
 	AVC.Param[Cuba].EaAtrasoMax = 1440;
+
+*/
+
+	i=0;
+	k=0;
+
+	printf("\n Reducao: %d \n\n", Comum->IdentReducao);
+
+	switch(Comum->IdentReducao)
+	{
+		case 2:
+			
+			CubaOpe = 301;
+			Cuba = ConvCubOperScore(CubaOpe);
+
+			printf("EstadoIO : %i \n", AVC.Cleit[Cuba].EstadoIO);
+
+			printf("\nBitSobeAnodo : %d", AVC.Abs[Cuba].BitSobeAnodo);
+			printf("\nBitDesceAnodo : %d", AVC.Abs[Cuba].BitDesceAnodo);
+			printf("\nBitLampEa : %d", AVC.Abs[Cuba].BitLampEa);
+			printf("\nBitLampRec : %d", AVC.Abs[Cuba].BitLampRec);
+			printf("\nBitAvPistaoAQuebA : %d", AVC.Abs[Cuba].BitAvPistaoAQuebA);
+			printf("\nBitRecPistaoAQuebB : %d", AVC.Abs[Cuba].BitRecPistaoAQuebB);
+			printf("\nBitAvPistaoBQuebC : %d", AVC.Abs[Cuba].BitAvPistaoBQuebC);
+			printf("\nBitRecPistaoBouM2QuebD : %d", AVC.Abs[Cuba].BitRecPistaoBouM2QuebD);
+			printf("\nBitSopro : %d", AVC.Abs[Cuba].BitSopro);
+			printf("\nBitSobeCamisaouM1 : %d", AVC.Abs[Cuba].BitSobeCamisaouM1);
+			printf("\nBitDescCamOuAvPCAlimA : %d", AVC.Abs[Cuba].BitDescCamOuAvPCAlimA);
+			printf("\nBitRecuoPistCAlimB : %d", AVC.Abs[Cuba].BitRecuoPistCAlimB);
+			printf("\nBitAvancoPistDAlimC : %d", AVC.Abs[Cuba].BitAvancoPistDAlimC);
+			printf("\nBitRecuoPistDAlimD : %d", AVC.Abs[Cuba].BitRecuoPistDAlimD);
+			printf("\nBitSireneEA : %d", AVC.Abs[Cuba].BitSireneEA);
+			printf("\nBitLiberaMCruzeiro : %d", AVC.Abs[Cuba].BitLiberaMCruzeiro);
+			printf("\nBitChaveQueb : %d", AVC.Abs[Cuba].BitChaveQueb);
+			printf("\nBitChaveCorr : %d", AVC.Abs[Cuba].BitChaveCorr);
+			printf("\nBitChaveLocRem : %d", AVC.Abs[Cuba].BitChaveLocRem);
+			printf("\nBitResetEa : %d", AVC.Abs[Cuba].BitResetEa);
+			printf("\nBitSubiuAnodo : %d", AVC.Abs[Cuba].BitSubiuAnodo);
+			printf("\nBitDesceuAnodo : %d", AVC.Abs[Cuba].BitDesceuAnodo);
+			printf("\nBitSubOuMovCamisaouM2 : %d", AVC.Abs[Cuba].BitSubOuMovCamisaouM2);
+			printf("\nBitDesCamOuPFAutoouM1 : %d", AVC.Abs[Cuba].BitDesCamOuPFAutoouM1);
+			printf("\nBitCheckUp : %d", AVC.Abs[Cuba].BitCheckUp);
+			printf("\nBitTrocaPinos : %d", AVC.Abs[Cuba].BitTrocaPinos);
+			printf("\nBitSoprou : %d", AVC.Abs[Cuba].BitSoprou);
+			printf("\nBitReleFalhaMM : %d", AVC.Abs[Cuba].BitReleFalhaMM);
+			printf("\nBitChaveMCruzeiro : %d", AVC.Abs[Cuba].BitChaveMCruzeiro);
+
+		break;
+
+		case 3:
+			
+			CubaOpe = 501;
+			Cuba = ConvCubOperScore(CubaOpe);
+
+			printf("EstadoIO : %i \n", AVC.Cleit[Cuba].EstadoIO);
+
+			printf("\nBitSobeAnodo : %d", AVC.Abs[Cuba].BitSobeAnodo);
+			printf("\nBitDesceAnodo : %d", AVC.Abs[Cuba].BitDesceAnodo);
+			printf("\nBitLampEa : %d", AVC.Abs[Cuba].BitLampEa);
+			printf("\nBitLampRec : %d", AVC.Abs[Cuba].BitLampRec);
+			printf("\nBitAvPistaoAQuebA : %d", AVC.Abs[Cuba].BitAvPistaoAQuebA);
+			printf("\nBitRecPistaoAQuebB : %d", AVC.Abs[Cuba].BitRecPistaoAQuebB);
+			printf("\nBitAvPistaoBQuebC : %d", AVC.Abs[Cuba].BitAvPistaoBQuebC);
+			printf("\nBitRecPistaoBouM2QuebD : %d", AVC.Abs[Cuba].BitRecPistaoBouM2QuebD);
+			printf("\nBitSopro : %d", AVC.Abs[Cuba].BitSopro);
+			printf("\nBitSobeCamisaouM1 : %d", AVC.Abs[Cuba].BitSobeCamisaouM1);
+			printf("\nBitDescCamOuAvPCAlimA : %d", AVC.Abs[Cuba].BitDescCamOuAvPCAlimA);
+			printf("\nBitRecuoPistCAlimB : %d", AVC.Abs[Cuba].BitRecuoPistCAlimB);
+			printf("\nBitAvancoPistDAlimC : %d", AVC.Abs[Cuba].BitAvancoPistDAlimC);
+			printf("\nBitRecuoPistDAlimD : %d", AVC.Abs[Cuba].BitRecuoPistDAlimD);
+			printf("\nBitSireneEA : %d", AVC.Abs[Cuba].BitSireneEA);
+			printf("\nBitLiberaMCruzeiro : %d", AVC.Abs[Cuba].BitLiberaMCruzeiro);
+			printf("\nBitChaveQueb : %d", AVC.Abs[Cuba].BitChaveQueb);
+			printf("\nBitChaveCorr : %d", AVC.Abs[Cuba].BitChaveCorr);
+			printf("\nBitChaveLocRem : %d", AVC.Abs[Cuba].BitChaveLocRem);
+			printf("\nBitResetEa : %d", AVC.Abs[Cuba].BitResetEa);
+			printf("\nBitSubiuAnodo : %d", AVC.Abs[Cuba].BitSubiuAnodo);
+			printf("\nBitDesceuAnodo : %d", AVC.Abs[Cuba].BitDesceuAnodo);
+			printf("\nBitSubOuMovCamisaouM2 : %d", AVC.Abs[Cuba].BitSubOuMovCamisaouM2);
+			printf("\nBitDesCamOuPFAutoouM1 : %d", AVC.Abs[Cuba].BitDesCamOuPFAutoouM1);
+			printf("\nBitCheckUp : %d", AVC.Abs[Cuba].BitCheckUp);
+			printf("\nBitTrocaPinos : %d", AVC.Abs[Cuba].BitTrocaPinos);
+			printf("\nBitSoprou : %d", AVC.Abs[Cuba].BitSoprou);
+			printf("\nBitReleFalhaMM : %d", AVC.Abs[Cuba].BitReleFalhaMM);
+			printf("\nBitChaveMCruzeiro : %d", AVC.Abs[Cuba].BitChaveMCruzeiro);
+			
+		break;
+
+		case 4:
+			
+			CubaOpe = 701;
+			Cuba = ConvCubOperScore(CubaOpe);
+
+			printf("EstadoIO : %i \n", AVC.Cleit[Cuba].EstadoIO);
+
+			printf("\nBitSobeAnodo : %d", AVC.Abs[Cuba].BitSobeAnodo);
+			printf("\nBitDesceAnodo : %d", AVC.Abs[Cuba].BitDesceAnodo);
+			printf("\nBitLampEa : %d", AVC.Abs[Cuba].BitLampEa);
+			printf("\nBitLampRec : %d", AVC.Abs[Cuba].BitLampRec);
+			printf("\nBitAvPistaoAQuebA : %d", AVC.Abs[Cuba].BitAvPistaoAQuebA);
+			printf("\nBitRecPistaoAQuebB : %d", AVC.Abs[Cuba].BitRecPistaoAQuebB);
+			printf("\nBitAvPistaoBQuebC : %d", AVC.Abs[Cuba].BitAvPistaoBQuebC);
+			printf("\nBitRecPistaoBouM2QuebD : %d", AVC.Abs[Cuba].BitRecPistaoBouM2QuebD);
+			printf("\nBitSopro : %d", AVC.Abs[Cuba].BitSopro);
+			printf("\nBitSobeCamisaouM1 : %d", AVC.Abs[Cuba].BitSobeCamisaouM1);
+			printf("\nBitDescCamOuAvPCAlimA : %d", AVC.Abs[Cuba].BitDescCamOuAvPCAlimA);
+			printf("\nBitRecuoPistCAlimB : %d", AVC.Abs[Cuba].BitRecuoPistCAlimB);
+			printf("\nBitAvancoPistDAlimC : %d", AVC.Abs[Cuba].BitAvancoPistDAlimC);
+			printf("\nBitRecuoPistDAlimD : %d", AVC.Abs[Cuba].BitRecuoPistDAlimD);
+			printf("\nBitSireneEA : %d", AVC.Abs[Cuba].BitSireneEA);
+			printf("\nBitLiberaMCruzeiro : %d", AVC.Abs[Cuba].BitLiberaMCruzeiro);
+			printf("\nBitChaveQueb : %d", AVC.Abs[Cuba].BitChaveQueb);
+			printf("\nBitChaveCorr : %d", AVC.Abs[Cuba].BitChaveCorr);
+			printf("\nBitChaveLocRem : %d", AVC.Abs[Cuba].BitChaveLocRem);
+			printf("\nBitResetEa : %d", AVC.Abs[Cuba].BitResetEa);
+			printf("\nBitSubiuAnodo : %d", AVC.Abs[Cuba].BitSubiuAnodo);
+			printf("\nBitDesceuAnodo : %d", AVC.Abs[Cuba].BitDesceuAnodo);
+			printf("\nBitSubOuMovCamisaouM2 : %d", AVC.Abs[Cuba].BitSubOuMovCamisaouM2);
+			printf("\nBitDesCamOuPFAutoouM1 : %d", AVC.Abs[Cuba].BitDesCamOuPFAutoouM1);
+			printf("\nBitCheckUp : %d", AVC.Abs[Cuba].BitCheckUp);
+			printf("\nBitTrocaPinos : %d", AVC.Abs[Cuba].BitTrocaPinos);
+			printf("\nBitSoprou : %d", AVC.Abs[Cuba].BitSoprou);
+			printf("\nBitReleFalhaMM : %d", AVC.Abs[Cuba].BitReleFalhaMM);
+			printf("\nBitChaveMCruzeiro : %d", AVC.Abs[Cuba].BitChaveMCruzeiro);
+			
+		break;
+
+		case 7:
+			
+			CubaOpe = 901;
+			Cuba = ConvCubOperScore(CubaOpe);
+
+			printf("EstadoIO : %i \n", AVC.Cleit[Cuba].EstadoIO);
+
+			printf("\nBitSobeAnodo : %d", AVC.Abs[Cuba].BitSobeAnodo);
+			printf("\nBitDesceAnodo : %d", AVC.Abs[Cuba].BitDesceAnodo);
+			printf("\nBitLampEa : %d", AVC.Abs[Cuba].BitLampEa);
+			printf("\nBitLampRec : %d", AVC.Abs[Cuba].BitLampRec);
+			printf("\nBitAvPistaoAQuebA : %d", AVC.Abs[Cuba].BitAvPistaoAQuebA);
+			printf("\nBitRecPistaoAQuebB : %d", AVC.Abs[Cuba].BitRecPistaoAQuebB);
+			printf("\nBitAvPistaoBQuebC : %d", AVC.Abs[Cuba].BitAvPistaoBQuebC);
+			printf("\nBitRecPistaoBouM2QuebD : %d", AVC.Abs[Cuba].BitRecPistaoBouM2QuebD);
+			printf("\nBitSopro : %d", AVC.Abs[Cuba].BitSopro);
+			printf("\nBitSobeCamisaouM1 : %d", AVC.Abs[Cuba].BitSobeCamisaouM1);
+			printf("\nBitDescCamOuAvPCAlimA : %d", AVC.Abs[Cuba].BitDescCamOuAvPCAlimA);
+			printf("\nBitRecuoPistCAlimB : %d", AVC.Abs[Cuba].BitRecuoPistCAlimB);
+			printf("\nBitAvancoPistDAlimC : %d", AVC.Abs[Cuba].BitAvancoPistDAlimC);
+			printf("\nBitRecuoPistDAlimD : %d", AVC.Abs[Cuba].BitRecuoPistDAlimD);
+			printf("\nBitSireneEA : %d", AVC.Abs[Cuba].BitSireneEA);
+			printf("\nBitLiberaMCruzeiro : %d", AVC.Abs[Cuba].BitLiberaMCruzeiro);
+			printf("\nBitChaveQueb : %d", AVC.Abs[Cuba].BitChaveQueb);
+			printf("\nBitChaveCorr : %d", AVC.Abs[Cuba].BitChaveCorr);
+			printf("\nBitChaveLocRem : %d", AVC.Abs[Cuba].BitChaveLocRem);
+			printf("\nBitResetEa : %d", AVC.Abs[Cuba].BitResetEa);
+			printf("\nBitSubiuAnodo : %d", AVC.Abs[Cuba].BitSubiuAnodo);
+			printf("\nBitDesceuAnodo : %d", AVC.Abs[Cuba].BitDesceuAnodo);
+			printf("\nBitSubOuMovCamisaouM2 : %d", AVC.Abs[Cuba].BitSubOuMovCamisaouM2);
+			printf("\nBitDesCamOuPFAutoouM1 : %d", AVC.Abs[Cuba].BitDesCamOuPFAutoouM1);
+			printf("\nBitCheckUp : %d", AVC.Abs[Cuba].BitCheckUp);
+			printf("\nBitTrocaPinos : %d", AVC.Abs[Cuba].BitTrocaPinos);
+			printf("\nBitSoprou : %d", AVC.Abs[Cuba].BitSoprou);
+			printf("\nBitReleFalhaMM : %d", AVC.Abs[Cuba].BitReleFalhaMM);
+			printf("\nBitChaveMCruzeiro : %d", AVC.Abs[Cuba].BitChaveMCruzeiro);
+			
+		break;
+
+		case 8:
+			
+			CubaOpe = 1301;
+			Cuba = ConvCubOperScore(CubaOpe);
+
+			printf("EstadoIO : %i \n", AVC.Cleit[Cuba].EstadoIO);
+
+			printf("\nBitSobeAnodo : %d", AVC.Abs[Cuba].BitSobeAnodo);
+			printf("\nBitDesceAnodo : %d", AVC.Abs[Cuba].BitDesceAnodo);
+			printf("\nBitLampEa : %d", AVC.Abs[Cuba].BitLampEa);
+			printf("\nBitLampRec : %d", AVC.Abs[Cuba].BitLampRec);
+			printf("\nBitAvPistaoAQuebA : %d", AVC.Abs[Cuba].BitAvPistaoAQuebA);
+			printf("\nBitRecPistaoAQuebB : %d", AVC.Abs[Cuba].BitRecPistaoAQuebB);
+			printf("\nBitAvPistaoBQuebC : %d", AVC.Abs[Cuba].BitAvPistaoBQuebC);
+			printf("\nBitRecPistaoBouM2QuebD : %d", AVC.Abs[Cuba].BitRecPistaoBouM2QuebD);
+			printf("\nBitSopro : %d", AVC.Abs[Cuba].BitSopro);
+			printf("\nBitSobeCamisaouM1 : %d", AVC.Abs[Cuba].BitSobeCamisaouM1);
+			printf("\nBitDescCamOuAvPCAlimA : %d", AVC.Abs[Cuba].BitDescCamOuAvPCAlimA);
+			printf("\nBitRecuoPistCAlimB : %d", AVC.Abs[Cuba].BitRecuoPistCAlimB);
+			printf("\nBitAvancoPistDAlimC : %d", AVC.Abs[Cuba].BitAvancoPistDAlimC);
+			printf("\nBitRecuoPistDAlimD : %d", AVC.Abs[Cuba].BitRecuoPistDAlimD);
+			printf("\nBitSireneEA : %d", AVC.Abs[Cuba].BitSireneEA);
+			printf("\nBitLiberaMCruzeiro : %d", AVC.Abs[Cuba].BitLiberaMCruzeiro);
+			printf("\nBitChaveQueb : %d", AVC.Abs[Cuba].BitChaveQueb);
+			printf("\nBitChaveCorr : %d", AVC.Abs[Cuba].BitChaveCorr);
+			printf("\nBitChaveLocRem : %d", AVC.Abs[Cuba].BitChaveLocRem);
+			printf("\nBitResetEa : %d", AVC.Abs[Cuba].BitResetEa);
+			printf("\nBitSubiuAnodo : %d", AVC.Abs[Cuba].BitSubiuAnodo);
+			printf("\nBitDesceuAnodo : %d", AVC.Abs[Cuba].BitDesceuAnodo);
+			printf("\nBitSubOuMovCamisaouM2 : %d", AVC.Abs[Cuba].BitSubOuMovCamisaouM2);
+			printf("\nBitDesCamOuPFAutoouM1 : %d", AVC.Abs[Cuba].BitDesCamOuPFAutoouM1);
+			printf("\nBitCheckUp : %d", AVC.Abs[Cuba].BitCheckUp);
+			printf("\nBitTrocaPinos : %d", AVC.Abs[Cuba].BitTrocaPinos);
+			printf("\nBitSoprou : %d", AVC.Abs[Cuba].BitSoprou);
+			printf("\nBitReleFalhaMM : %d", AVC.Abs[Cuba].BitReleFalhaMM);
+			printf("\nBitChaveMCruzeiro : %d", AVC.Abs[Cuba].BitChaveMCruzeiro);
+			
+		break;
+
+		case 9:
+			
+			CubaOpe = 1701;
+			Cuba = ConvCubOperScore(CubaOpe);
+
+			printf("EstadoIO : %i \n", AVC.Cleit[Cuba].EstadoIO);
+
+			printf("\nBitSobeAnodo : %d", AVC.Abs[Cuba].BitSobeAnodo);
+			printf("\nBitDesceAnodo : %d", AVC.Abs[Cuba].BitDesceAnodo);
+			printf("\nBitLampEa : %d", AVC.Abs[Cuba].BitLampEa);
+			printf("\nBitLampRec : %d", AVC.Abs[Cuba].BitLampRec);
+			printf("\nBitAvPistaoAQuebA : %d", AVC.Abs[Cuba].BitAvPistaoAQuebA);
+			printf("\nBitRecPistaoAQuebB : %d", AVC.Abs[Cuba].BitRecPistaoAQuebB);
+			printf("\nBitAvPistaoBQuebC : %d", AVC.Abs[Cuba].BitAvPistaoBQuebC);
+			printf("\nBitRecPistaoBouM2QuebD : %d", AVC.Abs[Cuba].BitRecPistaoBouM2QuebD);
+			printf("\nBitSopro : %d", AVC.Abs[Cuba].BitSopro);
+			printf("\nBitSobeCamisaouM1 : %d", AVC.Abs[Cuba].BitSobeCamisaouM1);
+			printf("\nBitDescCamOuAvPCAlimA : %d", AVC.Abs[Cuba].BitDescCamOuAvPCAlimA);
+			printf("\nBitRecuoPistCAlimB : %d", AVC.Abs[Cuba].BitRecuoPistCAlimB);
+			printf("\nBitAvancoPistDAlimC : %d", AVC.Abs[Cuba].BitAvancoPistDAlimC);
+			printf("\nBitRecuoPistDAlimD : %d", AVC.Abs[Cuba].BitRecuoPistDAlimD);
+			printf("\nBitSireneEA : %d", AVC.Abs[Cuba].BitSireneEA);
+			printf("\nBitLiberaMCruzeiro : %d", AVC.Abs[Cuba].BitLiberaMCruzeiro);
+			printf("\nBitChaveQueb : %d", AVC.Abs[Cuba].BitChaveQueb);
+			printf("\nBitChaveCorr : %d", AVC.Abs[Cuba].BitChaveCorr);
+			printf("\nBitChaveLocRem : %d", AVC.Abs[Cuba].BitChaveLocRem);
+			printf("\nBitResetEa : %d", AVC.Abs[Cuba].BitResetEa);
+			printf("\nBitSubiuAnodo : %d", AVC.Abs[Cuba].BitSubiuAnodo);
+			printf("\nBitDesceuAnodo : %d", AVC.Abs[Cuba].BitDesceuAnodo);
+			printf("\nBitSubOuMovCamisaouM2 : %d", AVC.Abs[Cuba].BitSubOuMovCamisaouM2);
+			printf("\nBitDesCamOuPFAutoouM1 : %d", AVC.Abs[Cuba].BitDesCamOuPFAutoouM1);
+			printf("\nBitCheckUp : %d", AVC.Abs[Cuba].BitCheckUp);
+			printf("\nBitTrocaPinos : %d", AVC.Abs[Cuba].BitTrocaPinos);
+			printf("\nBitSoprou : %d", AVC.Abs[Cuba].BitSoprou);
+			printf("\nBitReleFalhaMM : %d", AVC.Abs[Cuba].BitReleFalhaMM);
+			printf("\nBitChaveMCruzeiro : %d", AVC.Abs[Cuba].BitChaveMCruzeiro);
+			
+		break;
+
+	}	
 
 }
