@@ -1,0 +1,37 @@
+/*********************************
+***** EVENTO AEK ***********
+*********************************/
+
+GeraEvento(EV_AEK,Cuba,-1,
+                "Forca",
+                EaLocal[Cuba].AEK_VMaxIni,
+				EaLocal[Cuba].AEK_VMax,
+                EaLocal[Cuba].ContSobe,
+                EaLocal[Cuba].EaDesvPad);
+
+ParEv1: "Forca" ou "Fim"
+
+    .....
+
+ParEv2: EaLocal[Cuba].AEK_VMaxIni -- Tensão Instantânea no Início do AEK
+
+    if (AVC.Cleit[Cuba].Vinst > EaLocal[Cuba].AEK_VMax)
+    {
+        EaLocal[Cuba].AEK_VMax = AVC.Cleit[Cuba].Vinst;
+        AVC.User1[Cuba].AEKVMax = EaLocal[Cuba].AEK_VMax;
+
+        if (EaLocal[Cuba].ContSobe eq 0) 
+            EaLocal[Cuba].AEK_VMaxIni = EaLocal[Cuba].AEK_VMax;
+    }
+
+ParEv3: EaLocal[Cuba].AEK_VMax
+
+    
+
+ParEv4: EaLocal[Cuba].ContSobe
+
+    ...
+
+ParEv5: EaLocal[Cuba].EaDesvPad
+
+    ...

@@ -8203,8 +8203,6 @@ Cuba=0;
 	Cuba = ConvCubOperScore(CubaOpe);
 	AVC.Param[Cuba].EaAtrasoMax = 1440;
 
-*/
-
 	i=0;
 	k=0;
 
@@ -8447,5 +8445,359 @@ Cuba=0;
 		break;
 
 	}	
+
+*/
+
+	i=0;
+	k=0;
+
+	switch(Comum->IdentReducao)
+	{
+		case 2:
+
+			// Grupos A e B - Lado Externo
+			i = 0;
+			for(CubaOpe = 301; CubaOpe <= 318 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 418; CubaOpe >= 401 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 319; CubaOpe <= 336 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 436; CubaOpe >= 419 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			// Grupos A e B - Lado Interno
+			i = 0;
+			for(CubaOpe = 401; CubaOpe <= 418 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 318; CubaOpe >= 301 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 419; CubaOpe <= 436 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 336; CubaOpe >= 319 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			// Grupos C, D e E - Lado Externo
+			i = 0;
+			for(CubaOpe = 337; CubaOpe <= 354 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 454; CubaOpe >= 437 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 355; CubaOpe <= 372 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 472; CubaOpe >= 455 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 373; CubaOpe <= 380 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 480; CubaOpe >= 473 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			// Grupos C, D e E - Lado Interno
+			i = 0;
+			for(CubaOpe = 437; CubaOpe <= 454 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 354; CubaOpe >= 337 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 455; CubaOpe <= 472 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 372; CubaOpe >= 355 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 473; CubaOpe <= 480 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 380; CubaOpe >= 373 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+		break;
+
+		case 4:
+
+			// Grupos A e B - Lado Externo
+			i = 0;
+			for(CubaOpe = 301; CubaOpe <= 318 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 418; CubaOpe >= 401 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 319; CubaOpe <= 336 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 436; CubaOpe >= 419 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+            // Grupos A e B - Lado Externo
+			i = 0;
+			for(CubaOpe = 701; CubaOpe <= 718 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 818; CubaOpe >= 801 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 719; CubaOpe <= 736 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 836; CubaOpe >= 819 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			// Grupos A e B - Lado Interno
+			i = 0;
+			for(CubaOpe = 801; CubaOpe <= 818 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 718; CubaOpe >= 701 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 819; CubaOpe <= 836 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 736; CubaOpe >= 719 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			// Grupos C, D e E - Lado Externo
+			i = 0;
+			for(CubaOpe = 737; CubaOpe <= 754 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 854; CubaOpe >= 837 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 755; CubaOpe <= 772 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 872; CubaOpe >= 855 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 773; CubaOpe <= 780 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 880; CubaOpe >= 873 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb1 = i;
+				i=i+25;
+			}
+
+			// Grupos C, D e E - Lado Interno
+			i = 0;
+			for(CubaOpe = 837; CubaOpe <= 854 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 754; CubaOpe >= 737 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 855; CubaOpe <= 872 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 772; CubaOpe >= 755 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+			i+=35;
+			for(CubaOpe = 873; CubaOpe <= 880 ; CubaOpe++)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+			
+			for(CubaOpe = 780; CubaOpe >= 773 ; CubaOpe--)
+			{
+				Cuba = ConvCubOperScore(CubaOpe);
+				AVC.ParUser1[Cuba].DelayLadoQueb2 = i;
+				i=i+25;
+			}
+
+		break;		
 
 }

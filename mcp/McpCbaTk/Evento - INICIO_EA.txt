@@ -1,0 +1,74 @@
+/*********************************
+***** EVENTO INICIO_EA ***********
+*********************************/
+
+GeraEvento(INICIO_EA,Cuba,-1, ParEv1, ParEv2, ParEv3, EaVMaxAnt, ParEv5);
+
+ParEv1: TipoEa - Tipo de Efeito Anódico (LENTO, RÁPIDO ou MUITO RÁPIDO)
+
+    switch(TipoEa)
+        {
+        case EA_LENTO:
+            sprintf(ParEv1, "%8.8s", ScoreGetStr(TIPO_LENTO));
+    //		GeraEvento(INICIO_EA,Cuba,-1,ScoreGetStr(TIPO_LENTO));
+            break;
+        case EA_RAPIDO:
+            sprintf(ParEv1, "%8.8s", ScoreGetStr(TIPO_RAPIDO));
+    //		GeraEvento(INICIO_EA,Cuba,-1,ScoreGetStr(TIPO_RAPIDO));
+            break;
+        case EA_MUITO_RAPIDO:
+            sprintf(ParEv1, "%8.8s", ScoreGetStr(TIPO_MRAPID));
+    //		GeraEvento(INICIO_EA,Cuba,-1,ScoreGetStr(TIPO_MRAPID));
+            break;
+        }
+
+ParEv2: DifPrvEA - Intervalo de tempo em HH:MM desde a última Previsão de EA
+
+    DifPrevEa = AVC.Ea[Cuba].EaHoraInicio - AVC.Ea[Cuba].EaPrevT0;
+    
+    
+    // AVC.Ea[Cuba].EaPrevT0 = Hora de Início da Previsão
+    (Módulo PrevEaNovo.c)
+    if (EST_AVC(Cuba).EaPrev eq VERDADEIRO)
+	  {
+        // (...)
+		/* -- hora de inicio da previsao -- */
+		AVC.Ea[Cuba].EaPrevT0=HoraAtualCtrl;
+
+ParEv3: DifEAAnt - Intervalo de tempo em HH:MM desde o último EA
+
+    MontaHoraMin(IntervUltEa/60, Aux, "%03d:%02d");
+	sprintf(ParEv3,"*%s", Aux);
+
+ParEv4: EaVMaxAnt - Tensão Instantânea Máxima do Último Efeito Anódico
+
+    void InicioEa(int Cuba)
+    {
+    //(...)
+    EaVMaxAnt = AVC.Ea[Cuba].EaVMax;
+
+
+    (Módulo TrataEa.c)
+    //Função CalcVMaxMin - Calcula VMaxEa e VMinEa
+    void CalcVMaxMin(int Cuba)
+    {
+    if (AVC.Cleit[Cuba].Vinst > AVC.Ea[Cuba].EaVMax)   /* Calculo da Tensao Maxima */
+        AVC.Ea[Cuba].EaVMax = AVC.Cleit[Cuba].Vinst;
+    if (AVC.Cleit[Cuba].Vinst < AVC.Ea[Cuba].EaVMin)   /* Calculo da Tensao Minima */
+        AVC.Ea[Cuba].EaVMin = AVC.Cleit[Cuba].Vinst;
+    }
+
+ParEv5: DerivHMx - Derivada Histórica Máxima na última Previsão
+
+    (TrataEa)
+    if (AVC.Ea[Cuba].DerivHMaxPrevEa < 0.0)
+	  sprintf(ParEv5, "-1.0");	// Para indicar que nao tem valor valido (nao detectou previsao)
+    else
+	  sprintf(ParEv5, "%5.2f", AVC.Ea[Cuba].DerivHMaxPrevEa*1.0e3);
+
+    (PrevEaNovo.c)
+    /* -- O valor maximo sera' utilizado para classificacao do EA -- */
+	if (AVC.Ea[Cuba].RSuaveDerivH > AVC.Ea[Cuba].DerivHMaxPrevEa)
+	  AVC.Ea[Cuba].DerivHMaxPrevEa=AVC.Ea[Cuba].RSuaveDerivH;
+
+
